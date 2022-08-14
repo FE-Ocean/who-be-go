@@ -1,11 +1,8 @@
-@import './base/fonts';
-@import './base/normalize';
-@import './base/reset';
-@import './base/global';
 @import './constants/colors';
 @import './constants/typography';
 
-@import './components/buttons';
-@import './components/img-card';
+@import './base/fonts';
+@import './base/global';
+@import './base/normalize';
+@import './base/reset';
 
-@import './pages/home';
