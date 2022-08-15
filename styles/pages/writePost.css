@@ -4,6 +4,7 @@
     max-width: 740px;
     margin: 0 auto;
     color: #f1f1f1;
+    overflow: hidden;
 }
 
 .page-title {
@@ -86,16 +87,19 @@
     line-height: 18px;
 }
 .review-container .review-contents #text-review::-moz-placeholder {
-    color: #767676;
+    font-family: 'SpoqaHanSansNeo-Regular', sans-serif;
     font-size: 13px;
+    color: #767676;
 }
 .review-container .review-contents #text-review:-ms-input-placeholder {
-    color: #767676;
+    font-family: 'SpoqaHanSansNeo-Regular', sans-serif;
     font-size: 13px;
+    color: #767676;
 }
 .review-container .review-contents #text-review::placeholder {
-    color: #767676;
+    font-family: 'SpoqaHanSansNeo-Regular', sans-serif;
     font-size: 13px;
+    color: #767676;
 }
 .review-container #label-img {
     background-image: url('../../assets/icons/upload-file.svg');

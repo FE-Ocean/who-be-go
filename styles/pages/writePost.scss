@@ -7,6 +7,7 @@
     max-width: 740px;
     margin: 0 auto;
     color: $title-text;
+    overflow: hidden;
 }
 
 .page-title {
@@ -89,8 +90,11 @@
             font-size: 14px;
             line-height: 18px;
             &::placeholder {
+                font: {
+                    family: $font-regular;
+                    size: 13px;
+                }
                 color: $disabled-line;
-                font-size: 13px;
             }
         }
     }
