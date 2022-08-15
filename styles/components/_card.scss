@@ -1,0 +1,91 @@
+%card-base {
+    position: relative;
+    background-image: url('../../assets/images/ex_img.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+    z-index: -1;
+}
+
+%card-cover {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 30px;
+    background-blend-mode: multiply;
+    z-index: -1;
+}
+
+@mixin text-overflow($width) {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+    width: $width;
+}
+
+.card-m {
+    @extend %card-base;
+    width: 250px;
+    height: 354px;
+}
+
+.card-L {
+    @extend %card-base;
+    width: 300px;
+    height: 425px;
+    z-index: 10;
+    &:first-of-type {
+        margin-right: 20px;
+    }
+    &:last-of-type::after {
+        @extend %card-cover;
+    }
+}
+.wrapper-card {
+    width: fit-content;
+    display: flex;
+    margin: 0 auto;
+    color: $title-text;
+    &.home {
+        margin-top: 50px;
+    }
+    .wrapper-movie-title {
+        display: flex;
+        flex-direction: column;
+        margin: 50px 25px 0 25px;
+        font-family: $font-bold;
+
+        #movie-title-eng {
+            font-size: 20px;
+            margin-bottom: 10px;
+            @include text-overflow(250px);
+        }
+        #movie-title {
+            @include text-overflow(250px);
+            font-size: 18px;
+        }
+    }
+
+    .wrapper-sub-text {
+        display: block;
+        margin: 70px 20px 20px;
+        font-size: 13px;
+        font-family: $font-bold;
+        #sub-title {
+            margin-right: 18px;
+            color: $header-text;
+            @include text-overflow(250px);
+        }
+        #sub-text {
+            display: block;
+            color: $title-text;
+            margin-bottom: 8px;
+            @include text-overflow(250px);
+        }
+    }
+}

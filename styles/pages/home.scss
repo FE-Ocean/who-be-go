@@ -1,2 +1,15 @@
 @import '../constants/colors';
 @import '../constants/typography';
+
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+
+    .page-title {
+        font-family: $font-bold;
+        text-align: center;
+        margin-top: 164px;
+        color: $title-text;
+    }
+}

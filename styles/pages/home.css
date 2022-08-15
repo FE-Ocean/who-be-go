@@ -1,0 +1,11 @@
+.container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.container .page-title {
+  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
+  text-align: center;
+  margin-top: 164px;
+  color: #f1f1f1;
+}
