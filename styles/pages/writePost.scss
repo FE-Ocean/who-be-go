@@ -8,7 +8,8 @@ body {
 }
 
 .write-wrapper {
-    padding: 70px 0;
+    box-sizing: content-box;
+    padding: 70px 20px;
     max-width: 740px;
     margin: 0 auto;
 }
@@ -120,5 +121,4 @@ body {
 .save {
     margin-top: 21px;
     float: right;
-    background-color: $primary-color;
 }
