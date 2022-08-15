@@ -7,13 +7,14 @@ body {
     color: $title-text;
 }
 
-.writeContainer {
-    padding: 70px 0;
+.write-wrapper {
+    box-sizing: content-box;
+    padding: 70px 20px;
     max-width: 740px;
     margin: 0 auto;
 }
 
-.pageTitle {
+.page-title {
     font: {
         family: $font-bold;
         size: 30px;
@@ -22,28 +23,28 @@ body {
     text-align: center;
 }
 
-.upperContainer {
+.upper-wrapper {
     margin: 32px auto 22px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
 
-.titleContainer {
+.title-container {
     width: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
-    #movieTitle {
+    #movie-title {
         font: {
             family: $font-bold;
             size: 25px;
         }
         line-height: 31px;
     }
-    #movieEngTitle {
+    #movie-title-eng {
         font: {
             family: $font-medium;
             size: 15px;
@@ -52,7 +53,7 @@ body {
     }
 }
 
-.ratingContainer {
+.rating-container {
     width: fit-content;
     display: flex;
     flex-direction: column;
@@ -68,13 +69,13 @@ body {
     }
 }
 
-.reviewContainer {
+.review-container {
     position: relative;
     padding: 40px 37px;
     height: 425px;
     background-color: $sub-bg;
     border-radius: 20px;
-    .reviewContents {
+    .review-contents {
         overflow: auto;
         height: 100%;
         img {
@@ -83,7 +84,7 @@ body {
             margin-bottom: 14px;
             border-radius: 4px;
         }
-        #review {
+        #text-review {
             resize: none;
             width: 100%;
             // 높이는 나중에 js로 조절하기 위해 우선은 고정값으로 둠
@@ -99,7 +100,7 @@ body {
         }
     }
 
-    #imageLabel {
+    #label-img {
         background: {
             image: url('../../assets/icons/upload-file.svg');
             size: cover;
@@ -112,7 +113,7 @@ body {
         top: 25px;
         right: 25px;
     }
-    #imageInput {
+    #img-input {
         display: none;
     }
 }
@@ -120,5 +121,4 @@ body {
 .save {
     margin-top: 21px;
     float: right;
-    background-color: $primary-color;
 }
