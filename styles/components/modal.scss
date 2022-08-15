@@ -31,7 +31,7 @@
         color: $title-text;
         font: {
             family: $font-medium;
-            size: $font-size-14;
+            size: 14px;
         }
         padding: 10px 13px;
     }
@@ -62,7 +62,7 @@
             display: block;
             font: {
                 family: $font-medium;
-                size: $font-size-16;
+                size: 16px;
             }
             line-height: 20px;
             padding: 29px 62px 22px;
@@ -71,7 +71,7 @@
             position: relative;
             float: left;
             width: 50%;
-            font-size: $font-size-14;
+            font-size: 14px;
             line-height: 18px;
             padding: 14px 0;
             border-top: 0.5px solid $disabled-line;
