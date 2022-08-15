@@ -50,7 +50,7 @@
   color: #cfcfcf;
 }
 
-.nav li a:hover {
+.nav li a:hover, .nav li a.selected {
   color: #ff5f5f;
 }
 

@@ -37,7 +37,8 @@
             font-family: $font-bold;
             font-size: $font-size-16;
             color: $header-text;
-            &:hover {
+            &:hover,
+            &.selected {
                 color: $primary-color;
             }
         }
