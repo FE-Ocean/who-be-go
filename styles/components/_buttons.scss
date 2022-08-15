@@ -1,45 +1,45 @@
 %btn-base {
-  display: inline-block;
-  font-family: $font-bold;
-  text-align: center;
-  border-radius: 30px;
-  background-color: $primary-color;
-  color: $white;
+    display: inline-block;
+    font-family: $font-bold;
+    text-align: center;
+    border-radius: 30px;
+    background-color: $primary-color;
+    color: $white;
 }
 
 %btn-disabled {
-  background-color: $disabled-color;
-  color: $white;
+    background-color: $disabled-color;
+    color: $white;
 }
 
 .btn-s {
-  @extend %btn-base;
-  width: 90px;
-  height: 32px;
-  font-size: 13px;
-  padding: 9px 0 7px;
-  &.disabled {
-    @extend %btn-disabled;
-  }
+    @extend %btn-base;
+    width: 90px;
+    height: 32px;
+    font-size: 13px;
+    padding: 9px 0 7px;
+    &.disabled {
+        @extend %btn-disabled;
+    }
 }
 
 .btn-ms {
-  @extend %btn-base;
-  width: 170px;
-  height: 32px;
-  font-size: 13px;
-  padding: 9px 0 7px;
-  &.disabled {
-    @extend %btn-disabled;
-  }
+    @extend %btn-base;
+    width: 170px;
+    height: 32px;
+    font-size: 13px;
+    padding: 9px 0 7px;
+    &.disabled {
+        @extend %btn-disabled;
+    }
 }
 
 .btn-L {
-  @extend %btn-base;
-  width: 322px;
-  height: 44px;
-  font-size: 14px;
-  &.disabled {
-    @extend %btn-disabled;
-  }
+    @extend %btn-base;
+    width: 322px;
+    height: 44px;
+    font-size: 14px;
+    &.disabled {
+        @extend %btn-disabled;
+    }
 }
