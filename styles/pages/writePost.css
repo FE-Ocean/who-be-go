@@ -1,0 +1,123 @@
+body {
+    width: 100%;
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+}
+
+.writeContainer {
+    padding: 70px 0;
+    max-width: 740px;
+    margin: 0 auto;
+}
+
+.pageTitle {
+    font-family: 'SpoqaHanSansNeo-Bold', sans-serif;
+    font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+}
+
+.upperContainer {
+    margin: 32px auto 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.titleContainer {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+.titleContainer #movieTitle {
+    font-family: 'SpoqaHanSansNeo-Bold', sans-serif;
+    font-size: 25px;
+    line-height: 31px;
+}
+.titleContainer #movieEngTitle {
+    font-family: 'SpoqaHanSansNeo-Medium', sans-serif;
+    font-size: 15px;
+    line-height: 19px;
+}
+
+.ratingContainer {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 7px;
+}
+.ratingContainer span {
+    font-size: 12px;
+    line-height: 15px;
+}
+.ratingContainer img {
+    cursor: pointer;
+}
+
+.reviewContainer {
+    position: relative;
+    padding: 40px 37px;
+    height: 425px;
+    background-color: #292929;
+    border-radius: 20px;
+}
+.reviewContainer .reviewContents {
+    overflow: auto;
+    height: 100%;
+}
+.reviewContainer .reviewContents img {
+    display: block;
+    max-width: 314px;
+    margin-bottom: 14px;
+    border-radius: 4px;
+}
+.reviewContainer .reviewContents #review {
+    resize: none;
+    width: 100%;
+    height: 200px;
+    word-break: keep-all;
+    color: #dedede;
+    font-size: 14px;
+    line-height: 18px;
+}
+.reviewContainer .reviewContents #review::-moz-placeholder {
+    color: #767676;
+    font-size: 13px;
+}
+.reviewContainer .reviewContents #review:-ms-input-placeholder {
+    color: #767676;
+    font-size: 13px;
+}
+.reviewContainer .reviewContents #review::placeholder {
+    color: #767676;
+    font-size: 13px;
+}
+.reviewContainer #imageLabel {
+    background-image: url('../../assets/icons/upload-file.svg');
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: transparent;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+.reviewContainer #imageInput {
+    display: none;
+}
+
+.save {
+    margin-top: 21px;
+    float: right;
+    background-color: #ff5f5f;
+}
