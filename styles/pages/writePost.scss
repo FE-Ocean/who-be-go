@@ -2,123 +2,123 @@
 @import '../constants/typography';
 
 body {
-  width: 100%;
-  background-color: $main-bg;
-  color: $title-text;
+    width: 100%;
+    background-color: $main-bg;
+    color: $title-text;
 }
 
 .writeContainer {
-  padding: 70px 0;
-  max-width: 740px;
-  margin: 0 auto;
+    padding: 70px 0;
+    max-width: 740px;
+    margin: 0 auto;
 }
 
 .pageTitle {
-  font: {
-    family: $font-bold;
-    size: 30px;
-  }
-  line-height: 38px;
-  text-align: center;
+    font: {
+        family: $font-bold;
+        size: 30px;
+    }
+    line-height: 38px;
+    text-align: center;
 }
 
 .upperContainer {
-  margin: 32px auto 22px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+    margin: 32px auto 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .titleContainer {
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 10px;
-  #movieTitle {
-    font: {
-      family: $font-bold;
-      size: 25px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    #movieTitle {
+        font: {
+            family: $font-bold;
+            size: 25px;
+        }
+        line-height: 31px;
     }
-    line-height: 31px;
-  }
-  #movieEngTitle {
-    font: {
-      family: $font-medium;
-      size: 15px;
+    #movieEngTitle {
+        font: {
+            family: $font-medium;
+            size: 15px;
+        }
+        line-height: 19px;
     }
-    line-height: 19px;
-  }
 }
 
 .ratingContainer {
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 7px;
-  span {
-    font-size: 12px;
-    line-height: 15px;
-  }
-  img {
-    cursor: pointer;
-  }
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 7px;
+    span {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    img {
+        cursor: pointer;
+    }
 }
 
 .reviewContainer {
-  position: relative;
-  padding: 40px 37px;
-  height: 425px;
-  background-color: $sub-bg;
-  border-radius: 20px;
-  .reviewContents {
-    overflow: auto;
-    height: 100%;
-    img {
-      display: block;
-      max-width: 314px;
-      margin-bottom: 14px;
-      border-radius: 4px;
+    position: relative;
+    padding: 40px 37px;
+    height: 425px;
+    background-color: $sub-bg;
+    border-radius: 20px;
+    .reviewContents {
+        overflow: auto;
+        height: 100%;
+        img {
+            display: block;
+            max-width: 314px;
+            margin-bottom: 14px;
+            border-radius: 4px;
+        }
+        #review {
+            resize: none;
+            width: 100%;
+            // 높이는 나중에 js로 조절하기 위해 우선은 고정값으로 둠
+            height: 200px;
+            word-break: keep-all;
+            color: $content-text;
+            font-size: 14px;
+            line-height: 18px;
+            &::placeholder {
+                color: $disabled-line;
+                font-size: 13px;
+            }
+        }
     }
-    #review {
-      resize: none;
-      width: 100%;
-      // 높이는 나중에 js로 조절하기 위해 우선은 고정값으로 둠
-      height: 200px;
-      word-break: keep-all;
-      color: $content-text;
-      font-size: 14px;
-      line-height: 18px;
-      &::placeholder {
-        color: $disabled-line;
-        font-size: 13px;
-      }
-    }
-  }
 
-  #imageLabel {
-    background: {
-      image: url('../../assets/icons/upload-file.svg');
-      size: cover;
+    #imageLabel {
+        background: {
+            image: url('../../assets/icons/upload-file.svg');
+            size: cover;
+        }
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        color: transparent;
+        position: absolute;
+        top: 25px;
+        right: 25px;
     }
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    color: transparent;
-    position: absolute;
-    top: 25px;
-    right: 25px;
-  }
-  #imageInput {
-    display: none;
-  }
+    #imageInput {
+        display: none;
+    }
 }
 
 .save {
-  margin-top: 21px;
-  float: right;
-  background-color: $primary-color;
+    margin-top: 21px;
+    float: right;
+    background-color: $primary-color;
 }

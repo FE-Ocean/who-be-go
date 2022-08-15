@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>후비고 - 후기 무비 고</title>
-    <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/pages/writePost.css" />
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>후비고 - 후기 무비 고</title>
+        <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/pages/writePost.css" />
+    </head>
 
-  <body>
-    <div class="writeContainer">
-      <h2 class="pageTitle">영화 독후감 작성</h2>
-      <div class="upperContainer">
-        <div class="titleContainer">
-          <p id="movieTitle">라라랜드 (영화 제목)</p>
-          <p id="movieEngTitle">LaLa Land (영화 영어 제목)</p>
+    <body>
+        <div class="writeContainer">
+            <h2 class="pageTitle">영화 독후감 작성</h2>
+            <div class="upperContainer">
+                <div class="titleContainer">
+                    <p id="movieTitle">라라랜드 (영화 제목)</p>
+                    <p id="movieEngTitle">LaLa Land (영화 영어 제목)</p>
+                </div>
+                <div class="ratingContainer">
+                    <span>별점을 매겨주세요!</span>
+                    <img src="../assets/icons/stars-gray.svg" alt="rating" />
+                    <!-- 호버 시 노란 색의 별로 바뀌도록 -->
+                    <!-- <img src="../assets/icons/star-yellow.svg" alt="rating" /> -->
+                </div>
+            </div>
+            <div class="reviewContainer">
+                <div class="reviewContents">
+                    <img src="../assets/images/ex_img2.png" alt="" />
+                    <!-- <img src="../assets/images/ex_img2.png" alt="" /> -->
+                    <textarea
+                        name="review"
+                        id="review"
+                        placeholder="영화 독후감을 작성해 주세요."
+                    ></textarea>
+                </div>
+                <label id="imageLabel" for="imageInput">이미지 업로드</label>
+                <input
+                    type="file"
+                    name="imageInput"
+                    id="imageInput"
+                    accept="img/gif, image/jpeg, image/png"
+                />
+            </div>
+            <!-- 사진 또는 글이 입력되지 않았을 때 disabled -->
+            <button type="submit" class="btn-s save" id="saveButton" disabled>
+                저장
+            </button>
         </div>
-        <div class="ratingContainer">
-          <span>별점을 매겨주세요!</span>
-          <img src="../assets/icons/stars-gray.svg" alt="rating" />
-          <!-- 호버 시 노란 색의 별로 바뀌도록 -->
-          <!-- <img src="../assets/icons/star-yellow.svg" alt="rating" /> -->
-        </div>
-      </div>
-      <div class="reviewContainer">
-        <div class="reviewContents">
-          <img src="../assets/images/ex_img2.png" alt="" />
-          <!-- <img src="../assets/images/ex_img2.png" alt="" /> -->
-          <textarea
-            name="review"
-            id="review"
-            placeholder="영화 독후감을 작성해 주세요."
-          ></textarea>
-        </div>
-        <label id="imageLabel" for="imageInput">이미지 업로드</label>
-        <input
-          type="file"
-          name="imageInput"
-          id="imageInput"
-          accept="img/gif, image/jpeg, image/png"
-        />
-      </div>
-      <!-- 사진 또는 글이 입력되지 않았을 때 disabled -->
-      <button type="submit" class="btn-s save" id="saveButton" disabled>
-        저장
-      </button>
-    </div>
-  </body>
+    </body>
 </html>
