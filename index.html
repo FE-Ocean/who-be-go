@@ -2,16 +2,64 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>후비고 - 후기 무비 고</title>
-  <link rel="stylesheet" href="./styles/main.css">
-  <link rel="stylesheet" href="./styles/pages/home.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>후비고 | 후기 무비 고</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="../styles/components/common.css" />
+    <script src="../js/common.js" defer></script>
+    <link rel="stylesheet" href="./styles/pages/home.css">
 </head>
 
 <body>
-  <h1>homepage</h1>
+    <header class="header">
+        <h1 class="logo">
+            <img src="../assets/icons/logo-title.svg" alt="로고이미지" />
+            <button class="nav-toggle"></button>
+        </h1>
+
+        <ul class="nav">
+            <li><a href="#">요즘 영화</a></li>
+            <li><a href="#">영화 찾아요</a></li>
+            <li><a href="#">영화 독후감</a></li>
+            <li><a href="#">마이 페이지</a></li>
+            <li><a href="#">로그아웃</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section class="container">
+            <h1 class="page-title">오늘 이 영화 어때요?</h1>
+            <article class="wrapper-card home">
+                <h2 class="visually-hidden">영화 랜덤 추천</h2>
+                <div class="card-L"></div>
+                <div class="card-L">
+                    <div class="wrapper-movie-title">
+                        <strong id="movie-title-eng">LaLa Land</strong>
+                        <span id="movie-title">라라 랜드</span>
+                    </div>
+                    <div class="wrapper-sub-text">
+                        <span id="sub-title">Release</span>
+                        <strong id="sub-text">2016.12.07</strong>
+                        <span id="sub-title">Director</span>
+                        <strong id="sub-text">감독이름</strong>
+                        <span id="sub-title">Cast</span>
+                        <strong id="sub-text">라이언 고슬링, 엠마 스톤</strong>
+                        <span id="sub-title">Genre</span>
+                        <strong id="sub-text">로맨스, 뮤지컬, 드라마</strong>
+                        <span id="sub-title">Rate</span>
+                        <strong id="sub-text">4.98 / 5</strong>
+                    </div>
+
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Copyright FE Ocean all right reserved.</p>
+    </footer>
+
 </body>
 
 </html>
