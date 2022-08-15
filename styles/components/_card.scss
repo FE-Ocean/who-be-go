@@ -61,20 +61,20 @@
         font-family: $font-bold;
 
         #movie-title-eng {
-            font-size: $font-size-20;
+            font-size: 20px;
             margin-bottom: 10px;
             @include text-overflow(250px);
         }
         #movie-title {
             @include text-overflow(250px);
-            font-size: $font-size-18;
+            font-size: 18px;
         }
     }
 
     .wrapper-sub-text {
         display: block;
         margin: 70px 20px 20px;
-        font-size: $font-size-13;
+        font-size: 13px;
         font-family: $font-bold;
         #sub-title {
             margin-right: 18px;
