@@ -15,13 +15,11 @@
 }
 
 .logo {
-  height: 94px;
+  height: 90px;
 }
-
 .logo img {
-  margin-left: 145px;
+  margin-left: 90px;
 }
-
 .logo button {
   display: none;
   position: absolute;
@@ -36,20 +34,17 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 145px;
+  margin-right: 90px;
   letter-spacing: -0.02em;
 }
-
 .nav li {
   padding-left: 24px;
 }
-
 .nav li a {
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   color: #cfcfcf;
 }
-
 .nav li a:hover, .nav li a.selected {
   color: #ff5f5f;
 }
@@ -59,23 +54,23 @@
 }
 
 .footer {
+  position: fixed;
   width: 100%;
-  height: 92px;
+  height: 60px;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: #292929;
   text-align: center;
 }
-
 .footer p {
   display: inline-block;
-  margin-top: 41px;
+  margin-top: 25px;
   color: #cfcfcf;
   font-size: 10px;
 }
 
-@media screen and (max-width: 905px) {
+@media screen and (max-width: 768px) {
   .header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
