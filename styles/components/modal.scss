@@ -1,0 +1,93 @@
+@import '../constants/colors';
+@import '../constants/typography';
+
+// dropbox
+.modal-dropbox {
+    // 사용할 땐 여기부터
+    position: absolute;
+    top: 300px;
+    // 여기까지 삭제해주세요
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -15px;
+        left: 13px;
+        border: {
+            left: 15px solid transparent;
+            right: 15px solid transparent;
+            bottom: 25px solid $dropbox-bg;
+        }
+    }
+    width: 180px;
+    background-color: $dropbox-bg;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    .btn-dropbox {
+        width: 100%;
+        text-align: left;
+        color: $title-text;
+        font: {
+            family: $font-medium;
+            size: 14px;
+        }
+        padding: 10px 13px;
+    }
+}
+
+// alert
+.modal-alert-container {
+    &.disabled {
+        display: none;
+    }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    .modal-alert {
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $sub-bg;
+        text-align: center;
+        border-radius: 10px;
+        color: $title-text;
+        .message {
+            display: block;
+            font: {
+                family: $font-medium;
+                size: 16px;
+            }
+            line-height: 20px;
+            padding: 29px 62px 22px;
+        }
+        .btn-alert {
+            position: relative;
+            float: left;
+            width: 50%;
+            font-size: 14px;
+            line-height: 18px;
+            padding: 14px 0;
+            border-top: 0.5px solid $disabled-line;
+            color: $title-text;
+            &.action {
+                color: $primary-color;
+            }
+            &.action::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0.5px;
+                height: 100%;
+                background-color: $disabled-line;
+            }
+        }
+    }
+}
