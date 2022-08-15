@@ -1,0 +1,119 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #292929;
+}
+
+.logo {
+  height: 94px;
+}
+
+.logo img {
+  margin-left: 145px;
+}
+
+.logo button {
+  display: none;
+  position: absolute;
+  top: 33px;
+  right: 33px;
+  width: 25px;
+  height: 25px;
+  background: url(../../assets/icons/menu.svg) no-repeat 0 0;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 145px;
+  letter-spacing: -0.02em;
+}
+
+.nav li {
+  padding-left: 24px;
+}
+
+.nav li a {
+  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
+  font-size: 16px;
+  color: #cfcfcf;
+}
+
+.nav li a:hover, .nav li a.selected {
+  color: #ff5f5f;
+}
+
+.main {
+  margin-top: 94px;
+}
+
+.footer {
+  width: 100%;
+  height: 92px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #292929;
+  text-align: center;
+}
+
+.footer p {
+  display: inline-block;
+  margin-top: 41px;
+  color: #cfcfcf;
+  font-size: 10px;
+}
+
+@media screen and (max-width: 905px) {
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .logo img {
+    margin-left: 0;
+  }
+  .logo button {
+    display: block;
+  }
+  .nav {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    margin-right: 0;
+  }
+  .nav.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .nav li {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+  }
+  .nav li:last-child {
+    padding-bottom: 20px;
+  }
+  .nav li a {
+    display: block;
+  }
+  .main.active {
+    margin-top: 296px;
+  }
+}
