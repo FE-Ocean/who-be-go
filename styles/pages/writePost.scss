@@ -1,17 +1,12 @@
 @import '../constants/colors';
 @import '../constants/typography';
 
-body {
-    width: 100%;
-    background-color: $main-bg;
-    color: $title-text;
-}
-
 .write-wrapper {
     box-sizing: content-box;
     padding: 70px 20px;
     max-width: 740px;
     margin: 0 auto;
+    color: $title-text;
 }
 
 .page-title {

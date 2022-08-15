@@ -1,14 +1,9 @@
-body {
-    width: 100%;
-    background-color: #1e1e1e;
-    color: #f1f1f1;
-}
-
 .write-wrapper {
     box-sizing: content-box;
     padding: 70px 20px;
     max-width: 740px;
     margin: 0 auto;
+    color: #f1f1f1;
 }
 
 .page-title {
