@@ -1,0 +1,67 @@
+@import '../constants/colors';
+@import '../constants/typography';
+
+.container-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 322px;
+    margin-top: 174px;
+
+    .img-logo {
+        height: 167px;
+        margin-bottom: 10px;
+    }
+
+    label {
+        margin-bottom: 9px;
+        font-family: $font-medium;
+        color: $header-text;
+    }
+
+    input {
+        width: 322px;
+        padding: 7px;
+        border-bottom: 1px solid $disabled-line;
+        color: $white;
+        font-family: $font-regular;
+        line-height: 1;
+        &:focus {
+            border-color: $white;
+        }
+    }
+
+    .msg-error {
+        margin-top: 5px;
+        color: $primary-color;
+        font : {
+            family: $font-regular;
+            weight: 400;
+            size: 11px;
+        }
+        &.true {
+            display: block;
+        }
+        &.false {
+            display: none;
+        }
+    }
+
+    .wrapper-email,
+    .wrapper-password {
+        display: flex;
+        flex-direction: column;
+    }
+    .wrapper-password {
+        margin: 16px 0 35px 0;
+    }
+
+    .sign-up-link {
+        display: block;
+        text-align: center;
+        margin-top: 25px;
+        color: $header-text;
+        font-size: 12px;
+    }
+}
