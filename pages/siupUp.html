@@ -2,14 +2,38 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>회원가입</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 | 후비고</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/pages/signUp.css">
 </head>
 
 <body>
-
+    <section class="container-signup">
+        <h1 class="page-title">이메일로 회원가입</h1>
+        <form>
+            <div class="wrapper-email">
+                <label for="email" class="label-email">
+                    이메일
+                </label>
+                <input id="input-email" type="text" placeholder="이메일 주소를 입력해 주세요.">
+                </input>
+                <strong class="msg-error true">*이미 가입된 이메일 주소입니다.</strong>
+            </div>
+            <div class="wrapper-password">
+                <label for="password" class="label-password">
+                    비밀번호
+                </label>
+                <input id="input-password" type="password" maxLength="16" placeholder="비밀번호를 설정해 주세요."></input>
+                <strong class="msg-error false">
+                    *비밀번호는 6자 이상이어야 합니다.
+                </strong>
+            </div>
+            <button type="submit" class="btn-L disabled">회원가입</button>
+        </form>
+    </section>
 </body>
 
 </html>

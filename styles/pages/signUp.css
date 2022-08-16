@@ -1,0 +1,89 @@
+.container-signup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 202px;
+  min-width: 322px;
+}
+.container-signup .page-title {
+  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
+  font-size: 30px;
+  color: #ffffff;
+  margin-bottom: 54px;
+}
+.container-signup label {
+  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
+  color: #cfcfcf;
+  margin-bottom: 9px;
+}
+.container-signup ::-webkit-input-placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 13px;
+  color: #464646;
+}
+.container-signup ::-moz-placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 13px;
+  color: #464646;
+}
+.container-signup :-ms-input-placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 13px;
+  color: #464646;
+}
+.container-signup ::-ms-input-placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 13px;
+  color: #464646;
+}
+.container-signup ::placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 13px;
+  color: #464646;
+}
+.container-signup input {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  line-height: 1;
+  color: #ffffff;
+  padding: 7px;
+  border-bottom: 1px solid #767676;
+}
+.container-signup input:focus {
+  border-bottom: 1px solid #ffffff;
+}
+.container-signup .msg-error {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  color: #ff5f5f;
+  margin-top: 5px;
+}
+.container-signup .msg-error.true {
+  display: block;
+}
+.container-signup .msg-error.false {
+  display: none;
+}
+.container-signup .wrapper-email,
+.container-signup .wrapper-password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.container-signup .wrapper-password {
+  margin: 16px 0 35px 0;
+}
