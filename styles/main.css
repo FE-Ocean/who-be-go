@@ -114,11 +114,6 @@ abbr[title] {
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-b,
-strong {
-  font-weight: bolder;
-}
-
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
@@ -399,6 +394,10 @@ address {
   font-style: normal;
 }
 
+strong {
+  font-weight: 400;
+}
+
 .btn-L, .btn-ms, .btn-s {
   display: inline-block;
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
@@ -446,9 +445,8 @@ address {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.69);
   border-radius: 30px;
-  background-blend-mode: multiply;
   z-index: -1;
 }
 
@@ -507,24 +505,26 @@ address {
   font-size: 18px;
 }
 .wrapper-card .wrapper-sub-text {
-  display: block;
   margin: 70px 20px 20px;
   font-size: 13px;
-  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
 }
 .wrapper-card .wrapper-sub-text .sub-title {
+  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-right: 18px;
   color: #cfcfcf;
-  overflow: hidden;
-  white-space: nowrap;
-  display: inline-block;
-  text-overflow: ellipsis;
-  width: 250px;
 }
-.wrapper-card .wrapper-sub-text .sub-text {
-  display: block;
+.wrapper-card .wrapper-sub-text .sub-title .sub-text {
+  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
   color: #f1f1f1;
-  margin-bottom: 8px;
+  font-weight: 300;
+  margin: 8px 0;
   overflow: hidden;
   white-space: nowrap;
   display: inline-block;
