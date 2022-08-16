@@ -1,0 +1,78 @@
+@import '../constants/colors';
+@import '../constants/typography.scss';
+
+.search-result-main {
+    padding-top: 94px;
+}
+
+.text-heading {
+    margin-top: 70px;
+    line-height: 38px;
+    text-align: center;
+}
+
+.movie-article {
+    margin: 0 auto;
+    max-width: 550px;
+    .movie-title {
+        margin: 100px 0 7px;
+        line-height: 38px;
+    }
+    .sub-movie-title {
+        margin-bottom: 48px;
+        color: $title-text;
+        font-family: $font-medium;
+        font-size: 20px;
+        line-height: 25px;
+    }
+}
+
+.card-info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 550px;
+}
+
+.right-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
+    .img-wbg {
+        width: 48px;
+        height: 66px;
+        margin: 0 auto;
+        background: {
+            image: url('../../assets/icons/logo-one.svg');
+            repeat: no-repeat;
+            size: contain;
+        }
+    }
+    .movie-info {
+        max-width: 170px;
+        margin-top: 106px;
+        color: $content-text;
+        font-family: $font-regular;
+        font-size: 14px;
+        line-height: 18px;
+        div {
+            margin-bottom: 4px;
+        }
+    }
+}
+
+div > dt {
+    color: $title-text;
+    font-family: $font-medium;
+    line-height: 18px;
+}
+
+.movie-summary {
+    margin: 54px 0 54px;
+    color: $content-text;
+    font-size: 14px;
+    line-height: 23px;
+    dt {
+        margin-bottom: 16px;
+    }
+}

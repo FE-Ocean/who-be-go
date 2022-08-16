@@ -1,0 +1,90 @@
+.search-result-main {
+  padding-top: 94px;
+}
+
+.text-heading {
+  margin-top: 70px;
+  line-height: 38px;
+  text-align: center;
+}
+
+.movie-article {
+  margin: 0 auto;
+  max-width: 550px;
+}
+
+.movie-article .movie-title {
+  margin: 100px 0 7px;
+  line-height: 38px;
+}
+
+.movie-article .sub-movie-title {
+  margin-bottom: 48px;
+  color: #f1f1f1;
+  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.card-info-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 550px;
+}
+
+.right-part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 20px;
+}
+
+.right-part .img-wbg {
+  width: 48px;
+  height: 66px;
+  margin: 0 auto;
+  background-image: url("../../assets/icons/logo-one.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.right-part .movie-info {
+  max-width: 170px;
+  margin-top: 106px;
+  color: #dedede;
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.right-part .movie-info div {
+  margin-bottom: 4px;
+}
+
+div > dt {
+  color: #f1f1f1;
+  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
+  line-height: 18px;
+}
+
+.movie-summary {
+  margin: 54px 0 54px;
+  color: #dedede;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.movie-summary dt {
+  margin-bottom: 16px;
+}
