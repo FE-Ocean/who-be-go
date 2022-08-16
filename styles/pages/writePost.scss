@@ -83,8 +83,7 @@
         #text-review {
             resize: none;
             width: 100%;
-            // 높이는 나중에 js로 조절하기 위해 우선은 고정값으로 둠
-            height: 200px;
+            overflow-y: hidden;
             word-break: keep-all;
             color: $content-text;
             font-size: 14px;

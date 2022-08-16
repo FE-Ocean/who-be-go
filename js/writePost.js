@@ -1,6 +1,7 @@
 "use strict";
 const imgContainer = document.querySelector('.img-container');
 const imgInput = document.querySelector('#img-input');
+const textReview = document.querySelector('#text-review');
 // 서버로 전송할 이미지 목록 (파일 정보가 담김)
 let imgArray = [];
 // 화면에 보여줄 이미지 목록 (파일의 로컬 경로가 담김)
@@ -24,6 +25,10 @@ const setImage = () => {
             imgContainer.append(image);
         });
     }
+};
+const setTextHeight = (e) => {
+    const target = e.currentTarget;
+    target.style.height = textReview.scrollHeight + 'px';
 };
 imgInput.addEventListener('change', (e) => {
     const fileReader = new FileReader();
@@ -52,4 +57,10 @@ imgInput.addEventListener('change', (e) => {
         }
         setImage();
     });
+});
+textReview.addEventListener('keydown', (e) => {
+    setTextHeight(e);
+});
+textReview.addEventListener('keyup', (e) => {
+    setTextHeight(e);
 });
