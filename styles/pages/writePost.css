@@ -80,7 +80,7 @@
 .review-container .review-contents #text-review {
     resize: none;
     width: 100%;
-    height: 200px;
+    overflow-y: hidden;
     word-break: keep-all;
     color: #dedede;
     font-size: 14px;

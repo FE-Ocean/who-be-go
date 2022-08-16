@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="../styles/components/common.css" />
         <link rel="stylesheet" href="../styles/pages/writePost.css" />
         <script src="../js/common.js" defer></script>
-        <title>후비고 - 후기 무비 고</title>
+        <title>영화 감상문 작성 | 후비고</title>
     </head>
     <body>
         <header class="header">
@@ -33,7 +33,7 @@
 
         <main class="main">
             <div class="write-wrapper">
-                <h2 class="page-title">영화 독후감 작성</h2>
+                <h2 class="page-title">영화 감상문 작성</h2>
                 <div class="upper-wrapper">
                     <div class="title-container">
                         <p id="movie-title">라라랜드 (영화 제목)</p>
@@ -66,8 +66,13 @@
                         accept="img/gif, image/jpeg, image/png, img/bmp, img/tif, img/heic"
                     />
                 </div>
-                <!-- 사진 또는 글이 입력되지 않았을 때 disabled -->
-                <button type="submit" class="btn-s save" id="btn-save" disabled>
+                <!-- 글이 입력되지 않았을 때 disabled -->
+                <button
+                    type="submit"
+                    class="btn-s save disabled"
+                    id="btn-save"
+                    disabled
+                >
                     저장
                 </button>
             </div>
