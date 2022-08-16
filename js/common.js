@@ -8,9 +8,9 @@ toggleBtn.addEventListener('click', () => {
     main.classList.toggle('active');
 });
 
-function selectLink() {
-    navItem.forEach((item) => item.classList.remove('selected'));
-    this.classList.add('selected');
-}
-
-navItem.forEach((item) => item.addEventListener('click', selectLink));
+const activePage = window.location.pathname;
+navItem.forEach((link) => {
+    if (link.href.includes(`${activePage}`)) {
+        link.classList.add('selected');
+    }
+});
