@@ -1,0 +1,55 @@
+@import '../constants/colors';
+@import '../constants/typography.scss';
+
+.search-main {
+    padding-top: 94px;
+    text-align: center;
+}
+
+.text-heading {
+    margin: 70px 0 17px;
+    color: $title-text;
+    font-family: $font-bold;
+    font-size: 30px;
+    line-height: 38px;
+}
+
+.text-description {
+    margin-bottom: 42px;
+    color: $disabled-line;
+    font-family: $font-regular;
+    font-size: 18px;
+}
+
+.input-search-container {
+    position: relative;
+    background-color: #d9d9d9;
+    max-width: 740px;
+    margin: 0 auto;
+    border-radius: 40px;
+    .input-search {
+        width: 100%;
+        padding: 22px 52px 18px 34px;
+        font-family: $font-regular;
+        font-size: 18px;
+        box-sizing: border-box;
+        &::placeholder {
+            color: $disabled-line;
+            font-size: 18px;
+            line-height: 23px;
+        }
+    }
+    .img-search {
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        right: 22px;
+        background: {
+            image: url('../../assets/icons/icon-search.svg');
+            repeat: no-repeat;
+            size: contain;
+        }
+        width: 24px;
+        height: 24px;
+    }
+}

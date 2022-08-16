@@ -4,10 +4,11 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>영화 찾아요 | 후비고</title>
         <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/pages/search.css" />
         <link rel="stylesheet" href="../styles/components/common.css" />
         <script src="../js/common.js" defer></script>
-        <title>후비고 - 후기 무비 고</title>
     </head>
     <body>
         <header class="header">
@@ -20,22 +21,27 @@
                 </a>
                 <button class="nav-toggle"></button>
             </h1>
-
             <ul class="nav">
-                <li><a href="">요즘 영화</a></li>
-                <li><a href="">영화 찾아요</a></li>
+                <li><a href="../index.html">요즘 영화</a></li>
+                <li><a href="../pages/search.html">영화 찾아요</a></li>
                 <li><a href="../pages/writePost.html">영화 독후감</a></li>
-                <li><a href="">마이 페이지</a></li>
-                <li><a href="">로그아웃</a></li>
+                <li><a href="#">마이 페이지</a></li>
+                <li><a href="#">로그아웃</a></li>
             </ul>
         </header>
-
-        <main class="main">
-            <!-- 페이지 컨텐츠 -->
+        <main class="search-main">
+            <h2 class="text-heading">영화 찾아요</h2>
+            <p class="text-description">
+                영화를 검색해서 독후감을 작성해 보세요!
+            </p>
+            <div class="input-search-container">
+                <input
+                    type="text"
+                    placeholder="제목으로 검색해 보세요"
+                    class="input-search"
+                />
+                <div class="img-search"></div>
+            </div>
         </main>
-
-        <footer class="footer">
-            <p>Copyright FE Ocean all right reserved.</p>
-        </footer>
     </body>
 </html>
