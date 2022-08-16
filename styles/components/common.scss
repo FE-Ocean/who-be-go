@@ -34,14 +34,15 @@
     letter-spacing: -0.02em;
     li {
         padding-left: 24px;
-        a {
-            font-family: $font-bold;
-            font-size: 14px;
-            color: $header-text;
-            &:hover,
-            &.selected {
-                color: $primary-color;
-            }
+        color: $header-text;
+        font-family: $font-bold;
+        font-size: 14px;
+        cursor: pointer;
+        &:hover {
+            color: $primary-color;
+        }
+        a .selected {
+            color: $primary-color;
         }
     }
 }

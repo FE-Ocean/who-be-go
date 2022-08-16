@@ -43,15 +43,17 @@
 
 .nav li {
   padding-left: 24px;
-}
-
-.nav li a {
+  color: #cfcfcf;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 14px;
-  color: #cfcfcf;
+  cursor: pointer;
 }
 
-.nav li a:hover, .nav li a.selected {
+.nav li:hover {
+  color: #ff5f5f;
+}
+
+.nav li a .selected {
   color: #ff5f5f;
 }
 
