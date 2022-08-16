@@ -2,6 +2,7 @@
 const imgContainer = document.querySelector('.img-container');
 const imgInput = document.querySelector('#img-input');
 const textReview = document.querySelector('#text-review');
+const saveButton = document.querySelector('#btn-save');
 // 서버로 전송할 이미지 목록 (파일 정보가 담김)
 let imgArray = [];
 // 화면에 보여줄 이미지 목록 (파일의 로컬 경로가 담김)
@@ -29,6 +30,12 @@ const setImage = () => {
 const setTextHeight = (e) => {
     const target = e.currentTarget;
     target.style.height = textReview.scrollHeight + 'px';
+    if (target.value.length > 0) {
+        saveButton.classList.remove('disabled');
+    }
+    else {
+        saveButton.classList.add('disabled');
+    }
 };
 imgInput.addEventListener('change', (e) => {
     const fileReader = new FileReader();
