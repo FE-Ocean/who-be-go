@@ -12,12 +12,12 @@
     background-color: $sub-bg;
 }
 
-.logo {
+.img-logo {
     height: 90px;
     img {
         margin-left: 90px;
     }
-    button {
+    .btn-nav {
         display: none;
         position: absolute;
         top: 33px;
@@ -81,11 +81,11 @@
         flex-direction: column;
     }
 
-    .logo {
+    .img-logo {
         img {
             margin-left: 0;
         }
-        button {
+        .btn-nav {
             display: block;
         }
     }

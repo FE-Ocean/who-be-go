@@ -15,15 +15,15 @@
   background-color: #292929;
 }
 
-.logo {
+.img-logo {
   height: 90px;
 }
 
-.logo img {
+.img-logo img {
   margin-left: 90px;
 }
 
-.logo button {
+.img-logo .btn-nav {
   display: none;
   position: absolute;
   top: 33px;
@@ -94,10 +94,10 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .logo img {
+  .img-logo img {
     margin-left: 0;
   }
-  .logo button {
+  .img-logo .btn-nav {
     display: block;
   }
   .nav {
