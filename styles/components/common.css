@@ -10,6 +10,7 @@
           align-items: center;
   position: fixed;
   top: 0;
+  z-index: 9999;
   width: 100%;
   background-color: #292929;
 }
@@ -17,9 +18,11 @@
 .logo {
   height: 90px;
 }
+
 .logo img {
   margin-left: 90px;
 }
+
 .logo button {
   display: none;
   position: absolute;
@@ -37,14 +40,17 @@
   margin-right: 90px;
   letter-spacing: -0.02em;
 }
+
 .nav li {
   padding-left: 24px;
 }
+
 .nav li a {
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 14px;
   color: #cfcfcf;
 }
+
 .nav li a:hover, .nav li a.selected {
   color: #ff5f5f;
 }
@@ -60,9 +66,11 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 9999;
   background-color: #292929;
   text-align: center;
 }
+
 .footer p {
   display: inline-block;
   margin-top: 25px;

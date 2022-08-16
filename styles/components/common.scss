@@ -7,6 +7,7 @@
     align-items: center;
     position: fixed;
     top: 0;
+    z-index: 9999;
     width: 100%;
     background-color: $sub-bg;
 }
@@ -56,6 +57,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 9999;
     background-color: $sub-bg;
     text-align: center;
     p {
