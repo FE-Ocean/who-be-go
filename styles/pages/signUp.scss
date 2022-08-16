@@ -1,0 +1,59 @@
+@import '../constants/colors';
+@import '../constants/typography';
+
+.container-signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 202px;
+    min-width: 322px;
+
+    .page-title {
+        font-family: $font-bold;
+        font-size: 30px;
+        color: $white;
+        margin-bottom: 54px;
+    }
+    label {
+        font-family: $font-medium;
+        color: $header-text;
+        margin-bottom: 9px;
+    }
+    ::placeholder {
+        font-family: $font-regular;
+        font-size: 13px;
+        color: $placeholder-text;
+    }
+    input {
+        font-family: $font-regular;
+        line-height: 1;
+        color: $white;
+        padding: 7px;
+        border-bottom: 1px solid $disabled-line;
+        &:focus {
+            border-bottom: 1px solid $white;
+        }
+    }
+    .msg-error {
+        font-family: $font-regular;
+        font-weight: 400;
+        font-size: 11px;
+        color: $primary-color;
+        margin-top: 5px;
+        &.true {
+            display: block;
+        }
+        &.false {
+            display: none;
+        }
+    }
+    .wrapper-email,
+    .wrapper-password {
+        display: flex;
+        flex-direction: column;
+    }
+    .wrapper-password {
+        margin: 16px 0 35px 0;
+    }
+}
