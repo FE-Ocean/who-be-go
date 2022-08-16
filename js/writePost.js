@@ -1,10 +1,11 @@
-var imgContainer = document.querySelector('.img-container');
-var imgInput = document.querySelector('#img-input');
+"use strict";
+const imgContainer = document.querySelector('.img-container');
+const imgInput = document.querySelector('#img-input');
 // 서버로 전송할 이미지 목록 (파일 정보가 담김)
-var imgArray = [];
+let imgArray = [];
 // 화면에 보여줄 이미지 목록 (파일의 로컬 경로가 담김)
-var imgPreviewArray = [];
-var fileTypeArray = [
+let imgPreviewArray = [];
+const fileTypeArray = [
     'img/gif',
     'image/jpeg',
     'image/png',
@@ -14,20 +15,20 @@ var fileTypeArray = [
 ];
 // 저장 버튼을 누르기 전까지는 로컬 경로로 이미지를 보여줍니다.
 // 사진을 일일이 서버에 올리고 그걸 다시 받아와서 보여주려면 느리기 때문에 저장 버튼을 눌렀을 때만 이미지를 서버로 전송합니다.
-var setImage = function () {
+const setImage = () => {
     if (imgContainer !== null) {
         imgContainer.innerHTML = '';
-        imgPreviewArray.map(function (src) {
-            var image = document.createElement('img');
+        imgPreviewArray.map((src) => {
+            const image = document.createElement('img');
             image.src = src;
             imgContainer.append(image);
         });
     }
 };
-imgInput.addEventListener('change', function (e) {
-    var fileReader = new FileReader();
-    var target = e.currentTarget;
-    var files = target.files;
+imgInput.addEventListener('change', (e) => {
+    const fileReader = new FileReader();
+    const target = e.currentTarget;
+    const files = target.files;
     // 파일 선택 안 했을 때
     if (files === null) {
         return;
@@ -44,7 +45,7 @@ imgInput.addEventListener('change', function (e) {
         return;
     }
     fileReader.readAsDataURL(files[0]);
-    fileReader.addEventListener('load', function () {
+    fileReader.addEventListener('load', () => {
         imgArray.push(files[0]);
         if (fileReader.result !== null) {
             imgPreviewArray.push(fileReader.result.toString());
