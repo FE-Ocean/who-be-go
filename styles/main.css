@@ -512,7 +512,7 @@ address {
   font-size: 13px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
 }
-.wrapper-card .wrapper-sub-text #sub-title {
+.wrapper-card .wrapper-sub-text .sub-title {
   margin-right: 18px;
   color: #cfcfcf;
   overflow: hidden;
@@ -521,7 +521,7 @@ address {
   text-overflow: ellipsis;
   width: 250px;
 }
-.wrapper-card .wrapper-sub-text #sub-text {
+.wrapper-card .wrapper-sub-text .sub-text {
   display: block;
   color: #f1f1f1;
   margin-bottom: 8px;
@@ -530,4 +530,10 @@ address {
   display: inline-block;
   text-overflow: ellipsis;
   width: 250px;
+}
+
+@media screen and (max-width: 768px) {
+  .card-L:first-of-type {
+    display: none;
+  }
 }

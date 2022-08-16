@@ -1,4 +1,6 @@
 .container-signup {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,8 +14,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 202px;
+  margin-top: 100px;
   min-width: 322px;
+  padding: 0 20px;
 }
 .container-signup .page-title {
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;

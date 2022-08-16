@@ -1,11 +1,7 @@
-.container {
-  width: 90%;
-  max-width: 1140px;
+.container-home {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 70px 20px;
+  max-width: 740px;
   margin: 0 auto;
-}
-.container .page-title {
-  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
-  text-align: center;
-  margin-top: 164px;
-  color: #f1f1f1;
 }
