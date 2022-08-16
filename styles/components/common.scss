@@ -66,6 +66,13 @@
     }
 }
 
+.page-title {
+    font-family: $font-bold;
+    font-size: 30px;
+    text-align: center;
+    color: $title-text;
+}
+
 @media screen and (max-width: 768px) {
     .header {
         flex-direction: column;

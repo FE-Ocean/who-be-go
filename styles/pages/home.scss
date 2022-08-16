@@ -1,20 +1,9 @@
 @import '../constants/colors';
 @import '../constants/typography';
 
-.container {
-    width: 90%;
-    max-width: 1140px;
+.container-home {
+    box-sizing: content-box;
+    padding: 70px 20px;
+    max-width: 740px;
     margin: 0 auto;
-
-    .page-title {
-        font-family: $font-bold;
-        text-align: center;
-        margin-top: 164px;
-        color: $title-text;
-    }
-}
-@media screen and (max-width: 768px) {
-    .page-title {
-        font-size: 25px;
-    }
 }
