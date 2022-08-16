@@ -9,3 +9,9 @@
   margin-top: 164px;
   color: #f1f1f1;
 }
+
+@media screen and (max-width: 768px) {
+  .page-title {
+    font-size: 25px;
+  }
+}

@@ -76,16 +76,23 @@
         margin: 70px 20px 20px;
         font-size: 13px;
         font-family: $font-bold;
-        #sub-title {
+        .sub-title {
             margin-right: 18px;
             color: $header-text;
             @include text-overflow(250px);
         }
-        #sub-text {
+        .sub-text {
             display: block;
             color: $title-text;
             margin-bottom: 8px;
             @include text-overflow(250px);
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .card-L {
+        &:first-of-type {
+            display: none;
         }
     }
 }

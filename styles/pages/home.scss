@@ -13,3 +13,8 @@
         color: $title-text;
     }
 }
+@media screen and (max-width: 768px) {
+    .page-title {
+        font-size: 25px;
+    }
+}
