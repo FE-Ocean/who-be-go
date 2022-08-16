@@ -14,9 +14,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.69);
     border-radius: 30px;
-    background-blend-mode: multiply;
     z-index: -1;
 }
 
@@ -72,20 +71,21 @@
     }
 
     .wrapper-sub-text {
-        display: block;
         margin: 70px 20px 20px;
         font-size: 13px;
-        font-family: $font-bold;
         .sub-title {
+            font-family: $font-medium;
+            display: flex;
+            flex-direction: column;
             margin-right: 18px;
             color: $header-text;
-            @include text-overflow(250px);
-        }
-        .sub-text {
-            display: block;
-            color: $title-text;
-            margin-bottom: 8px;
-            @include text-overflow(250px);
+            .sub-text {
+                font-family: $font-medium;
+                color: $title-text;
+                font-weight: 300;
+                margin: 8px 0;
+                @include text-overflow(250px);
+            }
         }
     }
 }
