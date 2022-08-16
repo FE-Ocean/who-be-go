@@ -49,7 +49,7 @@
     }
 }
 
-.rating-container {
+.rating-wrapper {
     width: fit-content;
     display: flex;
     flex-direction: column;
@@ -60,8 +60,78 @@
         font-size: 12px;
         line-height: 15px;
     }
-    img {
-        cursor: pointer;
+    .star-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        #text-rating {
+            padding-top: 3px;
+            font: {
+                family: $font-bold;
+                size: 20px;
+            }
+        }
+    }
+    .radio-container {
+        position: relative;
+        width: 120px;
+        height: 24px;
+        background-image: url(../../assets/icons/stars-gray.svg);
+        display: flex;
+        .radio-rating {
+            cursor: pointer;
+            opacity: 0;
+            width: 12px;
+            &:nth-of-type(1):hover ~ .star,
+            &:nth-of-type(1):checked ~ .star {
+                width: 10%;
+            }
+            &:nth-of-type(2):hover ~ .star,
+            &:nth-of-type(2):checked ~ .star {
+                width: 20%;
+            }
+            &:nth-of-type(3):hover ~ .star,
+            &:nth-of-type(3):checked ~ .star {
+                width: 30%;
+            }
+            &:nth-of-type(4):hover ~ .star,
+            &:nth-of-type(4):checked ~ .star {
+                width: 40%;
+            }
+            &:nth-of-type(5):hover ~ .star,
+            &:nth-of-type(5):checked ~ .star {
+                width: 50%;
+            }
+            &:nth-of-type(6):hover ~ .star,
+            &:nth-of-type(6):checked ~ .star {
+                width: 60%;
+            }
+            &:nth-of-type(7):hover ~ .star,
+            &:nth-of-type(7):checked ~ .star {
+                width: 70%;
+            }
+            &:nth-of-type(8):hover ~ .star,
+            &:nth-of-type(8):checked ~ .star {
+                width: 80%;
+            }
+            &:nth-of-type(9):hover ~ .star,
+            &:nth-of-type(9):checked ~ .star {
+                width: 90%;
+            }
+            &:nth-of-type(10):hover ~ .star,
+            &:nth-of-type(10):checked ~ .star {
+                width: 100%;
+            }
+        }
+        .star {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            height: 24px;
+            background-image: url(../../assets/icons/star-yellow.svg);
+            pointer-events: none;
+        }
     }
 }
 
