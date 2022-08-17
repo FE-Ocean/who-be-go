@@ -1,4 +1,4 @@
-.container-signup {
+.container-login {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,48 +14,46 @@
           align-items: center;
   min-width: 322px;
   padding: 0 20px;
-  margin-top: 100px;
+  margin-top: 65px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
-.container-signup .page-title {
-  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
-  font-size: 30px;
-  color: #ffffff;
-  margin-bottom: 54px;
+.container-login .img-logo {
+  height: 150px;
+  margin-bottom: 10px;
 }
-.container-signup label {
+.container-login label {
   margin-bottom: 6px;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 13px;
   color: #dedede;
 }
-.container-signup ::-webkit-input-placeholder {
+.container-login ::-webkit-input-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
   color: #464646;
 }
-.container-signup ::-moz-placeholder {
+.container-login ::-moz-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
   color: #464646;
 }
-.container-signup :-ms-input-placeholder {
+.container-login :-ms-input-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
   color: #464646;
 }
-.container-signup ::-ms-input-placeholder {
+.container-login ::-ms-input-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
   color: #464646;
 }
-.container-signup ::placeholder {
+.container-login ::placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
   color: #464646;
 }
-.container-signup input {
+.container-login input {
   padding: 8px 0;
   border-bottom: 1px solid #767676;
   color: #ffffff;
@@ -63,33 +61,22 @@
   font-size: 13px;
   line-height: 1;
 }
-.container-signup input:focus {
+.container-login input:focus {
   border-color: #ffffff;
 }
-.container-signup .msg-error {
+.container-login .msg-error {
   display: none;
   margin-top: 7px;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-weight: 400;
   font-size: 11px;
 }
-.container-signup .msg-error.email.true {
-  color: #b8ff96;
+.container-login .msg-error.false {
   display: block;
-}
-.container-signup .msg-error.email.false {
   color: #ff5f5f;
-  display: block;
 }
-.container-signup .msg-error.password.true {
-  display: none;
-}
-.container-signup .msg-error.password.false {
-  color: #ff5f5f;
-  display: block;
-}
-.container-signup .wrapper-email,
-.container-signup .wrapper-password {
+.container-login .wrapper-email,
+.container-login .wrapper-password {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,6 +85,13 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.container-signup .wrapper-password {
+.container-login .wrapper-password {
   margin: 16px 0 35px 0;
+}
+.container-login .sign-up-link {
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  color: #cfcfcf;
+  font-size: 12px;
 }

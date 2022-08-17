@@ -14,29 +14,26 @@
 
 <body>
     <header class="header">
-        <h1 class="logo">
-            <a href="./index.html">
-                <img
-                    src="../assets/icons/logo-title.svg"
-                    alt="로고이미지"
-                />
+        <h1 class="img-logo">
+            <a href="/">
+                <img src="../assets/icons/logo-title.svg" alt="로고이미지" />
             </a>
-            <button class="nav-toggle"></button>
+            <button class="btn-nav"></button>
         </h1>
 
         <ul class="nav">
-            <li><a href="">요즘 영화</a></li>
-            <li><a href="./pages/search.html">영화 찾아요</a></li>
-            <li><a href="./pages/writePost.html">영화 독후감</a></li>
-            <li><a href="">마이 페이지</a></li>
-            <li><a href="">로그아웃</a></li>
+            <li><a href="./pages/chart.html">영화차트</a></li>
+            <li><a href="./pages/search.html">영화찾아요</a></li>
+            <li><a href="./pages/writePost.html">영화독후감</a></li>
+            <li><a href="./pages/myPage.html">마이페이지</a></li>
+            <li>로그아웃</li>
         </ul>
     </header>
 
-    <main>
-        <section class="container">
+    <main class="main">
+        <section class="container-home">
             <h1 class="page-title">오늘 이 영화 어때요?</h1>
-            <article class="wrapper-card home">
+            <article class="wrapper-card">
                 <h2 class="visually-hidden">영화 랜덤 추천</h2>
                 <div class="card-L"></div>
                 <div class="card-L">
@@ -44,18 +41,25 @@
                         <strong id="movie-title-eng">LaLa Land</strong>
                         <span id="movie-title">라라 랜드</span>
                     </div>
-                    <div class="wrapper-sub-text">
-                        <span id="sub-title">Release</span>
-                        <strong id="sub-text">2016.12.07</strong>
-                        <span id="sub-title">Director</span>
-                        <strong id="sub-text">감독이름</strong>
-                        <span id="sub-title">Cast</span>
-                        <strong id="sub-text">라이언 고슬링, 엠마 스톤</strong>
-                        <span id="sub-title">Genre</span>
-                        <strong id="sub-text">로맨스, 뮤지컬, 드라마</strong>
-                        <span id="sub-title">Rate</span>
-                        <strong id="sub-text">4.98 / 5</strong>
-                    </div>
+                    <ul class="wrapper-sub-text">
+                        <li class="sub-title">Release
+                            <strong id="text-release" class="sub-text">2016.12.07</strong>
+                        </li>
+                        <li class="sub-title">Director
+                            <strong id="text-director" class="sub-text">감독이름</strong>
+                        </li>
+                        <li class="sub-title">Cast
+                            <strong id="text-cast" class="sub-text">라이언 고슬링, 엠마 스톤</strong>
+                        </li>
+                        <li class="sub-title">Genre
+
+                            <strong id="text-genre" class="sub-text">로맨스, 뮤지컬, 드라마</strong>
+                        </li>
+                        <li class="sub-title">Rate
+                            <strong id="text-rate" class="sub-text">4.98 / 5</strong>
+                        </li>
+                    </ul>
+                </div>
             </article>
         </section>
     </main>

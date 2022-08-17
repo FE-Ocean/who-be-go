@@ -4,7 +4,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 30px;
-    z-index: -1;
 }
 
 %card-cover {
@@ -14,9 +13,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.69);
     border-radius: 30px;
-    background-blend-mode: multiply;
     z-index: -1;
 }
 
@@ -28,32 +26,18 @@
     width: $width;
 }
 
-.card-m {
-    @extend %card-base;
-    width: 250px;
-    height: 354px;
-}
-
-.card-L {
-    @extend %card-base;
-    width: 300px;
-    height: 425px;
-    z-index: 10;
-    &:first-of-type {
-        margin-right: 20px;
-    }
-    &:last-of-type::after {
-        @extend %card-cover;
-    }
-}
 .wrapper-card {
     width: fit-content;
     display: flex;
     margin: 0 auto;
     color: $title-text;
-    &.home {
-        margin-top: 50px;
+    margin-top: 50px;
+    &.chart {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
     }
+
     .wrapper-movie-title {
         display: flex;
         flex-direction: column;
@@ -72,20 +56,87 @@
     }
 
     .wrapper-sub-text {
-        display: block;
         margin: 70px 20px 20px;
         font-size: 13px;
-        font-family: $font-bold;
-        #sub-title {
+        .sub-title {
+            font-family: $font-medium;
+            display: flex;
+            flex-direction: column;
             margin-right: 18px;
             color: $header-text;
-            @include text-overflow(250px);
+            .sub-text {
+                font-family: $font-medium;
+                color: $title-text;
+                font-weight: 300;
+                margin: 8px 0;
+                @include text-overflow(250px);
+            }
         }
-        #sub-text {
+    }
+}
+
+.card-L {
+    @extend %card-base;
+    width: 300px;
+    height: 425px;
+    z-index: 10;
+    &:first-of-type {
+        margin-right: 20px;
+    }
+    &:last-of-type::after {
+        @extend %card-cover;
+    }
+}
+
+.card-m {
+    @extend %card-base;
+    width: 250px;
+    height: 354px;
+    .show-contents {
+        display: none;
+    }
+    &:hover {
+        z-index: 10;
+        .show-contents {
+            @extend %card-cover;
             display: block;
-            color: $title-text;
-            margin-bottom: 8px;
-            @include text-overflow(250px);
+        }
+        .wrapper-movie-title {
+            margin: 40px 20px 0 20px;
+
+            #movie-title-eng {
+                font-size: 16px;
+            }
+            #movie-title {
+                font-size: 14px;
+            }
+        }
+        .wrapper-sub-text {
+            margin: 40px 20px 20px;
+            font-size: 11px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card-L {
+        &:first-of-type {
+            display: none;
+        }
+    }
+    .wrapper-card {
+        &.chart {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .wrapper-card {
+        &.chart {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
         }
     }
 }

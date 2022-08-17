@@ -1,22 +1,21 @@
 @import '../constants/colors';
 @import '../constants/typography';
 
-.container-signup {
+.container-login {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-width: 322px;
     padding: 0 20px;
-    margin-top: 100px;
+    margin-top: 65px;
     box-sizing: content-box;
 
-    .page-title {
-        font-family: $font-bold;
-        font-size: 30px;
-        color: $white;
-        margin-bottom: 54px;
+    .img-logo {
+        height: 150px;
+        margin-bottom: 10px;
     }
+
     label {
         margin-bottom: 6px;
         font-family: $font-regular;
@@ -39,6 +38,7 @@
             border-color: $white;
         }
     }
+
     .msg-error {
         display: none;
         margin-top: 7px;
@@ -47,26 +47,12 @@
             weight: 400;
             size: 11px;
         }
-        &.email {
-            &.true {
-                color: $green;
-                display: block;
-            }
-            &.false {
-                color: $primary-color;
-                display: block;
-            }
-        }
-        &.password {
-            &.true {
-                display: none;
-            }
-            &.false {
-                color: $primary-color;
-                display: block;
-            }
+        &.false {
+            display: block;
+            color: $primary-color;
         }
     }
+
     .wrapper-email,
     .wrapper-password {
         display: flex;
@@ -74,5 +60,13 @@
     }
     .wrapper-password {
         margin: 16px 0 35px 0;
+    }
+
+    .sign-up-link {
+        display: block;
+        text-align: center;
+        margin-top: 25px;
+        color: $header-text;
+        font-size: 12px;
     }
 }

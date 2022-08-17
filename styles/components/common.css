@@ -10,17 +10,18 @@
           align-items: center;
   position: fixed;
   top: 0;
+  z-index: 9999;
   width: 100%;
   background-color: #292929;
 }
 
-.logo {
+.img-logo {
   height: 90px;
 }
-.logo img {
+.img-logo img {
   margin-left: 90px;
 }
-.logo button {
+.img-logo .btn-nav {
   display: none;
   position: absolute;
   top: 33px;
@@ -39,18 +40,46 @@
 }
 .nav li {
   padding-left: 24px;
-}
-.nav li a {
+  color: #cfcfcf;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 14px;
-  color: #cfcfcf;
+  cursor: pointer;
 }
-.nav li a:hover, .nav li a.selected {
+.nav li:hover {
+  color: #ff5f5f;
+}
+.nav li a .selected {
   color: #ff5f5f;
 }
 
 .main {
-  margin-top: 94px;
+  margin: 94px 0 60px;
+}
+.main.wrapper-etc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 250px;
+  color: #f1f1f1;
+}
+.main.wrapper-etc .img-etc {
+  width: 181px;
+  margin-bottom: 20px;
+}
+.main.wrapper-etc .text-etc {
+  margin-bottom: 30px;
+  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
+  font-size: 25px;
 }
 
 .footer {
@@ -60,6 +89,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 9999;
   background-color: #292929;
   text-align: center;
 }
@@ -70,6 +100,13 @@
   font-size: 10px;
 }
 
+.page-title {
+  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  color: #f1f1f1;
+}
+
 @media screen and (max-width: 768px) {
   .header {
     -webkit-box-orient: vertical;
@@ -77,10 +114,10 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .logo img {
+  .img-logo img {
     margin-left: 0;
   }
-  .logo button {
+  .img-logo .btn-nav {
     display: block;
   }
   .nav {
