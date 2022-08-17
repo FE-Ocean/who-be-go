@@ -561,4 +561,14 @@ address {
   .card-L:first-of-type {
     display: none;
   }
+  .wrapper-card.chart {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .wrapper-card.chart {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
 }

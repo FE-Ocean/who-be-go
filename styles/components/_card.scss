@@ -124,5 +124,19 @@
             display: none;
         }
     }
-    // card-m 반응형작업 필요
+    .wrapper-card {
+        &.chart {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .wrapper-card {
+        &.chart {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+        }
+    }
 }
