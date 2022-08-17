@@ -18,20 +18,24 @@
                 <label for="email" class="label-email">
                     이메일
                 </label>
-                <input id="email" type="text" placeholder="이메일 주소를 입력해 주세요.">
+                <input id="email" type="text" required autocomplete="off" autofocus placeholder="이메일 주소를 입력해 주세요.">
                 </input>
-                <strong class="msg-error true">*이미 가입된 이메일 주소입니다.</strong>
+                <!-- 형식이 올바르지 않을 때 "*이메일 형식이 올바르지 않습니다" -->
+                <!-- 사용가능한 이메일 일 때 "*사용 가능한 이메일 입니다"  -->
+                <!-- 이미 가입된 이메일 일 때 "*이미 가입된 이메일 주소입니다." -->
+                <strong class="msg-error email true">*사용 가능한 이메일 주소입니다.</strong>
             </div>
             <div class="wrapper-password">
                 <label for="password" class="label-password">
                     비밀번호
                 </label>
-                <input id="password" type="password" minlength="6" maxLength="16" placeholder="비밀번호를 설정해 주세요."></input>
-                <strong class="msg-error false">
+                <input id="password" type="password" minlength="6" maxLength="16" required
+                    placeholder="비밀번호를 설정해 주세요."></input>
+                <strong class="msg-error password false">
                     *비밀번호는 6자 이상이어야 합니다.
                 </strong>
             </div>
-            <button type="submit" class="btn-L disabled">회원가입</button>
+            <button type="submit" class="btn-L disabled">다음</button>
         </form>
     </section>
 </body>
