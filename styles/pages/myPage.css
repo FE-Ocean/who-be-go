@@ -1,0 +1,58 @@
+.container-mypage {
+  max-width: 720px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 70px 20px 40px;
+  margin: 0 auto;
+}
+.container-mypage .page-title {
+  margin-bottom: 34px;
+}
+.container-mypage .review-album {
+  margin: 0 auto;
+  padding-top: 50px;
+  border-top: 1px solid #767676;
+}
+.container-mypage .user-info {
+  display: block;
+  text-align: center;
+}
+.container-mypage .user-info #img-profile {
+  width: 110px;
+  margin-bottom: 19px;
+}
+.container-mypage .user-info #text-name {
+  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
+  font-size: 18px;
+  color: #cfcfcf;
+  margin-bottom: 5px;
+}
+.container-mypage .user-info #text-id,
+.container-mypage .user-info #text-intro {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  color: #dedede;
+}
+.container-mypage .user-info #text-id {
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+.container-mypage .user-info #text-intro {
+  font-size: 14px;
+  margin-bottom: 35px;
+}
+.container-mypage .wrapper-btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-bottom: 37px;
+}
+.container-mypage .wrapper-btn .btn-s {
+  background-color: #ff5f5f;
+}
+.container-mypage .wrapper-btn .btn-s:first-of-type {
+  margin-right: 16px;
+}
+.container-mypage .wrapper-btn .btn-s:hover, .container-mypage .wrapper-btn .btn-s:focus, .container-mypage .wrapper-btn .btn-s:active {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
