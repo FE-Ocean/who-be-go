@@ -399,6 +399,43 @@ address {
   font-style: normal;
 }
 
+/* chrome input-box color reset */
+input {
+  -webkit-text-fill-color: #cfcfcf;
+}
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input::-webkit-input-placeholder {
+  -webkit-text-fill-color: #464646;
+}
+
+input::-moz-placeholder {
+  -webkit-text-fill-color: #464646;
+}
+
+input:-ms-input-placeholder {
+  -webkit-text-fill-color: #464646;
+}
+
+input::-ms-input-placeholder {
+  -webkit-text-fill-color: #464646;
+}
+
+input::placeholder {
+  -webkit-text-fill-color: #464646;
+}
+
+input,
+textarea {
+  -moz-appearance: none;
+       appearance: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
 .btn-L, .btn-ms, .btn-s {
   display: inline-block;
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;

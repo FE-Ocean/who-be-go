@@ -45,3 +45,25 @@ ol {
 address {
     font-style: normal;
 }
+
+/* chrome input-box color reset */
+input {
+    -webkit-text-fill-color: $header-text;
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+    }
+}
+
+input::placeholder {
+    -webkit-text-fill-color: $placeholder-text;
+}
+
+input,
+textarea {
+    appearance: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
