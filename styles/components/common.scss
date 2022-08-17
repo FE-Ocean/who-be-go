@@ -49,6 +49,23 @@
 
 .main {
     margin: 94px 0 60px;
+    &.wrapper-etc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 250px;
+        color: $title-text;
+        .img-etc {
+            width: 181px;
+            margin-bottom: 20px;
+        }
+        .text-etc {
+            margin-bottom: 30px;
+            font-family: $font-bold;
+            font-size: 25px;
+        }
+    }
 }
 
 .footer {
