@@ -18,11 +18,9 @@
 .img-logo {
   height: 90px;
 }
-
 .img-logo img {
   margin-left: 90px;
 }
-
 .img-logo .btn-nav {
   display: none;
   position: absolute;
@@ -40,7 +38,6 @@
   margin-right: 90px;
   letter-spacing: -0.02em;
 }
-
 .nav li {
   padding-left: 24px;
   color: #cfcfcf;
@@ -48,17 +45,41 @@
   font-size: 14px;
   cursor: pointer;
 }
-
 .nav li:hover {
   color: #ff5f5f;
 }
-
 .nav li a .selected {
   color: #ff5f5f;
 }
 
 .main {
   margin: 94px 0 60px;
+}
+.main.wrapper-etc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 250px;
+  color: #f1f1f1;
+}
+.main.wrapper-etc .img-etc {
+  width: 181px;
+  margin-bottom: 20px;
+}
+.main.wrapper-etc .text-etc {
+  margin-bottom: 30px;
+  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
+  font-size: 25px;
 }
 
 .footer {
@@ -72,7 +93,6 @@
   background-color: #292929;
   text-align: center;
 }
-
 .footer p {
   display: inline-block;
   margin-top: 25px;
