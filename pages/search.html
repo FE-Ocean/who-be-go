@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../styles/main.css" />
         <link rel="stylesheet" href="../styles/pages/search.css" />
         <link rel="stylesheet" href="../styles/components/common.css" />
+        <link rel="stylesheet" href="../styles/components/modal.css" />
         <script src="../js/common.js" defer></script>
     </head>
     <body>
@@ -43,5 +44,14 @@
                 <div class="img-search"></div>
             </div>
         </main>
+        <div class="modal-alert-container disabled">
+            <div class="modal-alert">
+                <span class="message">로그아웃하시겠습니까?</span>
+                <button class="btn-alert" id="btn-cancel">취소</button>
+                <button class="btn-alert action" id="btn-logout">
+                    로그아웃
+                </button>
+            </div>
+        </div>
     </body>
 </html>
