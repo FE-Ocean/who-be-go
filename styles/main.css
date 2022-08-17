@@ -76,7 +76,8 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box; /* 1 */
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
 }
@@ -247,7 +248,8 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box; /* 1 */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
   color: inherit; /* 2 */
   display: table; /* 1 */
   max-width: 100%; /* 1 */
@@ -275,7 +277,8 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box; /* 1 */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
 
@@ -348,7 +351,8 @@ template {
   margin: 0;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 h1 {
@@ -372,7 +376,8 @@ input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 a,
@@ -403,11 +408,19 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   transition: background-color 5000s ease-in-out 0s;
 }
 
+input::-webkit-input-placeholder {
+  -webkit-text-fill-color: #464646;
+}
+
 input::-moz-placeholder {
   -webkit-text-fill-color: #464646;
 }
 
 input:-ms-input-placeholder {
+  -webkit-text-fill-color: #464646;
+}
+
+input::-ms-input-placeholder {
   -webkit-text-fill-color: #464646;
 }
 
@@ -478,6 +491,8 @@ textarea {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
   color: #f1f1f1;
@@ -489,8 +504,13 @@ textarea {
   gap: 20px;
 }
 .wrapper-card .wrapper-movie-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 50px 25px 0 25px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
 }
@@ -517,8 +537,13 @@ textarea {
 }
 .wrapper-card .wrapper-sub-text .sub-title {
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-right: 18px;
   color: #cfcfcf;
 }
