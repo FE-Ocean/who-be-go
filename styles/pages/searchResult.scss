@@ -1,6 +1,10 @@
 @import '../constants/colors';
 @import '../constants/typography.scss';
 
+.search-result-main {
+    padding-top: 94px;
+}
+
 .text-heading {
     margin-top: 70px;
     line-height: 38px;
@@ -10,9 +14,11 @@
 .movie-article {
     margin: 0 auto;
     max-width: 550px;
+    margin-bottom: 150px;
     .movie-title {
         margin: 100px 0 7px;
         line-height: 38px;
+        text-align: left;
     }
     .sub-movie-title {
         margin-bottom: 48px;
@@ -49,28 +55,18 @@
     .movie-info {
         max-width: 170px;
         margin-top: 70px;
-        color: $content-text;
+        color: $white;
         font-family: $font-regular;
         font-size: 14px;
-        line-height: 18px;
+        line-height: 16px;
         div {
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
     }
 }
 
 div > dt {
-    color: $title-text;
-    font-family: $font-medium;
+    color: $header-text;
+    font-family: $font-regular;
     line-height: 18px;
-}
-
-.movie-summary {
-    margin: 54px 0 54px;
-    color: $content-text;
-    font-size: 14px;
-    line-height: 23px;
-    dt {
-        margin-bottom: 16px;
-    }
 }

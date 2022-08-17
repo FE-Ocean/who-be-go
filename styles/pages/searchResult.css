@@ -1,3 +1,7 @@
+.search-result-main {
+  padding-top: 94px;
+}
+
 .text-heading {
   margin-top: 70px;
   line-height: 38px;
@@ -7,11 +11,13 @@
 .movie-article {
   margin: 0 auto;
   max-width: 550px;
+  margin-bottom: 150px;
 }
 
 .movie-article .movie-title {
   margin: 100px 0 7px;
   line-height: 38px;
+  text-align: left;
 }
 
 .movie-article .sub-movie-title {
@@ -59,29 +65,18 @@
 .right-part .movie-info {
   max-width: 170px;
   margin-top: 70px;
-  color: #dedede;
+  color: #ffffff;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 16px;
 }
 
 .right-part .movie-info div {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 div > dt {
-  color: #f1f1f1;
-  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
+  color: #cfcfcf;
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   line-height: 18px;
-}
-
-.movie-summary {
-  margin: 54px 0 54px;
-  color: #dedede;
-  font-size: 14px;
-  line-height: 23px;
-}
-
-.movie-summary dt {
-  margin-bottom: 16px;
 }
