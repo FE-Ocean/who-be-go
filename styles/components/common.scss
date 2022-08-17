@@ -7,16 +7,17 @@
     align-items: center;
     position: fixed;
     top: 0;
+    z-index: 9999;
     width: 100%;
     background-color: $sub-bg;
 }
 
-.logo {
+.img-logo {
     height: 90px;
     img {
         margin-left: 90px;
     }
-    button {
+    .btn-nav {
         display: none;
         position: absolute;
         top: 33px;
@@ -33,20 +34,21 @@
     letter-spacing: -0.02em;
     li {
         padding-left: 24px;
-        a {
-            font-family: $font-bold;
-            font-size: 14px;
-            color: $header-text;
-            &:hover,
-            &.selected {
-                color: $primary-color;
-            }
+        color: $header-text;
+        font-family: $font-bold;
+        font-size: 14px;
+        cursor: pointer;
+        &:hover {
+            color: $primary-color;
+        }
+        a .selected {
+            color: $primary-color;
         }
     }
 }
 
 .main {
-    margin-top: 94px;
+    margin: 94px 0 60px;
 }
 
 .footer {
@@ -56,6 +58,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 9999;
     background-color: $sub-bg;
     text-align: center;
     p {
@@ -78,11 +81,11 @@
         flex-direction: column;
     }
 
-    .logo {
+    .img-logo {
         img {
             margin-left: 0;
         }
-        button {
+        .btn-nav {
             display: block;
         }
     }
