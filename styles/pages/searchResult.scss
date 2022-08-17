@@ -1,10 +1,6 @@
 @import '../constants/colors';
 @import '../constants/typography.scss';
 
-.search-result-main {
-    padding-top: 94px;
-}
-
 .text-heading {
     margin-top: 70px;
     line-height: 38px;
@@ -29,15 +25,17 @@
 
 .card-info-wrapper {
     display: flex;
-    justify-content: space-between;
     max-width: 550px;
+    .poster-card {
+        margin-right: 40px;
+    }
 }
 
 .right-part {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 20px;
+    margin: 40px 0 10px;
     .img-wbg {
         width: 48px;
         height: 66px;
@@ -50,7 +48,7 @@
     }
     .movie-info {
         max-width: 170px;
-        margin-top: 106px;
+        margin-top: 70px;
         color: $content-text;
         font-family: $font-regular;
         font-size: 14px;
