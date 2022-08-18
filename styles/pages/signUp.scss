@@ -16,6 +16,15 @@
         font-size: 30px;
         color: $white;
         margin-bottom: 54px;
+        &.profile {
+            margin-bottom: 10px;
+        }
+    }
+    .page-subtitle {
+        font-family: $font-regular;
+        font-weight: 300;
+        font-size: 11px;
+        color: $disabled-line;
     }
     label {
         margin-bottom: 6px;
@@ -66,13 +75,60 @@
                 display: block;
             }
         }
+        &.userid {
+            &.true {
+                color: $green;
+                display: block;
+            }
+            &.false {
+                color: $primary-color;
+                display: block;
+            }
+        }
     }
     .wrapper-email,
-    .wrapper-password {
+    .wrapper-password,
+    .wrapper-name,
+    .wrapper-id,
+    .wrapper-intro {
         display: flex;
         flex-direction: column;
     }
-    .wrapper-password {
+    .wrapper-password,
+    .wrapper-intro {
         margin: 16px 0 35px 0;
     }
+    .wrapper-id {
+        margin-top: 16px;
+    }
+    .wrapper-upload-img {
+        width: 130px;
+        height: 130px;
+        margin: 20px auto;
+        background: {
+            image: url('../../assets/icons/default-logo.svg');
+            repeat: no-repeat;
+            size: cover;
+        }
+        position: relative;
+        border-radius: 9999px;
+        .ico-upload {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            cursor: pointer;
+        }
+    }
+}
+
+input[type='file'] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }

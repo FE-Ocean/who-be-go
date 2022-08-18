@@ -24,6 +24,15 @@
   color: #ffffff;
   margin-bottom: 54px;
 }
+.container-signup .page-title.profile {
+  margin-bottom: 10px;
+}
+.container-signup .page-subtitle {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  color: #767676;
+}
 .container-signup label {
   margin-bottom: 6px;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
@@ -88,8 +97,19 @@
   color: #ff5f5f;
   display: block;
 }
+.container-signup .msg-error.userid.true {
+  color: #b8ff96;
+  display: block;
+}
+.container-signup .msg-error.userid.false {
+  color: #ff5f5f;
+  display: block;
+}
 .container-signup .wrapper-email,
-.container-signup .wrapper-password {
+.container-signup .wrapper-password,
+.container-signup .wrapper-name,
+.container-signup .wrapper-id,
+.container-signup .wrapper-intro {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,6 +118,38 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.container-signup .wrapper-password {
+.container-signup .wrapper-password,
+.container-signup .wrapper-intro {
   margin: 16px 0 35px 0;
+}
+.container-signup .wrapper-id {
+  margin-top: 16px;
+}
+.container-signup .wrapper-upload-img {
+  width: 130px;
+  height: 130px;
+  margin: 20px auto;
+  background-image: url("../../assets/icons/default-logo.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border-radius: 9999px;
+}
+.container-signup .wrapper-upload-img .ico-upload {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+input[type=file] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

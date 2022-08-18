@@ -117,6 +117,39 @@
         }
     }
 }
+.review-album {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 210px);
+    gap: 20px;
+    height: 721px;
+    overflow-y: scroll;
+    .card-s {
+        @extend %card-base;
+        background-position: center center;
+        width: 210px;
+        height: 210px;
+        .show-contents {
+            display: none;
+        }
+        &:hover {
+            .show-contents {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 10;
+                @extend %card-cover;
+                #movie-title {
+                    font-family: $font-medium;
+                    font-size: 16px;
+                    color: $white;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
 
 @media screen and (max-width: 768px) {
     .card-L {
@@ -130,6 +163,21 @@
             gap: 20px;
         }
     }
+    .review-album {
+        height: 532px;
+        .card-s {
+            width: 160px;
+            height: 160px;
+        }
+        grid-template-columns: repeat(3, 160px);
+        gap: 15px;
+    }
+    #movie-title {
+        font-size: 15px;
+    }
+    .rate-star {
+        height: 20px;
+    }
 }
 
 @media screen and (max-width: 550px) {
@@ -138,5 +186,16 @@
             grid-template-columns: repeat(1, 1fr);
             gap: 20px;
         }
+    }
+
+    .review-album {
+        height: 600px;
+
+        .card-s {
+            width: 160px;
+            height: 160px;
+        }
+        grid-template-columns: repeat(2, 160px);
+        gap: 15px;
     }
 }

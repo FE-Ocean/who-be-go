@@ -452,7 +452,6 @@ textarea {
 
 .btn-s {
   width: 90px;
-  height: 32px;
   font-size: 13px;
   padding: 9px 0 7px;
 }
@@ -467,7 +466,7 @@ textarea {
   height: 44px;
   font-size: 14px;
 }
-.card-m, .card-L {
+.review-album .card-s, .card-m, .card-L {
   position: relative;
   background-image: url("../../assets/images/ex_img.jpeg");
   background-repeat: no-repeat;
@@ -475,7 +474,7 @@ textarea {
   border-radius: 30px;
 }
 
-.card-m:hover .show-contents, .card-L:last-of-type::after {
+.review-album .card-s:hover .show-contents, .card-m:hover .show-contents, .card-L:last-of-type::after {
   content: "";
   position: absolute;
   top: 0;
@@ -594,6 +593,47 @@ textarea {
   font-size: 11px;
 }
 
+.review-album {
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-template-columns: repeat(3, 210px);
+  gap: 20px;
+  height: 721px;
+  overflow-y: scroll;
+}
+.review-album .card-s {
+  background-position: center center;
+  width: 210px;
+  height: 210px;
+}
+.review-album .card-s .show-contents {
+  display: none;
+}
+.review-album .card-s:hover .show-contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+}
+.review-album .card-s:hover .show-contents #movie-title {
+  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
 @media screen and (max-width: 768px) {
   .card-L:first-of-type {
     display: none;
@@ -602,10 +642,34 @@ textarea {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+  .review-album {
+    height: 532px;
+    grid-template-columns: repeat(3, 160px);
+    gap: 15px;
+  }
+  .review-album .card-s {
+    width: 160px;
+    height: 160px;
+  }
+  #movie-title {
+    font-size: 15px;
+  }
+  .rate-star {
+    height: 20px;
+  }
 }
 @media screen and (max-width: 550px) {
   .wrapper-card.chart {
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
+  }
+  .review-album {
+    height: 600px;
+    grid-template-columns: repeat(2, 160px);
+    gap: 15px;
+  }
+  .review-album .card-s {
+    width: 160px;
+    height: 160px;
   }
 }
