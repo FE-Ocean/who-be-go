@@ -7,13 +7,14 @@ const textReview = document.querySelector('#text-review');
 const saveButton = document.querySelector('#btn-save');
 // 서버로 전송할 이미지 (파일 정보가 담김)
 let img;
+const IMG_MAX_SIZE = 10 * 1024 * 1024;
 const fileTypeArray = [
-    'img/gif',
+    'image/gif',
     'image/jpeg',
     'image/png',
-    'img/bmp',
-    'img/tif',
-    'img/heic',
+    'image/bmp',
+    'image/tiff',
+    'image/heic',
 ];
 const setTextHeight = (e) => {
     const target = e.currentTarget;
@@ -33,9 +34,14 @@ imgInput.addEventListener('change', (e) => {
     if (files === null) {
         return;
     }
+    console.log(files[0].type);
     // 파일 타입이 이미지가 아닐 때
     if (!fileTypeArray.includes(files[0].type)) {
         alert('이미지 파일만 첨부 가능합니다.');
+        return;
+    }
+    if (files[0].size > IMG_MAX_SIZE) {
+        alert('10MB 미만의 이미지만 첨부 가능합니다.');
         return;
     }
     fileReader.readAsDataURL(files[0]);
