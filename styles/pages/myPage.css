@@ -1,7 +1,6 @@
 .container-mypage {
   max-width: 720px;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   padding: 70px 20px 40px;
   margin: 0 auto;
 }
@@ -41,8 +40,6 @@
   margin-bottom: 35px;
 }
 .container-mypage .wrapper-btn {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   margin-bottom: 37px;
 }
@@ -53,6 +50,5 @@
   margin-right: 16px;
 }
 .container-mypage .wrapper-btn .btn-s:hover, .container-mypage .wrapper-btn .btn-s:focus, .container-mypage .wrapper-btn .btn-s:active {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+  transform: scale(1.03);
 }
