@@ -144,11 +144,14 @@
     .review-contents {
         overflow: auto;
         height: 100%;
-        img {
+        #img-review {
             display: block;
-            max-width: 314px;
+            max-width: 100%;
             margin-bottom: 14px;
             border-radius: 4px;
+            &.disabled {
+                display: none;
+            }
         }
         #text-review {
             resize: none;

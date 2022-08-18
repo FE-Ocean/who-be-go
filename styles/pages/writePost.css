@@ -129,11 +129,14 @@
   overflow: auto;
   height: 100%;
 }
-.review-container .review-contents img {
+.review-container .review-contents #img-review {
   display: block;
-  max-width: 314px;
+  max-width: 100%;
   margin-bottom: 14px;
   border-radius: 4px;
+}
+.review-container .review-contents #img-review.disabled {
+  display: none;
 }
 .review-container .review-contents #text-review {
   resize: none;
