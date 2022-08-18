@@ -651,6 +651,12 @@ textarea {
     width: 160px;
     height: 160px;
   }
+  #movie-title {
+    font-size: 15px;
+  }
+  .rate-star {
+    height: 20px;
+  }
 }
 @media screen and (max-width: 550px) {
   .wrapper-card.chart {
