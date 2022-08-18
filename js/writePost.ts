@@ -1,14 +1,12 @@
 const textRating = document.querySelector('#text-rating') as HTMLSpanElement;
 const radioRating = document.querySelectorAll('.radio-rating');
-const imgContainer = document.querySelector('.img-container');
+const imgReview = document.querySelector('#img-review') as HTMLImageElement;
 const imgInput = document.querySelector('#img-input') as HTMLInputElement;
 const textReview = document.querySelector('#text-review') as HTMLInputElement;
 const saveButton = document.querySelector('#btn-save') as HTMLButtonElement;
 
-// 서버로 전송할 이미지 목록 (파일 정보가 담김)
-let imgArray: File[] = [];
-// 화면에 보여줄 이미지 목록 (파일의 로컬 경로가 담김)
-let imgPreviewArray: string[] = [];
+// 서버로 전송할 이미지 (파일 정보가 담김)
+let img: File;
 
 const fileTypeArray: string[] = [
     'img/gif',
@@ -18,19 +16,6 @@ const fileTypeArray: string[] = [
     'img/tif',
     'img/heic',
 ];
-
-// 저장 버튼을 누르기 전까지는 로컬 경로로 이미지를 보여줍니다.
-// 사진을 일일이 서버에 올리고 그걸 다시 받아와서 보여주려면 느리기 때문에 저장 버튼을 눌렀을 때만 이미지를 서버로 전송합니다.
-const setImage = () => {
-    if (imgContainer !== null) {
-        imgContainer.innerHTML = '';
-        imgPreviewArray.map((src) => {
-            const image = document.createElement('img');
-            image.src = src;
-            imgContainer.append(image);
-        });
-    }
-};
 
 const setTextHeight = (e: Event) => {
     const target = e.currentTarget as HTMLInputElement;
@@ -55,19 +40,15 @@ imgInput.addEventListener('change', (e: Event) => {
         alert('이미지 파일만 첨부 가능합니다.');
         return;
     }
-    // 이미지를 세 장 이상 첨부하려고 했을 때
-    // 근데 왜 length가 2여야 작동하는지 모르겠음
-    if (imgArray.length > 2) {
-        alert('이미지 첨부는 최대 3개까지 가능합니다.');
-        return;
-    }
     fileReader.readAsDataURL(files[0]);
     fileReader.addEventListener('load', () => {
-        imgArray.push(files[0]);
         if (fileReader.result !== null) {
-            imgPreviewArray.push(fileReader.result.toString());
+            imgReview.classList.remove('disabled');
+            img = files[0];
+            console.log(img);
+            imgReview.src = fileReader.result.toString();
+            target.value = '';
         }
-        setImage();
     });
 });
 
