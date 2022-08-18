@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../styles/main.css" />
         <link rel="stylesheet" href="../styles/pages/search.css" />
         <link rel="stylesheet" href="../styles/components/common.css" />
+        <link rel="stylesheet" href="../styles/components/modal.css" />
         <script src="../js/common.js" defer></script>
     </head>
     <body>
@@ -26,7 +27,7 @@
                 <li><a href="../pages/search.html">영화찾아요</a></li>
                 <li><a href="../pages/writePost.html">영화감상문</a></li>
                 <li><a href="../pages/myPage.html">마이페이지</a></li>
-                <li>로그아웃</li>
+                <li></li>
             </ul>
         </header>
         <main class="main search-main">
@@ -43,5 +44,14 @@
                 <div class="img-search"></div>
             </div>
         </main>
+        <div class="modal-alert-container disabled">
+            <div class="modal-alert">
+                <span class="message">로그아웃하시겠습니까?</span>
+                <button class="btn-alert" id="btn-cancel">취소</button>
+                <button class="btn-alert action" id="btn-logout">
+                    로그아웃
+                </button>
+            </div>
+        </div>
     </body>
 </html>

@@ -1,13 +1,7 @@
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0;
   z-index: 9999;
@@ -32,8 +26,6 @@
 }
 
 .nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-right: 90px;
   letter-spacing: -0.02em;
@@ -56,19 +48,10 @@
   margin: 94px 0 60px;
 }
 .main.wrapper-etc {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-top: 250px;
   color: #f1f1f1;
 }
@@ -109,10 +92,7 @@
 
 @media screen and (max-width: 768px) {
   .header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   .img-logo img {
     margin-left: 0;
@@ -122,16 +102,11 @@
   }
   .nav {
     display: none;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     width: 100%;
     margin-right: 0;
   }
   .nav.active {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .nav li {
