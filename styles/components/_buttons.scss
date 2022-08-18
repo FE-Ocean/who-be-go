@@ -15,7 +15,6 @@
 .btn-s {
     @extend %btn-base;
     width: 90px;
-    height: 32px;
     font-size: 13px;
     padding: 9px 0 7px;
     &.disabled {
