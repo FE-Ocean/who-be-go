@@ -2,7 +2,7 @@
 @import '../constants/typography.scss';
 
 .search-main {
-    padding-top: 70px;
+    padding: 70px 5% 0;
     text-align: center;
 }
 
@@ -16,33 +16,38 @@
 
 .text-description {
     margin-bottom: 42px;
-    color: $disabled-line;
+    color: #8b8b8b;
     font-family: $font-regular;
     font-size: 18px;
 }
 
 .input-search-container {
     position: relative;
-    background-color: #d9d9d9;
     max-width: 740px;
     margin: 0 auto;
-    border-radius: 40px;
+    box-sizing: border-box;
     .input-search {
         width: 100%;
-        padding: 22px 52px 18px 34px;
+        padding: 21px 51px 17px 33px;
+        color: $header-text;
         font-family: $font-regular;
         font-size: 18px;
+        border: 1px solid #8b8b8b;
+        border-radius: 40px;
         box-sizing: border-box;
         &::placeholder {
-            color: $disabled-line;
+            color: #8b8b8b;
             font-size: 18px;
             line-height: 23px;
+        }
+        &:focus {
+            border-color: $header-text;
         }
     }
     .img-search {
         display: inline-block;
         position: absolute;
-        top: 20px;
+        top: 18px;
         right: 22px;
         background: {
             image: url('../../assets/icons/icon-search.svg');
