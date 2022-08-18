@@ -13,13 +13,11 @@
   max-width: 550px;
   margin-bottom: 150px;
 }
-
 .movie-article .movie-title {
   margin: 100px 0 7px;
   line-height: 38px;
   text-align: left;
 }
-
 .movie-article .sub-movie-title {
   margin-bottom: 48px;
   color: #f1f1f1;
@@ -29,30 +27,19 @@
 }
 
 .card-info-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   max-width: 550px;
 }
-
 .card-info-wrapper .poster-card {
   margin-right: 40px;
 }
 
 .right-part {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 40px 0 10px;
 }
-
 .right-part .img-wbg {
   width: 48px;
   height: 66px;
@@ -61,7 +48,6 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
-
 .right-part .movie-info {
   max-width: 170px;
   margin-top: 70px;
@@ -70,7 +56,6 @@
   font-size: 14px;
   line-height: 16px;
 }
-
 .right-part .movie-info div {
   margin-bottom: 8px;
 }

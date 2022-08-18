@@ -1,5 +1,15 @@
+@import '../constants/colors';
+@import '../constants/typography.scss';
+
 .container-chart {
     box-sizing: content-box;
     padding: 70px 20px;
     margin: 0 auto;
+}
+
+.text-description {
+    margin-bottom: 42px;
+    color: #8b8b8b;
+    font-family: $font-regular;
+    font-size: 18px;
 }

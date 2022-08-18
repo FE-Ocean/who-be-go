@@ -1,6 +1,13 @@
 .container-chart {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   padding: 70px 20px;
   margin: 0 auto;
+}
+
+.text-description {
+  margin:17px 0 42px 0;
+  color: #8b8b8b;
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 18px;
+  text-align: center;
 }
