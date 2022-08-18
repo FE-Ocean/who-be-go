@@ -38,6 +38,49 @@
             <button type="submit" class="btn-L disabled">다음</button>
         </form>
     </section>
+
+    <!-- 프로필 설정  -->
+    <section class="container-signup">
+        <h1 class="page-title profile">프로필 설정</h1>
+        <h2 class="page-subtitle">나중에 언제든지 변경할 수 있습니다.</h2>
+        <form method="POST">
+            <div class="wrapper-upload-img">
+                <label for="choose-img">
+                    <img src="../assets/icons/upload-file.svg" alt="upload" class="ico-upload">
+                </label>
+                <input type="file" name="user-img" id="choose-img" accept="image/*">
+            </div>
+            <div class="wrapper-name">
+                <label for="name" class="label-profile">
+                    사용자 이름
+                </label>
+                <input id="name" type="text" minlength="2" maxlength="11" required autocomplete="off" autofocus
+                    placeholder="2 ~ 10자 이내여야 합니다. ">
+                </input>
+            </div>
+            <div class="wrapper-id">
+                <label for="user-id" class="label-profile">
+                    계정ID
+                </label>
+                <input id="user-id" type="text" minlength="2" maxLength="20" required
+                    placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다."></input>
+                <strong class="msg-error userid false">
+                    *영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.
+                    <!-- *이미 사용 중인 ID 입니다.  -->
+                    <!-- *사용 가능한 계정ID 입니다.  -->
+                </strong>
+            </div>
+            <div class="wrapper-intro">
+                <label for="description" class="label-profile">
+                    소개
+                </label>
+                <input id="intro" type="text" required placeholder="자신을 소개해 주세요!"></ㅑ>
+            </div>
+            <button type="submit" class="btn-L disabled">후비고 시작하기</button>
+        </form>
+    </section>
+
+
 </body>
 
 </html>
