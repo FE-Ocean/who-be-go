@@ -1,6 +1,9 @@
+@import './common';
+
 %card-base {
     position: relative;
-    background-image: url('../../assets/images/ex_img.jpeg');
+    background-image: url('../../assets/images/post_default.jpg');
+
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 30px;
@@ -16,14 +19,6 @@
     background-color: rgba(0, 0, 0, 0.69);
     border-radius: 30px;
     z-index: -1;
-}
-
-@mixin text-overflow($width) {
-    overflow: hidden;
-    white-space: nowrap;
-    display: inline-block;
-    text-overflow: ellipsis;
-    width: $width;
 }
 
 .wrapper-card {
