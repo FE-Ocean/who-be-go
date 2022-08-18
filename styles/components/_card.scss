@@ -172,6 +172,12 @@
         grid-template-columns: repeat(3, 160px);
         gap: 15px;
     }
+    #movie-title {
+        font-size: 15px;
+    }
+    .rate-star {
+        height: 20px;
+    }
 }
 
 @media screen and (max-width: 550px) {
