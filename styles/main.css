@@ -521,7 +521,7 @@ textarea {
 }
 
 .main {
-  margin: 94px 0 60px;
+  margin: 80px 0 60px;
 }
 .main.wrapper-etc {
   display: -webkit-box;
@@ -661,28 +661,32 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 50px 25px 0 25px;
+  margin: 38px 25px 0 25px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
-}
-.wrapper-card .wrapper-movie-title #movie-title-eng {
-  font-size: 20px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  white-space: nowrap;
-  display: inline-block;
-  text-overflow: ellipsis;
-  width: 250px;
 }
 .wrapper-card .wrapper-movie-title #movie-title {
   overflow: hidden;
-  white-space: nowrap;
-  display: inline-block;
   text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   width: 250px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.wrapper-card .wrapper-movie-title #movie-title-eng {
   font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 250px;
 }
 .wrapper-card .wrapper-sub-text {
-  margin: 70px 20px 20px;
+  position: absolute;
+  bottom: 0;
+  margin: 20px 20px 20px;
   font-size: 13px;
 }
 .wrapper-card .wrapper-sub-text .sub-title {
@@ -703,9 +707,9 @@ textarea {
   font-weight: 300;
   margin: 8px 0;
   overflow: hidden;
-  white-space: nowrap;
-  display: inline-block;
   text-overflow: ellipsis;
+  display: inline-block;
+  white-space: nowrap;
   width: 250px;
 }
 
@@ -713,11 +717,13 @@ textarea {
   width: 300px;
   height: 425px;
   z-index: 10;
+  position: relative;
 }
 .card-L:first-of-type {
   margin-right: 20px;
 }
 .card-m {
+  position: relative;
   width: 250px;
   height: 354px;
 }
@@ -728,20 +734,42 @@ textarea {
   z-index: 10;
 }
 .card-m:hover .show-contents {
+  position: absolute;
+  bottom: 0;
   display: block;
 }
 .card-m:hover .wrapper-movie-title {
-  margin: 40px 20px 0 20px;
-}
-.card-m:hover .wrapper-movie-title #movie-title-eng {
-  font-size: 16px;
+  margin: 30px 20px 0 20px;
 }
 .card-m:hover .wrapper-movie-title #movie-title {
   font-size: 14px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 200px;
+}
+.card-m:hover .wrapper-movie-title #movie-title-eng {
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 200px;
 }
 .card-m:hover .wrapper-sub-text {
-  margin: 40px 20px 20px;
+  margin: 20px 20px 20px;
   font-size: 11px;
+}
+.card-m:hover .wrapper-sub-text .sub-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  white-space: nowrap;
+  width: 200px;
 }
 
 .review-album {
@@ -755,6 +783,8 @@ textarea {
   overflow-y: scroll;
 }
 .review-album .card-s {
+  background-image: url("../../assets/images/min-post-default.jpg");
+  border-radius: 15px;
   background-position: center center;
   width: 210px;
   height: 210px;
@@ -777,12 +807,20 @@ textarea {
       -ms-flex-align: center;
           align-items: center;
   z-index: 10;
+  border-radius: 15px;
 }
 .review-album .card-s:hover .show-contents #movie-title {
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
   font-size: 16px;
   color: #ffffff;
   margin-bottom: 10px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  width: 180px;
 }
 
 @media screen and (max-width: 768px) {
@@ -802,10 +840,16 @@ textarea {
     width: 160px;
     height: 160px;
   }
-  #movie-title {
-    font-size: 15px;
+  .review-album .card-s:hover .show-contents #movie-title {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    width: 140px;
   }
-  .rate-star {
+  .review-album .rate-star {
     height: 20px;
   }
 }
@@ -817,11 +861,6 @@ textarea {
   .review-album {
     height: 600px;
     grid-template-columns: repeat(2, 160px);
-    gap: 15px;
-  }
-  .review-album .card-s {
-    width: 160px;
-    height: 160px;
   }
 }
 .header {
@@ -879,7 +918,7 @@ textarea {
 }
 
 .main {
-  margin: 94px 0 60px;
+  margin: 80px 0 60px;
 }
 .main.wrapper-etc {
   display: -webkit-box;

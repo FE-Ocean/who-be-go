@@ -3,7 +3,6 @@
 %card-base {
     position: relative;
     background-image: url('../../assets/images/post_default.jpg');
-
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 30px;
@@ -36,22 +35,23 @@
     .wrapper-movie-title {
         display: flex;
         flex-direction: column;
-        margin: 50px 25px 0 25px;
+        margin: 38px 25px 0 25px;
         font-family: $font-bold;
-
-        #movie-title-eng {
+        #movie-title {
+            @include text-overflow-two(250px);
             font-size: 20px;
             margin-bottom: 10px;
-            @include text-overflow(250px);
         }
-        #movie-title {
-            @include text-overflow(250px);
+        #movie-title-eng {
             font-size: 18px;
+            @include text-overflow-two(250px);
         }
     }
 
     .wrapper-sub-text {
-        margin: 70px 20px 20px;
+        position: absolute;
+        bottom: 0;
+        margin: 20px 20px 20px;
         font-size: 13px;
         .sub-title {
             font-family: $font-medium;
@@ -64,7 +64,7 @@
                 color: $title-text;
                 font-weight: 300;
                 margin: 8px 0;
-                @include text-overflow(250px);
+                @include text-overflow-one(250px);
             }
         }
     }
@@ -75,6 +75,7 @@
     width: 300px;
     height: 425px;
     z-index: 10;
+    position: relative;
     &:first-of-type {
         margin-right: 20px;
     }
@@ -85,6 +86,7 @@
 
 .card-m {
     @extend %card-base;
+    position: relative;
     width: 250px;
     height: 354px;
     .show-contents {
@@ -94,21 +96,29 @@
         z-index: 10;
         .show-contents {
             @extend %card-cover;
+            position: absolute;
+            bottom: 0;
             display: block;
         }
         .wrapper-movie-title {
-            margin: 40px 20px 0 20px;
+            margin: 30px 20px 0 20px;
 
-            #movie-title-eng {
-                font-size: 16px;
-            }
             #movie-title {
                 font-size: 14px;
+                margin-bottom: 8px;
+                @include text-overflow-two(200px);
+            }
+            #movie-title-eng {
+                font-size: 16px;
+                @include text-overflow-two(200px);
             }
         }
         .wrapper-sub-text {
-            margin: 40px 20px 20px;
+            margin: 20px 20px 20px;
             font-size: 11px;
+            .sub-text {
+                @include text-overflow-one(200px);
+            }
         }
     }
 }
@@ -121,6 +131,8 @@
     overflow-y: scroll;
     .card-s {
         @extend %card-base;
+        background-image: url('../../assets/images/min-post-default.jpg');
+        border-radius: 15px;
         background-position: center center;
         width: 210px;
         height: 210px;
@@ -135,11 +147,14 @@
                 align-items: center;
                 z-index: 10;
                 @extend %card-cover;
+                border-radius: 15px;
                 #movie-title {
                     font-family: $font-medium;
                     font-size: 16px;
                     color: $white;
                     margin-bottom: 10px;
+                    text-align: center;
+                    @include text-overflow-three(180px);
                 }
             }
         }
@@ -163,15 +178,20 @@
         .card-s {
             width: 160px;
             height: 160px;
+            &:hover {
+                .show-contents {
+                    #movie-title {
+                        font-size: 14px;
+                        @include text-overflow-three(140px);
+                    }
+                }
+            }
         }
         grid-template-columns: repeat(3, 160px);
         gap: 15px;
-    }
-    #movie-title {
-        font-size: 15px;
-    }
-    .rate-star {
-        height: 20px;
+        .rate-star {
+            height: 20px;
+        }
     }
 }
 
@@ -185,12 +205,6 @@
 
     .review-album {
         height: 600px;
-
-        .card-s {
-            width: 160px;
-            height: 160px;
-        }
         grid-template-columns: repeat(2, 160px);
-        gap: 15px;
     }
 }
