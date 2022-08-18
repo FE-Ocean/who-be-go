@@ -14,51 +14,67 @@
           align-items: center;
   min-width: 322px;
   padding: 0 20px;
-  margin-top: 174px;
+  margin-top: 65px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
-
 .container-login .img-logo {
-  height: 167px;
+  height: 150px;
   margin-bottom: 10px;
 }
-
 .container-login label {
-  margin-bottom: 9px;
-  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
-  color: #cfcfcf;
+  margin-bottom: 6px;
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 13px;
+  color: #dedede;
 }
-
+.container-login ::-webkit-input-placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 12px;
+  color: #464646;
+}
+.container-login ::-moz-placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 12px;
+  color: #464646;
+}
+.container-login :-ms-input-placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 12px;
+  color: #464646;
+}
+.container-login ::-ms-input-placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 12px;
+  color: #464646;
+}
+.container-login ::placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 12px;
+  color: #464646;
+}
 .container-login input {
-  width: 322px;
-  padding: 7px;
+  padding: 8px 0;
   border-bottom: 1px solid #767676;
   color: #ffffff;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 13px;
   line-height: 1;
 }
-
 .container-login input:focus {
   border-color: #ffffff;
 }
-
 .container-login .msg-error {
-  margin-top: 5px;
-  color: #ff5f5f;
+  display: none;
+  margin-top: 7px;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-weight: 400;
   font-size: 11px;
 }
-
-.container-login .msg-error.true {
-  display: block;
-}
-
 .container-login .msg-error.false {
-  display: none;
+  display: block;
+  color: #ff5f5f;
 }
-
 .container-login .wrapper-email,
 .container-login .wrapper-password {
   display: -webkit-box;
@@ -69,11 +85,9 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-
 .container-login .wrapper-password {
   margin: 16px 0 35px 0;
 }
-
 .container-login .sign-up-link {
   display: block;
   text-align: center;

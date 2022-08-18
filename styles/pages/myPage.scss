@@ -1,0 +1,59 @@
+@import '../constants/colors';
+@import '../constants/typography';
+
+.container-mypage {
+    max-width: 720px;
+    box-sizing: content-box;
+    padding: 70px 20px 40px;
+    margin: 0 auto;
+    .page-title {
+        margin-bottom: 34px;
+    }
+    .review-album {
+        margin: 0 auto;
+        padding-top: 50px;
+        border-top: 1px solid $disabled-line;
+    }
+    .user-info {
+        display: block;
+        text-align: center;
+        #img-profile {
+            width: 110px;
+            margin-bottom: 19px;
+        }
+        #text-name {
+            font-family: $font-medium;
+            font-size: 18px;
+            color: $header-text;
+            margin-bottom: 5px;
+        }
+        #text-id,
+        #text-intro {
+            font-family: $font-regular;
+            color: $content-text;
+        }
+        #text-id {
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+        #text-intro {
+            font-size: 14px;
+            margin-bottom: 35px;
+        }
+    }
+    .wrapper-btn {
+        display: inline-flex;
+        .btn-s {
+            background-color: $primary-color;
+            &:first-of-type {
+                margin-right: 16px;
+            }
+            &:hover,
+            &:focus,
+            &:active {
+                transform: scale(1.03);
+            }
+        }
+        margin-bottom: 37px;
+    }
+}

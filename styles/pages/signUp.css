@@ -1,6 +1,4 @@
 .container-signup {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,9 +12,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 100px;
   min-width: 322px;
   padding: 0 20px;
+  margin-top: 100px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 .container-signup .page-title {
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
@@ -25,57 +25,68 @@
   margin-bottom: 54px;
 }
 .container-signup label {
-  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
-  color: #cfcfcf;
-  margin-bottom: 9px;
+  margin-bottom: 6px;
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 13px;
+  color: #dedede;
 }
 .container-signup ::-webkit-input-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   color: #464646;
 }
 .container-signup ::-moz-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   color: #464646;
 }
 .container-signup :-ms-input-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   color: #464646;
 }
 .container-signup ::-ms-input-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   color: #464646;
 }
 .container-signup ::placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   color: #464646;
 }
 .container-signup input {
-  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
-  line-height: 1;
-  color: #ffffff;
-  padding: 7px;
+  padding: 8px 0;
   border-bottom: 1px solid #767676;
+  color: #ffffff;
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 13px;
+  line-height: 1;
 }
 .container-signup input:focus {
-  border-bottom: 1px solid #ffffff;
+  border-color: #ffffff;
 }
 .container-signup .msg-error {
+  display: none;
+  margin-top: 7px;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-weight: 400;
   font-size: 11px;
-  color: #ff5f5f;
-  margin-top: 5px;
 }
-.container-signup .msg-error.true {
+.container-signup .msg-error.email.true {
+  color: #b8ff96;
   display: block;
 }
-.container-signup .msg-error.false {
+.container-signup .msg-error.email.false {
+  color: #ff5f5f;
+  display: block;
+}
+.container-signup .msg-error.password.true {
   display: none;
+}
+.container-signup .msg-error.password.false {
+  color: #ff5f5f;
+  display: block;
 }
 .container-signup .wrapper-email,
 .container-signup .wrapper-password {

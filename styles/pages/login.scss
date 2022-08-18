@@ -8,26 +8,31 @@
     align-items: center;
     min-width: 322px;
     padding: 0 20px;
-    margin-top: 174px;
+    margin-top: 65px;
     box-sizing: content-box;
 
     .img-logo {
-        height: 167px;
+        height: 150px;
         margin-bottom: 10px;
     }
 
     label {
-        margin-bottom: 9px;
-        font-family: $font-medium;
-        color: $header-text;
+        margin-bottom: 6px;
+        font-family: $font-regular;
+        font-size: 13px;
+        color: $content-text;
     }
-
+    ::placeholder {
+        font-family: $font-regular;
+        font-size: 12px;
+        color: $placeholder-text;
+    }
     input {
-        width: 322px;
-        padding: 7px;
+        padding: 8px 0;
         border-bottom: 1px solid $disabled-line;
         color: $white;
         font-family: $font-regular;
+        font-size: 13px;
         line-height: 1;
         &:focus {
             border-color: $white;
@@ -35,18 +40,16 @@
     }
 
     .msg-error {
-        margin-top: 5px;
-        color: $primary-color;
+        display: none;
+        margin-top: 7px;
         font : {
             family: $font-regular;
             weight: 400;
             size: 11px;
         }
-        &.true {
-            display: block;
-        }
         &.false {
-            display: none;
+            display: block;
+            color: $primary-color;
         }
     }
 
