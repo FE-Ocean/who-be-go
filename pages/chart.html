@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>영화 차트 | 후비고</title>
+        <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/components/common.css" />
+        <link rel="stylesheet" href="../styles/components/modal.css" />
+        <link rel="stylesheet" href="../styles/pages/chart.css" />
+        <script src="../js/common.js" defer></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>영화 차트 | 후비고</title>
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/components/common.css" />
-    <link rel="stylesheet" href="../styles/pages/chart.css">
-    <script src="../js/common.js" defer></script>
+    <body>
+        <header class="header">
+            <h1 class="img-logo">
+                <a href="../index.html">
+                    <img
+                        src="../assets/icons/logo-title.svg"
+                        alt="로고이미지"
+                    />
+                </a>
+                <button class="btn-nav"></button>
+            </h1>
 
-</head>
-
-<body>
-    <header class="header">
-        <h1 class="img-logo">
-            <a href="../index.html">
-                <img src="../assets/icons/logo-title.svg" alt="로고이미지" />
-            </a>
-            <button class="btn-nav"></button>
-        </h1>
-
-        <ul class="nav">
-            <li><a href="../pages/chart.html">영화차트</a></li>
-            <li><a href="../pages/search.html">영화찾아요</a></li>
-            <li><a href="../pages/writePost.html">영화감상문</a></li>
-            <li><a href="../pages/myPage.html">마이페이지</a></li>
-            <li>로그아웃</li>
-        </ul>
-    </header>
-    <main class="main">
+            <ul class="nav">
+                <li><a href="../pages/chart.html">영화차트</a></li>
+                <li><a href="../pages/search.html">영화찾아요</a></li>
+                <li><a href="../pages/writePost.html">영화감상문</a></li>
+                <li><a href="../pages/myPage.html">마이페이지</a></li>
+                <li></li>
+            </ul>
+        </header>
+  <main class="main">
         <section class="container-chart">
             <h1 class="page-title">요즘 영화 뭐 하지?</h1>
             <section class="wrapper-card chart">
@@ -202,10 +204,18 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <p>Copyright FE Ocean all right reserved.</p>
-    </footer>
 
-</body>
-
+        <footer class="footer">
+            <p>Copyright FE Ocean all right reserved.</p>
+        </footer>
+        <div class="modal-alert-container disabled">
+            <div class="modal-alert">
+                <span class="message">로그아웃하시겠습니까?</span>
+                <button class="btn-alert" id="btn-cancel">취소</button>
+                <button class="btn-alert action" id="btn-logout">
+                    로그아웃
+                </button>
+            </div>
+        </div>
+    </body>
 </html>
