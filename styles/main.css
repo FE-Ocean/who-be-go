@@ -76,7 +76,8 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box; /* 1 */
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
 }
@@ -247,7 +248,8 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box; /* 1 */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
   color: inherit; /* 2 */
   display: table; /* 1 */
   max-width: 100%; /* 1 */
@@ -275,7 +277,8 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box; /* 1 */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
 
@@ -348,7 +351,8 @@ template {
   margin: 0;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 h1 {
@@ -372,7 +376,8 @@ input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 a,
@@ -403,11 +408,19 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   transition: background-color 5000s ease-in-out 0s;
 }
 
+input::-webkit-input-placeholder {
+  -webkit-text-fill-color: #464646;
+}
+
 input::-moz-placeholder {
   -webkit-text-fill-color: #464646;
 }
 
 input:-ms-input-placeholder {
+  -webkit-text-fill-color: #464646;
+}
+
+input::-ms-input-placeholder {
   -webkit-text-fill-color: #464646;
 }
 
@@ -508,7 +521,7 @@ textarea {
 }
 
 .main {
-  margin: 94px 0 60px;
+  margin: 80px 0 60px;
 }
 .main.wrapper-etc {
   display: -webkit-box;
@@ -628,6 +641,8 @@ textarea {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
   color: #f1f1f1;
@@ -639,36 +654,50 @@ textarea {
   gap: 20px;
 }
 .wrapper-card .wrapper-movie-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  margin: 50px 25px 0 25px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 38px 25px 0 25px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
-}
-.wrapper-card .wrapper-movie-title #movie-title-eng {
-  font-size: 20px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  white-space: nowrap;
-  display: inline-block;
-  text-overflow: ellipsis;
-  width: 250px;
 }
 .wrapper-card .wrapper-movie-title #movie-title {
   overflow: hidden;
-  white-space: nowrap;
-  display: inline-block;
   text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   width: 250px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.wrapper-card .wrapper-movie-title #movie-title-eng {
   font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 250px;
 }
 .wrapper-card .wrapper-sub-text {
-  margin: 70px 20px 20px;
+  position: absolute;
+  bottom: 0;
+  margin: 20px 20px 20px;
   font-size: 13px;
 }
 .wrapper-card .wrapper-sub-text .sub-title {
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-right: 18px;
   color: #cfcfcf;
 }
@@ -678,9 +707,9 @@ textarea {
   font-weight: 300;
   margin: 8px 0;
   overflow: hidden;
-  white-space: nowrap;
-  display: inline-block;
   text-overflow: ellipsis;
+  display: inline-block;
+  white-space: nowrap;
   width: 250px;
 }
 
@@ -688,11 +717,13 @@ textarea {
   width: 300px;
   height: 425px;
   z-index: 10;
+  position: relative;
 }
 .card-L:first-of-type {
   margin-right: 20px;
 }
 .card-m {
+  position: relative;
   width: 250px;
   height: 354px;
 }
@@ -703,31 +734,57 @@ textarea {
   z-index: 10;
 }
 .card-m:hover .show-contents {
+  position: absolute;
+  bottom: 0;
   display: block;
 }
 .card-m:hover .wrapper-movie-title {
-  margin: 40px 20px 0 20px;
-}
-.card-m:hover .wrapper-movie-title #movie-title-eng {
-  font-size: 16px;
+  margin: 30px 20px 0 20px;
 }
 .card-m:hover .wrapper-movie-title #movie-title {
   font-size: 14px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 200px;
+}
+.card-m:hover .wrapper-movie-title #movie-title-eng {
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 200px;
 }
 .card-m:hover .wrapper-sub-text {
-  margin: 40px 20px 20px;
+  margin: 20px 20px 20px;
   font-size: 11px;
+}
+.card-m:hover .wrapper-sub-text .sub-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  white-space: nowrap;
+  width: 200px;
 }
 
 .review-album {
   display: grid;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   grid-template-columns: repeat(3, 210px);
   gap: 20px;
   height: 721px;
   overflow-y: scroll;
 }
 .review-album .card-s {
+  background-image: url("../../assets/images/min-post-default.jpg");
+  border-radius: 15px;
   background-position: center center;
   width: 210px;
   height: 210px;
@@ -736,17 +793,34 @@ textarea {
   display: none;
 }
 .review-album .card-s:hover .show-contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 10;
+  border-radius: 15px;
 }
 .review-album .card-s:hover .show-contents #movie-title {
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
   font-size: 16px;
   color: #ffffff;
   margin-bottom: 10px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  width: 180px;
 }
 
 @media screen and (max-width: 768px) {
@@ -766,10 +840,16 @@ textarea {
     width: 160px;
     height: 160px;
   }
-  #movie-title {
-    font-size: 15px;
+  .review-album .card-s:hover .show-contents #movie-title {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    width: 140px;
   }
-  .rate-star {
+  .review-album .rate-star {
     height: 20px;
   }
 }
@@ -781,11 +861,6 @@ textarea {
   .review-album {
     height: 600px;
     grid-template-columns: repeat(2, 160px);
-    gap: 15px;
-  }
-  .review-album .card-s {
-    width: 160px;
-    height: 160px;
   }
 }
 .header {
@@ -843,7 +918,7 @@ textarea {
 }
 
 .main {
-  margin: 94px 0 60px;
+  margin: 80px 0 60px;
 }
 .main.wrapper-etc {
   display: -webkit-box;
