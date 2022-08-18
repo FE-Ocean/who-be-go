@@ -134,3 +134,11 @@
         }
     }
 }
+
+@mixin text-overflow($width) {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+    width: $width;
+}
