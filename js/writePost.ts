@@ -1,3 +1,5 @@
+const textRating = document.querySelector('#text-rating') as HTMLSpanElement;
+const radioRating = document.querySelectorAll('.radio-rating');
 const imgContainer = document.querySelector('.img-container');
 const imgInput = document.querySelector('#img-input') as HTMLInputElement;
 const textReview = document.querySelector('#text-review') as HTMLInputElement;
@@ -76,3 +78,10 @@ textReview.addEventListener('keydown', (e: Event) => {
 textReview.addEventListener('keyup', (e: Event) => {
     setTextHeight(e);
 });
+
+for (let rating of radioRating) {
+    rating.addEventListener('click', () => {
+        const ratingValue = (rating as HTMLInputElement).value;
+        textRating.textContent = ratingValue;
+    });
+}

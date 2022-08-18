@@ -1,54 +1,41 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../styles/main.css" />
-        <link rel="stylesheet" href="../styles/pages/login.css" />
-        <title>로그인 | 후비고</title>
-    </head>
 
-    <body>
-        <section class="container-login">
-            <h1>
-                <span class="visually-hidden">후비고</span>
-                <img
-                    class="img-logo"
-                    src="../assets/icons/logo-one.svg"
-                    alt="로고이미지"
-                />
-            </h1>
-            <form>
-                <div class="wrapper-email">
-                    <label for="email">이메일</label>
-                    <input
-                        id="email"
-                        type="email"
-                        required
-                        autocomplete="off"
-                        autofocus
-                    />
-                </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/pages/login.css" />
+    <title>로그인 | 후비고</title>
+</head>
 
-                <div class="wrapper-password">
-                    <label for="password">비밀번호</label>
-                    <input
-                        id="password"
-                        type="password"
-                        minlength="6"
-                        maxlength="16"
-                        required
-                    />
-                    <strong class="msg-error true">
-                        *이메일 또는 비밀번호가 일치하지 않습니다.
-                    </strong>
-                </div>
+<body>
+    <section class="container-login">
+        <h1>
+            <span class="visually-hidden">후비고</span>
+            <img class="img-logo" src="../assets/icons/logo-one.svg" alt="로고이미지" />
+        </h1>
+        <form>
+            <div class="wrapper-email">
+                <label for="email">이메일</label>
+                <input id="email" type="text" required autocomplete="off" autofocus placeholder="이메일 주소를 입력해 주세요." />
+            </div>
 
-                <button type="submit" class="btn-L disabled">로그인</button>
-            </form>
+            <div class="wrapper-password">
+                <label for="password">비밀번호</label>
+                <input id="password" type="password" minlength="6" maxlength="16" required
+                    placeholder="비밀번호를 입력해 주세요." />
+                <strong class="msg-error false">
+                    *이메일 또는 비밀번호가 일치하지 않습니다.
+                </strong>
+            </div>
 
-            <a class="sign-up-link" href="./signUp.html">이메일로 회원가입</a>
-        </section>
-    </body>
+            <button type="submit" class="btn-L disabled">로그인</button>
+        </form>
+
+        <a class="sign-up-link" href="./signUp.html">이메일로 회원가입</a>
+    </section>
+</body>
+
 </html>

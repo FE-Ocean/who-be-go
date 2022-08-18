@@ -1,4 +1,6 @@
 "use strict";
+const textRating = document.querySelector('#text-rating');
+const radioRating = document.querySelectorAll('.radio-rating');
 const imgContainer = document.querySelector('.img-container');
 const imgInput = document.querySelector('#img-input');
 const textReview = document.querySelector('#text-review');
@@ -71,3 +73,9 @@ textReview.addEventListener('keydown', (e) => {
 textReview.addEventListener('keyup', (e) => {
     setTextHeight(e);
 });
+for (let rating of radioRating) {
+    rating.addEventListener('click', () => {
+        const ratingValue = rating.value;
+        textRating.textContent = ratingValue;
+    });
+}

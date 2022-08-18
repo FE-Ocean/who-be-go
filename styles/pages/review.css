@@ -1,0 +1,95 @@
+.main {
+  overflow: hidden;
+}
+
+.page-title {
+  font-size: 30px;
+  color: #f1f1f1;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.list-review {
+  max-width: 927px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-review {
+  max-width: 450px;
+  margin-bottom: 47px;
+}
+.item-review:nth-child(odd) {
+  margin-right: 27px;
+}
+
+.item-review.one {
+  margin: 0 auto;
+}
+
+.movie-title {
+  color: #f1f1f1;
+  font-size: 25px;
+}
+
+.btn-modal {
+  float: right;
+}
+
+.img-rating {
+  display: block;
+  width: 80px;
+  margin-top: 18px;
+  margin-bottom: 22px;
+}
+
+.img-poster {
+  border-radius: 4px;
+  max-width: 450px;
+  height: 350px;
+}
+
+.text-story {
+  color: #dedede;
+  font-size: 14px;
+  margin-top: 40px;
+  margin-bottom: 21px;
+}
+
+.text-date {
+  color: #f1f1f1;
+  font-size: 12px;
+}
+
+.wrapper-noreview {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  text-align: center;
+  display: none;
+}
+
+.text-description {
+  font-size: 30px;
+  line-height: 38px;
+  color: #F1F1F1;
+  display: block;
+}
+
+.btn-ms {
+  height: 44px;
+  margin-top: 33px;
+}
+
+@media screen and (max-width: 927px) {
+  .item-review {
+    margin: 0 auto 47px auto;
+  }
+  .item-review:nth-child(odd) {
+    margin: 0 auto 47px auto;
+  }
+}

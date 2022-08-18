@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../styles/main.css" />
         <link rel="stylesheet" href="../styles/components/common.css" />
+        <link rel="stylesheet" href="../styles/components/modal.css" />
         <link rel="stylesheet" href="../styles/pages/writePost.css" />
         <script src="../js/common.js" defer></script>
         <title>영화 감상문 작성 | 후비고</title>
@@ -27,7 +28,7 @@
                 <li><a href="../pages/search.html">영화찾아요</a></li>
                 <li><a href="../pages/writePost.html">영화감상문</a></li>
                 <li><a href="../pages/myPage.html">마이페이지</a></li>
-                <li>로그아웃</li>
+                <li></li>
             </ul>
         </header>
 
@@ -39,14 +40,85 @@
                         <p id="movie-title">라라랜드 (영화 제목)</p>
                         <p id="movie-title-eng">LaLa Land (영화 영어 제목)</p>
                     </div>
-                    <div class="rating-container">
+                    <div class="rating-wrapper">
                         <span>별점을 매겨주세요!</span>
-                        <img
-                            src="../assets/icons/stars-gray.svg"
-                            alt="rating"
-                        />
                         <!-- 호버 시 노란 색의 별로 바뀌도록 -->
-                        <!-- <img src="../assets/icons/star-yellow.svg" alt="rating" /> -->
+                        <div class="star-wrapper">
+                            <span id="text-rating"></span>
+                            <div class="radio-container">
+                                <input
+                                    type="radio"
+                                    name="radio-rating"
+                                    id="rating0.5"
+                                    value="0.5"
+                                    class="radio-rating"
+                                />
+                                <input
+                                    type="radio"
+                                    name="radio-rating"
+                                    id="rating1.0"
+                                    value="1.0"
+                                    class="radio-rating"
+                                />
+                                <input
+                                    type="radio"
+                                    name="radio-rating"
+                                    id="rating1.5"
+                                    value="1.5"
+                                    class="radio-rating"
+                                />
+                                <input
+                                    type="radio"
+                                    name="radio-rating"
+                                    id="rating2.0"
+                                    value="2.0"
+                                    class="radio-rating"
+                                />
+                                <input
+                                    type="radio"
+                                    name="radio-rating"
+                                    id="rating2.5"
+                                    value="2.5"
+                                    class="radio-rating"
+                                />
+                                <input
+                                    type="radio"
+                                    name="radio-rating"
+                                    id="rating3.0"
+                                    value="3.0"
+                                    class="radio-rating"
+                                />
+                                <input
+                                    type="radio"
+                                    name="radio-rating"
+                                    id="rating3.5"
+                                    value="3.5"
+                                    class="radio-rating"
+                                />
+                                <input
+                                    type="radio"
+                                    name="radio-rating"
+                                    id="rating4.0"
+                                    value="4.0"
+                                    class="radio-rating"
+                                />
+                                <input
+                                    type="radio"
+                                    name="radio-rating"
+                                    id="rating4.5"
+                                    value="4.5"
+                                    class="radio-rating"
+                                />
+                                <input
+                                    type="radio"
+                                    name="radio-rating"
+                                    id="rating5.0"
+                                    value="5.0"
+                                    class="radio-rating"
+                                />
+                                <div class="star"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="review-container">
@@ -82,6 +154,15 @@
             <p>Copyright FE Ocean all right reserved.</p>
         </footer>
 
+        <div class="modal-alert-container disabled">
+            <div class="modal-alert">
+                <span class="message">로그아웃하시겠습니까?</span>
+                <button class="btn-alert" id="btn-cancel">취소</button>
+                <button class="btn-alert action" id="btn-logout">
+                    로그아웃
+                </button>
+            </div>
+        </div>
         <script src="../js/writePost.js"></script>
     </body>
 </html>
