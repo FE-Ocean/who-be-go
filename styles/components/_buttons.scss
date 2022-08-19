@@ -17,7 +17,8 @@
     width: 90px;
     font-size: 13px;
     padding: 9px 0 7px;
-    &.disabled {
+    &.disabled,
+    &:disabled {
         @extend %btn-disabled;
     }
 }
@@ -28,7 +29,8 @@
     height: 32px;
     font-size: 13px;
     padding: 9px 0 7px;
-    &.disabled {
+    &.disabled,
+    &:disabled {
         @extend %btn-disabled;
     }
 }
@@ -38,7 +40,8 @@
     width: 322px;
     height: 44px;
     font-size: 14px;
-    &.disabled {
+    &.disabled,
+    &:disabled {
         @extend %btn-disabled;
     }
 }
