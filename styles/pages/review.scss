@@ -1,7 +1,9 @@
-@import "../constants/colors";
+@import '../constants/colors';
+@import '../components/common';
 
 .main {
     overflow: hidden;
+    padding: 0 5%;
 }
 
 .wrapper-review {
@@ -16,19 +18,23 @@
     text-align: center;
 }
 
-.list-review {
-    max-width: 927px;
+.wrapper-list-review {
     margin: 0 auto;
+    max-width: 727px;
+    overflow-x: hidden;
+}
+
+.list-review {
+    margin: 0 -13.5px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .item-review {
-    max-width: 450px;
+    width: 50%;
+    padding: 0 13.5px;
     margin-bottom: 47px;
-    &:nth-child(odd) {
-        margin-right: 27px;
-    }
+    position: relative;
 }
 
 // 게시글이 1개일 경우
@@ -37,12 +43,23 @@
 }
 
 .movie-title {
+    @include text-overflow-two(90%);
     color: $title-text;
     font-size: 25px;
 }
 
-.btn-modal {
-    float: right;
+.details-movie {
+    display: inline-block;
+    top: 0;
+    right: 12.5px;
+    position: absolute;
+    // float: right;
+    .btn-modal {
+        cursor: pointer;
+        &::marker {
+            font-size: 0;
+        }
+    }
 }
 
 .img-rating {
@@ -52,10 +69,16 @@
     margin-bottom: 22px;
 }
 
+.wrapper-poster {
+    background-color: #191919;
+    border-radius: 4px;
+}
+
 .img-poster {
     border-radius: 4px;
-    max-width: 450px;
+    width: 100%;
     height: 350px;
+    object-fit: contain;
 }
 
 .text-story {
@@ -85,7 +108,7 @@
 .text-description {
     font-size: 30px;
     line-height: 38px;
-    color: #F1F1F1;
+    color: #f1f1f1;
     display: block;
 }
 
@@ -94,11 +117,12 @@
     margin-top: 33px;
 }
 
-@media screen and (max-width: 927px) {
+@media screen and (max-width: 768px) {
+    .wrapper-list-review {
+        max-width: 450px;
+    }
+
     .item-review {
-        margin: 0 auto 47px auto;
-        &:nth-child(odd) {
-            margin: 0 auto 47px auto;
-        }
+        width: 100%;
     }
 }

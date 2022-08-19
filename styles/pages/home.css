@@ -1,6 +1,7 @@
 .container-home {
-  box-sizing: content-box;
-  padding: 70px 20px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 60px 20px;
   max-width: 740px;
   margin: 0 auto;
 }

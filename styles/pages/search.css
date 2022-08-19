@@ -1,5 +1,5 @@
 .search-main {
-  padding: 70px 5% 0;
+  padding: 60px 5%;
   text-align: center;
 }
 
@@ -22,8 +22,10 @@
   position: relative;
   max-width: 740px;
   margin: 0 auto;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
 .input-search-container .input-search {
   width: 100%;
   padding: 21px 51px 17px 33px;
@@ -32,26 +34,38 @@
   font-size: 18px;
   border: 1px solid #8b8b8b;
   border-radius: 40px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-.input-search-container .input-search::-moz-placeholder {
+
+.input-search-container .input-search::-webkit-input-placeholder {
   color: #8b8b8b;
   font-size: 18px;
   line-height: 23px;
 }
+
 .input-search-container .input-search:-ms-input-placeholder {
   color: #8b8b8b;
   font-size: 18px;
   line-height: 23px;
 }
+
+.input-search-container .input-search::-ms-input-placeholder {
+  color: #8b8b8b;
+  font-size: 18px;
+  line-height: 23px;
+}
+
 .input-search-container .input-search::placeholder {
   color: #8b8b8b;
   font-size: 18px;
   line-height: 23px;
 }
+
 .input-search-container .input-search:focus {
   border-color: #cfcfcf;
 }
+
 .input-search-container .img-search {
   display: inline-block;
   position: absolute;
