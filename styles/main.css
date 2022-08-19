@@ -436,6 +436,12 @@ textarea {
   -webkit-appearance: none;
 }
 
+::-webkit-scrollbar {
+  display: none; /* Chrome , Safari , Opera */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 .btn-L, .btn-ms, .btn-s {
   display: inline-block;
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
