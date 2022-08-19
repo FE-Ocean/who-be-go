@@ -14,21 +14,15 @@
   text-align: center;
 }
 
-.upper-wrapper {
-  margin: 32px auto 22px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
 .title-container {
+  margin: 43px auto 10px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
 }
 .title-container #movie-title {
@@ -43,6 +37,8 @@
 }
 
 .rating-wrapper {
+  margin-left: auto;
+  margin-bottom: 18px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
