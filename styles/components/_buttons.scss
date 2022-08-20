@@ -10,6 +10,7 @@
 %btn-disabled {
     background-color: $disabled-color;
     color: $white;
+    pointer-events: none;
 }
 
 .btn-s {
