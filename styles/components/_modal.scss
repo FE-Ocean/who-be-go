@@ -5,14 +5,14 @@
 .modal-dropbox {
     // 사용할 땐 여기부터
     position: absolute;
-    top: 50px;
-    right: 0;
+    top: 38px;
+    right: -2px;
     // 여기까지 삭제해주세요
     &::before {
         content: '';
         display: block;
         position: absolute;
-        top: -15px;
+        top: -10px;
         // left: 13px;
         right: 0px;
         border: {
@@ -21,19 +21,20 @@
             bottom: 25px solid $dropbox-bg;
         }
     }
-    width: 180px;
+    border-radius: 4px;
+    width: 110px;
     background-color: $dropbox-bg;
     // display: none;
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px;
+    padding: 6px;
     .btn-dropbox {
         width: 100%;
         text-align: left;
-        color: $title-text;
+        color: $content-text;
         font: {
-            family: $font-medium;
-            size: 14px;
+            family: $font-regular;
+            size: 13px;
         }
         padding: 10px 13px;
     }
