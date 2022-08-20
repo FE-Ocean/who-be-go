@@ -4,7 +4,6 @@ const main = document.querySelector('.main');
 const navItem = document.querySelectorAll('.nav li a');
 // 모달
 const modalAlertContainer = document.querySelector('.modal-alert-container');
-const modalAlert = document.querySelector('.modal-alert');
 const buttonCancel = document.querySelectorAll('#btn-cancel');
 const buttonLogout = document.querySelector('#btn-logout');
 
