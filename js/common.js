@@ -4,6 +4,7 @@ const main = document.querySelector('.main');
 const navItem = document.querySelectorAll('.nav li a');
 // 모달
 const modalAlertContainer = document.querySelector('.modal-alert-container');
+const modalAlert = document.querySelector('.modal-alert');
 const buttonCancel = document.querySelectorAll('#btn-cancel');
 const buttonLogout = document.querySelector('#btn-logout');
 
@@ -53,6 +54,12 @@ lastLi.addEventListener('click', () => {
 //     // modalAlertContainer.classList.add('disabled');
 //     e.target.parentNode.parentNode.classList.add('disabled')
 // });
+
+modalAlertContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal-alert-container')) {
+        e.target.classList.add('disabled');
+    }
+});
 
 buttonCancel.forEach((elem) => {
     elem.addEventListener('click', (e) => {
