@@ -37,6 +37,8 @@
         flex-direction: column;
         margin: 38px 25px 0 25px;
         font-family: $font-bold;
+        color: $white;
+        text-align: left;
         #movie-title {
             @include text-overflow-two(250px);
             font-size: 20px;
@@ -53,6 +55,7 @@
         bottom: 0;
         margin: 20px 20px 20px;
         font-size: 13px;
+        text-align: left;
         .sub-title {
             font-family: $font-medium;
             display: flex;
@@ -92,7 +95,8 @@
     .show-contents {
         display: none;
     }
-    &:hover {
+    &:hover,
+    &:focus {
         z-index: 10;
         .show-contents {
             @extend %card-cover;

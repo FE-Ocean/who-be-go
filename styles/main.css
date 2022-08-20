@@ -626,7 +626,7 @@ textarea {
   border-radius: 30px;
 }
 
-.review-album .card-s:hover .show-contents, .card-m:hover .show-contents, .card-L:last-of-type::after {
+.review-album .card-s:hover .show-contents, .card-m:hover .show-contents, .card-m:focus .show-contents, .card-L:last-of-type::after {
   content: "";
   position: absolute;
   top: 0;
@@ -664,6 +664,8 @@ textarea {
           flex-direction: column;
   margin: 38px 25px 0 25px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
+  color: #ffffff;
+  text-align: left;
 }
 .wrapper-card .wrapper-movie-title #movie-title {
   overflow: hidden;
@@ -689,6 +691,7 @@ textarea {
   bottom: 0;
   margin: 20px 20px 20px;
   font-size: 13px;
+  text-align: left;
 }
 .wrapper-card .wrapper-sub-text .sub-title {
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
@@ -731,18 +734,18 @@ textarea {
 .card-m .show-contents {
   display: none;
 }
-.card-m:hover {
+.card-m:hover, .card-m:focus {
   z-index: 10;
 }
-.card-m:hover .show-contents {
+.card-m:hover .show-contents, .card-m:focus .show-contents {
   position: absolute;
   bottom: 0;
   display: block;
 }
-.card-m:hover .wrapper-movie-title {
+.card-m:hover .wrapper-movie-title, .card-m:focus .wrapper-movie-title {
   margin: 30px 20px 0 20px;
 }
-.card-m:hover .wrapper-movie-title #movie-title {
+.card-m:hover .wrapper-movie-title #movie-title, .card-m:focus .wrapper-movie-title #movie-title {
   font-size: 14px;
   margin-bottom: 8px;
   overflow: hidden;
@@ -752,7 +755,7 @@ textarea {
   -webkit-box-orient: vertical;
   width: 200px;
 }
-.card-m:hover .wrapper-movie-title #movie-title-eng {
+.card-m:hover .wrapper-movie-title #movie-title-eng, .card-m:focus .wrapper-movie-title #movie-title-eng {
   font-size: 16px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -761,11 +764,11 @@ textarea {
   -webkit-box-orient: vertical;
   width: 200px;
 }
-.card-m:hover .wrapper-sub-text {
+.card-m:hover .wrapper-sub-text, .card-m:focus .wrapper-sub-text {
   margin: 20px 20px 20px;
   font-size: 11px;
 }
-.card-m:hover .wrapper-sub-text .sub-text {
+.card-m:hover .wrapper-sub-text .sub-text, .card-m:focus .wrapper-sub-text .sub-text {
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
