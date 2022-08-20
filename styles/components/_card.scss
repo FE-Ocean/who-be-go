@@ -131,7 +131,7 @@
     overflow-y: scroll;
     .card-s {
         @extend %card-base;
-        background-image: url('../../assets/images/min-post-default.jpg');
+        background-image: url('../../assets/images/min_post_default.jpg');
         border-radius: 15px;
         background-position: center center;
         width: 210px;
