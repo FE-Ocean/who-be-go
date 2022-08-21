@@ -13,33 +13,29 @@
 .page-title {
     font-size: 30px;
     color: $title-text;
-    margin-top: 70px;
-    margin-bottom: 70px;
+    margin-top: 60px;
+    margin-bottom: 50px;
     text-align: center;
 }
 
 .wrapper-list-review {
     margin: 0 auto;
-    max-width: 727px;
+    margin-top: 50px;
+    max-width: 540px;
     overflow-x: hidden;
 }
 
 .list-review {
-    margin: 0 -13.5px;
+    margin: 0 -14px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .item-review {
-    width: 50%;
-    padding: 0 13.5px;
-    margin-bottom: 47px;
+    width: 100%;
+    padding: 0 14px;
+    margin-bottom: 46px;
     position: relative;
-}
-
-// 게시글이 1개일 경우
-.item-review.one {
-    margin: 0 auto;
 }
 
 .movie-title {
@@ -50,46 +46,50 @@
 
 .details-movie {
     display: inline-block;
-    top: 0;
-    right: 12.5px;
+    top: 3px;
+    right: 22.5px;
     position: absolute;
-    // float: right;
     .btn-modal {
         cursor: pointer;
         &::marker {
             font-size: 0;
+        }
+        .ico-modal {
+            width: 25px;
+            height: 25px;
         }
     }
 }
 
 .img-rating {
     display: block;
-    width: 80px;
-    margin-top: 18px;
+    width: 100px;
+    margin-top: 12px;
     margin-bottom: 22px;
-}
-
-.wrapper-poster {
-    background-color: #191919;
-    border-radius: 4px;
 }
 
 .img-poster {
     border-radius: 4px;
-    width: 100%;
-    height: 350px;
+    width: 98%;
+    max-height: 400px;
     object-fit: contain;
 }
 
 .text-story {
     color: $content-text;
-    font-size: 14px;
-    margin-top: 40px;
-    margin-bottom: 21px;
+    font-size: 13px;
+    line-height: 1.3;
+    margin: 22px 0;
+    max: {
+        width: 98%;
+        height: 200px;
+    }
+    overflow-y: scroll;
+    border-radius: 4px;
 }
 
 .text-date {
-    color: $title-text;
+    color: $disabled-line;
     font-size: 12px;
 }
 
@@ -124,5 +124,25 @@
 
     .item-review {
         width: 100%;
+    }
+    .movie-title {
+        font-size: 20px;
+    }
+    .img-rating {
+        width: 80px;
+    }
+    .text-story {
+        font-size: 13px;
+    }
+    .text-date {
+        font-size: 11px;
+    }
+    .details-movie {
+        .btn-modal {
+            .ico-modal {
+                width: 22px;
+                height: 22px;
+            }
+        }
     }
 }

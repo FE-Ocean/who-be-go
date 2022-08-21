@@ -1,4 +1,14 @@
-"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+import { BASE_URL } from './BASE_URL.js';
+const movieTitle = document.querySelector('#movie-title');
 const textRating = document.querySelector('#text-rating');
 const radioRating = document.querySelectorAll('.radio-rating');
 const imgReview = document.querySelector('#img-review');
@@ -8,6 +18,7 @@ const saveButton = document.querySelector('#btn-save');
 // 서버로 전송할 이미지 (파일 정보가 담김)
 let img;
 const IMG_MAX_SIZE = 10 * 1024 * 1024;
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZjRmNjU0MTdhZTY2NjU4MWEzYWJlNiIsImV4cCI6MTY2NjA4Mjc2NywiaWF0IjoxNjYwODk4NzY3fQ.9mR2UQqnF8bBVLrwwgsqYQw2t5QK7ekw2uAo-jSVE8Y';
 const fileTypeArray = [
     'image/gif',
     'image/jpeg',
@@ -26,6 +37,48 @@ const setTextHeight = (e) => {
         saveButton.classList.add('disabled');
     }
 };
+// 이미지 업로드
+const handleUploadImage = (image) => __awaiter(void 0, void 0, void 0, function* () {
+    const formData = new FormData();
+    formData.append('image', image);
+    const data = yield fetch(BASE_URL + '/image/uploadfile', {
+        method: 'POST',
+        body: formData,
+    });
+    const result = yield data.json();
+    return `${BASE_URL}/${result.filename}`;
+});
+// 감상문 업로드
+const handleUploadReview = (e) => __awaiter(void 0, void 0, void 0, function* () {
+    e.preventDefault();
+    let imgUrl = '';
+    if (textRating.textContent === '') {
+        alert('별점을 입력해주세요.');
+        return;
+    }
+    if (img) {
+        imgUrl = yield handleUploadImage(img);
+    }
+    const reqData = {
+        post: {
+            content: movieTitle.textContent +
+                '@' +
+                textRating.textContent +
+                '@' +
+                textReview.value,
+            image: imgUrl,
+        },
+    };
+    yield fetch(BASE_URL + '/post', {
+        method: 'POST',
+        headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify(reqData),
+    });
+    window.location.href = '/pages/reviewDetail.html';
+});
 imgInput.addEventListener('change', (e) => {
     const fileReader = new FileReader();
     const target = e.currentTarget;
@@ -34,7 +87,6 @@ imgInput.addEventListener('change', (e) => {
     if (files === null) {
         return;
     }
-    console.log(files[0].type);
     // 파일 타입이 이미지가 아닐 때
     if (!fileTypeArray.includes(files[0].type)) {
         alert('이미지 파일만 첨부 가능합니다.');
@@ -49,7 +101,6 @@ imgInput.addEventListener('change', (e) => {
         if (fileReader.result !== null) {
             imgReview.classList.remove('disabled');
             img = files[0];
-            console.log(img);
             imgReview.src = fileReader.result.toString();
             target.value = '';
         }
@@ -60,6 +111,9 @@ textReview.addEventListener('keydown', (e) => {
 });
 textReview.addEventListener('keyup', (e) => {
     setTextHeight(e);
+});
+saveButton.addEventListener('click', (e) => {
+    handleUploadReview(e);
 });
 for (let rating of radioRating) {
     rating.addEventListener('click', () => {
