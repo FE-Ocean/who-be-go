@@ -1,45 +1,234 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  background-color: #292929;
+}
+
+.img-logo {
+  height: 90px;
+}
+.img-logo img {
+  margin-left: 90px;
+}
+.img-logo .btn-nav {
+  display: none;
+  position: absolute;
+  top: 33px;
+  right: 33px;
+  width: 25px;
+  height: 25px;
+  background: url(../../assets/icons/menu.svg) no-repeat 0 0;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 90px;
+  letter-spacing: -0.02em;
+}
+.nav li {
+  padding-left: 24px;
+  color: #cfcfcf;
+  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+.nav li:hover {
+  color: #ff5f5f;
+}
+.nav li a .selected {
+  color: #ff5f5f;
+}
+
+.main {
+  margin-top: 90px;
+  position: relative;
+  min-height: calc(100vh - 150px);
+}
+.main.wrapper-etc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 250px;
+  color: #f1f1f1;
+}
+.main.wrapper-etc .img-etc {
+  width: 181px;
+  margin-bottom: 20px;
+}
+.main.wrapper-etc .text-etc {
+  margin-bottom: 30px;
+  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
+  font-size: 25px;
+}
+
+.footer {
+  width: 100%;
+  height: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: #292929;
+  text-align: center;
+}
+.footer p {
+  display: inline-block;
+  margin-top: 25px;
+  color: #cfcfcf;
+  font-size: 10px;
+}
+
+.page-title {
+  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  color: #f1f1f1;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .img-logo img {
+    margin-left: 0;
+  }
+  .img-logo .btn-nav {
+    display: block;
+  }
+  .nav {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    margin-right: 0;
+  }
+  .nav.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .nav li {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+  }
+  .nav li:last-child {
+    padding-bottom: 20px;
+  }
+  .nav li a {
+    display: block;
+  }
+  .main.active {
+    margin-top: 296px;
+  }
+}
 .main {
   overflow: hidden;
+  padding: 0 5%;
 }
 
 .wrapper-review {
-  max-width: 739px;
+  max-width: 600px;
   margin: 70px auto;
   position: relative;
+  overflow-x: hidden;
 }
 
 .movie-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  width: 90%;
   color: #f1f1f1;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .btn-modal {
   position: absolute;
-  top: 0;
+  top: 3px;
   right: 0;
+}
+.btn-modal .ico-modal {
+  width: 30px;
+  height: 30px;
 }
 
 .img-rating {
   display: block;
-  width: 120px;
+  width: 100px;
   margin-top: 12px;
-  margin-bottom: 21px;
+  margin-bottom: 22px;
 }
 
 .img-poster {
   border-radius: 4px;
-  max-width: 100%;
-  height: 400px;
+  width: 98%;
+  max-height: 425px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .text-story {
   color: #dedede;
-  font-size: 16px;
-  margin-top: 60px;
-  margin-bottom: 40px;
+  font-size: 14px;
+  line-height: 1.3;
+  margin: 30px 0;
+  max-width: 98%;
+  max-height: 300px;
+  overflow-y: scroll;
+  border-radius: 4px;
 }
 
 .text-date {
   color: #767676;
-  font-size: 14px;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 768px) {
+  .movie-title {
+    font-size: 20px;
+  }
+  .img-rating {
+    width: 80px;
+  }
+  .text-story {
+    font-size: 13px;
+  }
+  .text-date {
+    font-size: 11px;
+  }
+  .btn-modal .ico-modal {
+    width: 22px;
+    height: 22px;
+  }
 }
