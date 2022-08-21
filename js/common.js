@@ -54,6 +54,12 @@ lastLi.addEventListener('click', () => {
 //     e.target.parentNode.parentNode.classList.add('disabled')
 // });
 
+modalAlertContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal-alert-container')) {
+        e.target.classList.add('disabled');
+    }
+});
+
 buttonCancel.forEach((elem) => {
     elem.addEventListener('click', (e) => {
         e.target.parentNode.parentNode.classList.add('disabled');
