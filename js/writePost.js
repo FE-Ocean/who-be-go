@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { BASE_URL } from './BASE_URL.js';
 const movieTitle = document.querySelector('#movie-title');
 const textRating = document.querySelector('#text-rating');
 const radioRating = document.querySelectorAll('.radio-rating');
@@ -18,7 +18,6 @@ const saveButton = document.querySelector('#btn-save');
 // 서버로 전송할 이미지 (파일 정보가 담김)
 let img;
 const IMG_MAX_SIZE = 10 * 1024 * 1024;
-const BASE_URL = 'https://mandarin.api.weniv.co.kr';
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZjRmNjU0MTdhZTY2NjU4MWEzYWJlNiIsImV4cCI6MTY2NjA4Mjc2NywiaWF0IjoxNjYwODk4NzY3fQ.9mR2UQqnF8bBVLrwwgsqYQw2t5QK7ekw2uAo-jSVE8Y';
 const fileTypeArray = [
     'image/gif',
