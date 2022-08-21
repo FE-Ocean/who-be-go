@@ -448,6 +448,7 @@ textarea {
 .btn-L.disabled, .btn-L:disabled, .btn-ms.disabled, .btn-ms:disabled, .btn-s.disabled, .btn-s:disabled {
   background-color: #ffc4c4;
   color: #ffffff;
+  pointer-events: none;
 }
 
 .btn-s {
@@ -623,7 +624,7 @@ textarea {
   background-image: url("../../assets/images/post_default.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 30px;
+  border-radius: 20px;
 }
 
 .review-album .card-s:hover .show-contents, .card-m:hover .show-contents, .card-m:focus .show-contents, .card-L:last-of-type::after {
@@ -634,7 +635,7 @@ textarea {
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.69);
-  border-radius: 30px;
+  border-radius: 20px;
   z-index: -1;
 }
 
@@ -662,7 +663,7 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 38px 25px 0 25px;
+  margin: 24px 20px 0 20px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   color: #ffffff;
   text-align: left;
@@ -673,24 +674,25 @@ textarea {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  width: 250px;
-  font-size: 20px;
-  margin-bottom: 10px;
+  width: 210px;
+  font-size: 18px;
+  margin-bottom: 4px;
 }
 .wrapper-card .wrapper-movie-title #movie-title-eng {
-  font-size: 18px;
+  font-size: 16px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  width: 250px;
+  width: 210px;
 }
 .wrapper-card .wrapper-sub-text {
+  width: 210px;
   position: absolute;
   bottom: 0;
-  margin: 20px 20px 20px;
-  font-size: 13px;
+  margin: 16px 20px;
+  font-size: 12px;
   text-align: left;
 }
 .wrapper-card .wrapper-sub-text .sub-title {
@@ -714,13 +716,15 @@ textarea {
   text-overflow: ellipsis;
   display: inline-block;
   white-space: nowrap;
-  width: 250px;
+  width: 200px;
 }
 
 .card-L {
-  width: 300px;
-  height: 425px;
+  width: 250px;
+  height: 360px;
   z-index: 10;
+  -o-object-fit: contain;
+     object-fit: contain;
   position: relative;
 }
 .card-L:first-of-type {
@@ -728,8 +732,8 @@ textarea {
 }
 .card-m {
   position: relative;
-  width: 250px;
-  height: 354px;
+  width: 210px;
+  height: 305px;
 }
 .card-m .show-contents {
   display: none;
@@ -743,37 +747,37 @@ textarea {
   display: block;
 }
 .card-m:hover .wrapper-movie-title, .card-m:focus .wrapper-movie-title {
-  margin: 30px 20px 0 20px;
+  margin: 26px 16px 4px 16px;
 }
 .card-m:hover .wrapper-movie-title #movie-title, .card-m:focus .wrapper-movie-title #movie-title {
-  font-size: 14px;
-  margin-bottom: 8px;
+  font-size: 16px;
+  margin-bottom: 4px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  width: 200px;
+  width: 180px;
 }
 .card-m:hover .wrapper-movie-title #movie-title-eng, .card-m:focus .wrapper-movie-title #movie-title-eng {
-  font-size: 16px;
+  font-size: 12px;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  width: 200px;
+  display: inline-block;
+  white-space: nowrap;
+  width: 180px;
 }
 .card-m:hover .wrapper-sub-text, .card-m:focus .wrapper-sub-text {
-  margin: 20px 20px 20px;
+  margin: 16px 16px 18px;
   font-size: 11px;
+  line-height: 0.9;
 }
 .card-m:hover .wrapper-sub-text .sub-text, .card-m:focus .wrapper-sub-text .sub-text {
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
   white-space: nowrap;
-  width: 200px;
+  width: 180px;
 }
 
 .review-album {
@@ -781,7 +785,7 @@ textarea {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  grid-template-columns: repeat(3, 210px);
+  grid-template-columns: repeat(3, 205px);
   gap: 20px;
   height: 721px;
   overflow-y: scroll;
@@ -790,8 +794,8 @@ textarea {
   background-image: url("../../assets/images/min_post_default.jpg");
   border-radius: 15px;
   background-position: center center;
-  width: 210px;
-  height: 210px;
+  width: 205px;
+  height: 205px;
 }
 .review-album .card-s .show-contents {
   display: none;
