@@ -6,8 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>영화 차트 | 후비고</title>
         <link rel="stylesheet" href="../styles/main.css" />
-        <link rel="stylesheet" href="../styles/components/common.css" />
-        <link rel="stylesheet" href="../styles/components/modal.css" />
         <link rel="stylesheet" href="../styles/pages/chart.css" />
         <script src="../js/common.js" defer></script>
     </head>
@@ -27,7 +25,7 @@
             <ul class="nav">
                 <li><a href="../pages/chart.html">영화차트</a></li>
                 <li><a href="../pages/search.html">영화찾아요</a></li>
-                <li><a href="../pages/writePost.html">영화감상문</a></li>
+                <li><a href="../pages/review.html">영화감상문</a></li>
                 <li><a href="../pages/myPage.html">마이페이지</a></li>
                 <li></li>
             </ul>
@@ -35,172 +33,10 @@
   <main class="main">
         <section class="container-chart">
             <h1 class="page-title">요즘 영화 뭐 하지?</h1>
-            <p class="text-description-chart">현재 상영 영화 순위를 알아봐요!</p>
+            <p class="text-description-chart">오늘의 박스오피스 순위를 알아봐요!</p>
             <section class="wrapper-card chart">
                 <h2 class="visually-hidden">영화 차트</h2>
-                <!-- 호버했을 때 영화 내용 나오게  -->
-                <article class="card-m">
-                    <h2 class="visually-hidden">11위 영화</h2>
-                    <div class="show-contents">
-                        <div class="wrapper-movie-title">
-                            <strong id="movie-title">라라 랜드</strong>
-                            <span id="movie-title-eng">LaLa Land</span>
-                        </div>
-                        <ul class="wrapper-sub-text">
-                            <li class="sub-title">Release
-                                <strong id="text-release" class="sub-text">2016.12.07</strong>
-                            </li>
-                            <li class="sub-title">Director
-                                <strong id="text-director" class="sub-text">감독이름</strong>
-                            </li>
-                            <li class="sub-title">Cast
-                                <strong id="text-cast" class="sub-text">라이언 고슬링, 엠마 스톤</strong>
-                            </li>
-                            <li class="sub-title">Genre
-
-                                <strong id="text-genre" class="sub-text">로맨스, 뮤지컬, 드라마</strong>
-                            </li>
-                            <li class="sub-title">Rate
-                                <strong id="text-rate" class="sub-text">4.98 / 5</strong>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="card-m">
-                    <h2 class="visually-hidden">2위 영화</h2>
-                    <div class="show-contents">
-                        <div class="wrapper-movie-title">
-                            <strong id="movie-title">라라 랜드</strong>
-                            <span id="movie-title-eng">LaLa Land</span>
-                        </div>
-                        <ul class="wrapper-sub-text">
-                            <li class="sub-title">Release
-                                <strong id="text-release" class="sub-text">2016.12.07</strong>
-                            </li>
-                            <li class="sub-title">Director
-                                <strong id="text-director" class="sub-text">감독이름</strong>
-                            </li>
-                            <li class="sub-title">Cast
-                                <strong id="text-cast" class="sub-text">라이언 고슬링, 엠마 스톤</strong>
-                            </li>
-                            <li class="sub-title">Genre
-
-                                <strong id="text-genre" class="sub-text">로맨스, 뮤지컬, 드라마</strong>
-                            </li>
-                            <li class="sub-title">Rate
-                                <strong id="text-rate" class="sub-text">4.98 / 5</strong>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="card-m">
-                    <h2 class="visually-hidden">3위 영화</h2>
-                    <div class="show-contents">
-                        <div class="wrapper-movie-title">
-                            <strong id="movie-title">라라 랜드</strong>
-                            <span id="movie-title-eng">LaLa Land</span>
-                        </div>
-                        <ul class="wrapper-sub-text">
-                            <li class="sub-title">Release
-                                <strong id="text-release" class="sub-text">2016.12.07</strong>
-                            </li>
-                            <li class="sub-title">Director
-                                <strong id="text-director" class="sub-text">감독이름</strong>
-                            </li>
-                            <li class="sub-title">Cast
-                                <strong id="text-cast" class="sub-text">라이언 고슬링, 엠마 스톤</strong>
-                            </li>
-                            <li class="sub-title">Genre
-
-                                <strong id="text-genre" class="sub-text">로맨스, 뮤지컬, 드라마</strong>
-                            </li>
-                            <li class="sub-title">Rate
-                                <strong id="text-rate" class="sub-text">4.98 / 5</strong>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="card-m">
-                    <h2 class="visually-hidden">4위 영화</h2>
-                    <div class="show-contents">
-                        <div class="wrapper-movie-title">
-                            <strong id="movie-title">라라 랜드</strong>
-                            <span id="movie-title-eng">LaLa Land</span>
-                        </div>
-                        <ul class="wrapper-sub-text">
-                            <li class="sub-title">Release
-                                <strong id="text-release" class="sub-text">2016.12.07</strong>
-                            </li>
-                            <li class="sub-title">Director
-                                <strong id="text-director" class="sub-text">감독이름</strong>
-                            </li>
-                            <li class="sub-title">Cast
-                                <strong id="text-cast" class="sub-text">라이언 고슬링, 엠마 스톤</strong>
-                            </li>
-                            <li class="sub-title">Genre
-
-                                <strong id="text-genre" class="sub-text">로맨스, 뮤지컬, 드라마</strong>
-                            </li>
-                            <li class="sub-title">Rate
-                                <strong id="text-rate" class="sub-text">4.98 / 5</strong>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="card-m">
-                    <h2 class="visually-hidden">5위 영화</h2>
-                    <div class="show-contents">
-                        <div class="wrapper-movie-title">
-                            <strong id="movie-title">라라 랜드</strong>
-                            <span id="movie-title-eng">LaLa Land</span>
-                        </div>
-                        <ul class="wrapper-sub-text">
-                            <li class="sub-title">Release
-                                <strong id="text-release" class="sub-text">2016.12.07</strong>
-                            </li>
-                            <li class="sub-title">Director
-                                <strong id="text-director" class="sub-text">감독이름</strong>
-                            </li>
-                            <li class="sub-title">Cast
-                                <strong id="text-cast" class="sub-text">라이언 고슬링, 엠마 스톤</strong>
-                            </li>
-                            <li class="sub-title">Genre
-
-                                <strong id="text-genre" class="sub-text">로맨스, 뮤지컬, 드라마</strong>
-                            </li>
-                            <li class="sub-title">Rate
-                                <strong id="text-rate" class="sub-text">4.98 / 5</strong>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="card-m">
-                    <h2 class="visually-hidden">6위 영화</h2>
-                    <div class="show-contents">
-                        <div class="wrapper-movie-title">
-                            <strong id="movie-title">라라 랜드</strong>
-                            <span id="movie-title-eng">LaLa Land</span>
-                        </div>
-                        <ul class="wrapper-sub-text">
-                            <li class="sub-title">Release
-                                <strong id="text-release" class="sub-text">2016.12.07</strong>
-                            </li>
-                            <li class="sub-title">Director
-                                <strong id="text-director" class="sub-text">감독이름</strong>
-                            </li>
-                            <li class="sub-title">Cast
-                                <strong id="text-cast" class="sub-text">라이언 고슬링, 엠마 스톤</strong>
-                            </li>
-                            <li class="sub-title">Genre
-
-                                <strong id="text-genre" class="sub-text">로맨스, 뮤지컬, 드라마</strong>
-                            </li>
-                            <li class="sub-title">Rate
-                                <strong id="text-rate" class="sub-text">4.98 / 5</strong>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
+                <!-- 호버했을 때 영화 내용 나오게, DOM 조작중 -->
             </section>
         </section>
     </main>
