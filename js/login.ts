@@ -1,4 +1,4 @@
-import { BASE_URL } from './BASE_URL.js';
+import { MANDARIN_URL } from './BASE_URL.js';
 
 const loginForm = document.querySelector('.form-login') as HTMLFormElement;
 const email = document.querySelector('#email') as HTMLInputElement;
@@ -31,7 +31,7 @@ const Login = async (e: Event) => {
     };
 
     try {
-        const res = await fetch(BASE_URL + '/user/login', {
+        const res = await fetch(MANDARIN_URL + '/user/login', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
