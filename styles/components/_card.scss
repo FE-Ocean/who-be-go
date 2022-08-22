@@ -5,7 +5,7 @@
     background-image: url('../../assets/images/post_default.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 30px;
+    border-radius: 20px;
 }
 
 %card-cover {
@@ -16,7 +16,7 @@
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.69);
-    border-radius: 30px;
+    border-radius: 20px;
     z-index: -1;
 }
 
@@ -35,26 +35,27 @@
     .wrapper-movie-title {
         display: flex;
         flex-direction: column;
-        margin: 38px 25px 0 25px;
+        margin: 24px 20px 0 20px;
         font-family: $font-bold;
         color: $white;
         text-align: left;
         #movie-title {
-            @include text-overflow-two(250px);
-            font-size: 20px;
-            margin-bottom: 10px;
+            @include text-overflow-two(210px);
+            font-size: 18px;
+            margin-bottom: 4px;
         }
         #movie-title-eng {
-            font-size: 18px;
-            @include text-overflow-two(250px);
+            font-size: 16px;
+            @include text-overflow-two(210px);
         }
     }
 
     .wrapper-sub-text {
+        width: 210px;
         position: absolute;
         bottom: 0;
-        margin: 20px 20px 20px;
-        font-size: 13px;
+        margin: 16px 20px;
+        font-size: 12px;
         text-align: left;
         .sub-title {
             font-family: $font-medium;
@@ -67,7 +68,7 @@
                 color: $title-text;
                 font-weight: 300;
                 margin: 8px 0;
-                @include text-overflow-one(250px);
+                @include text-overflow-one(200px);
             }
         }
     }
@@ -75,9 +76,10 @@
 
 .card-L {
     @extend %card-base;
-    width: 300px;
-    height: 425px;
+    width: 250px;
+    height: 360px;
     z-index: 10;
+    object-fit: contain;
     position: relative;
     &:first-of-type {
         margin-right: 20px;
@@ -90,8 +92,8 @@
 .card-m {
     @extend %card-base;
     position: relative;
-    width: 250px;
-    height: 354px;
+    width: 210px;
+    height: 305px;
     .show-contents {
         display: none;
     }
@@ -105,23 +107,24 @@
             display: block;
         }
         .wrapper-movie-title {
-            margin: 30px 20px 0 20px;
+            margin: 26px 16px 4px 16px;
 
             #movie-title {
-                font-size: 14px;
-                margin-bottom: 8px;
-                @include text-overflow-two(200px);
+                font-size: 16px;
+                margin-bottom: 4px;
+                @include text-overflow-two(180px);
             }
             #movie-title-eng {
-                font-size: 16px;
-                @include text-overflow-two(200px);
+                font-size: 12px;
+                @include text-overflow-one(180px);
             }
         }
         .wrapper-sub-text {
-            margin: 20px 20px 20px;
+            margin: 16px 16px 18px;
             font-size: 11px;
+            line-height: 0.9;
             .sub-text {
-                @include text-overflow-one(200px);
+                @include text-overflow-one(180px);
             }
         }
     }
@@ -129,7 +132,7 @@
 .review-album {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(3, 210px);
+    grid-template-columns: repeat(3, 205px);
     gap: 20px;
     height: 721px;
     overflow-y: scroll;
@@ -138,8 +141,8 @@
         background-image: url('../../assets/images/min_post_default.jpg');
         border-radius: 15px;
         background-position: center center;
-        width: 210px;
-        height: 210px;
+        width: 205px;
+        height: 205px;
         .show-contents {
             display: none;
         }
