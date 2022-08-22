@@ -45,6 +45,7 @@ const Login = (e) => __awaiter(void 0, void 0, void 0, function* () {
         const resJson = yield res.json();
         if (resJson.status !== 422) {
             localStorage.setItem('token', resJson.user.token);
+            localStorage.setItem('accountname', resJson.user.accountname);
             location.href = '../index.html';
         }
         else {

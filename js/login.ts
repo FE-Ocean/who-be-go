@@ -42,6 +42,7 @@ const Login = async (e: Event) => {
 
         if (resJson.status !== 422) {
             localStorage.setItem('token', resJson.user.token);
+            localStorage.setItem('accountname', resJson.user.accountname);
             location.href = '../index.html';
         } else {
             errMsg.classList.add('false');
