@@ -130,6 +130,7 @@
 .container-signup .wrapper-upload-img .ico-upload {
   width: 40px;
   height: 40px;
+  border-radius: 9999px;
   position: absolute;
   bottom: 0;
   right: 0;
