@@ -166,7 +166,7 @@
 .wrapper-list-review {
   margin: 0 auto;
   margin-top: 50px;
-  max-width: 540px;
+  max-width: 450px;
   overflow-x: hidden;
 }
 
@@ -270,13 +270,16 @@
 
 @media screen and (max-width: 768px) {
   .wrapper-list-review {
-    max-width: 450px;
+    max-width: 360px;
   }
   .item-review {
     width: 100%;
   }
   .movie-title {
     font-size: 20px;
+  }
+  .img-poster {
+    max-height: 305px;
   }
   .img-rating {
     width: 80px;

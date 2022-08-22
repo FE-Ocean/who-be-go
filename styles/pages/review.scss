@@ -21,7 +21,7 @@
 .wrapper-list-review {
     margin: 0 auto;
     margin-top: 50px;
-    max-width: 540px;
+    max-width: 450px;
     overflow-x: hidden;
 }
 
@@ -71,7 +71,7 @@
 .img-poster {
     border-radius: 4px;
     width: 98%;
-    max-height: 400px;
+    max-height: 360px;
     object-fit: contain;
 }
 
@@ -119,7 +119,7 @@
 
 @media screen and (max-width: 768px) {
     .wrapper-list-review {
-        max-width: 450px;
+        max-width: 360px;
     }
 
     .item-review {
@@ -127,6 +127,9 @@
     }
     .movie-title {
         font-size: 20px;
+    }
+    .img-poster {
+        max-height: 305px;
     }
     .img-rating {
         width: 80px;
