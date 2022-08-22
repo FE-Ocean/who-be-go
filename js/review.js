@@ -50,13 +50,10 @@ const setReviewList = (post) => {
         review.classList.add('disabled');
         noReview.classList.remove('disabled');
     }
-    else if (post.length === 1) {
-        // 리뷰가 1개일때 실행될 코드
-    }
-    else if (post.length >= 2) {
+    else {
         review.classList.remove('disabled');
         noReview.classList.add('disabled');
-        post.forEach((i) => {
+        for (let i of post) {
             const li = document.createElement('li');
             const strong = document.createElement('strong');
             const details = document.createElement('details');
@@ -78,7 +75,6 @@ const setReviewList = (post) => {
             strong.classList.add('movie-title');
             strong.textContent = movieTitle;
             strong.addEventListener('click', () => {
-                console.log('click');
                 window.location.href = `../pages/reviewDetail.html?id=${i.id}`;
             });
             details.classList.add('details-movie');
@@ -123,7 +119,7 @@ const setReviewList = (post) => {
             li.appendChild(p);
             li.appendChild(span);
             fragment.appendChild(li);
-        });
+        }
         listReview === null || listReview === void 0 ? void 0 : listReview.appendChild(fragment);
     }
 };
