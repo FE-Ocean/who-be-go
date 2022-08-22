@@ -41,18 +41,9 @@ lastLi.addEventListener('click', () => {
     if (window.localStorage.getItem('token')) {
         modalAlertContainer.classList.remove('disabled');
     } else {
-        // 로그아웃 테스트를 위한 임시 코드
-        window.localStorage.setItem('token', '123456');
-        checkLogin();
-        // 로그인 페이지로 이동
-        // window.location.href = '/pages/login.html';
+        window.location.href = '/pages/login.html';
     }
 });
-
-// buttonCancel.addEventListener('click', (e) => {
-//     // modalAlertContainer.classList.add('disabled');
-//     e.target.parentNode.parentNode.classList.add('disabled')
-// });
 
 modalAlertContainer.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal-alert-container')) {
@@ -68,7 +59,6 @@ buttonCancel.forEach((elem) => {
 
 buttonLogout.addEventListener('click', () => {
     window.localStorage.removeItem('token');
-    checkLogin();
     modalAlertContainer.classList.remove('disabled');
     window.location.href = '/index.html';
 });
