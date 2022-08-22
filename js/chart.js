@@ -1,16 +1,20 @@
+// 공통 키값
 const apiKey = '52ae81d6ce669361445e67ea47f30077'
-const today = '20220820'
-const items = '9'
-const reqUrl = `https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${apiKey}&targetDt=${today}&itemPerPage=${items}`
+let movCode = new Array;
+console.log(movCode)
+// 01. 영화순위, 영화이름(한국), 개봉일, 코드 불러오기
 
-fetch(reqUrl)
-  .then (response => response.json())
-  .then (data => {
-    let movieCharts = data.boxOfficeResult.dailyBoxOfficeList;
-    console.log(data)
+
+const getMovieNameApi = async () => {
+  const today = '20220821'
+  const items = '9'
+  const reqUrl_01 = `https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${apiKey}&targetDt=${today}&itemPerPage=${items}`
+
+  const res = await fetch (reqUrl_01)
+  if (res.status === 200) {
+    const data = await res.json();
+    let movieCharts = data.boxOfficeResult.dailyBoxOfficeList
     movieCharts.map(function(chart){
-
-
 
       const wrapperCard = document.querySelector(".wrapper-card.chart");
       const cardM = document.createElement('button');
@@ -67,9 +71,6 @@ fetch(reqUrl)
               textRate.setAttribute('id','text-director');
               textRate.setAttribute('class','sub-text')
               textRate.innerText = "4.98 / 5";
-      
-      
-      
         wrapperCard.append(cardM)
         cardM.append(ally)
         cardM.append(showContent)
@@ -87,15 +88,53 @@ fetch(reqUrl)
         subTitle_gen.append(textGen)
         cardHoverCont.append(subTitle_rate)
         subTitle_rate.append(textRate)
-
-
     })
+    movCode.push(movieCharts.movieCd)
+    return movieCharts
+    // 9개 배열 불러와짐
+  } else {
+    throw new Error('영화 순위 데이터안불러와짐')
+  }
+}
 
+getMovieNameApi()
+  .then((data) => {
+    console.log(data)
+    return 
   })
-  .catch (function(error) {
-    console.log(error)
-  }) 
-  
 
+
+// 02. 01번에서 코드불러오면 -> 영화이름(영어), 감독이름, 출연진, 장르
+
+const getMovieDetailApi = async () => {
+  const movieCode = movCode[0]
+  console.log(movieCode)
+  const reqUrl_02 = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=${apiKey}&movieCd=${movieCode}`
+  console.log(reqUrl_02);
+  const res = await fetch (reqUrl_02)
+  if (res.status === 200) {
+    const data = await res.json();
+    // const idnum = data.find((idnum) => idnum.movieInfoResult.movieInfo.movieCd === movieNameApi)
+
+    return data.movieInfoResult.movieInfo
+  } else {
+    throw new Error('영화 정보 안불러와짐')
+  }
+}
+
+getMovieDetailApi()
+  .then((data) => {
+  console.log(data)
+  })
+
+// 03. 남은거 - 영화포스터, 평점
+
+// api 합치기
+// const getMovie = async () => {
+//   const movieNameApi = await getMovieNameApi()
+//   const movieDetailApi = await getMovieDetailApi(movieNameApi)
+  
+//   return movieNameApi, movieDetailApi;
+// }
 
 
