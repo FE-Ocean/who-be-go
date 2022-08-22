@@ -96,7 +96,6 @@ password.addEventListener('input', (e) => {
         errorPassword.innerText = '*비밀번호는 6~16자 이내로 입력해 주세요.';
     }
 });
-//다음 버튼 클릭 이벤트
 nextBtn.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.href = './profile.html';

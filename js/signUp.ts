@@ -91,7 +91,6 @@ password.addEventListener('input', (e: Event) => {
     }
 });
 
-//다음 버튼 클릭 이벤트
 nextBtn.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.href = './profile.html';
