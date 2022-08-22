@@ -94,5 +94,5 @@ password.addEventListener('input', (e: Event) => {
 //다음 버튼 클릭 이벤트
 nextBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('프로필 설정으로 이동');
+    window.location.href = './profile.html';
 });
