@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,14 +7,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { MANDARIN_URL } from './BASE_URL.js';
+const noReview = document.querySelector('.wrapper-noreview');
+const review = document.querySelector('.wrapper-review');
 const modalButton = document.querySelectorAll('.btn-modal');
 const modalDropbox = document.querySelectorAll('.modal-dropbox');
 // 영화 리스트 불러오기
 const getReviewList = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // 로그인 구현되면 로컬스토리지에서 받아오는 형식으로 수정예정
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZmYyOTY3MTdhZTY2NjU4MWE1ZWYwMSIsImV4cCI6MTY2NjA3MzQ0NywiaWF0IjoxNjYwODg5NDQ3fQ.E6AKCeNOXPKQUdo8fkIaEsvUrl_bovHU6aFNgSw2jzU';
-        const url = 'https://mandarin.api.weniv.co.kr/post/feocean/userpost';
+        const token = window.localStorage.getItem('token');
+        const accountname = window.localStorage.getItem('accountname');
+        const url = `${MANDARIN_URL}/post/${accountname}/userpost`;
         const response = yield fetch(url, {
             method: 'GET',
             headers: {
@@ -42,12 +44,13 @@ const setReviewList = (post) => {
     const fragment = document.createDocumentFragment();
     if (post.length === 0) {
         // 리뷰가 0개일때 실행될 코드
+        review.classList.add('disabled');
+        noReview.classList.remove('disabled');
     }
-    else if (post.length === 1) {
-        // 리뷰가 1개일때 실행될 코드
-    }
-    else if (post.length >= 2) {
-        post.forEach((i) => {
+    else {
+        review.classList.remove('disabled');
+        noReview.classList.add('disabled');
+        for (let i of post) {
             const li = document.createElement('li');
             const strong = document.createElement('strong');
             const details = document.createElement('details');
@@ -61,9 +64,16 @@ const setReviewList = (post) => {
             const imgPoster = document.createElement('img');
             const p = document.createElement('p');
             const span = document.createElement('span');
+            const content = i.content.split('@');
+            const movieTitle = content[0];
+            const rating = content[1];
+            const review = content[2];
             li.classList.add('item-review');
             strong.classList.add('movie-title');
-            strong.textContent = '라라랜드';
+            strong.textContent = movieTitle;
+            strong.addEventListener('click', () => {
+                window.location.href = `../pages/reviewDetail.html?id=${i.id}`;
+            });
             details.classList.add('details-movie');
             summary.classList.add('btn-modal');
             imgMore.setAttribute('src', '../assets/icons/icon-more-vertical.svg');
@@ -77,15 +87,16 @@ const setReviewList = (post) => {
             buttonDelete.classList.add('btn-dropbox');
             buttonDelete.setAttribute('id', 'btn-show-alert');
             buttonDelete.textContent = '삭제';
+            // 리뷰 페이지의 별점도 라디오버튼으로 보여주실 건가요?
             imgRating.classList.add('img-rating');
             imgRating.setAttribute('src', '../assets/icons/star-yellow.svg');
-            imgRating.setAttribute('alt', '영화별점');
+            imgRating.setAttribute('alt', rating);
             divWrapperPoster.classList.add('wrapper-poster');
             imgPoster.classList.add('img-poster');
             imgPoster.setAttribute('src', `${i.image}`);
-            imgPoster.setAttribute('alt', '영화포스터');
+            imgPoster.setAttribute('alt', '리뷰 이미지');
             p.classList.add('text-story');
-            p.textContent = `${i.content}`;
+            p.textContent = `${review}`;
             span.classList.add('text-date');
             span.textContent = `${i.createdAt
                 .slice(0, 11)
@@ -105,7 +116,7 @@ const setReviewList = (post) => {
             li.appendChild(p);
             li.appendChild(span);
             fragment.appendChild(li);
-        });
+        }
         listReview === null || listReview === void 0 ? void 0 : listReview.appendChild(fragment);
     }
 };

@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,15 +7,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { MANDARIN_URL } from './BASE_URL.js';
 // URL 이 ?id=123123 이런식으로 온다고 가정하겠습니다.
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get('id');
 // 리뷰 상세글 불러오기
 const getReviewDetail = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log(id);
     try {
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZmYyOTY3MTdhZTY2NjU4MWE1ZWYwMSIsImV4cCI6MTY2NjA3MzQ0NywiaWF0IjoxNjYwODg5NDQ3fQ.E6AKCeNOXPKQUdo8fkIaEsvUrl_bovHU6aFNgSw2jzU';
-        const url = `https://mandarin.api.weniv.co.kr/post/${id}`;
+        const token = window.localStorage.getItem('token');
+        const url = `${MANDARIN_URL}/post/${id}`;
         const response = yield fetch(url, {
             method: 'GET',
             headers: {
@@ -36,22 +37,24 @@ const getReviewDetail = (id) => __awaiter(void 0, void 0, void 0, function* () {
         console.error(error);
     }
 });
-// 현재는 임시 ID값을 넣어주었습니다.
-getReviewDetail('62ff2be317ae666581a5ef33');
 // id값으로 받아온 리뷰상세 설정해주기
 const setReviewDetail = (post) => {
     const h2 = document.querySelector('.movie-title');
     const imgPoster = document.querySelector('.img-poster');
     const p = document.querySelector('.text-story');
     const span = document.querySelector('.text-date');
+    const contentArray = post.content.split('@');
+    const movieTitle = contentArray[0];
+    const rating = contentArray[1];
+    const review = contentArray[2];
     if (h2 instanceof HTMLHeadingElement) {
-        h2.textContent = '임시 제목입니다.';
+        h2.textContent = movieTitle;
     }
     if (imgPoster instanceof HTMLImageElement) {
         imgPoster.src = `${post.image}`;
     }
     if (p instanceof HTMLParagraphElement) {
-        p.textContent = `${post.content}`;
+        p.textContent = review;
     }
     if (span instanceof HTMLSpanElement) {
         span.textContent = `${post.createdAt
@@ -61,3 +64,7 @@ const setReviewDetail = (post) => {
             .replace('T', '일')}`;
     }
 };
+// 현재는 임시 ID값을 넣어주었습니다.
+if (id !== null) {
+    getReviewDetail(id);
+}
