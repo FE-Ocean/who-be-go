@@ -68,7 +68,7 @@ const handleUploadReview = async (e: Event) => {
             image: imgUrl,
         },
     };
-    await fetch(MANDARIN_URL + '/post', {
+    const data = await fetch(MANDARIN_URL + '/post', {
         method: 'POST',
         headers: {
             Authorization: `Bearer ${token}`,
@@ -76,7 +76,8 @@ const handleUploadReview = async (e: Event) => {
         },
         body: JSON.stringify(reqData),
     });
-    window.location.href = '/pages/reviewDetail.html';
+    const result = await data.json();
+    window.location.href = `/pages/reviewDetail.html?id=${result.post.id}`;
 };
 
 imgInput.addEventListener('change', (e: Event) => {
