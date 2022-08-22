@@ -3,26 +3,6 @@ const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get('id');
 
-interface Post {
-    id: string;
-    content: string;
-    image: string;
-    createdAt: string;
-    updatedAt: string;
-    hearted: boolean;
-    heartCount: number;
-    commentCount: number;
-    author: {
-        _id: string;
-        username: number;
-        accountname: number;
-        following: string[];
-        follower: string[];
-        followerCount: number;
-        followingCount: number;
-    };
-}
-
 // 리뷰 상세글 불러오기
 const getReviewDetail = async (id: string) => {
     try {
