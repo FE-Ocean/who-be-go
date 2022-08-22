@@ -69,7 +69,7 @@ const handleUploadReview = (e) => __awaiter(void 0, void 0, void 0, function* ()
             image: imgUrl,
         },
     };
-    yield fetch(MANDARIN_URL + '/post', {
+    const data = yield fetch(MANDARIN_URL + '/post', {
         method: 'POST',
         headers: {
             Authorization: `Bearer ${token}`,
@@ -77,7 +77,8 @@ const handleUploadReview = (e) => __awaiter(void 0, void 0, void 0, function* ()
         },
         body: JSON.stringify(reqData),
     });
-    window.location.href = '/pages/reviewDetail.html';
+    const result = yield data.json();
+    window.location.href = `/pages/reviewDetail.html?id=${result.post.id}`;
 });
 imgInput.addEventListener('change', (e) => {
     const fileReader = new FileReader();
