@@ -1,34 +1,20 @@
+import { MANDARIN_URL } from './BASE_URL.js';
+import PostInterface from './postInterface';
+
+const noReview = document.querySelector('.wrapper-noreview') as HTMLElement;
+const review = document.querySelector('.wrapper-review') as HTMLElement;
 const modalButton = document.querySelectorAll('.btn-modal');
 const modalDropbox = document.querySelectorAll('.modal-dropbox');
-
-type Post = {
-    id: string;
-    content: string;
-    image: string;
-    createdAt: string;
-    updatedAt: string;
-    hearted: boolean;
-    heartCount: number;
-    commentCount: number;
-    author: {
-        _id: string;
-        username: string;
-        accountname: string;
-        following: string[];
-        follower: string[];
-        followerCount: number;
-        followingCount: number;
-    };
-};
 
 // 영화 리스트 불러오기
 const getReviewList = async () => {
     try {
         // 로그인 구현되면 로컬스토리지에서 받아오는 형식으로 수정예정
-        const token =
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZmYyOTY3MTdhZTY2NjU4MWE1ZWYwMSIsImV4cCI6MTY2NjA3MzQ0NywiaWF0IjoxNjYwODg5NDQ3fQ.E6AKCeNOXPKQUdo8fkIaEsvUrl_bovHU6aFNgSw2jzU';
-
-        const url = 'https://mandarin.api.weniv.co.kr/post/feocean/userpost';
+        const token = window.localStorage.getItem('token');
+        // 임시 username
+        const accountname = 'doonkeeemaan';
+        // const accountname = window.localStorage.getItem('accountname');
+        const url = `${MANDARIN_URL}/post/${accountname}/userpost`;
 
         const response = await fetch(url, {
             method: 'GET',
@@ -38,7 +24,6 @@ const getReviewList = async () => {
             },
         });
         const json = await response.json();
-
         if (json.status === '404') {
             throw new Error('해당 계정이 존재하지 않습니다.');
         } else {
@@ -52,15 +37,19 @@ const getReviewList = async () => {
 getReviewList();
 
 // 영화리뷰 리스트 저장하기
-const setReviewList = (post: Post[]) => {
+const setReviewList = (post: PostInterface[]) => {
     const listReview = document.querySelector('.list-review');
     const fragment = document.createDocumentFragment();
 
     if (post.length === 0) {
         // 리뷰가 0개일때 실행될 코드
+        review.classList.add('disabled');
+        noReview.classList.remove('disabled');
     } else if (post.length === 1) {
         // 리뷰가 1개일때 실행될 코드
     } else if (post.length >= 2) {
+        review.classList.remove('disabled');
+        noReview.classList.add('disabled');
         post.forEach((i) => {
             const li = document.createElement('li');
             const strong = document.createElement('strong');
@@ -76,9 +65,18 @@ const setReviewList = (post: Post[]) => {
             const p = document.createElement('p');
             const span = document.createElement('span');
 
+            const content = i.content.split('@');
+            const movieTitle = content[0];
+            const rating = content[1];
+            const review = content[2];
+
             li.classList.add('item-review');
             strong.classList.add('movie-title');
-            strong.textContent = '라라랜드';
+            strong.textContent = movieTitle;
+            strong.addEventListener('click', () => {
+                console.log('click');
+                window.location.href = `../pages/reviewDetail.html?id=${i.id}`;
+            });
             details.classList.add('details-movie');
             summary.classList.add('btn-modal');
             imgMore.setAttribute(
@@ -95,15 +93,16 @@ const setReviewList = (post: Post[]) => {
             buttonDelete.classList.add('btn-dropbox');
             buttonDelete.setAttribute('id', 'btn-show-alert');
             buttonDelete.textContent = '삭제';
+            // 리뷰 페이지의 별점도 라디오버튼으로 보여주실 건가요?
             imgRating.classList.add('img-rating');
             imgRating.setAttribute('src', '../assets/icons/star-yellow.svg');
-            imgRating.setAttribute('alt', '영화별점');
+            imgRating.setAttribute('alt', rating);
             divWrapperPoster.classList.add('wrapper-poster');
             imgPoster.classList.add('img-poster');
             imgPoster.setAttribute('src', `${i.image}`);
-            imgPoster.setAttribute('alt', '영화포스터');
+            imgPoster.setAttribute('alt', '리뷰 이미지');
             p.classList.add('text-story');
-            p.textContent = `${i.content}`;
+            p.textContent = `${review}`;
             span.classList.add('text-date');
             span.textContent = `${i.createdAt
                 .slice(0, 11)
