@@ -13,8 +13,7 @@ const saveButton = document.querySelector('#btn-save') as HTMLButtonElement;
 // 서버로 전송할 이미지 (파일 정보가 담김)
 let img: File;
 const IMG_MAX_SIZE = 10 * 1024 * 1024;
-const token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZjRmNjU0MTdhZTY2NjU4MWEzYWJlNiIsImV4cCI6MTY2NjA4Mjc2NywiaWF0IjoxNjYwODk4NzY3fQ.9mR2UQqnF8bBVLrwwgsqYQw2t5QK7ekw2uAo-jSVE8Y';
+const token = window.localStorage.getItem('token');
 
 const fileTypeArray: string[] = [
     'image/gif',
