@@ -15,11 +15,8 @@ const modalDropbox = document.querySelectorAll('.modal-dropbox');
 // 영화 리스트 불러오기
 const getReviewList = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // 로그인 구현되면 로컬스토리지에서 받아오는 형식으로 수정예정
         const token = window.localStorage.getItem('token');
-        // 임시 username
-        const accountname = 'doonkeeemaan';
-        // const accountname = window.localStorage.getItem('accountname');
+        const accountname = window.localStorage.getItem('accountname');
         const url = `${MANDARIN_URL}/post/${accountname}/userpost`;
         const response = yield fetch(url, {
             method: 'GET',
