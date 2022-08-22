@@ -7,7 +7,9 @@
 }
 
 .wrapper-review {
-    // display: none;
+    &.disabled {
+        display: none;
+    }
 }
 
 .page-title {
@@ -42,6 +44,7 @@
     @include text-overflow-two(90%);
     color: $title-text;
     font-size: 25px;
+    cursor: pointer;
 }
 
 .details-movie {
@@ -84,7 +87,7 @@
         width: 98%;
         height: 200px;
     }
-    overflow-y: scroll;
+    overflow-y: auto;
     border-radius: 4px;
 }
 
@@ -102,7 +105,9 @@
     transform: translate(-50%, -50%);
     margin: 0;
     text-align: center;
-    display: none;
+    &.disabled {
+        display: none;
+    }
 }
 
 .text-description {
