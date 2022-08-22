@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { BASE_URL } from './BASE_URL.js';
+import { MANDARIN_URL } from './BASE_URL.js';
 const movieTitle = document.querySelector('#movie-title');
 const textRating = document.querySelector('#text-rating');
 const radioRating = document.querySelectorAll('.radio-rating');
@@ -41,12 +41,12 @@ const setTextHeight = (e) => {
 const handleUploadImage = (image) => __awaiter(void 0, void 0, void 0, function* () {
     const formData = new FormData();
     formData.append('image', image);
-    const data = yield fetch(BASE_URL + '/image/uploadfile', {
+    const data = yield fetch(MANDARIN_URL + '/image/uploadfile', {
         method: 'POST',
         body: formData,
     });
     const result = yield data.json();
-    return `${BASE_URL}/${result.filename}`;
+    return `${MANDARIN_URL}/${result.filename}`;
 });
 // 감상문 업로드
 const handleUploadReview = (e) => __awaiter(void 0, void 0, void 0, function* () {
@@ -69,7 +69,7 @@ const handleUploadReview = (e) => __awaiter(void 0, void 0, void 0, function* ()
             image: imgUrl,
         },
     };
-    yield fetch(BASE_URL + '/post', {
+    yield fetch(MANDARIN_URL + '/post', {
         method: 'POST',
         headers: {
             Authorization: `Bearer ${token}`,

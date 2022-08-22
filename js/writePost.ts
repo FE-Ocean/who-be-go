@@ -1,4 +1,4 @@
-import { BASE_URL } from './BASE_URL.js';
+import { MANDARIN_URL } from './BASE_URL.js';
 
 const movieTitle = document.querySelector(
     '#movie-title'
@@ -39,12 +39,12 @@ const setTextHeight = (e: Event) => {
 const handleUploadImage = async (image: File) => {
     const formData = new FormData();
     formData.append('image', image);
-    const data = await fetch(BASE_URL + '/image/uploadfile', {
+    const data = await fetch(MANDARIN_URL + '/image/uploadfile', {
         method: 'POST',
         body: formData,
     });
     const result = await data.json();
-    return `${BASE_URL}/${result.filename}`;
+    return `${MANDARIN_URL}/${result.filename}`;
 };
 
 // 감상문 업로드
@@ -69,7 +69,7 @@ const handleUploadReview = async (e: Event) => {
             image: imgUrl,
         },
     };
-    await fetch(BASE_URL + '/post', {
+    await fetch(MANDARIN_URL + '/post', {
         method: 'POST',
         headers: {
             Authorization: `Bearer ${token}`,
