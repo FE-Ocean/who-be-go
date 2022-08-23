@@ -13,6 +13,7 @@ const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get('id');
 const movieTitle = document.querySelector('#movie-title');
+const movieSubTitle = document.querySelector('#movie-title-eng');
 const textRating = document.querySelector('#text-rating');
 const radioRating = document.querySelectorAll('.radio-rating');
 const imgReview = document.querySelector('#img-review');
@@ -52,6 +53,8 @@ const handleEditReview = (e) => __awaiter(void 0, void 0, void 0, function* () {
         post: {
             content: movieTitle.textContent +
                 '@' +
+                movieSubTitle.textContent +
+                '@' +
                 textRating.textContent +
                 '@' +
                 textReview.value,
@@ -68,14 +71,15 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
         const post = yield getReviewDetail(id);
         const contentArray = post.content.split('@');
         movieTitle.textContent = contentArray[0];
-        textRating.textContent = contentArray[1];
+        movieSubTitle.textContent = contentArray[1];
+        textRating.textContent = contentArray[2];
         for (let rating of radioRating) {
             const ratingValue = rating.value;
-            if (rating !== null && ratingValue === contentArray[1]) {
+            if (rating !== null && ratingValue === contentArray[2]) {
                 rating.checked = true;
             }
         }
-        textReview.textContent = contentArray[2];
+        textReview.textContent = contentArray[3];
         imgReview.src = post.image;
         imgUrl = post.image;
     }

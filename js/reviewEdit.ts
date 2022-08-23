@@ -8,6 +8,9 @@ const id = params.get('id');
 const movieTitle = document.querySelector(
     '#movie-title'
 ) as HTMLParagraphElement;
+const movieSubTitle = document.querySelector(
+    '#movie-title-eng'
+) as HTMLParagraphElement;
 const textRating = document.querySelector('#text-rating') as HTMLSpanElement;
 const radioRating = document.querySelectorAll('.radio-rating');
 const imgReview = document.querySelector('#img-review') as HTMLImageElement;
@@ -51,6 +54,8 @@ const handleEditReview = async (e: Event) => {
             content:
                 movieTitle.textContent +
                 '@' +
+                movieSubTitle.textContent +
+                '@' +
                 textRating.textContent +
                 '@' +
                 textReview.value,
@@ -68,14 +73,15 @@ window.addEventListener('load', async () => {
         const post = await getReviewDetail(id);
         const contentArray = post.content.split('@');
         movieTitle.textContent = contentArray[0];
-        textRating.textContent = contentArray[1];
+        movieSubTitle.textContent = contentArray[1];
+        textRating.textContent = contentArray[2];
         for (let rating of radioRating) {
             const ratingValue = (rating as HTMLInputElement).value;
-            if (rating !== null && ratingValue === contentArray[1]) {
+            if (rating !== null && ratingValue === contentArray[2]) {
                 (rating as HTMLInputElement).checked = true;
             }
         }
-        textReview.textContent = contentArray[2];
+        textReview.textContent = contentArray[3];
         imgReview.src = post.image;
         imgUrl = post.image;
     }

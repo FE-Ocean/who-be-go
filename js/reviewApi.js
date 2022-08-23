@@ -81,7 +81,6 @@ const editReview = (id, reqData) => __awaiter(void 0, void 0, void 0, function* 
             body: JSON.stringify(reqData),
         });
         const result = yield data.json();
-        console.log(result);
         if (result.post) {
             return result.post.id;
         }

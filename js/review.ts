@@ -41,8 +41,8 @@ const setReviewList = (post: PostInterface[]) => {
 
             const content = i.content.split('@');
             const movieTitle = content[0];
-            const rating = content[1];
-            const review = content[2];
+            const rating = content[2];
+            const review = content[3];
 
             li.classList.add('item-review');
             strong.classList.add('movie-title');

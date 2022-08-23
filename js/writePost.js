@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { handleUploadImage } from './imageApi.js';
 import { writeReview } from './reviewApi.js';
 const movieTitle = document.querySelector('#movie-title');
+const movieSubTitle = document.querySelector('#movie-title-eng');
 const textRating = document.querySelector('#text-rating');
 const radioRating = document.querySelectorAll('.radio-rating');
 const imgReview = document.querySelector('#img-review');
@@ -51,6 +52,8 @@ const handleUploadReview = (e) => __awaiter(void 0, void 0, void 0, function* ()
     const reqData = {
         post: {
             content: movieTitle.textContent +
+                '@' +
+                movieSubTitle.textContent +
                 '@' +
                 textRating.textContent +
                 '@' +

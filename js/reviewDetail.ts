@@ -15,8 +15,8 @@ const setReviewDetail = (post: PostInterface) => {
 
     const contentArray = post.content.split('@');
     const movieTitle = contentArray[0];
-    const rating = contentArray[1];
-    const review = contentArray[2];
+    const rating = contentArray[2];
+    const review = contentArray[3];
 
     if (h2 instanceof HTMLHeadingElement) {
         h2.textContent = movieTitle;
