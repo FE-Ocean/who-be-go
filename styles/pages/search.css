@@ -77,3 +77,8 @@
   width: 24px;
   height: 24px;
 }
+
+.container-searched-list {
+  padding-top: 25px;
+  color: #cfcfcf;
+}

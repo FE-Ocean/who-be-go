@@ -7,8 +7,6 @@
         <title>영화 찾아요 | 후비고</title>
         <link rel="stylesheet" href="../styles/main.css" />
         <link rel="stylesheet" href="../styles/pages/search.css" />
-        <link rel="stylesheet" href="../styles/components/common.css" />
-        <link rel="stylesheet" href="../styles/components/modal.css" />
         <script src="../js/common.js" defer></script>
     </head>
     <body>
@@ -25,12 +23,13 @@
             <ul class="nav">
                 <li><a href="../pages/chart.html">영화차트</a></li>
                 <li><a href="../pages/search.html">영화찾아요</a></li>
-                <li><a href="../pages/writePost.html">영화감상문</a></li>
+                <li><a href="../pages/review.html">영화감상문</a></li>
                 <li><a href="../pages/myPage.html">마이페이지</a></li>
                 <li></li>
             </ul>
         </header>
         <main class="main search-main">
+            <!-- 이부분 마크업 고민됨 -->
             <h2 class="text-heading">영화 찾아요</h2>
             <p class="text-description">
                 영화를 검색해서 독후감을 작성해 보세요!
@@ -40,9 +39,12 @@
                     type="text"
                     placeholder="제목으로 검색해 보세요"
                     class="input-search"
+                    onkeyup="search()"
+                    id="input-search"
                 />
                 <div class="img-search"></div>
             </div>
+            <section class="container-searched-list"></section>
         </main>
         <footer class="footer">
             <p>Copyright FE Ocean all right reserved.</p>
@@ -56,5 +58,9 @@
                 </button>
             </div>
         </div>
+        <!-- <script type="module">
+            import { search } from '../js/search.js';
+        </script> -->
+        <script src="../js/search.js"></script>
     </body>
 </html>
