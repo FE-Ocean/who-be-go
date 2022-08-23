@@ -33,7 +33,7 @@ const setReviewList = (post: PostInterface[]) => {
             const divDropbox = document.createElement('div');
             const buttonEdit = document.createElement('button');
             const buttonDelete = document.createElement('button');
-            const imgRating = document.createElement('img');
+            const imgRating = document.createElement('div');
             const divWrapperPoster = document.createElement('div');
             const imgPoster = document.createElement('img');
             const p = document.createElement('p');
@@ -42,6 +42,7 @@ const setReviewList = (post: PostInterface[]) => {
             const content = i.content.split('@');
             const movieTitle = content[0];
             const rating = content[2];
+            const widthRating: string = (parseFloat(rating) / 5) * 100 + '%';
             const review = content[3];
 
             li.classList.add('item-review');
@@ -74,12 +75,21 @@ const setReviewList = (post: PostInterface[]) => {
                 modalAlertContainer.classList.remove('disabled');
             });
             // 리뷰 페이지의 별점도 라디오버튼으로 보여주실 건가요?
-            imgRating.classList.add('img-rating');
-            imgRating.setAttribute('src', '../assets/icons/star-yellow.svg');
-            imgRating.setAttribute('alt', rating);
+            imgRating.classList.add('wrapper-rating');
+            imgRating.style.setProperty('--width-rating', widthRating);
             divWrapperPoster.classList.add('wrapper-poster');
             imgPoster.classList.add('img-poster');
-            imgPoster.setAttribute('src', `${i.image}`);
+            if (
+                i.image === '' ||
+                i.image === 'https://mandarin.api.weniv.co.kr/undefined'
+            ) {
+                imgPoster.setAttribute(
+                    'src',
+                    '../assets/images/max_post_default.jpg'
+                );
+            } else {
+                imgPoster.setAttribute('src', `${i.image}`);
+            }
             imgPoster.setAttribute('alt', '리뷰 이미지');
             p.classList.add('text-story');
             p.textContent = `${review}`;
