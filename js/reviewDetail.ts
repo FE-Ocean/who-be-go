@@ -1,5 +1,19 @@
-import { getReviewDetail } from './reviewApi.js';
+import { getReviewDetail, deleteReview } from './reviewApi.js';
 import PostInterface from './postInterface';
+
+const modalButton = document.querySelector('.btn-modal') as HTMLButtonElement;
+const modalDropbox = document.querySelector('.modal-dropbox') as HTMLElement;
+const modalAlertContainer = document.querySelectorAll(
+    '.modal-alert-container'
+)[1];
+// 수정 버튼
+const buttonEdit = document.querySelector('#btn-edit') as HTMLButtonElement;
+// (드롭박스의) 삭제 버튼
+const buttonShowAlert = document.querySelector(
+    '#btn-show-alert'
+) as HTMLButtonElement;
+// (모달의) 삭제 버튼
+const buttonDelete = document.querySelector('#btn-delete') as HTMLButtonElement;
 
 // URL 이 ?id=123123 이런식으로 온다고 가정하겠습니다.
 const queryString = window.location.search;
@@ -43,5 +57,32 @@ window.addEventListener('load', async () => {
     if (id !== null) {
         const currentPost = await getReviewDetail(id);
         setReviewDetail(currentPost);
+    }
+});
+
+modalButton.addEventListener('click', () => {
+    modalDropbox.classList.toggle('disabled');
+});
+
+window.addEventListener('click', (e: Event) => {
+    const target = e.target as HTMLElement;
+    if (!target.classList.contains('ico-modal')) {
+        modalDropbox.classList.add('disabled');
+    }
+});
+
+buttonEdit.addEventListener('click', () => {
+    window.location.href = `../pages/reviewEdit.html?id=${id}`;
+});
+
+buttonShowAlert.addEventListener("click", () => {
+    modalAlertContainer.classList.remove('disabled');
+});
+
+buttonDelete.addEventListener('click', async () => {
+    if (id !== null) {
+        await deleteReview(id);
+        modalAlertContainer.classList.add('disabled');
+        window.location.href = '../pages/review.html';
     }
 });

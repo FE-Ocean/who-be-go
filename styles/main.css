@@ -1039,6 +1039,9 @@ textarea {
           align-items: flex-start;
   padding: 6px;
 }
+.modal-dropbox.disabled {
+    display: none;
+}
 .modal-dropbox::before {
   content: "";
   display: block;
