@@ -59,6 +59,7 @@ buttonCancel.forEach((elem) => {
 
 buttonLogout.addEventListener('click', () => {
     window.localStorage.removeItem('token');
+    window.localStorage.removeItem('accountname');
     modalAlertContainer.classList.remove('disabled');
     window.location.href = '/index.html';
 });
