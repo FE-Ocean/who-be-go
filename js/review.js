@@ -7,38 +7,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { MANDARIN_URL } from './BASE_URL.js';
+import { getReviewList, deleteReview } from './reviewApi.js';
 const noReview = document.querySelector('.wrapper-noreview');
 const review = document.querySelector('.wrapper-review');
 const modalButton = document.querySelectorAll('.btn-modal');
 const modalDropbox = document.querySelectorAll('.modal-dropbox');
-// 영화 리스트 불러오기
-const getReviewList = () => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const token = window.localStorage.getItem('token');
-        const accountname = window.localStorage.getItem('accountname');
-        const url = `${MANDARIN_URL}/post/${accountname}/userpost`;
-        const response = yield fetch(url, {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-type': 'application/json',
-            },
-        });
-        const json = yield response.json();
-        console.log('json : ', json);
-        if (json.status === '404') {
-            throw new Error('해당 계정이 존재하지 않습니다.');
-        }
-        else {
-            setReviewList(json.post);
-        }
-    }
-    catch (error) {
-        console.error(error);
-    }
-});
-getReviewList();
+const modalAlertContainer = document.querySelectorAll('.modal-alert-container')[1];
+// 삭제 버튼
+const buttonDelete = document.querySelector('#btn-delete');
+let postId = '';
 // 영화리뷰 리스트 저장하기
 const setReviewList = (post) => {
     const listReview = document.querySelector('.list-review');
@@ -67,9 +44,9 @@ const setReviewList = (post) => {
             const span = document.createElement('span');
             const content = i.content.split('@');
             const movieTitle = content[0];
-            const rating = content[1];
-            const review = content[2];
+            const rating = content[2];
             const widthRating = (parseFloat(rating) / 5) * 100 + '%';
+            const review = content[3];
             li.classList.add('item-review');
             strong.classList.add('movie-title');
             strong.textContent = movieTitle;
@@ -86,9 +63,16 @@ const setReviewList = (post) => {
             buttonEdit.classList.add('btn-dropbox');
             buttonEdit.setAttribute('id', 'btn-edit');
             buttonEdit.textContent = '수정';
+            buttonEdit.addEventListener('click', () => {
+                window.location.href = `../pages/reviewEdit.html?id=${i.id}`;
+            });
             buttonDelete.classList.add('btn-dropbox');
             buttonDelete.setAttribute('id', 'btn-show-alert');
             buttonDelete.textContent = '삭제';
+            buttonDelete.addEventListener('click', () => {
+                postId = i.id;
+                modalAlertContainer.classList.remove('disabled');
+            });
             // 리뷰 페이지의 별점도 라디오버튼으로 보여주실 건가요?
             imgRating.classList.add('wrapper-rating');
             imgRating.style.setProperty('--width-rating', widthRating);
@@ -148,3 +132,12 @@ window.addEventListener('click', (e) => {
         }
     });
 });
+window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
+    const reviewList = yield getReviewList();
+    setReviewList(reviewList);
+}));
+buttonDelete.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
+    yield deleteReview(postId);
+    modalAlertContainer.classList.add('disabled');
+    window.location.href = '../pages/review.html';
+}));

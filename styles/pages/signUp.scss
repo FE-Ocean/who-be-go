@@ -56,7 +56,8 @@
             weight: 400;
             size: 11px;
         }
-        &.email {
+        &.email,
+        &.userid {
             &.true {
                 color: $green;
                 display: block;
@@ -69,16 +70,6 @@
         &.password {
             &.true {
                 display: none;
-            }
-            &.false {
-                color: $primary-color;
-                display: block;
-            }
-        }
-        &.userid {
-            &.true {
-                color: $green;
-                display: block;
             }
             &.false {
                 color: $primary-color;
@@ -115,6 +106,7 @@
         .ico-upload {
             width: 40px;
             height: 40px;
+            border-radius: 9999px;
             position: absolute;
             bottom: 0;
             right: 0;

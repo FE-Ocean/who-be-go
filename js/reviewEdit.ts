@@ -1,5 +1,9 @@
 import { handleUploadImage } from './imageApi.js';
-import { writeReview } from './reviewApi.js';
+import { getReviewDetail, editReview } from './reviewApi.js';
+
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get('id');
 
 const movieTitle = document.querySelector(
     '#movie-title'
@@ -17,6 +21,8 @@ const saveButton = document.querySelector('#btn-save') as HTMLButtonElement;
 // 서버로 전송할 이미지 (파일 정보가 담김)
 let img: File;
 const IMG_MAX_SIZE = 10 * 1024 * 1024;
+// 이미지 url
+let imgUrl: String = '';
 
 const fileTypeArray: string[] = [
     'image/gif',
@@ -37,14 +43,9 @@ const setTextHeight = (e: Event) => {
     }
 };
 
-// 감상문 업로드
-const handleUploadReview = async (e: Event) => {
+// 감상문 수정
+const handleEditReview = async (e: Event) => {
     e.preventDefault();
-    let imgUrl: String = '';
-    if (textRating.textContent === '') {
-        alert('별점을 입력해주세요.');
-        return;
-    }
     if (img) {
         imgUrl = await handleUploadImage(img);
     }
@@ -61,9 +62,30 @@ const handleUploadReview = async (e: Event) => {
             image: imgUrl,
         },
     };
-    const postId = await writeReview(reqData);
-    window.location.href = `/pages/reviewDetail.html?id=${postId}`;
+    const postId = await editReview(id as string, reqData);
+    if (postId) {
+        window.location.href = `/pages/reviewDetail.html?id=${postId}`;
+    }
 };
+
+window.addEventListener('load', async () => {
+    if (id !== null) {
+        const post = await getReviewDetail(id);
+        const contentArray = post.content.split('@');
+        movieTitle.textContent = contentArray[0];
+        movieSubTitle.textContent = contentArray[1];
+        textRating.textContent = contentArray[2];
+        for (let rating of radioRating) {
+            const ratingValue = (rating as HTMLInputElement).value;
+            if (rating !== null && ratingValue === contentArray[2]) {
+                (rating as HTMLInputElement).checked = true;
+            }
+        }
+        textReview.textContent = contentArray[3];
+        imgReview.src = post.image;
+        imgUrl = post.image;
+    }
+});
 
 imgInput.addEventListener('change', (e: Event) => {
     const fileReader = new FileReader();
@@ -102,7 +124,7 @@ textReview.addEventListener('keyup', (e: Event) => {
 });
 
 saveButton.addEventListener('click', (e: Event) => {
-    handleUploadReview(e);
+    handleEditReview(e);
 });
 
 for (let rating of radioRating) {

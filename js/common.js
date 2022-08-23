@@ -3,12 +3,15 @@ const nav = document.querySelector('.nav');
 const main = document.querySelector('.main');
 const navItem = document.querySelectorAll('.nav li a');
 // 모달
-const modalAlertContainer = document.querySelector('.modal-alert-container');
+const modalAlertContainer = document.querySelectorAll('.modal-alert-container');
 const buttonCancel = document.querySelectorAll('#btn-cancel');
 const buttonLogout = document.querySelector('#btn-logout');
 
 // 로그아웃, 로그인 li
 const lastLi = nav.lastElementChild;
+
+const logoutModal = modalAlertContainer[0];
+const deleteModal = modalAlertContainer[1];
 
 // 로그인되어 있는지 체크
 const checkLogin = () => {
@@ -39,16 +42,18 @@ navItem.forEach((link) => {
 // 로그아웃 or 로그인
 lastLi.addEventListener('click', () => {
     if (window.localStorage.getItem('token')) {
-        modalAlertContainer.classList.remove('disabled');
+        logoutModal.classList.remove('disabled');
     } else {
         window.location.href = '/pages/login.html';
     }
 });
 
-modalAlertContainer.addEventListener('click', (e) => {
-    if (e.target.classList.contains('modal-alert-container')) {
-        e.target.classList.add('disabled');
-    }
+modalAlertContainer.forEach((modal) => {
+    modal.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal-alert-container')) {
+            e.target.classList.add('disabled');
+        }
+    });
 });
 
 buttonCancel.forEach((elem) => {
@@ -59,6 +64,7 @@ buttonCancel.forEach((elem) => {
 
 buttonLogout.addEventListener('click', () => {
     window.localStorage.removeItem('token');
-    modalAlertContainer.classList.remove('disabled');
+    window.localStorage.removeItem('accountname');
+    logoutModal.classList.remove('disabled');
     window.location.href = '/index.html';
 });

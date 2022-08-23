@@ -7,36 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { MANDARIN_URL } from './BASE_URL.js';
+import { getReviewDetail } from './reviewApi.js';
 // URL 이 ?id=123123 이런식으로 온다고 가정하겠습니다.
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get('id');
-// 리뷰 상세글 불러오기
-const getReviewDetail = (id) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(id);
-    try {
-        const token = window.localStorage.getItem('token');
-        const url = `${MANDARIN_URL}/post/${id}`;
-        const response = yield fetch(url, {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-type': 'application/json',
-            },
-        });
-        const json = yield response.json();
-        if (json.post) {
-            setReviewDetail(json.post);
-        }
-        else {
-            throw new Error('리뷰 상세를 불러오는 과정에서 에러가 발생했습니다.');
-        }
-    }
-    catch (error) {
-        console.error(error);
-    }
-});
 // id값으로 받아온 리뷰상세 설정해주기
 const setReviewDetail = (post) => {
     const h2 = document.querySelector('.movie-title');
@@ -45,8 +20,8 @@ const setReviewDetail = (post) => {
     const span = document.querySelector('.text-date');
     const contentArray = post.content.split('@');
     const movieTitle = contentArray[0];
-    const rating = contentArray[1];
-    const review = contentArray[2];
+    const rating = contentArray[2];
+    const review = contentArray[3];
     if (h2 instanceof HTMLHeadingElement) {
         h2.textContent = movieTitle;
     }
@@ -64,7 +39,9 @@ const setReviewDetail = (post) => {
             .replace('T', '일')}`;
     }
 };
-// 현재는 임시 ID값을 넣어주었습니다.
-if (id !== null) {
-    getReviewDetail(id);
-}
+window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
+    if (id !== null) {
+        const currentPost = yield getReviewDetail(id);
+        setReviewDetail(currentPost);
+    }
+}));
