@@ -26,6 +26,7 @@ const getReviewList = () => __awaiter(void 0, void 0, void 0, function* () {
             },
         });
         const json = yield response.json();
+        console.log('json : ', json);
         if (json.status === '404') {
             throw new Error('해당 계정이 존재하지 않습니다.');
         }
@@ -59,7 +60,7 @@ const setReviewList = (post) => {
             const divDropbox = document.createElement('div');
             const buttonEdit = document.createElement('button');
             const buttonDelete = document.createElement('button');
-            const imgRating = document.createElement('img');
+            const imgRating = document.createElement('div');
             const divWrapperPoster = document.createElement('div');
             const imgPoster = document.createElement('img');
             const p = document.createElement('p');
@@ -68,6 +69,7 @@ const setReviewList = (post) => {
             const movieTitle = content[0];
             const rating = content[1];
             const review = content[2];
+            const widthRating = (parseFloat(rating) / 5) * 100 + '%';
             li.classList.add('item-review');
             strong.classList.add('movie-title');
             strong.textContent = movieTitle;
@@ -88,9 +90,8 @@ const setReviewList = (post) => {
             buttonDelete.setAttribute('id', 'btn-show-alert');
             buttonDelete.textContent = '삭제';
             // 리뷰 페이지의 별점도 라디오버튼으로 보여주실 건가요?
-            imgRating.classList.add('img-rating');
-            imgRating.setAttribute('src', '../assets/icons/star-yellow.svg');
-            imgRating.setAttribute('alt', rating);
+            imgRating.classList.add('wrapper-rating');
+            imgRating.style.setProperty('--width-rating', widthRating);
             divWrapperPoster.classList.add('wrapper-poster');
             imgPoster.classList.add('img-poster');
             imgPoster.setAttribute('src', `${i.image}`);
