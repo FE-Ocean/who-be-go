@@ -1,12 +1,22 @@
 .container-signup {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-width: 322px;
   padding: 0 20px;
   margin-top: 100px;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 .container-signup .page-title {
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
@@ -29,12 +39,22 @@
   font-size: 13px;
   color: #dedede;
 }
+.container-signup ::-webkit-input-placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 12px;
+  color: #464646;
+}
 .container-signup ::-moz-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
   color: #464646;
 }
 .container-signup :-ms-input-placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 12px;
+  color: #464646;
+}
+.container-signup ::-ms-input-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
   color: #464646;
@@ -62,11 +82,11 @@
   font-weight: 400;
   font-size: 11px;
 }
-.container-signup .msg-error.email.true {
+.container-signup .msg-error.email.true, .container-signup .msg-error.userid.true {
   color: #b8ff96;
   display: block;
 }
-.container-signup .msg-error.email.false {
+.container-signup .msg-error.email.false, .container-signup .msg-error.userid.false {
   color: #ff5f5f;
   display: block;
 }
@@ -77,21 +97,18 @@
   color: #ff5f5f;
   display: block;
 }
-.container-signup .msg-error.userid.true {
-  color: #b8ff96;
-  display: block;
-}
-.container-signup .msg-error.userid.false {
-  color: #ff5f5f;
-  display: block;
-}
 .container-signup .wrapper-email,
 .container-signup .wrapper-password,
 .container-signup .wrapper-name,
 .container-signup .wrapper-id,
 .container-signup .wrapper-intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .container-signup .wrapper-password,
 .container-signup .wrapper-intro {
@@ -113,6 +130,7 @@
 .container-signup .wrapper-upload-img .ico-upload {
   width: 40px;
   height: 40px;
+  border-radius: 9999px;
   position: absolute;
   bottom: 0;
   right: 0;

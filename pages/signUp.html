@@ -13,72 +13,30 @@
 <body>
     <section class="container-signup">
         <h1 class="page-title">이메일로 회원가입</h1>
-        <form>
+        <form id="form-signup">
             <div class="wrapper-email">
                 <label for="email" class="label-email">
                     이메일
                 </label>
-                <input id="email" type="text" required autocomplete="off" autofocus placeholder="이메일 주소를 입력해 주세요.">
+                <input id="email" type="text" autofocus placeholder="이메일 주소를 입력해 주세요.">
                 </input>
-                <!-- 형식이 올바르지 않을 때 "*이메일 형식이 올바르지 않습니다" -->
-                <!-- 사용가능한 이메일 일 때 "*사용 가능한 이메일 입니다"  -->
-                <!-- 이미 가입된 이메일 일 때 "*이미 가입된 이메일 주소입니다." -->
-                <strong class="msg-error email true">*사용 가능한 이메일 주소입니다.</strong>
+                <strong class="msg-error email">
+                    *사용 가능한 이메일 주소입니다.
+                </strong>
             </div>
             <div class="wrapper-password">
                 <label for="password" class="label-password">
                     비밀번호
                 </label>
-                <input id="password" type="password" minlength="6" maxLength="16" required
-                    placeholder="비밀번호를 설정해 주세요."></input>
-                <strong class="msg-error password false">
-                    *비밀번호는 6자 이상이어야 합니다.
+                <input id="password" type="password" minlength="5" maxLength="16" placeholder="비밀번호를 설정해 주세요."></input>
+                <strong class="msg-error password">
                 </strong>
             </div>
-            <button type="submit" class="btn-L disabled">다음</button>
+            <button type="submit" class="btn-L" id="btn-next" disabled>다음</button>
         </form>
     </section>
 
-    <!-- 프로필 설정  -->
-    <section class="container-signup">
-        <h1 class="page-title profile">프로필 설정</h1>
-        <h2 class="page-subtitle">나중에 언제든지 변경할 수 있습니다.</h2>
-        <form method="POST">
-            <div class="wrapper-upload-img">
-                <label for="choose-img">
-                    <img src="../assets/icons/upload-file.svg" alt="upload" class="ico-upload">
-                </label>
-                <input type="file" name="user-img" id="choose-img" accept="image/*">
-            </div>
-            <div class="wrapper-name">
-                <label for="name" class="label-profile">
-                    사용자 이름
-                </label>
-                <input id="name" type="text" minlength="2" maxlength="11" required autocomplete="off" autofocus
-                    placeholder="2 ~ 10자 이내여야 합니다. ">
-                </input>
-            </div>
-            <div class="wrapper-id">
-                <label for="user-id" class="label-profile">
-                    계정ID
-                </label>
-                <input id="user-id" type="text" minlength="2" maxLength="20" required
-                    placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다."></input>
-                <strong class="msg-error userid false">
-                    *영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.
-                    <!-- *이미 사용 중인 ID 입니다.  -->
-                    <!-- *사용 가능한 계정ID 입니다.  -->
-                </strong>
-            </div>
-            <div class="wrapper-intro">
-                <label for="description" class="label-profile">
-                    소개
-                </label>
-                <input id="intro" type="text" required placeholder="자신을 소개해 주세요!"></input>
-            </div>
-            <button type="submit" class="btn-L disabled">후비고 시작하기</button>
-        </form>
-    </section>
+    <script type="module" src="../js/signUp.js"></script>
 
 
 </body>
