@@ -4,6 +4,9 @@ import { writeReview } from './reviewApi.js';
 const movieTitle = document.querySelector(
     '#movie-title'
 ) as HTMLParagraphElement;
+const movieSubTitle = document.querySelector(
+    '#movie-title-eng'
+) as HTMLParagraphElement;
 const textRating = document.querySelector('#text-rating') as HTMLSpanElement;
 const radioRating = document.querySelectorAll('.radio-rating');
 const imgReview = document.querySelector('#img-review') as HTMLImageElement;
@@ -49,6 +52,8 @@ const handleUploadReview = async (e: Event) => {
         post: {
             content:
                 movieTitle.textContent +
+                '@' +
+                movieSubTitle.textContent +
                 '@' +
                 textRating.textContent +
                 '@' +
