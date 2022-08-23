@@ -1,4 +1,4 @@
-import { MANDARIN_URL } from './BASE_URL.js';
+import { getReviewList, deleteReview } from './reviewApi.js';
 import PostInterface from './postInterface';
 
 const noReview = document.querySelector('.wrapper-noreview') as HTMLElement;
@@ -11,56 +11,6 @@ const modalAlertContainer = document.querySelectorAll(
 // 삭제 버튼
 const buttonDelete = document.querySelector('#btn-delete') as HTMLButtonElement;
 let postId: string = '';
-
-const token = window.localStorage.getItem('token');
-
-// 영화 리스트 불러오기
-const getReviewList = async () => {
-    try {
-        const accountname = window.localStorage.getItem('accountname');
-        const url = `${MANDARIN_URL}/post/${accountname}/userpost`;
-
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-type': 'application/json',
-            },
-        });
-        const json = await response.json();
-        if (json.status === '404') {
-            throw new Error('해당 계정이 존재하지 않습니다.');
-        } else {
-            setReviewList(json.post);
-        }
-    } catch (error) {
-        console.error(error);
-    }
-};
-
-getReviewList();
-
-const deleteReview = async (id: string) => {
-    try {
-        const data = await fetch(`${MANDARIN_URL}/post/${id}`, {
-            method: 'DELETE',
-            headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-type': 'application/json',
-            },
-        });
-        const result = await data.json();
-        if (result.status !== '200') {
-            throw new Error(result.message);
-        }
-    } catch (error) {
-        if (error instanceof Error) {
-            alert(error.message);
-        }
-    }
-    modalAlertContainer.classList.add('disabled');
-    window.location.href = '../pages/review.html';
-};
 
 // 영화리뷰 리스트 저장하기
 const setReviewList = (post: PostInterface[]) => {
@@ -113,6 +63,9 @@ const setReviewList = (post: PostInterface[]) => {
             buttonEdit.classList.add('btn-dropbox');
             buttonEdit.setAttribute('id', 'btn-edit');
             buttonEdit.textContent = '수정';
+            buttonEdit.addEventListener('click', () => {
+                window.location.href = `../pages/reviewEdit.html?id=${i.id}`;
+            });
             buttonDelete.classList.add('btn-dropbox');
             buttonDelete.setAttribute('id', 'btn-show-alert');
             buttonDelete.textContent = '삭제';
@@ -181,6 +134,13 @@ window.addEventListener('click', (e) => {
     });
 });
 
-buttonDelete.addEventListener('click', () => {
-    deleteReview(postId);
+window.addEventListener('load', async () => {
+    const reviewList = await getReviewList();
+    setReviewList(reviewList);
+});
+
+buttonDelete.addEventListener('click', async () => {
+    await deleteReview(postId);
+    modalAlertContainer.classList.add('disabled');
+    window.location.href = '../pages/review.html';
 });
