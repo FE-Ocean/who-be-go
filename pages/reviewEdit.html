@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../styles/main.css" />
         <link rel="stylesheet" href="../styles/pages/writePost.css" />
         <script src="../js/common.js" defer></script>
-        <title>영화 감상문 작성 | 후비고</title>
+        <title>영화 감상문 수정 | 후비고</title>
     </head>
     <body>
         <header class="header">
@@ -32,7 +32,7 @@
 
         <main class="main">
             <div class="write-wrapper">
-                <h2 class="page-title">영화 감상문 작성</h2>
+                <h2 class="page-title">영화 감상문 수정</h2>
                 <div class="title-container">
                     <p id="movie-title">영화 제목</p>
                     <p id="movie-title-eng">영화 부제목</p>
@@ -121,7 +121,6 @@
                     <div class="review-contents">
                         <img
                             id="img-review"
-                            class="disabled"
                             src=""
                             alt="리뷰 이미지"
                         />
@@ -140,7 +139,7 @@
                     />
                 </div>
                 <!-- 글이 입력되지 않았을 때 disabled -->
-                <button type="submit" class="btn-s save disabled" id="btn-save">
+                <button type="submit" class="btn-s save" id="btn-save">
                     저장
                 </button>
             </div>
@@ -160,5 +159,5 @@
             </div>
         </div>
     </body>
-    <script type="module" src="../js/writePost.js"></script>
+    <script type="module" src="../js/reviewEdit.js"></script>
 </html>

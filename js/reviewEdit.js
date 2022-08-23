@@ -8,7 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { handleUploadImage } from './imageApi.js';
-import { writeReview } from './reviewApi.js';
+import { getReviewDetail, editReview } from './reviewApi.js';
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get('id');
 const movieTitle = document.querySelector('#movie-title');
 const textRating = document.querySelector('#text-rating');
 const radioRating = document.querySelectorAll('.radio-rating');
@@ -19,6 +22,8 @@ const saveButton = document.querySelector('#btn-save');
 // 서버로 전송할 이미지 (파일 정보가 담김)
 let img;
 const IMG_MAX_SIZE = 10 * 1024 * 1024;
+// 이미지 url
+let imgUrl = '';
 const fileTypeArray = [
     'image/gif',
     'image/jpeg',
@@ -37,14 +42,9 @@ const setTextHeight = (e) => {
         saveButton.classList.add('disabled');
     }
 };
-// 감상문 업로드
-const handleUploadReview = (e) => __awaiter(void 0, void 0, void 0, function* () {
+// 감상문 수정
+const handleEditReview = (e) => __awaiter(void 0, void 0, void 0, function* () {
     e.preventDefault();
-    let imgUrl = '';
-    if (textRating.textContent === '') {
-        alert('별점을 입력해주세요.');
-        return;
-    }
     if (img) {
         imgUrl = yield handleUploadImage(img);
     }
@@ -58,9 +58,28 @@ const handleUploadReview = (e) => __awaiter(void 0, void 0, void 0, function* ()
             image: imgUrl,
         },
     };
-    const postId = yield writeReview(reqData);
-    window.location.href = `/pages/reviewDetail.html?id=${postId}`;
+    const postId = yield editReview(id, reqData);
+    if (postId) {
+        window.location.href = `/pages/reviewDetail.html?id=${postId}`;
+    }
 });
+window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
+    if (id !== null) {
+        const post = yield getReviewDetail(id);
+        const contentArray = post.content.split('@');
+        movieTitle.textContent = contentArray[0];
+        textRating.textContent = contentArray[1];
+        for (let rating of radioRating) {
+            const ratingValue = rating.value;
+            if (rating !== null && ratingValue === contentArray[1]) {
+                rating.checked = true;
+            }
+        }
+        textReview.textContent = contentArray[2];
+        imgReview.src = post.image;
+        imgUrl = post.image;
+    }
+}));
 imgInput.addEventListener('change', (e) => {
     const fileReader = new FileReader();
     const target = e.currentTarget;
@@ -95,7 +114,7 @@ textReview.addEventListener('keyup', (e) => {
     setTextHeight(e);
 });
 saveButton.addEventListener('click', (e) => {
-    handleUploadReview(e);
+    handleEditReview(e);
 });
 for (let rating of radioRating) {
     rating.addEventListener('click', () => {
