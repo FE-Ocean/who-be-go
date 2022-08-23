@@ -5,11 +5,18 @@ const noReview = document.querySelector('.wrapper-noreview') as HTMLElement;
 const review = document.querySelector('.wrapper-review') as HTMLElement;
 const modalButton = document.querySelectorAll('.btn-modal');
 const modalDropbox = document.querySelectorAll('.modal-dropbox');
+const modalAlertContainer = document.querySelectorAll(
+    '.modal-alert-container'
+)[1];
+// 삭제 버튼
+const buttonDelete = document.querySelector('#btn-delete') as HTMLButtonElement;
+let postId: string = '';
+
+const token = window.localStorage.getItem('token');
 
 // 영화 리스트 불러오기
 const getReviewList = async () => {
     try {
-        const token = window.localStorage.getItem('token');
         const accountname = window.localStorage.getItem('accountname');
         const url = `${MANDARIN_URL}/post/${accountname}/userpost`;
 
@@ -32,6 +39,28 @@ const getReviewList = async () => {
 };
 
 getReviewList();
+
+const deleteReview = async (id: string) => {
+    try {
+        const data = await fetch(`${MANDARIN_URL}/post/${id}`, {
+            method: 'DELETE',
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-type': 'application/json',
+            },
+        });
+        const result = await data.json();
+        if (result.status !== '200') {
+            throw new Error(result.message);
+        }
+    } catch (error) {
+        if (error instanceof Error) {
+            alert(error.message);
+        }
+    }
+    modalAlertContainer.classList.add('disabled');
+    window.location.href = '../pages/review.html';
+};
 
 // 영화리뷰 리스트 저장하기
 const setReviewList = (post: PostInterface[]) => {
@@ -87,6 +116,10 @@ const setReviewList = (post: PostInterface[]) => {
             buttonDelete.classList.add('btn-dropbox');
             buttonDelete.setAttribute('id', 'btn-show-alert');
             buttonDelete.textContent = '삭제';
+            buttonDelete.addEventListener('click', () => {
+                postId = i.id;
+                modalAlertContainer.classList.remove('disabled');
+            });
             // 리뷰 페이지의 별점도 라디오버튼으로 보여주실 건가요?
             imgRating.classList.add('img-rating');
             imgRating.setAttribute('src', '../assets/icons/star-yellow.svg');
@@ -146,4 +179,8 @@ window.addEventListener('click', (e) => {
             elem.style.display = 'none';
         }
     });
+});
+
+buttonDelete.addEventListener('click', () => {
+    deleteReview(postId);
 });
