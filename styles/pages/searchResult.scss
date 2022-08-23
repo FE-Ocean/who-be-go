@@ -14,14 +14,15 @@
 .movie-article {
     margin: 0 auto;
     max-width: 550px;
-    margin-bottom: 150px;
+    padding: 0px 20px;
+    margin-bottom: 100px;
     .movie-title {
-        margin: 100px 0 7px;
+        margin: 60px 0 4px;
         line-height: 38px;
         text-align: left;
     }
     .sub-movie-title {
-        margin-bottom: 48px;
+        margin-bottom: 30px;
         color: $title-text;
         font-family: $font-medium;
         font-size: 20px;
@@ -41,7 +42,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 40px 0 10px;
+    margin: 10px 0 10px;
     .img-wbg {
         width: 48px;
         height: 66px;
@@ -54,10 +55,9 @@
     }
     .movie-info {
         max-width: 170px;
-        margin-top: 70px;
         color: $white;
         font-family: $font-regular;
-        font-size: 14px;
+        font-size: 13px;
         line-height: 16px;
         div {
             margin-bottom: 8px;
@@ -69,4 +69,66 @@ div > dt {
     color: $header-text;
     font-family: $font-regular;
     line-height: 18px;
+    margin-bottom: 3px;
+}
+
+.movie-summary {
+    margin: 30px 0 54px;
+    color: $content-text;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+@media screen and (max-width: 550px) {
+    .movie-article {
+        margin: 0 auto;
+        max-width: 300px;
+        padding: 0px 10px;
+        margin-bottom: 100px;
+        box-sizing: content-box;
+        .movie-title {
+            margin: 50px 0 7px;
+            font-size: 25px;
+            line-height: 31px;
+            text-align: center;
+        }
+        .sub-movie-title {
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+        }
+    }
+
+    .card-info-wrapper {
+        flex-direction: column;
+        max-width: 300px;
+        margin: 0 auto;
+        .poster-card {
+            margin: 0 auto;
+            width: 210px;
+            height: 305px;
+        }
+    }
+
+    .right-part {
+        flex-direction: column;
+        max-width: 300px;
+        margin: 25px 0 0px;
+        .container-review-btn {
+            margin: 0 auto;
+            padding-bottom: 20px;
+            .img-wbg {
+                display: none;
+            }
+        }
+        .movie-info {
+            font-size: 11px;
+        }
+    }
+
+    .movie-summary {
+        margin: 0px 0 54px;
+        font-size: 11px;
+    }
 }

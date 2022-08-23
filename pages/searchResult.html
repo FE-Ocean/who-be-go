@@ -7,8 +7,6 @@
         <title>영화 검색 결과 | 후비고</title>
         <link rel="stylesheet" href="../styles/main.css" />
         <link rel="stylesheet" href="../styles/pages/searchResult.css" />
-        <link rel="stylesheet" href="../styles/components/common.css" />
-        <link rel="stylesheet" href="../styles/components/modal.css" />
         <script src="../js/common.js" defer></script>
     </head>
     <body>
@@ -25,20 +23,23 @@
             <ul class="nav">
                 <li><a href="../pages/chart.html">영화차트</a></li>
                 <li><a href="../pages/search.html">영화찾아요</a></li>
-                <li><a href="../pages/writePost.html">영화감상문</a></li>
+                <li><a href="../pages/review.html">영화감상문</a></li>
                 <li><a href="../pages/myPage.html">마이페이지</a></li>
                 <li></li>
             </ul>
         </header>
         <main class="search-result-main">
-            <h2 class="text-heading page-title">영화 검색 결과</h2>
+            <!-- <h2 class="text-heading page-title">영화 검색 결과</h2> -->
             <article class="movie-article">
-                <h2 class="movie-title page-title">영화 제목</h2>
-                <h3 class="sub-movie-title">english title</h3>
+                <h2 class="movie-title page-title">영화 제목 라라랜드 라라</h2>
+                <h3 class="sub-movie-title">english title english title</h3>
                 <div class="card-info-wrapper">
-                    <img src="" class="poster-card card-L" />
+                    <img
+                        src="http://file.koreafilm.or.kr/thm/02/00/05/51/tn_DPF020277.jpg"
+                        class="poster-card card-L search"
+                    />
                     <div class="right-part">
-                        <div>
+                        <div class="container-review-btn">
                             <div class="img-wbg"></div>
                             <a href="../pages/writePost.html" class="btn-ms">
                                 영화 감상문 작성하기
@@ -62,11 +63,26 @@
                                 <dd>장르장르</dd>
                             </div>
                             <div>
-                                <dt>평점</dt>
-                                <dd>4.8 / 5</dd>
+                                <dt>상영시간</dt>
+                                <dd>123분</dd>
+                            </div>
+                            <div>
+                                <dt>관람등급</dt>
+                                <dd>12세관람가</dd>
                             </div>
                         </dl>
                     </div>
+                </div>
+                <div class="movie-summary">
+                    <dt>줄거리</dt>
+                    <dd>
+                        모험가(ISFP)는 진정한 의미의 예술가라고 할 수 있습니다.
+                        하지만 모험가라고 반드시 예술 업계에만 종사하는 것은
+                        아닙니다. 이들에게는 삶 자체가 자신을 표현하기 위한
+                        캔버스이기 때문입니다. 이들은 입는 옷부터 여가 시간을
+                        보내는 방식까지 다양한 측면에서 자신의 독특한 개성을
+                        생생히 드러냅니다.
+                    </dd>
                 </div>
             </article>
         </main>
