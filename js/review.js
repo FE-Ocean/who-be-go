@@ -94,7 +94,13 @@ const setReviewList = (post) => {
             imgRating.style.setProperty('--width-rating', widthRating);
             divWrapperPoster.classList.add('wrapper-poster');
             imgPoster.classList.add('img-poster');
-            imgPoster.setAttribute('src', `${i.image}`);
+            if (i.image === '' ||
+                i.image === 'https://mandarin.api.weniv.co.kr/undefined') {
+                imgPoster.setAttribute('src', '../assets/images/max_post_default.jpg');
+            }
+            else {
+                imgPoster.setAttribute('src', `${i.image}`);
+            }
             imgPoster.setAttribute('alt', '리뷰 이미지');
             p.classList.add('text-story');
             p.textContent = `${review}`;
