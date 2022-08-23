@@ -7,7 +7,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { getReviewDetail } from './reviewApi.js';
+import { getReviewDetail, deleteReview } from './reviewApi.js';
+const modalButton = document.querySelector('.btn-modal');
+const modalDropbox = document.querySelector('.modal-dropbox');
+const modalAlertContainer = document.querySelectorAll('.modal-alert-container')[1];
+// 수정 버튼
+const buttonEdit = document.querySelector('#btn-edit');
+// (드롭박스의) 삭제 버튼
+const buttonShowAlert = document.querySelector('#btn-show-alert');
+// (모달의) 삭제 버튼
+const buttonDelete = document.querySelector('#btn-delete');
 // URL 이 ?id=123123 이런식으로 온다고 가정하겠습니다.
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
@@ -48,5 +57,27 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
     if (id !== null) {
         const currentPost = yield getReviewDetail(id);
         setReviewDetail(currentPost);
+    }
+}));
+modalButton.addEventListener('click', () => {
+    modalDropbox.classList.toggle('disabled');
+});
+window.addEventListener('click', (e) => {
+    const target = e.target;
+    if (!target.classList.contains('ico-modal')) {
+        modalDropbox.classList.add('disabled');
+    }
+});
+buttonEdit.addEventListener('click', () => {
+    window.location.href = `../pages/reviewEdit.html?id=${id}`;
+});
+buttonShowAlert.addEventListener("click", () => {
+    modalAlertContainer.classList.remove('disabled');
+});
+buttonDelete.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
+    if (id !== null) {
+        yield deleteReview(id);
+        modalAlertContainer.classList.add('disabled');
+        window.location.href = '../pages/review.html';
     }
 }));
