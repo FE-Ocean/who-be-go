@@ -29,11 +29,24 @@
     }
 }
 
-.img-rating {
-    display: block;
+.wrapper-rating {
+    background-image: url('../../assets/icons/stars-gray.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
     width: 100px;
+    height: 20px;
     margin-top: 12px;
     margin-bottom: 22px;
+    --width-rating: 100%;
+    &::before {
+        content: '';
+        display: block;
+        background-image: url('../../assets/icons/star-yellow-100.svg');
+        width: var(--width-rating);
+        height: 20px;
+    }
 }
 
 .img-poster {

@@ -3,11 +3,17 @@ import PostInterface from './postInterface';
 
 const noReview = document.querySelector('.wrapper-noreview') as HTMLElement;
 const review = document.querySelector('.wrapper-review') as HTMLElement;
+const writePostButton = document.getElementById('btn-writepost');
 const modalButton = document.querySelectorAll('.btn-modal');
 const modalDropbox = document.querySelectorAll('.modal-dropbox');
 const modalAlertContainer = document.querySelectorAll(
     '.modal-alert-container'
 )[1];
+
+writePostButton?.addEventListener('click', (e) => {
+    location.href = '/pages/writePost.html';
+});
+
 // 삭제 버튼
 const buttonDelete = document.querySelector('#btn-delete') as HTMLButtonElement;
 let postId: string = '';

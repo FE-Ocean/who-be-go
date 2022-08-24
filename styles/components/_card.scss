@@ -76,8 +76,8 @@
 
 .card-L {
     @extend %card-base;
-    width: 250px;
-    height: 360px;
+    width: 295px;
+    height: 425px;
     z-index: 10;
     object-fit: contain;
     position: relative;
@@ -172,6 +172,11 @@
     .card-L {
         &:first-of-type {
             display: none;
+        }
+        &.search {
+            &:first-of-type {
+                display: block;
+            }
         }
     }
     .wrapper-card {
