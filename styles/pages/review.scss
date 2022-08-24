@@ -47,20 +47,18 @@
     cursor: pointer;
 }
 
-.details-movie {
+.btn-modal {
     display: inline-block;
     top: 3px;
     right: 22.5px;
     position: absolute;
-    .btn-modal {
-        cursor: pointer;
-        &::marker {
-            font-size: 0;
-        }
-        .ico-modal {
-            width: 25px;
-            height: 25px;
-        }
+    cursor: pointer;
+    &::marker {
+        font-size: 0;
+    }
+    .ico-modal {
+        width: 25px;
+        height: 25px;
     }
 }
 

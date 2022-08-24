@@ -13,8 +13,6 @@ hasToken();
 const noReview = document.querySelector('.wrapper-noreview');
 const review = document.querySelector('.wrapper-review');
 const writePostButton = document.getElementById('btn-writepost');
-const modalButton = document.querySelectorAll('.btn-modal');
-const modalDropbox = document.querySelectorAll('.modal-dropbox');
 const modalAlertContainer = document.querySelectorAll('.modal-alert-container')[1];
 writePostButton === null || writePostButton === void 0 ? void 0 : writePostButton.addEventListener('click', () => {
     location.href = '/pages/writePost.html';
@@ -37,8 +35,9 @@ const setReviewList = (post) => {
         for (let i of post) {
             const li = document.createElement('li');
             const strong = document.createElement('strong');
-            const details = document.createElement('details');
-            const summary = document.createElement('summary');
+            // const details = document.createElement('details');
+            // const summary = document.createElement('summary');
+            const modalButton = document.createElement('button');
             const imgMore = document.createElement('img');
             const divDropbox = document.createElement('div');
             const buttonEdit = document.createElement('button');
@@ -59,13 +58,14 @@ const setReviewList = (post) => {
             strong.addEventListener('click', () => {
                 window.location.href = `../pages/reviewDetail.html?id=${i.id}`;
             });
-            details.classList.add('details-movie');
-            summary.classList.add('btn-modal');
+            // details.classList.add('details-movie');
+            modalButton.classList.add('btn-modal');
             imgMore.setAttribute('src', '../assets/icons/icon-more-vertical.svg');
             imgMore.setAttribute('width', '25px');
             imgMore.setAttribute('height', '25px');
             imgMore.setAttribute('alt', '더보기버튼');
-            divDropbox.classList.add('modal-dropbox');
+            imgMore.classList.add('ico-modal');
+            divDropbox.classList.add('modal-dropbox', 'disabled');
             buttonEdit.classList.add('btn-dropbox');
             buttonEdit.setAttribute('id', 'btn-edit');
             buttonEdit.textContent = '수정';
@@ -79,7 +79,6 @@ const setReviewList = (post) => {
                 postId = i.id;
                 modalAlertContainer.classList.remove('disabled');
             });
-            // 리뷰 페이지의 별점도 라디오버튼으로 보여주실 건가요?
             imgRating.classList.add('wrapper-rating');
             imgRating.style.setProperty('--width-rating', widthRating);
             divWrapperPoster.classList.add('wrapper-poster');
@@ -100,14 +99,20 @@ const setReviewList = (post) => {
                 .replace('-', '년 ')
                 .replace('-', '월 ')
                 .replace('T', '일')}`;
-            summary.appendChild(imgMore);
+            modalButton.appendChild(imgMore);
+            // 실제 클릭되는 것은 이미지이기 때문에 이미지에 이벤트리스너 달아줌
+            imgMore.addEventListener('click', () => {
+                divDropbox.classList.toggle('disabled');
+            });
             divDropbox.appendChild(buttonEdit);
             divDropbox.appendChild(buttonDelete);
-            details.appendChild(summary);
-            details.appendChild(divDropbox);
+            // details.appendChild(summary);
+            // details.appendChild(divDropbox);
+            modalButton.appendChild(divDropbox);
             divWrapperPoster.appendChild(imgPoster);
             li.appendChild(strong);
-            li.appendChild(details);
+            // li.appendChild(details);
+            li.appendChild(modalButton);
             li.appendChild(imgRating);
             li.appendChild(divWrapperPoster);
             li.appendChild(p);
@@ -117,27 +122,43 @@ const setReviewList = (post) => {
         listReview === null || listReview === void 0 ? void 0 : listReview.appendChild(fragment);
     }
 };
-// 모달 버튼 클릭 시 드롭다운 나오게
-modalButton.forEach((elem) => {
-    if (elem instanceof HTMLElement) {
-        elem === null || elem === void 0 ? void 0 : elem.addEventListener('click', (e) => {
-            if (elem.nextElementSibling instanceof HTMLElement) {
-                e.stopPropagation();
-                console.log(elem.nextElementSibling.style.display);
-                elem.nextElementSibling.style.display = 'block';
-                console.log(elem.nextElementSibling.style.display);
-            }
-        });
+// 바깥 영역 클릭하면 모달 닫힘
+window.addEventListener('click', (e) => {
+    // 문제는 이렇게 클릭 이벤트 실행될 때마다 쿼리셀렉터를 새로 불러와야 하는데 이게 맞는지?
+    const modalDropbox = document.querySelectorAll('.modal-dropbox');
+    const target = e.target;
+    if (!target.classList.contains('ico-modal')) {
+        for (let dropbox of modalDropbox) {
+            dropbox.classList.add('disabled');
+        }
     }
 });
+// 모달 버튼 클릭 시 드롭다운 나오게
+// modalButton.forEach((elem) => {
+//     if (elem instanceof HTMLElement) {
+//         elem?.addEventListener('click', (e) => {
+//             if (elem.nextElementSibling instanceof HTMLElement) {
+//                 e.stopPropagation();
+//                 console.log(elem.nextElementSibling.style.display);
+//                 elem.nextElementSibling.style.display = 'block';
+//                 console.log(elem.nextElementSibling.style.display);
+//             }
+//         });
+//     }
+// });
 // 바깥 영역 클릭시 모달 닫히게
-window.addEventListener('click', (e) => {
-    modalDropbox.forEach((elem) => {
-        if (elem instanceof HTMLElement) {
-            elem.style.display = 'none';
-        }
-    });
-});
+// window.addEventListener('click', (e) => {
+//     const target = e.target as HTMLElement;
+//     console.log(target.className);
+//     if (target.className === '') {
+//         for (let elem of modalDropbox) {
+//             console.log(elem);
+//             if (elem instanceof HTMLElement) {
+//                 elem.style.display = 'none';
+//             }
+//         }
+//     }
+// });
 window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
     const reviewList = yield getReviewList();
     setReviewList(reviewList);

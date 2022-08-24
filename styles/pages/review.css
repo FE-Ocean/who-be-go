@@ -174,19 +174,17 @@
   cursor: pointer;
 }
 
-.details-movie {
+.btn-modal {
   display: inline-block;
   top: 3px;
   right: 22.5px;
   position: absolute;
-}
-.details-movie .btn-modal {
   cursor: pointer;
 }
-.details-movie .btn-modal::marker {
+.btn-modal::marker {
   font-size: 0;
 }
-.details-movie .btn-modal .ico-modal {
+.btn-modal .ico-modal {
   width: 25px;
   height: 25px;
 }
