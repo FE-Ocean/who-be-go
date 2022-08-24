@@ -1,6 +1,5 @@
 .container-chart {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   padding: 60px 20px;
   margin: 0 auto;
 }
@@ -10,4 +9,15 @@
   color: #8b8b8b;
   font: 18px/1 "SpoqaHanSansNeo-Regular", sans-serif;
   text-align: center;
+}
+
+.card-m:focus {
+  outline: 10px solid #FFC3C3;
+}
+
+.card-m .show-contents {
+  text-align: left;
+}
+.card-m .show-contents .wrapper-movie-title {
+  color: #fff;
 }
