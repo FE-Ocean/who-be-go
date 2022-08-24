@@ -5,7 +5,7 @@
     background-image: url('../../assets/images/post_default.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 %card-cover {
@@ -15,8 +15,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.69);
-    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
     z-index: -1;
 }
 
@@ -35,26 +35,17 @@
     .wrapper-movie-title {
         display: flex;
         flex-direction: column;
-        margin: 24px 20px 0 20px;
+        margin: 24px 22px 0 22px;
         font-family: $font-bold;
         color: $white;
         text-align: left;
-        #movie-title {
-            @include text-overflow-two(210px);
-            font-size: 18px;
-            margin-bottom: 4px;
-        }
-        #movie-title-eng {
-            font-size: 16px;
-            @include text-overflow-two(210px);
-        }
     }
 
     .wrapper-sub-text {
         width: 210px;
         position: absolute;
         bottom: 0;
-        margin: 16px 20px;
+        margin: 20px 22px;
         font-size: 12px;
         text-align: left;
         .sub-title {
@@ -68,7 +59,7 @@
                 color: $title-text;
                 font-weight: 300;
                 margin: 8px 0;
-                @include text-overflow-one(200px);
+                @include text-overflow-one(250px);
             }
         }
     }
@@ -76,8 +67,8 @@
 
 .card-L {
     @extend %card-base;
-    width: 295px;
-    height: 425px;
+    width: 312px;
+    height: 451px;
     z-index: 10;
     object-fit: contain;
     position: relative;
@@ -86,6 +77,22 @@
     }
     &:last-of-type::after {
         @extend %card-cover;
+    }
+    .wrapper-movie-title {
+        margin-top: 40px;
+        #movie-title {
+            @include text-overflow-two(96%);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        #movie-title-eng {
+            font-size: 20px;
+            @include text-overflow-two(96%);
+        }
+    }
+    &.search {
+        width: fit-content;
+        height: 425px;
     }
 }
 
@@ -129,6 +136,7 @@
         }
     }
 }
+
 .review-album {
     display: grid;
     justify-content: center;
@@ -139,7 +147,6 @@
     .card-s {
         @extend %card-base;
         background-image: url('../../assets/images/min_post_default.jpg');
-        border-radius: 15px;
         background-position: center center;
         width: 205px;
         height: 205px;
@@ -154,7 +161,6 @@
                 align-items: center;
                 z-index: 10;
                 @extend %card-cover;
-                border-radius: 15px;
                 #movie-title {
                     font-family: $font-medium;
                     font-size: 16px;

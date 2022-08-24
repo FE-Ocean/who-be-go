@@ -1,24 +1,21 @@
 @font-face {
-  font-family: 'SpoqaHanSansNeo-Regular';
+  font-family: "SpoqaHanSansNeo-Regular";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
-  font-family: 'SpoqaHanSansNeo-Medium';
+  font-family: "SpoqaHanSansNeo-Medium";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Medium.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
-  font-family: 'SpoqaHanSansNeo-Bold';
+  font-family: "SpoqaHanSansNeo-Bold";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Bold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
-
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
@@ -43,10 +40,8 @@ body {
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /* Sections
@@ -82,12 +77,9 @@ h1 {
  */
 hr {
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+          box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /**
@@ -95,10 +87,8 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
@@ -115,13 +105,10 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-  /* 2 */
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -139,10 +126,8 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
@@ -192,14 +177,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
@@ -226,9 +207,9 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
@@ -236,9 +217,9 @@ button,
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -247,9 +228,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -268,18 +249,12 @@ fieldset {
  */
 legend {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
+          box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
 }
 
 /**
@@ -300,20 +275,18 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type='checkbox'],
-[type='radio'] {
+[type=checkbox],
+[type=radio] {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+          box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -321,17 +294,15 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type='search'] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type='search']::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -340,10 +311,8 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /* Interactive
@@ -402,7 +371,6 @@ textarea {
   background-color: transparent;
   border: 0;
 }
-
 button:focus,
 input:focus,
 select:focus,
@@ -435,13 +403,16 @@ address {
 input {
   -webkit-text-fill-color: #cfcfcf;
 }
-
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }
 
 input::-webkit-input-placeholder {
+  -webkit-text-fill-color: #464646;
+}
+
+input::-moz-placeholder {
   -webkit-text-fill-color: #464646;
 }
 
@@ -465,7 +436,7 @@ textarea {
   -webkit-appearance: none;
 }
 
-.btn-s, .btn-ms, .btn-L {
+.btn-L, .btn-ms, .btn-s {
   display: inline-block;
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
   text-align: center;
@@ -474,7 +445,7 @@ textarea {
   color: #ffffff;
 }
 
-.btn-s.disabled, .btn-s:disabled, .btn-ms.disabled, .btn-ms:disabled, .btn-L.disabled, .btn-L:disabled {
+.btn-L.disabled, .btn-L:disabled, .btn-ms.disabled, .btn-ms:disabled, .btn-s.disabled, .btn-s:disabled {
   background-color: #ffc4c4;
   color: #ffffff;
   pointer-events: none;
@@ -485,20 +456,17 @@ textarea {
   font-size: 13px;
   padding: 9px 0 7px;
 }
-
 .btn-ms {
   width: 170px;
   height: 32px;
   font-size: 13px;
   padding: 9px 0 7px;
 }
-
 .btn-L {
   width: 322px;
   height: 44px;
   font-size: 14px;
 }
-
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -519,11 +487,9 @@ textarea {
 .img-logo {
   height: 90px;
 }
-
 .img-logo img {
   margin-left: 90px;
 }
-
 .img-logo .btn-nav {
   display: none;
   position: absolute;
@@ -541,7 +507,6 @@ textarea {
   margin-right: 90px;
   letter-spacing: -0.02em;
 }
-
 .nav li {
   padding-left: 24px;
   color: #cfcfcf;
@@ -549,11 +514,9 @@ textarea {
   font-size: 14px;
   cursor: pointer;
 }
-
 .nav li:hover {
   color: #ff5f5f;
 }
-
 .nav li a .selected {
   color: #ff5f5f;
 }
@@ -563,7 +526,6 @@ textarea {
   position: relative;
   min-height: calc(100vh - 150px);
 }
-
 .main.wrapper-etc {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -581,12 +543,10 @@ textarea {
   margin-top: 250px;
   color: #f1f1f1;
 }
-
 .main.wrapper-etc .img-etc {
   width: 181px;
   margin-bottom: 20px;
 }
-
 .main.wrapper-etc .text-etc {
   margin-bottom: 30px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
@@ -603,7 +563,6 @@ textarea {
   background-color: #292929;
   text-align: center;
 }
-
 .footer p {
   display: inline-block;
   margin-top: 25px;
@@ -660,24 +619,23 @@ textarea {
     margin-top: 296px;
   }
 }
-
-.card-L, .card-m, .review-album .card-s {
+.review-album .card-s, .card-m, .card-L {
   position: relative;
   background-image: url("../../assets/images/post_default.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
-.card-L:last-of-type::after, .card-m:hover .show-contents, .card-m:focus .show-contents, .review-album .card-s:hover .show-contents {
-  content: '';
+.review-album .card-s:hover .show-contents, .card-m:hover .show-contents, .card-m:focus .show-contents, .card-L:last-of-type::after {
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.69);
-  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
   z-index: -1;
 }
 
@@ -692,15 +650,11 @@ textarea {
   color: #f1f1f1;
   margin-top: 50px;
 }
-
 .wrapper-card.chart {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-
 .wrapper-card .wrapper-movie-title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -709,42 +663,19 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 24px 20px 0 20px;
+  margin: 24px 22px 0 22px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   color: #ffffff;
   text-align: left;
 }
-
-.wrapper-card .wrapper-movie-title #movie-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  width: 210px;
-  font-size: 18px;
-  margin-bottom: 4px;
-}
-
-.wrapper-card .wrapper-movie-title #movie-title-eng {
-  font-size: 16px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  width: 210px;
-}
-
 .wrapper-card .wrapper-sub-text {
   width: 210px;
   position: absolute;
   bottom: 0;
-  margin: 16px 20px;
+  margin: 20px 22px;
   font-size: 12px;
   text-align: left;
 }
-
 .wrapper-card .wrapper-sub-text .sub-title {
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
   display: -webkit-box;
@@ -757,7 +688,6 @@ textarea {
   margin-right: 18px;
   color: #cfcfcf;
 }
-
 .wrapper-card .wrapper-sub-text .sub-title .sub-text {
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
   color: #f1f1f1;
@@ -767,20 +697,47 @@ textarea {
   text-overflow: ellipsis;
   display: inline-block;
   white-space: nowrap;
-  width: 200px;
+  width: 250px;
 }
 
 .card-L {
-  width: 295px;
-  height: 425px;
+  width: 312px;
+  height: 451px;
   z-index: 10;
   -o-object-fit: contain;
      object-fit: contain;
   position: relative;
 }
-
 .card-L:first-of-type {
   margin-right: 20px;
+}
+.card-L .wrapper-movie-title {
+  margin-top: 40px;
+}
+.card-L .wrapper-movie-title #movie-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 96%;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.card-L .wrapper-movie-title #movie-title-eng {
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 96%;
+}
+.card-L.search {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 425px;
 }
 
 .card-m {
@@ -788,25 +745,20 @@ textarea {
   width: 210px;
   height: 305px;
 }
-
 .card-m .show-contents {
   display: none;
 }
-
 .card-m:hover, .card-m:focus {
   z-index: 10;
 }
-
 .card-m:hover .show-contents, .card-m:focus .show-contents {
   position: absolute;
   bottom: 0;
   display: block;
 }
-
 .card-m:hover .wrapper-movie-title, .card-m:focus .wrapper-movie-title {
   margin: 26px 16px 4px 16px;
 }
-
 .card-m:hover .wrapper-movie-title #movie-title, .card-m:focus .wrapper-movie-title #movie-title {
   font-size: 16px;
   margin-bottom: 4px;
@@ -817,7 +769,6 @@ textarea {
   -webkit-box-orient: vertical;
   width: 180px;
 }
-
 .card-m:hover .wrapper-movie-title #movie-title-eng, .card-m:focus .wrapper-movie-title #movie-title-eng {
   font-size: 12px;
   overflow: hidden;
@@ -826,13 +777,11 @@ textarea {
   white-space: nowrap;
   width: 180px;
 }
-
 .card-m:hover .wrapper-sub-text, .card-m:focus .wrapper-sub-text {
   margin: 16px 16px 18px;
   font-size: 11px;
   line-height: 0.9;
 }
-
 .card-m:hover .wrapper-sub-text .sub-text, .card-m:focus .wrapper-sub-text .sub-text {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -842,30 +791,24 @@ textarea {
 }
 
 .review-album {
-  display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-grid-columns: (205px)[3];
-      grid-template-columns: repeat(3, 205px);
+  grid-template-columns: repeat(3, 205px);
   gap: 20px;
   height: 721px;
   overflow-y: scroll;
 }
-
 .review-album .card-s {
   background-image: url("../../assets/images/min_post_default.jpg");
-  border-radius: 15px;
   background-position: center center;
   width: 205px;
   height: 205px;
 }
-
 .review-album .card-s .show-contents {
   display: none;
 }
-
 .review-album .card-s:hover .show-contents {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -881,9 +824,7 @@ textarea {
       -ms-flex-align: center;
           align-items: center;
   z-index: 10;
-  border-radius: 15px;
 }
-
 .review-album .card-s:hover .show-contents #movie-title {
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
   font-size: 16px;
@@ -906,14 +847,12 @@ textarea {
     display: block;
   }
   .wrapper-card.chart {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
   .review-album {
     height: 532px;
-    -ms-grid-columns: (160px)[3];
-        grid-template-columns: repeat(3, 160px);
+    grid-template-columns: repeat(3, 160px);
     gap: 15px;
   }
   .review-album .card-s {
@@ -933,20 +872,16 @@ textarea {
     height: 20px;
   }
 }
-
 @media screen and (max-width: 550px) {
   .wrapper-card.chart {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
   }
   .review-album {
     height: 600px;
-    -ms-grid-columns: (160px)[2];
-        grid-template-columns: repeat(2, 160px);
+    grid-template-columns: repeat(2, 160px);
   }
 }
-
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -967,11 +902,9 @@ textarea {
 .img-logo {
   height: 90px;
 }
-
 .img-logo img {
   margin-left: 90px;
 }
-
 .img-logo .btn-nav {
   display: none;
   position: absolute;
@@ -989,7 +922,6 @@ textarea {
   margin-right: 90px;
   letter-spacing: -0.02em;
 }
-
 .nav li {
   padding-left: 24px;
   color: #cfcfcf;
@@ -997,11 +929,9 @@ textarea {
   font-size: 14px;
   cursor: pointer;
 }
-
 .nav li:hover {
   color: #ff5f5f;
 }
-
 .nav li a .selected {
   color: #ff5f5f;
 }
@@ -1011,7 +941,6 @@ textarea {
   position: relative;
   min-height: calc(100vh - 150px);
 }
-
 .main.wrapper-etc {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1029,12 +958,10 @@ textarea {
   margin-top: 250px;
   color: #f1f1f1;
 }
-
 .main.wrapper-etc .img-etc {
   width: 181px;
   margin-bottom: 20px;
 }
-
 .main.wrapper-etc .text-etc {
   margin-bottom: 30px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
@@ -1051,7 +978,6 @@ textarea {
   background-color: #292929;
   text-align: center;
 }
-
 .footer p {
   display: inline-block;
   margin-top: 25px;
@@ -1108,7 +1034,6 @@ textarea {
     margin-top: 296px;
   }
 }
-
 .modal-dropbox {
   position: absolute;
   top: 38px;
@@ -1125,13 +1050,11 @@ textarea {
           align-items: flex-start;
   padding: 6px;
 }
-
 .modal-dropbox.disabled {
   display: none;
 }
-
 .modal-dropbox::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: -10px;
@@ -1140,7 +1063,6 @@ textarea {
   border-right: 15px solid transparent;
   border-bottom: 25px solid #121212;
 }
-
 .modal-dropbox .btn-dropbox {
   width: 100%;
   text-align: left;
@@ -1159,11 +1081,9 @@ textarea {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
 .modal-alert-container.disabled {
   display: none;
 }
-
 .modal-alert-container .modal-alert {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1177,7 +1097,6 @@ textarea {
   border-radius: 10px;
   color: #f1f1f1;
 }
-
 .modal-alert-container .modal-alert .message {
   display: block;
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
@@ -1185,7 +1104,6 @@ textarea {
   line-height: 20px;
   padding: 29px 62px 22px;
 }
-
 .modal-alert-container .modal-alert .btn-alert {
   position: relative;
   float: left;
@@ -1196,13 +1114,11 @@ textarea {
   border-top: 0.5px solid #767676;
   color: #f1f1f1;
 }
-
 .modal-alert-container .modal-alert .btn-alert.action {
   color: #ff5f5f;
 }
-
 .modal-alert-container .modal-alert .btn-alert.action::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
