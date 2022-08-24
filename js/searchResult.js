@@ -19,7 +19,11 @@ const genre = document.querySelector('.genre');
 const runtime = document.querySelector('.runtime');
 const rating = document.querySelector('.rating');
 const summary = document.querySelector('.movie-summary>dd');
+const postReview = document.querySelector('.container-review-btn>button');
 const movieSeq = window.location.search.slice(1);
+postReview.addEventListener('click', () => {
+    window.location.href = `../pages/writePost.html?${movieSeq}`;
+});
 function getMovieInfo() {
     return __awaiter(this, void 0, void 0, function* () {
         const url = 
