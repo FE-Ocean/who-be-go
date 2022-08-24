@@ -634,7 +634,7 @@ textarea {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   z-index: -1;
 }
@@ -737,6 +737,7 @@ textarea {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  height: 425px;
 }
 
 .card-m {
