@@ -14,7 +14,8 @@ const noReview = document.querySelector('.wrapper-noreview');
 const review = document.querySelector('.wrapper-review');
 const writePostButton = document.getElementById('btn-writepost');
 const modalAlertContainer = document.querySelectorAll('.modal-alert-container')[1];
-writePostButton === null || writePostButton === void 0 ? void 0 : writePostButton.addEventListener('click', () => {
+const ul = document.querySelector('.list-review');
+writePostButton === null || writePostButton === void 0 ? void 0 : writePostButton.addEventListener('click', (e) => {
     location.href = '/pages/writePost.html';
 });
 // 삭제 버튼
@@ -122,6 +123,29 @@ const setReviewList = (post) => {
         listReview === null || listReview === void 0 ? void 0 : listReview.appendChild(fragment);
     }
 };
+// 무한 스크롤
+const createObserver = (element) => {
+    let skip = 10;
+    const observer = new IntersectionObserver(([entry], observer) => __awaiter(void 0, void 0, void 0, function* () {
+        if (entry.isIntersecting) {
+            observer.unobserve(entry.target);
+            const newReviewList = yield getReviewList(skip);
+            setReviewList(newReviewList);
+            if ((ul === null || ul === void 0 ? void 0 : ul.lastElementChild) instanceof HTMLLIElement) {
+                observer.observe(ul.lastElementChild);
+            }
+            skip += 10;
+            if (newReviewList.length < 10) {
+                observer.disconnect();
+            }
+        }
+    }), {
+        threshold: 0.5,
+    });
+    if (element) {
+        observer.observe(element);
+    }
+};
 // 바깥 영역 클릭하면 모달 닫힘
 window.addEventListener('click', (e) => {
     // 문제는 이렇게 클릭 이벤트 실행될 때마다 쿼리셀렉터를 새로 불러와야 하는데 이게 맞는지?
@@ -162,6 +186,10 @@ window.addEventListener('click', (e) => {
 window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
     const reviewList = yield getReviewList();
     setReviewList(reviewList);
+    let lastItem = ul === null || ul === void 0 ? void 0 : ul.lastElementChild;
+    if (lastItem instanceof HTMLLIElement) {
+        createObserver(lastItem);
+    }
 }));
 buttonDelete.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
     yield deleteReview(postId);
