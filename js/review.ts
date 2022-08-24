@@ -1,5 +1,8 @@
 import { getReviewList, deleteReview } from './reviewApi.js';
 import PostInterface from './postInterface';
+import { hasToken } from './tokenValid.js';
+
+hasToken();
 
 const noReview = document.querySelector('.wrapper-noreview') as HTMLElement;
 const review = document.querySelector('.wrapper-review') as HTMLElement;
@@ -10,7 +13,7 @@ const modalAlertContainer = document.querySelectorAll(
     '.modal-alert-container'
 )[1];
 
-writePostButton?.addEventListener('click', (e) => {
+writePostButton?.addEventListener('click', () => {
     location.href = '/pages/writePost.html';
 });
 

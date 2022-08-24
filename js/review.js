@@ -8,13 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { getReviewList, deleteReview } from './reviewApi.js';
+import { hasToken } from './tokenValid.js';
+hasToken();
 const noReview = document.querySelector('.wrapper-noreview');
 const review = document.querySelector('.wrapper-review');
 const writePostButton = document.getElementById('btn-writepost');
 const modalButton = document.querySelectorAll('.btn-modal');
 const modalDropbox = document.querySelectorAll('.modal-dropbox');
 const modalAlertContainer = document.querySelectorAll('.modal-alert-container')[1];
-writePostButton === null || writePostButton === void 0 ? void 0 : writePostButton.addEventListener('click', (e) => {
+writePostButton === null || writePostButton === void 0 ? void 0 : writePostButton.addEventListener('click', () => {
     location.href = '/pages/writePost.html';
 });
 // 삭제 버튼
