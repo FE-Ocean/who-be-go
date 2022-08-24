@@ -9,6 +9,7 @@ const modalDropbox = document.querySelectorAll('.modal-dropbox');
 const modalAlertContainer = document.querySelectorAll(
     '.modal-alert-container'
 )[1];
+const ul = document.querySelector('.list-review');
 
 writePostButton?.addEventListener('click', (e) => {
     location.href = '/pages/writePost.html';
@@ -127,6 +128,38 @@ const setReviewList = (post: PostInterface[]) => {
     }
 };
 
+// 무한 스크롤
+const createObserver = (element: Element) => {
+    let skip = 10;
+
+    const observer = new IntersectionObserver(
+        async ([entry], observer) => {
+            if (entry.isIntersecting) {
+                observer.unobserve(entry.target);
+                const newReviewList = await getReviewList(skip);
+
+                setReviewList(newReviewList);
+                if (ul?.lastElementChild instanceof HTMLLIElement) {
+                    observer.observe(ul.lastElementChild);
+                }
+
+                skip += 10;
+
+                if (newReviewList.length < 10) {
+                    observer.disconnect();
+                }
+            }
+        },
+        {
+            threshold: 0.5,
+        }
+    );
+
+    if (element) {
+        observer.observe(element);
+    }
+};
+
 // 모달 버튼 클릭 시 드롭다운 나오게
 modalButton.forEach((elem) => {
     if (elem instanceof HTMLElement) {
@@ -153,6 +186,11 @@ window.addEventListener('click', (e) => {
 window.addEventListener('load', async () => {
     const reviewList = await getReviewList();
     setReviewList(reviewList);
+
+    let lastItem = ul?.lastElementChild;
+    if (lastItem instanceof HTMLLIElement) {
+        createObserver(lastItem);
+    }
 });
 
 buttonDelete.addEventListener('click', async () => {

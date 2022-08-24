@@ -11,9 +11,9 @@ import { MANDARIN_URL } from './BASE_URL.js';
 const token = window.localStorage.getItem('token');
 const accountname = window.localStorage.getItem('accountname');
 // 영화 리스트 불러오기
-const getReviewList = () => __awaiter(void 0, void 0, void 0, function* () {
+const getReviewList = (skip = 0) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const url = `${MANDARIN_URL}/post/${accountname}/userpost`;
+        const url = `${MANDARIN_URL}/post/${accountname}/userpost/?limit=${10}&skip=${skip}`;
         const response = yield fetch(url, {
             method: 'GET',
             headers: {

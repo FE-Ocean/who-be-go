@@ -14,6 +14,7 @@ const writePostButton = document.getElementById('btn-writepost');
 const modalButton = document.querySelectorAll('.btn-modal');
 const modalDropbox = document.querySelectorAll('.modal-dropbox');
 const modalAlertContainer = document.querySelectorAll('.modal-alert-container')[1];
+const ul = document.querySelector('.list-review');
 writePostButton === null || writePostButton === void 0 ? void 0 : writePostButton.addEventListener('click', (e) => {
     location.href = '/pages/writePost.html';
 });
@@ -115,6 +116,29 @@ const setReviewList = (post) => {
         listReview === null || listReview === void 0 ? void 0 : listReview.appendChild(fragment);
     }
 };
+// 무한 스크롤
+const createObserver = (element) => {
+    let skip = 10;
+    const observer = new IntersectionObserver(([entry], observer) => __awaiter(void 0, void 0, void 0, function* () {
+        if (entry.isIntersecting) {
+            observer.unobserve(entry.target);
+            const newReviewList = yield getReviewList(skip);
+            setReviewList(newReviewList);
+            if ((ul === null || ul === void 0 ? void 0 : ul.lastElementChild) instanceof HTMLLIElement) {
+                observer.observe(ul.lastElementChild);
+            }
+            skip += 10;
+            if (newReviewList.length < 10) {
+                observer.disconnect();
+            }
+        }
+    }), {
+        threshold: 0.5,
+    });
+    if (element) {
+        observer.observe(element);
+    }
+};
 // 모달 버튼 클릭 시 드롭다운 나오게
 modalButton.forEach((elem) => {
     if (elem instanceof HTMLElement) {
@@ -139,6 +163,10 @@ window.addEventListener('click', (e) => {
 window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
     const reviewList = yield getReviewList();
     setReviewList(reviewList);
+    let lastItem = ul === null || ul === void 0 ? void 0 : ul.lastElementChild;
+    if (lastItem instanceof HTMLLIElement) {
+        createObserver(lastItem);
+    }
 }));
 buttonDelete.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
     yield deleteReview(postId);
