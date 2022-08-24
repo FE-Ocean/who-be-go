@@ -67,8 +67,8 @@
 
 .card-L {
     @extend %card-base;
-    width: 316px;
-    height: 451px;
+    width: 310px;
+    height: 310 * 1.43px;
     z-index: 10;
     object-fit: contain;
     position: relative;
