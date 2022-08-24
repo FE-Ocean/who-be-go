@@ -15,7 +15,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.775);
     border-radius: 10px;
     z-index: -1;
 }
@@ -67,8 +67,8 @@
 
 .card-L {
     @extend %card-base;
-    width: 312px;
-    height: 451px;
+    width: 310px;
+    height: 310 * 1.43px;
     z-index: 10;
     object-fit: contain;
     position: relative;
@@ -87,7 +87,7 @@
         }
         #movie-title-eng {
             font-size: 20px;
-            @include text-overflow-two(96%);
+            @include text-overflow-three(96%);
         }
     }
     &.search {

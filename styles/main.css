@@ -644,7 +644,7 @@ textarea {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.775);
   border-radius: 10px;
   z-index: -1;
 }
@@ -711,8 +711,8 @@ textarea {
 }
 
 .card-L {
-  width: 312px;
-  height: 451px;
+  width: 310px;
+  height: 443.3px;
   z-index: 10;
   -o-object-fit: contain;
      object-fit: contain;
@@ -739,7 +739,7 @@ textarea {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   width: 96%;
 }

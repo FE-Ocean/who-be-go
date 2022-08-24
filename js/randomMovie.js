@@ -22,7 +22,7 @@ const imgInfo = document.querySelector('.card-L.info');
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-const id = data[rand(1, 89)];
+const id = data[rand(1, 98)];
 const title = id.title;
 const movieSeq = id.movieSeq;
 const serviceKey = 'NE98FTD75W4C0R4JS785';
@@ -31,12 +31,14 @@ function getMovieInfo() {
     return __awaiter(this, void 0, void 0, function* () {
         const url = MOVIE_URL +
             `&detail=Y&title=${title}&movieSeq=${movieSeq}&ServiceKey=${serviceKey}`;
+        console.log(url);
         try {
             const response = yield fetch(url, {
                 method: 'GET',
             });
             const reqJson = yield response.json();
             const result = yield reqJson.Data[0].Result[0];
+            console.log(result.title);
             const title = result.title
                 .replace(/\!HS/g, '')
                 .replace(/\s+\!HE+\s/g, '')
