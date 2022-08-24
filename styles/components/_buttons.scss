@@ -34,6 +34,11 @@
     &:disabled {
         @extend %btn-disabled;
     }
+    &:hover,
+    &:focus,
+    &:active {
+        transform: scale(1.03);
+    }
 }
 
 .btn-L {
@@ -44,5 +49,10 @@
     &.disabled,
     &:disabled {
         @extend %btn-disabled;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        transform: scale(1.03);
     }
 }
