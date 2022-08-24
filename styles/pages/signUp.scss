@@ -67,7 +67,8 @@
                 display: block;
             }
         }
-        &.password {
+        &.password,
+        &.username {
             &.true {
                 display: none;
             }
@@ -123,4 +124,8 @@ input[type='file'] {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+.section-profile {
+    display: none;
 }
