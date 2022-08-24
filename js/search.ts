@@ -10,6 +10,7 @@ interface MovieList {
             genre: string;
             rating: string;
             runtime: string;
+            movieSeq: string;
             directors: {
                 director: [
                     {
@@ -56,7 +57,7 @@ const createSearchedList = (list: MovieList) => {
         searchedList?.appendChild(title);
         title.textContent = list.Result[i].title;
         title.addEventListener('click', () => {
-            window.location.href = '../pages/searchResult.html';
+            window.location.href = `../pages/searchResult.html?movieSeq=${list.Result[i].movieSeq}`;
         });
     }
 };
