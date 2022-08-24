@@ -1,5 +1,3 @@
-"use strict";
-// import { MOVIE_URL } from './BASE_URL.js';
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -9,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { getMovieInfo } from './movieApi.js';
 const title = document.querySelector('.movie-title');
 const titleEng = document.querySelector('.sub-movie-title');
 const poster = document.querySelector('.poster-card');
@@ -24,27 +23,25 @@ const movieSeq = window.location.search.slice(1);
 postReview.addEventListener('click', () => {
     window.location.href = `../pages/writePost.html?${movieSeq}`;
 });
-function getMovieInfo() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const url = 
-        // MOVIE_URL +
-        // `&ServiceKey=&detail=Y&movieSeq=${getValue}`;
-        `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=&detail=Y&${movieSeq}`;
-        try {
-            const response = yield fetch(url, {
-                method: 'GET',
-            });
-            const json = yield response.json();
-            showValue(json.Data[0].Result[0]);
-            console.log(json.Data[0].Result[0]);
-        }
-        catch (err) {
-            console.error(err);
-        }
-    });
-}
+// async function getMovieInfo(code:string) {
+//     const url =
+//         // MOVIE_URL +
+//         // `&ServiceKey=&detail=Y&movieSeq=${getValue}`;
+//         `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=NE98FTD75W4C0R4JS785&detail=Y&${code}`;
+//     try {
+//         const response = await fetch(url, {
+//             method: 'GET',
+//         });
+//         const json = await response.json();
+//         console.log(json.Data[0].Result[0]);
+//         return json.Data[0].Result[0];
+//     } catch (err) {
+//         console.error(err);
+//     }
+// }
 window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
-    yield getMovieInfo();
+    const movieInfo = yield getMovieInfo(movieSeq);
+    showValue(movieInfo);
 }));
 const showValue = (movie) => {
     title.textContent = movie.title;
