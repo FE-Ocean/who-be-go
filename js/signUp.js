@@ -96,8 +96,169 @@ password.addEventListener('input', (e) => {
         errorPassword.innerText = '*비밀번호는 6~16자 이내로 입력해 주세요.';
     }
 });
-//다음버튼 클릭시 프로필 설정 이동
+//nextBtn 클릭시 프로필 설정 섹션으로 전환
+const signUpSection = document.querySelector('.section-signup');
+const profileSection = document.querySelector('.section-profile');
 nextBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    window.location.href = './profile.html';
+    signUpSection.style.display = 'none';
+    profileSection.style.display = 'flex';
+});
+const profileForm = document.querySelector('#form-profile');
+const imgBtn = document.querySelector('#choose-img');
+const thumbnailImg = document.querySelector('.wrapper-upload-img');
+const name = document.querySelector('#name');
+const id = document.querySelector('#user-id');
+const intro = document.querySelector('#intro');
+const errorName = document.querySelector('.msg-error.username');
+const errorId = document.querySelector('.msg-error.userid');
+const startBtn = document.querySelector('.btn-start');
+// 버튼 활성화 함수
+function checkBtn() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const nameCheckedResult = checkNameValid(name.value);
+        const idCheckedResult = yield checkIdValid(id.value);
+        if (nameCheckedResult && idCheckedResult) {
+            startBtn.disabled = false;
+        }
+        else {
+            startBtn.disabled = true;
+        }
+    });
+}
+profileForm.addEventListener('input', () => {
+    checkBtn();
+});
+// name 체크
+function checkNameValid(name) {
+    if (name == '') {
+        errorName.innerText = '*사용자 이름은 필수 입력사항 입니다.';
+        errorName.classList.remove('true');
+        errorName.classList.add('false');
+        return false;
+    }
+    else if (name.length < 2 || name.length > 11) {
+        errorName.innerText = '*사용자 이름은 2~10자 이내여야 합니다.';
+        errorName.classList.remove('true');
+        errorName.classList.add('false');
+        return false;
+    }
+    else {
+        errorName.classList.remove('false');
+        return true;
+    }
+}
+// id 체크, 검증
+function checkIdValid(id) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const regex = /^[a-zA-Z0-9_.]{1,10}$/;
+            if (id == '') {
+                errorId.innerText = '*계정ID는 필수 입력사항 입니다.';
+                errorId.classList.remove('true');
+                errorId.classList.add('false');
+                return false;
+            }
+            else if (!regex.test(id)) {
+                errorId.innerText =
+                    '*영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.';
+                errorId.classList.remove('true');
+                errorId.classList.add('false');
+                return false;
+            }
+            const idData = {
+                user: {
+                    accountname: id,
+                },
+            };
+            const res = yield fetch(MANDARIN_URL + '/user/accountnamevalid', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify(idData),
+            });
+            const resJson = yield res.json();
+            const resMsg = resJson.message;
+            if (resMsg === '사용 가능한 계정ID 입니다.') {
+                errorId.innerText = '*' + resMsg;
+                errorId.classList.remove('false');
+                errorId.classList.add('true');
+                return true;
+            }
+            else if (resMsg === '이미 가입된 계정ID 입니다.') {
+                errorId.innerText = '*' + resMsg;
+                errorId.classList.remove('true');
+                errorId.classList.add('false');
+                return false;
+            }
+        }
+        catch (err) {
+            console.error(err);
+        }
+    });
+}
+// 이미지 업로드
+function uploadImg(e) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const formData = new FormData();
+        const target = e.target;
+        if (target.files !== null) {
+            const file = target.files[0];
+            formData.append('image', file);
+        }
+        try {
+            const res = yield fetch(MANDARIN_URL + '/image/uploadfile', {
+                method: 'POST',
+                body: formData,
+            });
+            const resJson = yield res.json();
+            const filename = resJson.filename;
+            const imgURL = MANDARIN_URL + '/' + filename;
+            thumbnailImg.style.backgroundImage = `url(${imgURL})`;
+        }
+        catch (err) {
+            console.error(err);
+        }
+    });
+}
+imgBtn.addEventListener('change', (e) => {
+    uploadImg(e);
+});
+// 유저 정보 post
+function userInfo(e) {
+    return __awaiter(this, void 0, void 0, function* () {
+        e.preventDefault();
+        const image = thumbnailImg.style.backgroundImage !== ''
+            ? thumbnailImg.style.backgroundImage
+            : '../../assets/icons/default-logo.svg';
+        try {
+            const res = yield fetch(MANDARIN_URL + '/user', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user: {
+                        username: name.value,
+                        email: email.value,
+                        password: password.value,
+                        accountname: id.value,
+                        intro: intro.value,
+                        image: image,
+                    },
+                }),
+            });
+            const resJson = yield res.json();
+            if (resJson.message === '회원가입 성공') {
+                location.href = './login.html';
+            }
+        }
+        catch (err) {
+            console.error(err);
+        }
+    });
+}
+startBtn.addEventListener('click', (e) => {
+    userInfo(e);
 });
