@@ -3,7 +3,26 @@
 
 .container-home {
     box-sizing: content-box;
-    padding: 60px 20px;
+    padding: 60px 20px 30px;
     max-width: 740px;
     margin: 0 auto;
+}
+
+.btn-L {
+    &.home {
+        display: block;
+        margin: 0 auto 80px;
+        padding: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .btn-L {
+        &.home {
+            width: 170px;
+            display: block;
+            margin: 0 auto 80px;
+            padding: 14px;
+        }
+    }
 }
