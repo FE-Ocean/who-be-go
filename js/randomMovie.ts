@@ -17,7 +17,7 @@ function rand(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const id = data[rand(1, 99)];
+const id = data[rand(1, 98)];
 const title: string = id.title;
 const movieSeq: string = id.movieSeq;
 const serviceKey: string = 'NE98FTD75W4C0R4JS785';
@@ -35,7 +35,7 @@ async function getMovieInfo() {
         const reqJson = await response.json();
 
         const result = await reqJson.Data[0].Result[0];
-
+        console.log(result.title);
         const title = result.title
             .replace(/\!HS/g, '')
             .replace(/\s+\!HE+\s/g, '')

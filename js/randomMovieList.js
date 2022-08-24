@@ -101,5 +101,4 @@ export default [
     { id: 96, title: '이터널선샤인', movieSeq: '10779' },
     { id: 97, title: '어거스트러쉬', movieSeq: '21440' },
     { id: 98, title: '원스어폰어타임인할리우드', movieSeq: '48214' },
-    { id: 99, title: '어거스트러쉬', movieSeq: '21440' },
 ];

@@ -22,7 +22,7 @@ const imgInfo = document.querySelector('.card-L.info');
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-const id = data[rand(1, 99)];
+const id = data[rand(1, 98)];
 const title = id.title;
 const movieSeq = id.movieSeq;
 const serviceKey = 'NE98FTD75W4C0R4JS785';
@@ -38,6 +38,7 @@ function getMovieInfo() {
             });
             const reqJson = yield response.json();
             const result = yield reqJson.Data[0].Result[0];
+            console.log(result.title);
             const title = result.title
                 .replace(/\!HS/g, '')
                 .replace(/\s+\!HE+\s/g, '')
