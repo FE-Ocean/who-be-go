@@ -22,7 +22,7 @@ const imgInfo = document.querySelector('.card-L.info');
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-const id = data[rand(1, 89)];
+const id = data[rand(1, 99)];
 const title = id.title;
 const movieSeq = id.movieSeq;
 const serviceKey = 'NE98FTD75W4C0R4JS785';
@@ -31,6 +31,7 @@ function getMovieInfo() {
     return __awaiter(this, void 0, void 0, function* () {
         const url = MOVIE_URL +
             `&detail=Y&title=${title}&movieSeq=${movieSeq}&ServiceKey=${serviceKey}`;
+        console.log(url);
         try {
             const response = yield fetch(url, {
                 method: 'GET',

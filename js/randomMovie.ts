@@ -17,7 +17,7 @@ function rand(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const id = data[rand(1, 89)];
+const id = data[rand(1, 99)];
 const title: string = id.title;
 const movieSeq: string = id.movieSeq;
 const serviceKey: string = 'NE98FTD75W4C0R4JS785';
@@ -27,7 +27,7 @@ async function getMovieInfo() {
     const url =
         MOVIE_URL +
         `&detail=Y&title=${title}&movieSeq=${movieSeq}&ServiceKey=${serviceKey}`;
-
+    console.log(url);
     try {
         const response = await fetch(url, {
             method: 'GET',
