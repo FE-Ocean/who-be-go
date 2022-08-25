@@ -79,6 +79,17 @@
 }
 
 .container-searched-list {
-  padding-top: 25px;
+  padding: 25px 33px;
   color: #cfcfcf;
+  line-height: 1.37;
+  text-align: left;
+}
+
+.searched-movie {
+  cursor: pointer;
+}
+
+.searched-movie:hover {
+  background-color: black;
+  opacity: 0.95;
 }

@@ -60,6 +60,15 @@
 }
 
 .container-searched-list {
-    padding-top: 25px;
+    padding: 25px 33px;
     color: $header-text;
+    line-height: 1.37;
+    text-align: left;
+}
+.searched-movie {
+    cursor: pointer;
+    &:hover {
+        background-color: black;
+        opacity: 0.95;
+    }
 }
