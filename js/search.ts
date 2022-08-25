@@ -30,8 +30,11 @@ async function search() {
     const searchInput: string = (
         document.getElementById('input-search') as HTMLInputElement
     ).value;
+    if (searchInput == '') {
+        return;
+    }
     const serviceKey = 'NE98FTD75W4C0R4JS785';
-    const url = `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=${serviceKey}&detail=Y&listCount=15&title=${searchInput}`;
+    const url = `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=${serviceKey}&detail=Y&listCount=17&title=${searchInput}`;
     console.log('인풋', searchInput);
     try {
         const response = await fetch(url, {
@@ -52,12 +55,14 @@ const createSearchedList = (list: MovieList) => {
 
     searchedList.innerHTML = '';
     for (let i = 0; i < list.Result.length; i++) {
-        // if (!searchedList) {
-        //     searchedList.innerHTML = '';
-        // }
         const title = document.createElement('p');
+        title.classList.add('searched-movie');
         searchedList?.appendChild(title);
-        title.textContent = list.Result[i].title;
+        title.textContent = list.Result[i].title
+            .replace(/\!HS/g, '')
+            .replace(/\!HE/g, '')
+            .replace(/^\s+|\s+$/g, '')
+            .replace(/ +/g, ' ');
         title.addEventListener('click', () => {
             window.location.href = `../pages/searchResult.html?movieSeq=${list.Result[i].movieSeq}&movieId=${list.Result[i].movieId}`;
         });
