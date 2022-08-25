@@ -1,8 +1,9 @@
-// import { MOVIE_URL } from './BASE_URL.js';
+import { getMovieInfo } from './movieApi.js';
 
 interface MovieLists {
     title: string;
     titleEng: string;
+    titleOrg: string;
     posters: string;
     repRlsDate: string;
     prodYear: string;
@@ -45,42 +46,38 @@ const runtime = document.querySelector('.runtime');
 const rating = document.querySelector('.rating');
 const summary = document.querySelector('.movie-summary>dd') as HTMLElement;
 const postReview = document.querySelector('.container-review-btn>button');
-const movieSeq = window.location.search.slice(1);
+// const movieSeq = window.location.search.slice(1);
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+const movieId = params.get('movieId');
+const movieSeq = params.get('movieSeq');
 
 postReview!.addEventListener('click', () => {
-    window.location.href = `../pages/writePost.html?${movieSeq}`;
+    window.location.href = `../pages/writePost.html?movieId=${movieId}&movieSeq=${movieSeq}`;
 });
 
-async function getMovieInfo() {
-    const url =
-        // MOVIE_URL +
-        // `&ServiceKey=&detail=Y&movieSeq=${getValue}`;
-        `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=&detail=Y&${movieSeq}`;
-
-    try {
-        const response = await fetch(url, {
-            method: 'GET',
-        });
-        const json = await response.json();
-        showValue(json.Data[0].Result[0]);
-        console.log(json.Data[0].Result[0]);
-    } catch (err) {
-        console.error(err);
-    }
-}
-
 window.addEventListener('load', async () => {
-    await getMovieInfo();
+    if (movieId !== null && movieSeq !== null) {
+        const movieInfo = await getMovieInfo(movieId, movieSeq);
+        showValue(movieInfo);
+    }
 });
 
 const showValue = (movie: MovieLists) => {
     title.textContent = movie.title;
-    titleEng.textContent = movie.titleEng;
+
+    if (movie.titleEng === '') {
+        titleEng.textContent = movie.titleOrg;
+    } else {
+        titleEng.textContent = movie.titleEng;
+    }
+
     if (movie.posters !== '') {
         poster.src = movie.posters.substring(0, 60);
     } else {
         poster.src = '../assets/images/post_default.jpg';
     }
+
     if (movie.repRlsDate === '') {
         release!.textContent = movie.prodYear;
     } else {
@@ -91,18 +88,38 @@ const showValue = (movie: MovieLists) => {
             '.' +
             movie.repRlsDate.slice(6);
     }
-    director!.textContent = movie.directors.director[0].directorNm;
+
+    if (movie.directors.director[0].directorNm === '') {
+        director!.textContent = '정보 없음';
+    } else {
+        director!.textContent = movie.directors.director[0].directorNm;
+    }
 
     let actorBox: string = '';
-    for (let i = 0; i < 4; i++) {
-        actorBox += movie.actors.actor[i].actorNm;
-        actorBox += ' | ';
+    if (!movie.actors.actor[0].actorNm) {
+        actor!.textContent = '정보 없음';
+    } else {
+        for (let i = 0; i < movie.actors.actor.length; i++) {
+            actorBox += movie.actors.actor[i].actorNm;
+            actorBox += ' | ';
+        }
+        actor!.textContent = actorBox.slice(0, -2);
     }
-    actor!.textContent = actorBox.slice(0, -2);
 
-    genre!.textContent = movie.genre.replace(/,/g, ' | ');
+    if (movie.genre === '') {
+        genre!.textContent = '정보 없음';
+    } else {
+        genre!.textContent = movie.genre.replace(/,/g, ' | ');
+    }
+
     runtime!.textContent = movie.runtime + '분';
-    rating!.textContent = movie.rating;
+
+    if (movie.rating === '') {
+        rating!.textContent = '정보 없음';
+    } else {
+        rating!.textContent = movie.rating;
+    }
+
     if (movie.plots.plot[0].plotText === '') {
         summary.textContent = '줄거리가 제공되지 않습니다 :)';
     } else {
