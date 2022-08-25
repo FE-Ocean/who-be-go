@@ -1,4 +1,4 @@
-// import { MOVIE_URL } from './BASE_URL.js';
+import { getMovieInfo } from './movieApi.js';
 
 interface MovieLists {
     title: string;
@@ -51,26 +51,9 @@ postReview!.addEventListener('click', () => {
     window.location.href = `../pages/writePost.html?${movieSeq}`;
 });
 
-async function getMovieInfo() {
-    const url =
-        // MOVIE_URL +
-        // `&ServiceKey=&detail=Y&movieSeq=${getValue}`;
-        `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=&detail=Y&${movieSeq}`;
-
-    try {
-        const response = await fetch(url, {
-            method: 'GET',
-        });
-        const json = await response.json();
-        showValue(json.Data[0].Result[0]);
-        console.log(json.Data[0].Result[0]);
-    } catch (err) {
-        console.error(err);
-    }
-}
-
 window.addEventListener('load', async () => {
-    await getMovieInfo();
+    const movieInfo = await getMovieInfo(movieSeq);
+    showValue(movieInfo);
 });
 
 const showValue = (movie: MovieLists) => {

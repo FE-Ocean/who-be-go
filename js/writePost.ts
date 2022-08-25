@@ -1,4 +1,5 @@
 import { handleUploadImage } from './imageApi.js';
+import { getMovieInfo } from './movieApi.js';
 import { writeReview } from './reviewApi.js';
 
 const movieTitle = document.querySelector(
@@ -14,9 +15,15 @@ const imgInput = document.querySelector('#img-input') as HTMLInputElement;
 const textReview = document.querySelector('#text-review') as HTMLInputElement;
 const saveButton = document.querySelector('#btn-save') as HTMLButtonElement;
 
+const movieSeq = window.location.search.slice(1);
+// const queryString = window.location.search;
+// const params = new URLSearchParams(queryString);
+// const movieSeq = params.get('movieSeq');
+
 // 서버로 전송할 이미지 (파일 정보가 담김)
 let img: File;
 const IMG_MAX_SIZE = 10 * 1024 * 1024;
+let imgUrl: String = '';
 
 const fileTypeArray: string[] = [
     'image/gif',
@@ -40,7 +47,6 @@ const setTextHeight = (e: Event) => {
 // 감상문 업로드
 const handleUploadReview = async (e: Event) => {
     e.preventDefault();
-    let imgUrl: String = '';
     if (textRating.textContent === '') {
         alert('별점을 입력해주세요.');
         return;
@@ -64,6 +70,21 @@ const handleUploadReview = async (e: Event) => {
     const postId = await writeReview(reqData);
     window.location.href = `/pages/reviewDetail.html?id=${postId}`;
 };
+
+window.addEventListener('load', async () => {
+    if (movieSeq !== null) {
+        const movieInfo = await getMovieInfo(movieSeq);
+        movieTitle.textContent = movieInfo.title;
+        if (movieInfo.titleEng !== '') {
+            movieSubTitle.textContent = movieInfo.titleEng;
+        } else {
+            movieSubTitle.textContent = movieInfo.titleOrg;
+        }
+        if (movieInfo.posters !== '') {
+            imgUrl = movieInfo.posters.substring(0, 60);
+        }
+    }
+});
 
 imgInput.addEventListener('change', (e: Event) => {
     const fileReader = new FileReader();
