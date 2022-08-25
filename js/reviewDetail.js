@@ -23,6 +23,7 @@ const params = new URLSearchParams(queryString);
 const id = params.get('id');
 // id값으로 받아온 리뷰상세 설정해주기
 const setReviewDetail = (post) => {
+    console.log(post);
     const h2 = document.querySelector('.movie-title');
     const imgRating = document.querySelector('.wrapper-rating');
     const imgPoster = document.querySelector('.img-poster');
@@ -40,7 +41,13 @@ const setReviewDetail = (post) => {
         imgRating.style.setProperty('--width-rating', widthRating);
     }
     if (imgPoster instanceof HTMLImageElement) {
-        imgPoster.src = `${post.image}`;
+        if (post.image === '' ||
+            post.image === 'https://mandarin.api.weniv.co.kr/undefined') {
+            imgPoster.src = '../assets/images/max_post_default.jpg';
+        }
+        else {
+            imgPoster.src = `${post.image}`;
+        }
     }
     if (p instanceof HTMLParagraphElement) {
         p.textContent = review;
@@ -71,7 +78,7 @@ window.addEventListener('click', (e) => {
 buttonEdit.addEventListener('click', () => {
     window.location.href = `../pages/reviewEdit.html?id=${id}`;
 });
-buttonShowAlert.addEventListener("click", () => {
+buttonShowAlert.addEventListener('click', () => {
     modalAlertContainer.classList.remove('disabled');
 });
 buttonDelete.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
