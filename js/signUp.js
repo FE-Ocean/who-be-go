@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { MANDARIN_URL } from './BASE_URL.js';
+import { handleUploadImage } from './imageApi.js';
 import { getEmailValidMsg, getIdValidMsg, signUp } from './userApi.js';
 const signUpForm = document.querySelector('#form-signup');
 const email = document.querySelector('#email');
@@ -186,21 +186,13 @@ function checkIdValid(id) {
 // 이미지 업로드
 function uploadImg(e) {
     return __awaiter(this, void 0, void 0, function* () {
-        const formData = new FormData();
-        const target = e.target;
-        if (target.files !== null) {
-            const file = target.files[0];
-            formData.append('image', file);
-        }
         try {
-            const res = yield fetch(MANDARIN_URL + '/image/uploadfile', {
-                method: 'POST',
-                body: formData,
-            });
-            const resJson = yield res.json();
-            const filename = resJson.filename;
-            const imgURL = MANDARIN_URL + '/' + filename;
-            thumbnailImg.style.backgroundImage = `url(${imgURL})`;
+            const target = e.target;
+            if (target.files !== null) {
+                const file = target.files[0];
+                const imgURL = yield handleUploadImage(file);
+                thumbnailImg.style.backgroundImage = `url(${imgURL})`;
+            }
         }
         catch (err) {
             console.error(err);

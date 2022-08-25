@@ -1,4 +1,4 @@
-import { MANDARIN_URL } from './BASE_URL.js';
+import { handleUploadImage } from './imageApi.js';
 import { getEmailValidMsg, getIdValidMsg, signUp } from './userApi.js';
 
 const signUpForm = document.querySelector('#form-signup') as HTMLFormElement;
@@ -181,26 +181,18 @@ async function checkIdValid(id: string) {
 
 // 이미지 업로드
 async function uploadImg(e: Event) {
-    const formData = new FormData();
-    const target = e.target as HTMLInputElement;
-    if (target.files !== null) {
-        const file = target.files[0];
-        formData.append('image', file);
-    }
-
     try {
-        const res = await fetch(MANDARIN_URL + '/image/uploadfile', {
-            method: 'POST',
-            body: formData,
-        });
-        const resJson = await res.json();
-        const filename = resJson.filename;
-        const imgURL = MANDARIN_URL + '/' + filename;
-        thumbnailImg.style.backgroundImage = `url(${imgURL})`;
+        const target = e.target as HTMLInputElement;
+        if (target.files !== null) {
+            const file = target.files[0];
+            const imgURL = await handleUploadImage(file);
+            thumbnailImg.style.backgroundImage = `url(${imgURL})`;
+        }
     } catch (err) {
         console.error(err);
     }
 }
+
 imgBtn.addEventListener('change', (e: Event) => {
     uploadImg(e);
 });
