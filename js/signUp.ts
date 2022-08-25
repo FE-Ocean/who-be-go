@@ -27,13 +27,13 @@ async function checkEmailValid(email: string) {
         try {
             const reqMsg: string = await getEmailValidMsg(reqData);
             if (reqMsg === '사용 가능한 이메일 입니다.') {
-                errorEmail.innerText = '*' + reqMsg;
+                errorEmail.textContent = '*' + reqMsg;
                 errorEmail.classList.remove('false');
                 errorEmail.classList.add('true');
                 return true;
             } else {
                 // 이미 가입된 이메일 주소 입니다.
-                errorEmail.innerText = '*' + reqMsg;
+                errorEmail.textContent = '*' + reqMsg;
                 errorEmail.classList.add('false');
                 return false;
             }
@@ -41,7 +41,7 @@ async function checkEmailValid(email: string) {
             console.error(err);
         }
     } else {
-        errorEmail.innerText = '*이메일 형식이 올바르지 않습니다.';
+        errorEmail.textContent = '*이메일 형식이 올바르지 않습니다.';
         errorEmail.classList.add('false');
         return false;
     }
@@ -93,19 +93,19 @@ password.addEventListener('input', (e: Event) => {
         errorPassword.classList.add('true');
     } else {
         errorPassword.classList.add('false');
-        errorPassword.innerText = '*비밀번호는 6~16자 이내로 입력해 주세요.';
+        errorPassword.textContent = '*비밀번호는 6~16자 이내로 입력해 주세요.';
     }
 });
 
 checkPassword.addEventListener('input', (e: Event) => {
     e.preventDefault();
     if (checkPasswordCorrect(password.value, checkPassword.value)) {
-        checkMsg.innerText = '';
+        checkMsg.textContent = '';
         checkMsg.classList.add('true');
         checkMsg.classList.remove('false');
     } else {
         checkMsg.classList.add('false');
-        checkMsg.innerText = '*비밀번호가 일치하지 않습니다.';
+        checkMsg.textContent = '*비밀번호가 일치하지 않습니다.';
     }
 });
 
@@ -151,12 +151,12 @@ profileForm.addEventListener('input', () => {
 // name 체크
 function checkNameValid(name: string) {
     if (name == '') {
-        errorName.innerText = '*사용자 이름은 필수 입력사항 입니다.';
+        errorName.textContent = '*사용자 이름은 필수 입력사항 입니다.';
         errorName.classList.remove('true');
         errorName.classList.add('false');
         return false;
     } else if (name.length < 2 || name.length > 11) {
-        errorName.innerText = '*사용자 이름은 2~10자 이내여야 합니다.';
+        errorName.textContent = '*사용자 이름은 2~10자 이내여야 합니다.';
         errorName.classList.remove('true');
         errorName.classList.add('false');
         return false;
@@ -171,12 +171,12 @@ async function checkIdValid(id: string) {
     try {
         const regex = /^[a-zA-Z0-9_.]{1,10}$/;
         if (id == '') {
-            errorId.innerText = '*계정ID는 필수 입력사항 입니다.';
+            errorId.textContent = '*계정ID는 필수 입력사항 입니다.';
             errorId.classList.remove('true');
             errorId.classList.add('false');
             return false;
         } else if (!regex.test(id)) {
-            errorId.innerText =
+            errorId.textContent =
                 '*영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.';
             errorId.classList.remove('true');
             errorId.classList.add('false');
@@ -191,12 +191,12 @@ async function checkIdValid(id: string) {
         const resMsg: string = await getIdValidMsg(idData);
 
         if (resMsg === '사용 가능한 계정ID 입니다.') {
-            errorId.innerText = '*' + resMsg;
+            errorId.textContent = '*' + resMsg;
             errorId.classList.remove('false');
             errorId.classList.add('true');
             return true;
         } else if (resMsg === '이미 가입된 계정ID 입니다.') {
-            errorId.innerText = '*' + resMsg;
+            errorId.textContent = '*' + resMsg;
             errorId.classList.remove('true');
             errorId.classList.add('false');
             return false;
