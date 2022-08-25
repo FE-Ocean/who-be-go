@@ -1,5 +1,8 @@
 import { MANDARIN_URL } from './BASE_URL.js';
 
+const token = window.localStorage.getItem('token');
+const accountname = window.localStorage.getItem('accountname');
+
 // 이메일 검증 결과
 const getEmailValidMsg = async (reqData: object) => {
     const res = await fetch(MANDARIN_URL + '/user/emailvalid', {
@@ -55,4 +58,27 @@ const signUp = async (reqData: object) => {
     return resJson.message;
 };
 
-export { getEmailValidMsg, getIdValidMsg, login, signUp };
+// 계정 정보 불러오기
+const getUserInfo = async () => {
+    try {
+        const data = await fetch(`${MANDARIN_URL}/profile/${accountname}`, {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-type': 'application/json',
+            },
+        });
+        const result = await data.json();
+        if (result.profile) {
+            return result.profile;
+        } else {
+            throw new Error(result.message);
+        }
+    } catch (error) {
+        if (error instanceof Error) {
+            alert(error.message);
+        }
+    }
+};
+
+export { getEmailValidMsg, getIdValidMsg, login, signUp, getUserInfo };

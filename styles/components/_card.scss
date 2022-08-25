@@ -143,7 +143,7 @@
     grid-template-columns: repeat(3, 205px);
     gap: 20px;
     height: 721px;
-    overflow-y: scroll;
+    overflow-y: auto;
     .card-s {
         @extend %card-base;
         background-image: url('../../assets/images/min_post_default.jpg');
@@ -169,6 +169,21 @@
                     text-align: center;
                     @include text-overflow-three(180px);
                 }
+            }
+        }
+        .rate-star {
+            position: relative;
+            width: 120px;
+            height: 24px;
+            background-image: url('../../assets/icons/stars-gray.svg');
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: var(--width-rating);
+                height: 100%;
+                background-image: url('../../assets/icons/star-yellow.svg');
             }
         }
     }
@@ -204,12 +219,17 @@
                     }
                 }
             }
+            .rate-star {
+                width: 100px;
+                height: 20px;
+                background-size: cover;
+                &::after {
+                    background-size: cover;
+                }
+            }
         }
         grid-template-columns: repeat(3, 160px);
         gap: 15px;
-        .rate-star {
-            height: 20px;
-        }
     }
 }
 
