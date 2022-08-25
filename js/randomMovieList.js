@@ -1,5 +1,5 @@
 export default [
-    { id: 1, title: '라라랜드', movieSeq: '36256' },
+    { id: 1, title: '마녀', movieSeq: '17298' },
     { id: 2, title: '리틀포레스트', movieSeq: '16928' },
     { id: 3, title: '인턴', movieSeq: '34729' },
     { id: 4, title: '노팅힐', movieSeq: '06630' },
@@ -101,4 +101,5 @@ export default [
     { id: 96, title: '이터널선샤인', movieSeq: '10779' },
     { id: 97, title: '어거스트러쉬', movieSeq: '21440' },
     { id: 98, title: '원스어폰어타임인할리우드', movieSeq: '48214' },
+    { id: 99, title: '라라랜드', movieSeq: '36256' },
 ];
