@@ -4,10 +4,12 @@ import { getEmailValidMsg, getIdValidMsg, signUp } from './userApi.js';
 const signUpForm = document.querySelector('#form-signup') as HTMLFormElement;
 const email = document.querySelector('#email') as HTMLInputElement;
 const password = document.querySelector('#password') as HTMLInputElement;
+const checkPassword = document.querySelector('#check') as HTMLInputElement;
 const errorEmail = document.querySelector('.msg-error.email') as HTMLElement;
 const errorPassword = document.querySelector(
     '.msg-error.password'
 ) as HTMLElement;
+const checkMsg = document.querySelector('.msg-error.check') as HTMLElement;
 const nextBtn = document.querySelector('#btn-next') as HTMLButtonElement;
 
 //이메일 주소 유효성 검사
@@ -53,11 +55,24 @@ function checkPasswordValid(password: string) {
         return false;
     }
 }
+//비밀번호 일치 검증
+function checkPasswordCorrect(password: string, check: string) {
+    const checkPassword = password;
+    const checkCorr = check;
+    if (checkPassword === checkCorr) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 //버튼 활성화 함수
 async function btnCheckValid() {
     const emailCheckedResult = await checkEmailValid(email.value);
-    const passwordCheckedResult = checkPasswordValid(password.value);
+    const passwordCheckedResult = checkPasswordCorrect(
+        password.value,
+        checkPassword.value
+    );
 
     if (emailCheckedResult && passwordCheckedResult) {
         nextBtn.disabled = false;
@@ -79,6 +94,18 @@ password.addEventListener('input', (e: Event) => {
     } else {
         errorPassword.classList.add('false');
         errorPassword.innerText = '*비밀번호는 6~16자 이내로 입력해 주세요.';
+    }
+});
+
+checkPassword.addEventListener('input', (e: Event) => {
+    e.preventDefault();
+    if (checkPasswordCorrect(password.value, checkPassword.value)) {
+        checkMsg.innerText = '';
+        checkMsg.classList.add('true');
+        checkMsg.classList.remove('false');
+    } else {
+        checkMsg.classList.add('false');
+        checkMsg.innerText = '*비밀번호가 일치하지 않습니다.';
     }
 });
 

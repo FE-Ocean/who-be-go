@@ -18,56 +18,52 @@
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
-
 .container-signup .page-title {
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 30px;
   color: #ffffff;
   margin-bottom: 54px;
 }
-
 .container-signup .page-title.profile {
   margin-bottom: 10px;
 }
-
 .container-signup .page-subtitle {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-weight: 300;
   font-size: 11px;
   color: #767676;
 }
-
 .container-signup label {
   margin-bottom: 6px;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 13px;
   color: #dedede;
 }
-
 .container-signup ::-webkit-input-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
   color: #464646;
 }
-
+.container-signup ::-moz-placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 12px;
+  color: #464646;
+}
 .container-signup :-ms-input-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
   color: #464646;
 }
-
 .container-signup ::-ms-input-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
   color: #464646;
 }
-
 .container-signup ::placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
   color: #464646;
 }
-
 .container-signup input {
   padding: 8px 0;
   border-bottom: 1px solid #767676;
@@ -76,11 +72,9 @@
   font-size: 13px;
   line-height: 1;
 }
-
 .container-signup input:focus {
   border-color: #ffffff;
 }
-
 .container-signup .msg-error {
   display: none;
   margin-top: 7px;
@@ -88,26 +82,21 @@
   font-weight: 400;
   font-size: 11px;
 }
-
-.container-signup .msg-error.email.true, .container-signup .msg-error.userid.true {
+.container-signup .msg-error.email.true, .container-signup .msg-error.userid.true, .container-signup .msg-error.check.true {
   color: #b8ff96;
   display: block;
 }
-
-.container-signup .msg-error.email.false, .container-signup .msg-error.userid.false {
+.container-signup .msg-error.email.false, .container-signup .msg-error.userid.false, .container-signup .msg-error.check.false {
   color: #ff5f5f;
   display: block;
 }
-
 .container-signup .msg-error.password.true, .container-signup .msg-error.username.true {
   display: none;
 }
-
 .container-signup .msg-error.password.false, .container-signup .msg-error.username.false {
   color: #ff5f5f;
   display: block;
 }
-
 .container-signup .wrapper-email,
 .container-signup .wrapper-password,
 .container-signup .wrapper-name,
@@ -121,16 +110,13 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-
 .container-signup .wrapper-password,
 .container-signup .wrapper-intro {
-  margin: 16px 0 35px 0;
+  margin: 16px 0 20px 0;
 }
-
 .container-signup .wrapper-id {
   margin-top: 16px;
 }
-
 .container-signup .wrapper-upload-img {
   width: 130px;
   height: 130px;
@@ -141,7 +127,6 @@
   position: relative;
   border-radius: 9999px;
 }
-
 .container-signup .wrapper-upload-img .ico-upload {
   width: 40px;
   height: 40px;
@@ -152,7 +137,7 @@
   cursor: pointer;
 }
 
-input[type='file'] {
+input[type=file] {
   position: absolute;
   width: 1px;
   height: 1px;

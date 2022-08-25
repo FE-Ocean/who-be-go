@@ -57,7 +57,8 @@
             size: 11px;
         }
         &.email,
-        &.userid {
+        &.userid,
+        &.check {
             &.true {
                 color: $green;
                 display: block;
@@ -88,7 +89,7 @@
     }
     .wrapper-password,
     .wrapper-intro {
-        margin: 16px 0 35px 0;
+        margin: 16px 0 20px 0;
     }
     .wrapper-id {
         margin-top: 16px;
