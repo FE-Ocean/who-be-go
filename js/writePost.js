@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { handleUploadImage } from './imageApi.js';
+import { getMovieInfo } from './movieApi.js';
 import { writeReview } from './reviewApi.js';
 const movieTitle = document.querySelector('#movie-title');
 const movieSubTitle = document.querySelector('#movie-title-eng');
@@ -17,9 +18,15 @@ const imgReview = document.querySelector('#img-review');
 const imgInput = document.querySelector('#img-input');
 const textReview = document.querySelector('#text-review');
 const saveButton = document.querySelector('#btn-save');
+// const movieSeq = window.location.search.slice(1);
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+const movieId = params.get('movieId');
+const movieSeq = params.get('movieSeq');
 // 서버로 전송할 이미지 (파일 정보가 담김)
 let img;
 const IMG_MAX_SIZE = 10 * 1024 * 1024;
+let imgUrl = '';
 const fileTypeArray = [
     'image/gif',
     'image/jpeg',
@@ -41,7 +48,6 @@ const setTextHeight = (e) => {
 // 감상문 업로드
 const handleUploadReview = (e) => __awaiter(void 0, void 0, void 0, function* () {
     e.preventDefault();
-    let imgUrl = '';
     if (textRating.textContent === '') {
         alert('별점을 입력해주세요.');
         return;
@@ -64,6 +70,21 @@ const handleUploadReview = (e) => __awaiter(void 0, void 0, void 0, function* ()
     const postId = yield writeReview(reqData);
     window.location.href = `/pages/reviewDetail.html?id=${postId}`;
 });
+window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
+    if (movieId !== null && movieSeq !== null) {
+        const movieInfo = yield getMovieInfo(movieId, movieSeq);
+        movieTitle.textContent = movieInfo.title;
+        if (movieInfo.titleEng !== '') {
+            movieSubTitle.textContent = movieInfo.titleEng;
+        }
+        else {
+            movieSubTitle.textContent = movieInfo.titleOrg;
+        }
+        if (movieInfo.posters !== '') {
+            imgUrl = movieInfo.posters.substring(0, 60);
+        }
+    }
+}));
 imgInput.addEventListener('change', (e) => {
     const fileReader = new FileReader();
     const target = e.currentTarget;

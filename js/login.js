@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { MANDARIN_URL } from './BASE_URL.js';
+import { login } from './userApi.js';
 const loginForm = document.querySelector('.form-login');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
@@ -35,14 +35,7 @@ const Login = (e) => __awaiter(void 0, void 0, void 0, function* () {
         },
     };
     try {
-        const res = yield fetch(MANDARIN_URL + '/user/login', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify(loginData),
-        });
-        const resJson = yield res.json();
+        const resJson = yield login(loginData);
         if (resJson.status !== 422) {
             localStorage.setItem('token', resJson.user.token);
             localStorage.setItem('accountname', resJson.user.accountname);

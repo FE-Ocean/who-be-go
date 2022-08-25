@@ -13,3 +13,14 @@
     font: 18px/1 $font-regular;
     text-align: center;
 }
+
+// .card-m:focus {
+//     outline: 10px solid #FFC3C3;
+// }
+
+.card-m .show-contents {
+    text-align: left;
+    & .wrapper-movie-title {
+        color: #fff;
+    }
+}

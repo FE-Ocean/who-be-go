@@ -1,4 +1,5 @@
-import { MANDARIN_URL } from './BASE_URL.js';
+import { handleUploadImage } from './imageApi.js';
+import { getEmailValidMsg, getIdValidMsg, signUp } from './userApi.js';
 
 const signUpForm = document.querySelector('#form-signup') as HTMLFormElement;
 const email = document.querySelector('#email') as HTMLInputElement;
@@ -22,17 +23,7 @@ async function checkEmailValid(email: string) {
     };
     if (checkEmail.test(email)) {
         try {
-            const res = await fetch(MANDARIN_URL + '/user/emailvalid', {
-                method: 'POST',
-                headers: {
-                    'Content-type': 'application/json',
-                },
-                body: JSON.stringify(reqData),
-            });
-
-            const reqJson = await res.json();
-
-            const reqMsg: string = reqJson.message;
+            const reqMsg: string = await getEmailValidMsg(reqData);
             if (reqMsg === '사용 가능한 이메일 입니다.') {
                 errorEmail.innerText = '*' + reqMsg;
                 errorEmail.classList.remove('false');
@@ -170,16 +161,7 @@ async function checkIdValid(id: string) {
                 accountname: id,
             },
         };
-        const res = await fetch(MANDARIN_URL + '/user/accountnamevalid', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify(idData),
-        });
-
-        const resJson = await res.json();
-        const resMsg: string = resJson.message;
+        const resMsg: string = await getIdValidMsg(idData);
 
         if (resMsg === '사용 가능한 계정ID 입니다.') {
             errorId.innerText = '*' + resMsg;
@@ -199,26 +181,18 @@ async function checkIdValid(id: string) {
 
 // 이미지 업로드
 async function uploadImg(e: Event) {
-    const formData = new FormData();
-    const target = e.target as HTMLInputElement;
-    if (target.files !== null) {
-        const file = target.files[0];
-        formData.append('image', file);
-    }
-
     try {
-        const res = await fetch(MANDARIN_URL + '/image/uploadfile', {
-            method: 'POST',
-            body: formData,
-        });
-        const resJson = await res.json();
-        const filename = resJson.filename;
-        const imgURL = MANDARIN_URL + '/' + filename;
-        thumbnailImg.style.backgroundImage = `url(${imgURL})`;
+        const target = e.target as HTMLInputElement;
+        if (target.files !== null) {
+            const file = target.files[0];
+            const imgURL = await handleUploadImage(file);
+            thumbnailImg.style.backgroundImage = `url(${imgURL})`;
+        }
     } catch (err) {
         console.error(err);
     }
 }
+
 imgBtn.addEventListener('change', (e: Event) => {
     uploadImg(e);
 });
@@ -230,26 +204,20 @@ async function userInfo(e: Event) {
         thumbnailImg.style.backgroundImage !== ''
             ? thumbnailImg.style.backgroundImage
             : '../../assets/icons/default-logo.svg';
+    const reqData = {
+        user: {
+            username: name.value,
+            email: email.value,
+            password: password.value,
+            accountname: id.value,
+            intro: intro.value,
+            image: image,
+        },
+    };
 
     try {
-        const res = await fetch(MANDARIN_URL + '/user', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify({
-                user: {
-                    username: name.value,
-                    email: email.value,
-                    password: password.value,
-                    accountname: id.value,
-                    intro: intro.value,
-                    image: image,
-                },
-            }),
-        });
-        const resJson = await res.json();
-        if (resJson.message === '회원가입 성공') {
+        const resMsg = await signUp(reqData);
+        if (resMsg === '회원가입 성공') {
             location.href = './login.html';
         }
     } catch (err) {

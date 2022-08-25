@@ -33,6 +33,7 @@ var __awaiter =
             );
         });
     };
+
 import { getMovieInfo } from './movieApi.js';
 const title = document.querySelector('.movie-title');
 const titleEng = document.querySelector('.sub-movie-title');
@@ -53,14 +54,14 @@ const movieSeq = params.get('movieSeq');
 postReview.addEventListener('click', () => {
     window.location.href = `../pages/writePost.html?movieId=${movieId}&movieSeq=${movieSeq}`;
 });
-window.addEventListener('load', () =>
-    __awaiter(void 0, void 0, void 0, function* () {
-        if (movieId !== null && movieSeq !== null) {
-            const movieInfo = yield getMovieInfo(movieId, movieSeq);
-            showValue(movieInfo);
-        }
-    })
-);
+
+window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
+    if (movieId !== null && movieSeq !== null) {
+        const movieInfo = yield getMovieInfo(movieId, movieSeq);
+        showValue(movieInfo);
+    }
+}));
+
 const showValue = (movie) => {
     title.textContent = movie.title;
     if (movie.titleEng === '') {
