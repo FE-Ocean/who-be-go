@@ -47,6 +47,10 @@
     flex-direction: column;
     justify-content: space-between;
     margin: 10px 0 10px;
+    .container-review-btn {
+        position: relative;
+        animation: motion 1.8s linear 0s infinite alternate;
+    }
     .img-wbg {
         width: 48px;
         height: 66px;
@@ -58,6 +62,8 @@
         }
     }
     .btn-ms {
+        position: absolute;
+        top: 70px;
         margin: 0 7.5px 0;
     }
     .movie-info {
@@ -128,10 +134,15 @@ div > dt {
         max-width: 300px;
         margin: 25px 0 0px;
         .container-review-btn {
+            position: static;
             margin: 0 auto;
             padding-bottom: 20px;
+            animation: none;
             .img-wbg {
                 display: none;
+            }
+            .btn-ms {
+                position: static;
             }
         }
         .movie-info {
@@ -149,5 +160,14 @@ div > dt {
     }
     .actor {
         @include text-overflow-one(300px);
+    }
+}
+
+@keyframes motion {
+    form {
+        padding-top: 0px;
+    }
+    to {
+        padding-top: 10px;
     }
 }
