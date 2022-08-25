@@ -221,6 +221,12 @@
   margin: 10px 0 10px;
 }
 
+.right-part .container-review-btn {
+  position: relative;
+  -webkit-animation: motion 1.8s linear 0s infinite alternate;
+          animation: motion 1.8s linear 0s infinite alternate;
+}
+
 .right-part .img-wbg {
   width: 48px;
   height: 66px;
@@ -231,6 +237,8 @@
 }
 
 .right-part .btn-ms {
+  position: absolute;
+  top: 70px;
   margin: 0 7.5px 0;
 }
 
@@ -317,11 +325,17 @@ div > dt {
     margin: 25px 0 0px;
   }
   .right-part .container-review-btn {
+    position: static;
     margin: 0 auto;
     padding-bottom: 20px;
+    -webkit-animation: none;
+            animation: none;
   }
   .right-part .container-review-btn .img-wbg {
     display: none;
+  }
+  .right-part .container-review-btn .btn-ms {
+    position: static;
   }
   .right-part .movie-info {
     font-size: 11px;
@@ -343,5 +357,23 @@ div > dt {
     display: inline-block;
     white-space: nowrap;
     width: 300px;
+  }
+}
+
+@-webkit-keyframes motion {
+  form {
+    padding-top: 0px;
+  }
+  to {
+    padding-top: 10px;
+  }
+}
+
+@keyframes motion {
+  form {
+    padding-top: 0px;
+  }
+  to {
+    padding-top: 10px;
   }
 }
