@@ -15,7 +15,7 @@ const review = document.querySelector('.wrapper-review');
 const writePostButton = document.getElementById('btn-writepost');
 const modalAlertContainer = document.querySelectorAll('.modal-alert-container')[1];
 const ul = document.querySelector('.list-review');
-writePostButton === null || writePostButton === void 0 ? void 0 : writePostButton.addEventListener('click', (e) => {
+writePostButton === null || writePostButton === void 0 ? void 0 : writePostButton.addEventListener('click', () => {
     location.href = '/pages/writePost.html';
 });
 // 삭제 버튼
