@@ -15,10 +15,11 @@ const imgInput = document.querySelector('#img-input') as HTMLInputElement;
 const textReview = document.querySelector('#text-review') as HTMLInputElement;
 const saveButton = document.querySelector('#btn-save') as HTMLButtonElement;
 
-const movieSeq = window.location.search.slice(1);
-// const queryString = window.location.search;
-// const params = new URLSearchParams(queryString);
-// const movieSeq = params.get('movieSeq');
+// const movieSeq = window.location.search.slice(1);
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+const movieId = params.get('movieId');
+const movieSeq = params.get('movieSeq');
 
 // 서버로 전송할 이미지 (파일 정보가 담김)
 let img: File;
@@ -72,8 +73,8 @@ const handleUploadReview = async (e: Event) => {
 };
 
 window.addEventListener('load', async () => {
-    if (movieSeq !== null) {
-        const movieInfo = await getMovieInfo(movieSeq);
+    if (movieId !== null && movieSeq !== null) {
+        const movieInfo = await getMovieInfo(movieId, movieSeq);
         movieTitle.textContent = movieInfo.title;
         if (movieInfo.titleEng !== '') {
             movieSubTitle.textContent = movieInfo.titleEng;

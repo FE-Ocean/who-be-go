@@ -18,10 +18,11 @@ const imgReview = document.querySelector('#img-review');
 const imgInput = document.querySelector('#img-input');
 const textReview = document.querySelector('#text-review');
 const saveButton = document.querySelector('#btn-save');
-const movieSeq = window.location.search.slice(1);
-// const queryString = window.location.search;
-// const params = new URLSearchParams(queryString);
-// const movieSeq = params.get('movieSeq');
+// const movieSeq = window.location.search.slice(1);
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+const movieId = params.get('movieId');
+const movieSeq = params.get('movieSeq');
 // 서버로 전송할 이미지 (파일 정보가 담김)
 let img;
 const IMG_MAX_SIZE = 10 * 1024 * 1024;
@@ -70,8 +71,8 @@ const handleUploadReview = (e) => __awaiter(void 0, void 0, void 0, function* ()
     window.location.href = `/pages/reviewDetail.html?id=${postId}`;
 });
 window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
-    if (movieSeq !== null) {
-        const movieInfo = yield getMovieInfo(movieSeq);
+    if (movieId !== null && movieSeq !== null) {
+        const movieInfo = yield getMovieInfo(movieId, movieSeq);
         movieTitle.textContent = movieInfo.title;
         if (movieInfo.titleEng !== '') {
             movieSubTitle.textContent = movieInfo.titleEng;

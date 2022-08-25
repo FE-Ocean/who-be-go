@@ -45,15 +45,21 @@ const runtime = document.querySelector('.runtime');
 const rating = document.querySelector('.rating');
 const summary = document.querySelector('.movie-summary>dd') as HTMLElement;
 const postReview = document.querySelector('.container-review-btn>button');
-const movieSeq = window.location.search.slice(1);
+// const movieSeq = window.location.search.slice(1);
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+const movieId = params.get('movieId');
+const movieSeq = params.get('movieSeq');
 
 postReview!.addEventListener('click', () => {
-    window.location.href = `../pages/writePost.html?${movieSeq}`;
+    window.location.href = `../pages/writePost.html?movieId=${movieId}&movieSeq=${movieSeq}`;
 });
 
 window.addEventListener('load', async () => {
-    const movieInfo = await getMovieInfo(movieSeq);
-    showValue(movieInfo);
+    if (movieId !== null && movieSeq !== null) {
+        const movieInfo = await getMovieInfo(movieId, movieSeq);
+        showValue(movieInfo);
+    }
 });
 
 const showValue = (movie: MovieLists) => {
