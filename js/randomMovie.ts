@@ -1,5 +1,6 @@
 import { MOVIE_URL } from './BASE_URL.js';
 import data from './randomMovieList.js';
+
 interface MovieLists {
     title: string;
     titleOrg: string;
@@ -78,6 +79,10 @@ const setValue = (result: MovieLists) => {
             return poster;
         }
     }
+
+    img!.style.backgroundImage = "url('" + posterUrl(result.posters) + "')";
+    imgInfo!.style.backgroundImage = "url('" + posterUrl(result.posters) + "')";
+
     const title = result.title
         .replace(/\!HS/g, '')
         .replace(/\s+\!HE+\s/g, '')
@@ -90,21 +95,36 @@ const setValue = (result: MovieLists) => {
         0,
         4
     )}.${result.repRlsDate.slice(4, 6)}.${result.repRlsDate.slice(6, 8)}`;
-    director!.textContent = result.directors.director[0].directorNm;
+
+    if (result.directors.director[0].directorNm === '') {
+        director!.textContent = '정보없음';
+    } else {
+        director!.textContent = result.directors.director[0].directorNm;
+    }
 
     let actorBox: string = '';
-    for (let i = 0; i < 3; i++) {
-        actorBox += result.actors.actor[i].actorNm;
-        actorBox += ' | ';
+    if (!result.actors.actor[0].actorNm) {
+        actors!.textContent = '정보없음';
+    } else {
+        for (let i = 0; i < result.actors.actor.length; i++) {
+            actorBox += result.actors.actor[i].actorNm;
+            actorBox += ' | ';
+        }
     }
     actors!.textContent = actorBox.slice(0, -2);
 
-    let newGenres: string = result.genre.split(',').join(' | ');
-    genre!.textContent = newGenres;
+    if (result.genre === '') {
+        genre!.textContent = '정보없음';
+    } else {
+        let newGenres: string = result.genre.split(',').join(' | ');
+        genre!.textContent = newGenres;
+    }
 
-    rating!.textContent = result.rating;
-    img!.style.backgroundImage = "url('" + posterUrl(result.posters) + "')";
-    imgInfo!.style.backgroundImage = "url('" + posterUrl(result.posters) + "')";
+    if (result.rating === '') {
+        rating!.textContent = '정보없음';
+    } else {
+        rating!.textContent = result.rating;
+    }
 };
 
 //새로운 영화 추천 버튼
