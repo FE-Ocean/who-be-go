@@ -171,6 +171,21 @@
                 }
             }
         }
+        .rate-star {
+            position: relative;
+            width: 120px;
+            height: 24px;
+            background-image: url('../../assets/icons/stars-gray.svg');
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: var(--width-rating);
+                height: 100%;
+                background-image: url('../../assets/icons/star-yellow.svg');
+            }
+        }
     }
 }
 
@@ -204,12 +219,17 @@
                     }
                 }
             }
+            .rate-star {
+                width: 100px;
+                height: 20px;
+                background-size: cover;
+                &::after {
+                    background-size: cover;
+                }
+            }
         }
         grid-template-columns: repeat(3, 160px);
         gap: 15px;
-        .rate-star {
-            height: 20px;
-        }
     }
 }
 

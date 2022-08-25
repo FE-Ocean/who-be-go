@@ -35,6 +35,10 @@
         #text-id {
             font-size: 13px;
             margin-bottom: 25px;
+            &::before{
+                content: "@";
+                margin-right: 4px;
+            }
         }
         #text-intro {
             font-size: 14px;
