@@ -112,7 +112,11 @@ const showValue = (movie: MovieLists) => {
         genre!.textContent = movie.genre.replace(/,/g, ' | ');
     }
 
-    runtime!.textContent = movie.runtime + '분';
+    if (movie.runtime === '') {
+        runtime!.textContent = '정보 없음';
+    } else {
+        runtime!.textContent = movie.runtime + '분';
+    }
 
     if (movie.rating === '') {
         rating!.textContent = '정보 없음';
