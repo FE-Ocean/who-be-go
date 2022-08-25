@@ -12,7 +12,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 function search() {
     return __awaiter(this, void 0, void 0, function* () {
         const searchInput = document.getElementById('input-search').value;
-        const url = `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=&detail=Y&listCount=10&title=${searchInput}`;
+        const serviceKey = 'NE98FTD75W4C0R4JS785';
+        const url = `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=${serviceKey}&detail=Y&listCount=15&title=${searchInput}`;
         console.log('인풋', searchInput);
         try {
             const response = yield fetch(url, {
@@ -38,7 +39,7 @@ const createSearchedList = (list) => {
         searchedList === null || searchedList === void 0 ? void 0 : searchedList.appendChild(title);
         title.textContent = list.Result[i].title;
         title.addEventListener('click', () => {
-            window.location.href = `../pages/searchResult.html?movieSeq=${list.Result[i].movieSeq}`;
+            window.location.href = `../pages/searchResult.html?movieSeq=${list.Result[i].movieSeq}&movieId=${list.Result[i].movieId}`;
         });
     }
 };
