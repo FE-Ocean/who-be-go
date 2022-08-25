@@ -11,13 +11,27 @@
   text-align: center;
 }
 
-.card-m:focus {
-  outline: 10px solid #FFC3C3;
-}
-
 .card-m .show-contents {
   text-align: left;
 }
 .card-m .show-contents .wrapper-movie-title {
   color: #fff;
+}
+
+@-webkit-keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.loading {
+  background-image: none;
+  background-color: #e0e0e0;
+  -webkit-animation: blinker 1s linear infinite;
+          animation: blinker 1s linear infinite;
 }
