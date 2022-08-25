@@ -44,12 +44,12 @@ profileForm.addEventListener('input', () => {
 // name 체크
 function checkNameValid(name: string) {
     if (name == '') {
-        errorName.innerText = '*사용자 이름은 필수 입력사항 입니다.';
+        errorName.textContent = '*사용자 이름은 필수 입력사항 입니다.';
         errorName.classList.remove('true');
         errorName.classList.add('false');
         return false;
     } else if (name.length < 2 || name.length > 11) {
-        errorName.innerText = '*사용자 이름은 2~10자 이내여야 합니다.';
+        errorName.textContent = '*사용자 이름은 2~10자 이내여야 합니다.';
         errorName.classList.remove('true');
         errorName.classList.add('false');
         return false;
@@ -64,12 +64,12 @@ async function checkIdValid(id: string) {
     try {
         const regex = /^[a-zA-Z0-9_.]{1,10}$/;
         if (id == '') {
-            errorId.innerText = '*계정ID는 필수 입력사항 입니다.';
+            errorId.textContent = '*계정ID는 필수 입력사항 입니다.';
             errorId.classList.remove('true');
             errorId.classList.add('false');
             return false;
         } else if (!regex.test(id)) {
-            errorId.innerText =
+            errorId.textContent =
                 '*영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.';
             errorId.classList.remove('true');
             errorId.classList.add('false');
@@ -88,12 +88,12 @@ async function checkIdValid(id: string) {
         const resMsg: string = await getIdValidMsg(idData);
 
         if (resMsg === '사용 가능한 계정ID 입니다.') {
-            errorId.innerText = '*' + resMsg;
+            errorId.textContent = '*' + resMsg;
             errorId.classList.remove('false');
             errorId.classList.add('true');
             return true;
         } else if (resMsg === '이미 가입된 계정ID 입니다.') {
-            errorId.innerText = '*' + resMsg;
+            errorId.textContent = '*' + resMsg;
             errorId.classList.remove('true');
             errorId.classList.add('false');
             return false;
@@ -138,7 +138,6 @@ async function editProfile(e: Event) {
 
     if (editInfo) {
         localStorage.setItem('accountname', editInfo.accountname);
-        console.log(accountname);
         location.href = './myPage.html';
     }
 }
