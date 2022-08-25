@@ -24,3 +24,15 @@
         color: #fff;
     }
 }
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.loading {
+    background-image: none;
+    background-color: #e0e0e0;
+    animation: blinker 1s linear infinite;
+}
