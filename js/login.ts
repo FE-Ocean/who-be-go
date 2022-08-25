@@ -1,4 +1,4 @@
-import { MANDARIN_URL } from './BASE_URL.js';
+import { login } from './userApi.js';
 
 const loginForm = document.querySelector('.form-login') as HTMLFormElement;
 const email = document.querySelector('#email') as HTMLInputElement;
@@ -31,14 +31,7 @@ const Login = async (e: Event) => {
     };
 
     try {
-        const res = await fetch(MANDARIN_URL + '/user/login', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify(loginData),
-        });
-        const resJson = await res.json();
+        const resJson = await login(loginData);
 
         if (resJson.status !== 422) {
             localStorage.setItem('token', resJson.user.token);
