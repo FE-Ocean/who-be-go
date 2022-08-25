@@ -12,8 +12,10 @@ import { getEmailValidMsg, getIdValidMsg, signUp } from './userApi.js';
 const signUpForm = document.querySelector('#form-signup');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
+const checkPassword = document.querySelector('#check');
 const errorEmail = document.querySelector('.msg-error.email');
 const errorPassword = document.querySelector('.msg-error.password');
+const checkMsg = document.querySelector('.msg-error.check');
 const nextBtn = document.querySelector('#btn-next');
 //이메일 주소 유효성 검사
 const checkEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,5}$/i;
@@ -61,11 +63,22 @@ function checkPasswordValid(password) {
         return false;
     }
 }
+//비밀번호 일치 검증
+function checkPasswordCorrect(password, check) {
+    const checkPassword = password;
+    const checkCorr = check;
+    if (checkPassword === checkCorr) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 //버튼 활성화 함수
 function btnCheckValid() {
     return __awaiter(this, void 0, void 0, function* () {
         const emailCheckedResult = yield checkEmailValid(email.value);
-        const passwordCheckedResult = checkPasswordValid(password.value);
+        const passwordCheckedResult = checkPasswordCorrect(password.value, checkPassword.value);
         if (emailCheckedResult && passwordCheckedResult) {
             nextBtn.disabled = false;
         }
@@ -87,6 +100,18 @@ password.addEventListener('input', (e) => {
     else {
         errorPassword.classList.add('false');
         errorPassword.innerText = '*비밀번호는 6~16자 이내로 입력해 주세요.';
+    }
+});
+checkPassword.addEventListener('input', (e) => {
+    e.preventDefault();
+    if (checkPasswordCorrect(password.value, checkPassword.value)) {
+        checkMsg.innerText = '';
+        checkMsg.classList.add('true');
+        checkMsg.classList.remove('false');
+    }
+    else {
+        checkMsg.classList.add('false');
+        checkMsg.innerText = '*비밀번호가 일치하지 않습니다.';
     }
 });
 //nextBtn 클릭시 프로필 설정 섹션으로 전환
