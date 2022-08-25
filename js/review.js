@@ -15,7 +15,7 @@ const review = document.querySelector('.wrapper-review');
 const writePostButton = document.getElementById('btn-writepost');
 const modalAlertContainer = document.querySelectorAll('.modal-alert-container')[1];
 const ul = document.querySelector('.list-review');
-writePostButton === null || writePostButton === void 0 ? void 0 : writePostButton.addEventListener('click', (e) => {
+writePostButton === null || writePostButton === void 0 ? void 0 : writePostButton.addEventListener('click', () => {
     location.href = '/pages/writePost.html';
 });
 // 삭제 버튼
@@ -36,8 +36,6 @@ const setReviewList = (post) => {
         for (let i of post) {
             const li = document.createElement('li');
             const strong = document.createElement('strong');
-            // const details = document.createElement('details');
-            // const summary = document.createElement('summary');
             const modalButton = document.createElement('button');
             const imgMore = document.createElement('img');
             const divDropbox = document.createElement('div');
@@ -59,7 +57,6 @@ const setReviewList = (post) => {
             strong.addEventListener('click', () => {
                 window.location.href = `../pages/reviewDetail.html?id=${i.id}`;
             });
-            // details.classList.add('details-movie');
             modalButton.classList.add('btn-modal');
             imgMore.setAttribute('src', '../assets/icons/icon-more-vertical.svg');
             imgMore.setAttribute('width', '25px');
@@ -107,12 +104,9 @@ const setReviewList = (post) => {
             });
             divDropbox.appendChild(buttonEdit);
             divDropbox.appendChild(buttonDelete);
-            // details.appendChild(summary);
-            // details.appendChild(divDropbox);
             modalButton.appendChild(divDropbox);
             divWrapperPoster.appendChild(imgPoster);
             li.appendChild(strong);
-            // li.appendChild(details);
             li.appendChild(modalButton);
             li.appendChild(imgRating);
             li.appendChild(divWrapperPoster);
@@ -130,6 +124,8 @@ const createObserver = (element) => {
         if (entry.isIntersecting) {
             observer.unobserve(entry.target);
             const newReviewList = yield getReviewList(skip);
+            if (newReviewList.length === 0)
+                return;
             setReviewList(newReviewList);
             if ((ul === null || ul === void 0 ? void 0 : ul.lastElementChild) instanceof HTMLLIElement) {
                 observer.observe(ul.lastElementChild);
@@ -157,35 +153,11 @@ window.addEventListener('click', (e) => {
         }
     }
 });
-// 모달 버튼 클릭 시 드롭다운 나오게
-// modalButton.forEach((elem) => {
-//     if (elem instanceof HTMLElement) {
-//         elem?.addEventListener('click', (e) => {
-//             if (elem.nextElementSibling instanceof HTMLElement) {
-//                 e.stopPropagation();
-//                 console.log(elem.nextElementSibling.style.display);
-//                 elem.nextElementSibling.style.display = 'block';
-//                 console.log(elem.nextElementSibling.style.display);
-//             }
-//         });
-//     }
-// });
-// 바깥 영역 클릭시 모달 닫히게
-// window.addEventListener('click', (e) => {
-//     const target = e.target as HTMLElement;
-//     console.log(target.className);
-//     if (target.className === '') {
-//         for (let elem of modalDropbox) {
-//             console.log(elem);
-//             if (elem instanceof HTMLElement) {
-//                 elem.style.display = 'none';
-//             }
-//         }
-//     }
-// });
 window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
     const reviewList = yield getReviewList();
     setReviewList(reviewList);
+    if (reviewList.length < 10)
+        return;
     let lastItem = ul === null || ul === void 0 ? void 0 : ul.lastElementChild;
     if (lastItem instanceof HTMLLIElement) {
         createObserver(lastItem);
