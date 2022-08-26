@@ -1,6 +1,7 @@
 import { getReviewList, deleteReview } from './reviewApi.js';
 import PostInterface from './postInterface';
 import { hasToken } from './tokenValid.js';
+import { complete } from './loading.js';
 
 hasToken();
 
@@ -183,6 +184,7 @@ window.addEventListener('load', async () => {
     if (lastItem instanceof HTMLLIElement) {
         createObserver(lastItem);
     }
+    complete();
 });
 
 buttonDelete.addEventListener('click', async () => {

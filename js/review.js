@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { getReviewList, deleteReview } from './reviewApi.js';
 import { hasToken } from './tokenValid.js';
+import { complete } from './loading.js';
 hasToken();
 const noReview = document.querySelector('.wrapper-noreview');
 const review = document.querySelector('.wrapper-review');
@@ -162,6 +163,7 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
     if (lastItem instanceof HTMLLIElement) {
         createObserver(lastItem);
     }
+    complete();
 }));
 buttonDelete.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
     yield deleteReview(postId);
