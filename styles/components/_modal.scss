@@ -3,20 +3,20 @@
 
 // dropbox
 .modal-dropbox {
+    z-index: 20;
     &.disabled {
         display: none;
     }
     // 사용할 땐 여기부터
     position: absolute;
-    top: 38px;
-    right: -2px;
+    top: 40px;
+    right: -3px;
     // 여기까지 삭제해주세요
     &::before {
         content: '';
         display: block;
         position: absolute;
         top: -10px;
-        // left: 13px;
         right: 0px;
         border: {
             left: 15px solid transparent;
@@ -24,10 +24,9 @@
             bottom: 25px solid $dropbox-bg;
         }
     }
-    border-radius: 4px;
+    border-radius: 8px;
     width: 110px;
     background-color: $dropbox-bg;
-    // display: none;
     flex-direction: column;
     align-items: flex-start;
     padding: 6px;
@@ -45,7 +44,7 @@
 
 // alert
 .modal-alert-container {
-    z-index: 10;
+    z-index: 1000000;
     &.disabled {
         display: none;
     }
@@ -94,6 +93,28 @@
                 width: 0.5px;
                 height: 100%;
                 background-color: $disabled-line;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .modal-dropbox {
+        width: 62px;
+        right: -2px;
+        .btn-dropbox {
+            font-size: 12px;
+        }
+    }
+    .modal-alert-container {
+        .modal-alert {
+            width: 220px;
+            .message {
+                font-size: 13px;
+                padding: 26px 40px 22px;
+            }
+            .btn-alert {
+                font-size: 13px;
             }
         }
     }

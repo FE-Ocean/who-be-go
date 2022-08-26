@@ -1,6 +1,6 @@
 @import '../constants/colors';
 @import '../constants/typography';
-
+@import '../components/common';
 .write-wrapper {
     box-sizing: content-box;
     padding: 60px 20px;
@@ -10,18 +10,8 @@
     overflow: hidden;
 }
 
-.page-title {
-    font: {
-        family: $font-bold;
-        size: 30px;
-    }
-    line-height: 38px;
-    text-align: center;
-}
-
 .title-container {
-    margin: 43px auto 10px;
-    width: fit-content;
+    margin: 0 auto 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,21 +22,27 @@
             family: $font-bold;
             size: 25px;
         }
-        line-height: 31px;
+
+        @include text-overflow-three(98%);
+        line-height: 1.4;
     }
+
     #movie-title-eng {
         font: {
             family: $font-medium;
-            size: 15px;
+            size: 20px;
         }
-        line-height: 19px;
+        line-height: 1.4;
+        color: $header-text;
+        @include text-overflow-three(98%);
     }
 }
 
 .rating-wrapper {
     margin: {
         left: auto;
-        bottom: 18px;
+        bottom: 22px;
+        right: 5px;
     }
     width: fit-content;
     display: flex;
@@ -63,10 +59,10 @@
         align-items: center;
         gap: 10px;
         #text-rating {
-            padding-top: 3px;
+            padding-top: 4px;
             font: {
                 family: $font-bold;
-                size: 20px;
+                size: 16px;
             }
         }
     }
@@ -140,11 +136,14 @@
     background-color: $post-bg;
     border-radius: 20px;
     .review-contents {
-        overflow: auto;
+        overflow-y: auto;
         height: 100%;
+        @include scroll(8px);
+
         #img-review {
             display: block;
-            max-width: 100%;
+            max-width: 250px;
+            max-height: 300px;
             margin-bottom: 14px;
             border-radius: 4px;
             &.disabled {
@@ -153,12 +152,15 @@
         }
         #text-review {
             resize: none;
-            width: 100%;
-            overflow-y: hidden;
-            word-break: keep-all;
+            width: 98%;
+            height: 330px;
+            overflow-y: auto;
+            word-break: break-all;
             color: $content-text;
             font-size: 14px;
-            line-height: 18px;
+            line-height: 1.4;
+            @include scroll(6px);
+
             &::placeholder {
                 font: {
                     family: $font-regular;
@@ -188,6 +190,28 @@
 }
 
 .save {
-    margin-top: 21px;
+    margin-top: 22px;
     float: right;
+}
+
+@media screen and (max-width: 768px) {
+    .review-container {
+        padding: 24px;
+        #label-img {
+            top: -7px;
+            right: -7px;
+        }
+    }
+    .title-container {
+        margin-bottom: 12px;
+        #movie-title {
+            font-size: 20px;
+            @include text-overflow-two(96%);
+        }
+
+        #movie-title-eng {
+            font-size: 15px;
+            @include text-overflow-two(96%);
+        }
+    }
 }

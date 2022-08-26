@@ -142,7 +142,6 @@
     justify-content: center;
     grid-template-columns: repeat(3, 205px);
     gap: 20px;
-    height: 721px;
     overflow-y: auto;
     .card-s {
         @extend %card-base;
@@ -207,7 +206,6 @@
         }
     }
     .review-album {
-        height: 532px;
         .card-s {
             width: 160px;
             height: 160px;

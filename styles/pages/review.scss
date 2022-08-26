@@ -12,14 +12,6 @@
     }
 }
 
-.page-title {
-    font-size: 30px;
-    color: $title-text;
-    margin-top: 60px;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
 .wrapper-list-review {
     margin: 0 auto;
     margin-top: 50px;
@@ -44,6 +36,7 @@
     @include text-overflow-two(90%);
     color: $title-text;
     font-size: 25px;
+    margin-left: 5px;
     cursor: pointer;
 }
 
@@ -62,19 +55,6 @@
     }
 }
 
-// .img-rating {
-//     display: block;
-//     width: 100px;
-//     margin-top: 12px;
-//     margin-bottom: 22px;
-
-//     &::before {
-//         content: 'gg';
-//         display: block;
-//         width: 100%;
-//     }
-// }
-
 .wrapper-rating {
     background-image: url('../../assets/icons/stars-gray.svg');
     background-position: center;
@@ -83,8 +63,7 @@
     position: relative;
     width: 100px;
     height: 20px;
-    margin-top: 12px;
-    margin-bottom: 22px;
+    margin: 12px 0 22px 5px;
     --width-rating: 100%;
     &::before {
         content: '';
@@ -105,14 +84,16 @@
 .text-story {
     color: $content-text;
     font-size: 13px;
-    line-height: 1.3;
-    margin: 22px 0;
+    line-height: 1.4;
+    margin: 16px 0;
     max: {
         width: 98%;
         height: 200px;
     }
+    overflow-wrap: break-word;
     overflow-y: auto;
     border-radius: 4px;
+    @include scroll(8px);
 }
 
 .text-date {
@@ -146,7 +127,7 @@
     margin-top: 33px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 550px) {
     .wrapper-list-review {
         max-width: 360px;
     }

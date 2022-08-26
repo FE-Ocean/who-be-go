@@ -1,5 +1,6 @@
 @import '../constants/colors';
 @import '../constants/typography';
+@import '../components/common';
 
 .container-mypage {
     max-width: 720px;
@@ -13,11 +14,17 @@
         margin: 0 auto;
         padding-top: 50px;
         border-top: 1px solid $disabled-line;
+        height: fit-content;
+        max-height: 800px;
+        @include scroll(8px);
     }
     .user-info {
         display: block;
+        max-width: 600px;
+        margin: 0 auto;
         text-align: center;
         #img-profile {
+            border-radius: 9999px;
             width: 110px;
             margin-bottom: 19px;
         }
@@ -25,7 +32,7 @@
             font-family: $font-medium;
             font-size: 18px;
             color: $header-text;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
         #text-id,
         #text-intro {
@@ -35,8 +42,8 @@
         #text-id {
             font-size: 13px;
             margin-bottom: 25px;
-            &::before{
-                content: "@";
+            &::before {
+                content: '@';
                 margin-right: 4px;
             }
         }
