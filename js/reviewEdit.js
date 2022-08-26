@@ -80,7 +80,10 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
             }
         }
         textReview.textContent = contentArray[3];
-        imgReview.src = post.image;
+        if (post.image) {
+            imgReview.classList.remove('disabled');
+            imgReview.src = post.image;
+        }
         imgUrl = post.image;
     }
 }));
