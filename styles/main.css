@@ -564,7 +564,7 @@ textarea {
   color: #ff5f5f;
 }
 
-.nav li a .selected {
+.nav li a.selected {
   color: #ff5f5f;
 }
 
@@ -1050,7 +1050,7 @@ textarea {
   color: #ff5f5f;
 }
 
-.nav li a .selected {
+.nav li a.selected {
   color: #ff5f5f;
 }
 
