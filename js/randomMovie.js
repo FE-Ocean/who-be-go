@@ -19,6 +19,7 @@ const rating = document.querySelector('#rating');
 const img = document.querySelector('.card-L');
 const imgInfo = document.querySelector('.card-L.info');
 const newBtn = document.querySelector('.btn-L.home');
+const loading = document.querySelector('.wrapper-etc');
 //숫자 랜덤으로 뽑아주는 함수
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -48,6 +49,7 @@ function getMovieInfo() {
 }
 window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
     yield getMovieInfo();
+    loading.classList.add('disabled');
 }));
 const setValue = (result) => {
     function posterUrl(posters) {

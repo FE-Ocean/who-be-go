@@ -11,6 +11,7 @@ const modalAlertContainer = document.querySelectorAll(
     '.modal-alert-container'
 )[1];
 const ul = document.querySelector('.list-review');
+const loading = document.querySelector('.wrapper-etc') as HTMLElement;
 
 writePostButton?.addEventListener('click', () => {
     location.href = '/pages/writePost.html';
@@ -183,6 +184,7 @@ window.addEventListener('load', async () => {
     if (lastItem instanceof HTMLLIElement) {
         createObserver(lastItem);
     }
+    loading.classList.add('disabled');
 });
 
 buttonDelete.addEventListener('click', async () => {

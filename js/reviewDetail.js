@@ -17,6 +17,7 @@ const buttonEdit = document.querySelector('#btn-edit');
 const buttonShowAlert = document.querySelector('#btn-show-alert');
 // (모달의) 삭제 버튼
 const buttonDelete = document.querySelector('#btn-delete');
+const loading = document.querySelector('.wrapper-etc');
 // URL 이 ?id=123123 이런식으로 온다고 가정하겠습니다.
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
@@ -65,6 +66,7 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
         const currentPost = yield getReviewDetail(id);
         setReviewDetail(currentPost);
     }
+    loading.classList.add('disabled');
 }));
 modalButton.addEventListener('click', () => {
     modalDropbox.classList.toggle('disabled');
