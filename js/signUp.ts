@@ -123,9 +123,7 @@ nextBtn.addEventListener('click', (e: Event) => {
 
 const profileForm = document.querySelector('#form-profile') as HTMLFormElement;
 const imgBtn = document.querySelector('#choose-img') as HTMLInputElement;
-const thumbnailImg = document.querySelector(
-    '.wrapper-upload-img'
-) as HTMLDivElement;
+const profileImg = document.querySelector('#img-profile') as HTMLImageElement;
 const name = document.querySelector('#name') as HTMLInputElement;
 const id = document.querySelector('#user-id') as HTMLInputElement;
 const intro = document.querySelector('#intro') as HTMLInputElement;
@@ -213,7 +211,7 @@ async function uploadImg(e: Event) {
         if (target.files !== null) {
             const file = target.files[0];
             const imgURL = await handleUploadImage(file);
-            thumbnailImg.style.backgroundImage = `url(${imgURL})`;
+            profileImg.src = imgURL;
         }
     } catch (err) {
         console.error(err);
@@ -228,8 +226,8 @@ imgBtn.addEventListener('change', (e: Event) => {
 async function userInfo(e: Event) {
     e.preventDefault();
     const image =
-        thumbnailImg.style.backgroundImage !== ''
-            ? thumbnailImg.style.backgroundImage
+        profileImg.src !== ''
+            ? profileImg.src
             : '../../assets/icons/default-logo.svg';
     const reqData = {
         user: {
@@ -245,6 +243,7 @@ async function userInfo(e: Event) {
     try {
         const resMsg = await signUp(reqData);
         if (resMsg === '회원가입 성공') {
+            console.log(reqData);
             location.href = './login.html';
         }
     } catch (err) {

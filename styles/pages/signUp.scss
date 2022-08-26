@@ -95,23 +95,23 @@
         margin-top: 16px;
     }
     .wrapper-upload-img {
-        width: 130px;
-        height: 130px;
-        margin: 20px auto;
-        background: {
-            image: url('../../assets/icons/default-logo.svg');
-            repeat: no-repeat;
-            size: cover;
-        }
+        width: 322px;
         position: relative;
-        border-radius: 9999px;
+        #img-profile {
+            display: block;
+            width: 130px;
+            height: 130px;
+            margin: 20px auto;
+            border-radius: 50%;
+            object-fit: cover;
+        }
         .ico-upload {
             width: 40px;
             height: 40px;
             border-radius: 9999px;
             position: absolute;
             bottom: 0;
-            right: 0;
+            right: 90px;
             cursor: pointer;
         }
     }

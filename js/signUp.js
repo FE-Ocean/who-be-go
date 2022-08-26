@@ -124,7 +124,7 @@ nextBtn.addEventListener('click', (e) => {
 });
 const profileForm = document.querySelector('#form-profile');
 const imgBtn = document.querySelector('#choose-img');
-const thumbnailImg = document.querySelector('.wrapper-upload-img');
+const profileImg = document.querySelector('#img-profile');
 const name = document.querySelector('#name');
 const id = document.querySelector('#user-id');
 const intro = document.querySelector('#intro');
@@ -216,7 +216,7 @@ function uploadImg(e) {
             if (target.files !== null) {
                 const file = target.files[0];
                 const imgURL = yield handleUploadImage(file);
-                thumbnailImg.style.backgroundImage = `url(${imgURL})`;
+                profileImg.src = imgURL;
             }
         }
         catch (err) {
@@ -231,8 +231,8 @@ imgBtn.addEventListener('change', (e) => {
 function userInfo(e) {
     return __awaiter(this, void 0, void 0, function* () {
         e.preventDefault();
-        const image = thumbnailImg.style.backgroundImage !== ''
-            ? thumbnailImg.style.backgroundImage
+        const image = profileImg.src !== ''
+            ? profileImg.src
             : '../../assets/icons/default-logo.svg';
         const reqData = {
             user: {
@@ -247,6 +247,7 @@ function userInfo(e) {
         try {
             const resMsg = yield signUp(reqData);
             if (resMsg === '회원가입 성공') {
+                console.log(reqData);
                 location.href = './login.html';
             }
         }
