@@ -53,12 +53,16 @@ const setMovieDetail = (movie, detailResult) => __awaiter(void 0, void 0, void 0
     const li = document.getElementById(`rank${movie.rank}`);
     if (li instanceof HTMLLIElement) {
         li.style.backgroundImage = `url(${detailResult.posters.split('|')[0]})`;
+        li.addEventListener('click', () => {
+            location.href = `../pages/searchResult.html?movieSeq=${detailResult.movieSeq}&movieId=${detailResult.movieId}`;
+        });
         const movieTitle = li.querySelector('#movie-title');
         const movieEngTitle = li.querySelector('#movie-title-eng');
         const textRelease = li.querySelector('#text-release');
         const textDirector = li.querySelector('#text-director');
         const textActor = li.querySelector('#text-actor');
         const textGenre = li.querySelector('#text-genre');
+        const movieRank = li.querySelector('#rank>.num');
         if (movieTitle instanceof HTMLElement) {
             movieTitle.textContent = `${movie.movieNm}`;
         }
@@ -81,6 +85,9 @@ const setMovieDetail = (movie, detailResult) => __awaiter(void 0, void 0, void 0
         }
         if (textGenre instanceof HTMLElement) {
             textGenre.textContent = `${detailResult.genre}`;
+        }
+        if (movieRank instanceof HTMLElement) {
+            movieRank.textContent = `${movie.rank}`;
         }
     }
 });
