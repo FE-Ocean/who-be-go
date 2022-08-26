@@ -21,37 +21,29 @@
 .card-m {
     cursor: pointer;
     #rank {
-        // position: absolute;
-        // top: -20px; left: -20px;
         position: absolute;
-        top: -20px; left: 50%;
-        transform:translateX(-50%);
-        width: 40px; 
-        height: 40px; 
-        border-radius: 50%;
-        border: 1px solid  #888;
-        text-align: center;
+        top: 5px;
+        left: 1px;
         .num {
             position: absolute;
-            top: -5px; left: -5px;
-            font: 20px/40px 'arial';
-            color: #fff;
-            background: #222;
-            border: 1px solid #fff;
-            width: 40px;
-            height: 40px;
+            top: -33px;
+            left: -26px;
+            font-family: $font-medium;
+            color: $white;
+            font-size: 40px;
+            font-style: italic;
             display: block;
-            border-radius: 50%;
+            padding: 10px;
+            text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.4);
         }
     }
     .show-contents {
         text-align: left;
         & .wrapper-movie-title {
-            color: #fff;
+            color: $white;
         }
     }
 }
-
 
 @keyframes blinker {
     50% {
