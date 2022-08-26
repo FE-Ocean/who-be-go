@@ -142,6 +142,7 @@
     text-overflow: ellipsis;
     display: inline-block;
     white-space: nowrap;
+    word-break: keep-all;
     width: $width;
 }
 
@@ -151,6 +152,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    word-break: keep-all;
     width: $width;
 }
 
@@ -160,5 +162,19 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    word-break: keep-all;
     width: $width;
+}
+
+@mixin scroll($width) {
+    &::-webkit-scrollbar {
+        width: $width;
+        border-radius: 60px;
+        scroll-padding: 10%;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 30px;
+        height: 10%;
+        background-color: $scroll-color;
+    }
 }

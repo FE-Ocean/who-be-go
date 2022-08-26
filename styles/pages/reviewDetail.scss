@@ -10,13 +10,13 @@
     max-width: 600px;
     margin: 70px auto;
     position: relative;
-    overflow: hidden;
 }
 
 .movie-title {
     @include text-overflow-three(90%);
     color: $title-text;
     font-size: 30px;
+    word-break: break-all;
 }
 
 .btn-modal {
@@ -24,8 +24,8 @@
     top: 3px;
     right: 0;
     .ico-modal {
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
     }
 }
 
@@ -60,13 +60,15 @@
     color: $content-text;
     font-size: 14px;
     line-height: 1.3;
-    margin: 30px 0;
+    margin: 10px 0;
     max: {
         width: 98%;
         height: 300px;
     }
+    word-wrap: break-word;
     overflow-y: auto;
     border-radius: 4px;
+    @include scroll(8px);
 }
 
 .text-date {
@@ -74,7 +76,7 @@
     font-size: 13px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 550px) {
     .movie-title {
         font-size: 20px;
     }
