@@ -14,6 +14,7 @@ const username = document.querySelector('#text-name');
 const userId = document.querySelector('#text-id');
 const userIntro = document.querySelector('#text-intro');
 const reviewAlbum = document.querySelector('.review-album');
+const loading = document.querySelector('.wrapper-etc');
 const createReviewAlbum = (review) => {
     const li = document.createElement('li');
     li.classList.add('card-s');
@@ -49,4 +50,5 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
     for (let review of reviewList) {
         reviewAlbum.appendChild(createReviewAlbum(review));
     }
+    loading.classList.add('disabled');
 }));

@@ -17,6 +17,7 @@ const imgReview = document.querySelector('#img-review') as HTMLImageElement;
 const imgInput = document.querySelector('#img-input') as HTMLInputElement;
 const textReview = document.querySelector('#text-review') as HTMLInputElement;
 const saveButton = document.querySelector('#btn-save') as HTMLButtonElement;
+const loading = document.querySelector('.wrapper-etc') as HTMLElement;
 
 // 서버로 전송할 이미지 (파일 정보가 담김)
 let img: File;
@@ -88,6 +89,7 @@ window.addEventListener('load', async () => {
         }
         imgUrl = post.image;
     }
+    loading.classList.add('disabled');
 });
 
 imgInput.addEventListener('change', (e: Event) => {

@@ -35,6 +35,7 @@ const rating = document.querySelector('#rating') as HTMLElement;
 const img = document.querySelector('.card-L') as HTMLImageElement;
 const imgInfo = document.querySelector('.card-L.info') as HTMLImageElement;
 const newBtn = document.querySelector('.btn-L.home') as HTMLButtonElement;
+const loading = document.querySelector('.wrapper-etc') as HTMLElement;
 
 //숫자 랜덤으로 뽑아주는 함수
 function rand(min: number, max: number) {
@@ -68,6 +69,7 @@ async function getMovieInfo() {
 
 window.addEventListener('load', async () => {
     await getMovieInfo();
+    loading.classList.add('disabled');
 });
 
 const setValue = (result: MovieLists) => {

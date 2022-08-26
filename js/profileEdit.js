@@ -18,7 +18,12 @@ const intro = document.querySelector('#intro');
 const errorName = document.querySelector('.msg-error.username');
 const errorId = document.querySelector('.msg-error.userid');
 const editBtn = document.querySelector('.btn-edit');
+const loading = document.querySelector('.wrapper-etc');
 const accountname = window.localStorage.getItem('accountname');
+window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
+    yield getProfile();
+    loading.classList.add('disabled');
+}));
 // 현재 프로필 정보 get
 function getProfile() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -29,7 +34,6 @@ function getProfile() {
         intro.value = userInfo.intro;
     });
 }
-getProfile();
 // 버튼 활성화 함수
 function checkBtn() {
     return __awaiter(this, void 0, void 0, function* () {

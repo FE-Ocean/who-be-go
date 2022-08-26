@@ -12,8 +12,14 @@ const intro = document.querySelector('#intro') as HTMLInputElement;
 const errorName = document.querySelector('.msg-error.username') as HTMLElement;
 const errorId = document.querySelector('.msg-error.userid') as HTMLElement;
 const editBtn = document.querySelector('.btn-edit') as HTMLButtonElement;
+const loading = document.querySelector('.wrapper-etc') as HTMLElement;
 
 const accountname = window.localStorage.getItem('accountname');
+
+window.addEventListener('load', async () => {
+    await getProfile();
+    loading.classList.add('disabled');
+});
 
 // 현재 프로필 정보 get
 async function getProfile() {
@@ -23,8 +29,6 @@ async function getProfile() {
     id.value = userInfo.accountname;
     intro.value = userInfo.intro;
 }
-
-getProfile();
 
 // 버튼 활성화 함수
 async function checkBtn() {

@@ -15,6 +15,7 @@ const review = document.querySelector('.wrapper-review');
 const writePostButton = document.getElementById('btn-writepost');
 const modalAlertContainer = document.querySelectorAll('.modal-alert-container')[1];
 const ul = document.querySelector('.list-review');
+const loading = document.querySelector('.wrapper-etc');
 writePostButton === null || writePostButton === void 0 ? void 0 : writePostButton.addEventListener('click', () => {
     location.href = '/pages/writePost.html';
 });
@@ -162,6 +163,7 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
     if (lastItem instanceof HTMLLIElement) {
         createObserver(lastItem);
     }
+    loading.classList.add('disabled');
 }));
 buttonDelete.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
     yield deleteReview(postId);

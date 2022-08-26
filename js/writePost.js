@@ -18,6 +18,7 @@ const imgReview = document.querySelector('#img-review');
 const imgInput = document.querySelector('#img-input');
 const textReview = document.querySelector('#text-review');
 const saveButton = document.querySelector('#btn-save');
+const loading = document.querySelector('.wrapper-etc');
 // const movieSeq = window.location.search.slice(1);
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
@@ -84,6 +85,7 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
             imgUrl = movieInfo.posters.substring(0, 60);
         }
     }
+    loading.classList.add('disabled');
 }));
 imgInput.addEventListener('change', (e) => {
     const fileReader = new FileReader();

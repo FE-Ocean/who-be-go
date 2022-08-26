@@ -14,6 +14,7 @@ const imgReview = document.querySelector('#img-review') as HTMLImageElement;
 const imgInput = document.querySelector('#img-input') as HTMLInputElement;
 const textReview = document.querySelector('#text-review') as HTMLInputElement;
 const saveButton = document.querySelector('#btn-save') as HTMLButtonElement;
+const loading = document.querySelector('.wrapper-etc') as HTMLElement;
 
 // const movieSeq = window.location.search.slice(1);
 const queryString = window.location.search;
@@ -85,6 +86,7 @@ window.addEventListener('load', async () => {
             imgUrl = movieInfo.posters.substring(0, 60);
         }
     }
+    loading.classList.add('disabled');
 });
 
 imgInput.addEventListener('change', (e: Event) => {

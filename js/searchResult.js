@@ -24,6 +24,7 @@ const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const movieId = params.get('movieId');
 const movieSeq = params.get('movieSeq');
+const loading = document.querySelector('.wrapper-etc');
 postReview.addEventListener('click', () => {
     window.location.href = `../pages/writePost.html?movieId=${movieId}&movieSeq=${movieSeq}`;
 });
@@ -32,6 +33,7 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
         const movieInfo = yield getMovieInfo(movieId, movieSeq);
         showValue(movieInfo);
     }
+    loading.classList.add('disabled');
 }));
 const showValue = (movie) => {
     title.textContent = movie.title;
