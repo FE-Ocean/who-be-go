@@ -141,4 +141,6 @@ async function editProfile(e: Event) {
         location.href = './myPage.html';
     }
 }
-editBtn.addEventListener('click', editProfile);
+editBtn.addEventListener('click', (e: Event) => {
+    editProfile(e);
+});

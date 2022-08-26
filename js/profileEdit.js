@@ -150,4 +150,6 @@ function editProfile(e) {
         }
     });
 }
-editBtn.addEventListener('click', editProfile);
+editBtn.addEventListener('click', (e) => {
+    editProfile(e);
+});
