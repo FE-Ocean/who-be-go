@@ -9,15 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-function search() {
+const searchInput = document.getElementById('input-search');
+const searchedList = document.querySelector('.container-searched-list');
+function search(searchInputValue) {
     return __awaiter(this, void 0, void 0, function* () {
-        const searchInput = document.getElementById('input-search').value;
-        if (searchInput == '') {
-            return;
-        }
         const serviceKey = 'NE98FTD75W4C0R4JS785';
-        const url = `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=${serviceKey}&detail=Y&listCount=17&title=${searchInput}`;
-        console.log('인풋', searchInput);
+        const url = `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=${serviceKey}&detail=Y&listCount=17&title=${searchInputValue}`;
         try {
             const response = yield fetch(url, {
                 method: 'GET',
@@ -32,7 +29,8 @@ function search() {
     });
 }
 const createSearchedList = (list) => {
-    const searchedList = document.querySelector('.container-searched-list');
+    if (list.Result === undefined)
+        return;
     searchedList.innerHTML = '';
     for (let i = 0; i < list.Result.length; i++) {
         const title = document.createElement('p');
@@ -43,8 +41,18 @@ const createSearchedList = (list) => {
             .replace(/\!HE/g, '')
             .replace(/^\s+|\s+$/g, '')
             .replace(/ +/g, ' ');
+        // DocumentFragment 수정 필요
         title.addEventListener('click', () => {
             window.location.href = `../pages/searchResult.html?movieSeq=${list.Result[i].movieSeq}&movieId=${list.Result[i].movieId}`;
         });
     }
 };
+searchInput === null || searchInput === void 0 ? void 0 : searchInput.addEventListener('keyup', (e) => {
+    if (e.target instanceof HTMLInputElement) {
+        if (e.target.value === '' || e.target.value.trim() === '') {
+            searchedList.innerHTML = '';
+            return;
+        }
+        search(e.target.value);
+    }
+});
