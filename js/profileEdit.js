@@ -11,7 +11,7 @@ import { handleUploadImage } from './imageApi.js';
 import { getIdValidMsg, getUserInfo, editUserInfo } from './userApi.js';
 const profileForm = document.querySelector('#form-profile');
 const imgBtn = document.querySelector('#choose-img');
-const thumbnailImg = document.querySelector('.wrapper-upload-img');
+const profileImg = document.querySelector('#img-profile');
 const name = document.querySelector('#name');
 const id = document.querySelector('#user-id');
 const intro = document.querySelector('#intro');
@@ -28,7 +28,7 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
 function getProfile() {
     return __awaiter(this, void 0, void 0, function* () {
         const userInfo = yield getUserInfo();
-        thumbnailImg.style.backgroundImage = userInfo.image;
+        profileImg.src = userInfo.image;
         name.value = userInfo.username;
         id.value = userInfo.accountname;
         intro.value = userInfo.intro;
@@ -124,7 +124,7 @@ function uploadImg(e) {
             if (target.files !== null) {
                 const file = target.files[0];
                 const editImgURL = yield handleUploadImage(file);
-                thumbnailImg.style.backgroundImage = `url(${editImgURL})`;
+                profileImg.src = editImgURL;
             }
         }
         catch (err) {
@@ -144,7 +144,7 @@ function editProfile(e) {
                 username: name.value,
                 accountname: id.value,
                 intro: intro.value,
-                image: thumbnailImg.style.backgroundImage,
+                image: profileImg.src,
             },
         };
         const editInfo = yield editUserInfo(reqData);

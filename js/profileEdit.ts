@@ -3,9 +3,7 @@ import { getIdValidMsg, getUserInfo, editUserInfo } from './userApi.js';
 
 const profileForm = document.querySelector('#form-profile') as HTMLFormElement;
 const imgBtn = document.querySelector('#choose-img') as HTMLInputElement;
-const thumbnailImg = document.querySelector(
-    '.wrapper-upload-img'
-) as HTMLDivElement;
+const profileImg = document.querySelector('#img-profile') as HTMLImageElement;
 const name = document.querySelector('#name') as HTMLInputElement;
 const id = document.querySelector('#user-id') as HTMLInputElement;
 const intro = document.querySelector('#intro') as HTMLInputElement;
@@ -24,7 +22,7 @@ window.addEventListener('load', async () => {
 // 현재 프로필 정보 get
 async function getProfile() {
     const userInfo = await getUserInfo();
-    thumbnailImg.style.backgroundImage = userInfo.image;
+    profileImg.src = userInfo.image;
     name.value = userInfo.username;
     id.value = userInfo.accountname;
     intro.value = userInfo.intro;
@@ -114,7 +112,7 @@ async function uploadImg(e: Event) {
         if (target.files !== null) {
             const file = target.files[0];
             const editImgURL = await handleUploadImage(file);
-            thumbnailImg.style.backgroundImage = `url(${editImgURL})`;
+            profileImg.src = editImgURL;
         }
     } catch (err) {
         console.error(err);
@@ -134,7 +132,7 @@ async function editProfile(e: Event) {
             username: name.value,
             accountname: id.value,
             intro: intro.value,
-            image: thumbnailImg.style.backgroundImage,
+            image: profileImg.src,
         },
     };
 
