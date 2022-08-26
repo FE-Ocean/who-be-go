@@ -82,4 +82,29 @@ const getUserInfo = () => __awaiter(void 0, void 0, void 0, function* () {
         }
     }
 });
-export { getEmailValidMsg, getIdValidMsg, login, signUp, getUserInfo };
+// 계정 정보 수정
+const editUserInfo = (reqData) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const data = yield fetch(`${MANDARIN_URL}/user`, {
+            method: 'PUT',
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(reqData),
+        });
+        const result = yield data.json();
+        if (result.user) {
+            return result.user;
+        }
+        else {
+            throw new Error(result.message);
+        }
+    }
+    catch (error) {
+        if (error instanceof Error) {
+            alert(error.message);
+        }
+    }
+});
+export { getEmailValidMsg, getIdValidMsg, login, signUp, getUserInfo, editUserInfo, };
