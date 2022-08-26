@@ -1,4 +1,6 @@
 import { BoxOffice, MovieDetail } from './movieListInterface.js';
+import { MOVIE_URL } from './BASE_URL.js';
+
 const loadingItem = document.querySelectorAll('.loading');
 // 일별 박스 오피스 값을 불러옵니다.
 const boxOffice = async () => {
@@ -29,7 +31,7 @@ const movieDetail = async (boxOfficeResult: BoxOffice[]) => {
         const title = movie.movieNm;
         const releaseDts = movie.openDt.replace(/-/gi, '');
 
-        const url = `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?ServiceKey=${serviceKey}&title=${title}&collection=kmdb_new2&releaseDts=${releaseDts}&detail=Y`;
+        const url = `${MOVIE_URL}&ServiceKey=${serviceKey}&title=${title}&collection=kmdb_new2&releaseDts=${releaseDts}&detail=Y`;
 
         const response = await fetch(url);
         const json = await response.json();
@@ -41,7 +43,7 @@ const movieDetail = async (boxOfficeResult: BoxOffice[]) => {
 
         // 만약 검색한 결과 값이 없을 경우 검색 조건을 바꿔서 한번 더 검색합니다.
         else if (json.Data[0].Result === undefined) {
-            const url = `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?ServiceKey=${serviceKey}&title=${title}&collection=kmdb_new2&releaseDte=${releaseDts}&detail=Y`;
+            const url = `${MOVIE_URL}&ServiceKey=${serviceKey}&title=${title}&releaseDte=${releaseDts}&detail=Y`;
             const response = await fetch(url);
             const json = await response.json();
             const detailResult = json.Data[0].Result[0];
@@ -57,14 +59,13 @@ const setMovieDetail = async (movie: BoxOffice, detailResult: MovieDetail) => {
         li.style.backgroundImage = `url(${detailResult.posters.split('|')[0]})`;
         li.addEventListener('click', () => {
             location.href = `../pages/searchResult.html?movieSeq=${detailResult.movieSeq}&movieId=${detailResult.movieId}`;
-          })
+        });
         const movieTitle = li.querySelector('#movie-title');
         const movieEngTitle = li.querySelector('#movie-title-eng');
         const textRelease = li.querySelector('#text-release');
         const textDirector = li.querySelector('#text-director');
         const textActor = li.querySelector('#text-actor');
         const textGenre = li.querySelector('#text-genre');
-        const movieRank = li.querySelector('#rank>.num');
 
         if (movieTitle instanceof HTMLElement) {
             movieTitle.textContent = `${movie.movieNm}`;
@@ -93,9 +94,6 @@ const setMovieDetail = async (movie: BoxOffice, detailResult: MovieDetail) => {
 
         if (textGenre instanceof HTMLElement) {
             textGenre.textContent = `${detailResult.genre}`;
-        }
-        if (movieRank instanceof HTMLElement) {
-            movieRank.textContent = `${movie.rank}`
         }
     }
 };

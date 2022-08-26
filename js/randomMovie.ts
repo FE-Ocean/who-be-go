@@ -53,8 +53,6 @@ async function getMovieInfo() {
         MOVIE_URL +
         `&detail=Y&title=${title}&movieSeq=${movieSeq}&ServiceKey=${serviceKey}`;
 
-    console.log(url);
-
     try {
         const response = await fetch(url, {
             method: 'GET',

@@ -33,7 +33,6 @@ function getMovieInfo() {
     return __awaiter(this, void 0, void 0, function* () {
         const url = MOVIE_URL +
             `&detail=Y&title=${title}&movieSeq=${movieSeq}&ServiceKey=${serviceKey}`;
-        console.log(url);
         try {
             const response = yield fetch(url, {
                 method: 'GET',

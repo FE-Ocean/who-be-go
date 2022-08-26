@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { MOVIE_URL } from './BASE_URL.js';
 const loadingItem = document.querySelectorAll('.loading');
 // 일별 박스 오피스 값을 불러옵니다.
 const boxOffice = () => __awaiter(void 0, void 0, void 0, function* () {
@@ -31,7 +32,7 @@ const movieDetail = (boxOfficeResult) => __awaiter(void 0, void 0, void 0, funct
         const serviceKey = 'NE98FTD75W4C0R4JS785';
         const title = movie.movieNm;
         const releaseDts = movie.openDt.replace(/-/gi, '');
-        const url = `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?ServiceKey=${serviceKey}&title=${title}&collection=kmdb_new2&releaseDts=${releaseDts}&detail=Y`;
+        const url = `${MOVIE_URL}&ServiceKey=${serviceKey}&title=${title}&collection=kmdb_new2&releaseDts=${releaseDts}&detail=Y`;
         const response = yield fetch(url);
         const json = yield response.json();
         if (json.Data[0].Result !== undefined) {
@@ -40,7 +41,7 @@ const movieDetail = (boxOfficeResult) => __awaiter(void 0, void 0, void 0, funct
         }
         // 만약 검색한 결과 값이 없을 경우 검색 조건을 바꿔서 한번 더 검색합니다.
         else if (json.Data[0].Result === undefined) {
-            const url = `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?ServiceKey=${serviceKey}&title=${title}&collection=kmdb_new2&releaseDte=${releaseDts}&detail=Y`;
+            const url = `${MOVIE_URL}&ServiceKey=${serviceKey}&title=${title}&releaseDte=${releaseDts}&detail=Y`;
             const response = yield fetch(url);
             const json = yield response.json();
             const detailResult = json.Data[0].Result[0];
@@ -62,7 +63,6 @@ const setMovieDetail = (movie, detailResult) => __awaiter(void 0, void 0, void 0
         const textDirector = li.querySelector('#text-director');
         const textActor = li.querySelector('#text-actor');
         const textGenre = li.querySelector('#text-genre');
-        const movieRank = li.querySelector('#rank>.num');
         if (movieTitle instanceof HTMLElement) {
             movieTitle.textContent = `${movie.movieNm}`;
         }
@@ -86,9 +86,6 @@ const setMovieDetail = (movie, detailResult) => __awaiter(void 0, void 0, void 0
         if (textGenre instanceof HTMLElement) {
             textGenre.textContent = `${detailResult.genre}`;
         }
-        if (movieRank instanceof HTMLElement) {
-            movieRank.textContent = `${movie.rank}`;
-        }
     }
 });
 const hideLoading = () => {
@@ -101,4 +98,3 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
     movieDetail(results);
     hideLoading();
 }));
-export {};
