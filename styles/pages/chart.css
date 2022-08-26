@@ -11,6 +11,33 @@
   text-align: center;
 }
 
+.card-m {
+  cursor: pointer;
+}
+.card-m #rank {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #888;
+  text-align: center;
+}
+.card-m #rank .num {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  font: 20px/40px "arial";
+  color: #fff;
+  background: #222;
+  border: 1px solid #fff;
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 50%;
+}
 .card-m .show-contents {
   text-align: left;
 }
