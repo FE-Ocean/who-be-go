@@ -55,7 +55,9 @@ const setMovieDetail = async (movie: BoxOffice, detailResult: MovieDetail) => {
     const li = document.getElementById(`rank${movie.rank}`);
     if (li instanceof HTMLLIElement) {
         li.style.backgroundImage = `url(${detailResult.posters.split('|')[0]})`;
-
+        li.addEventListener('click', () => {
+            location.href = `../pages/searchResult.html?movieSeq=${detailResult.movieSeq}&movieId=${detailResult.movieId}`;
+          })
         const movieTitle = li.querySelector('#movie-title');
         const movieEngTitle = li.querySelector('#movie-title-eng');
         const textRelease = li.querySelector('#text-release');
