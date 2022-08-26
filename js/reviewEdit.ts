@@ -82,7 +82,10 @@ window.addEventListener('load', async () => {
             }
         }
         textReview.textContent = contentArray[3];
-        imgReview.src = post.image;
+        if (post.image) {
+            imgReview.classList.remove('disabled');
+            imgReview.src = post.image;
+        }
         imgUrl = post.image;
     }
 });
