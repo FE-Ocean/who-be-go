@@ -64,6 +64,7 @@ const setMovieDetail = async (movie: BoxOffice, detailResult: MovieDetail) => {
         const textDirector = li.querySelector('#text-director');
         const textActor = li.querySelector('#text-actor');
         const textGenre = li.querySelector('#text-genre');
+        const movieRank = li.querySelector('#rank>.num');
 
         if (movieTitle instanceof HTMLElement) {
             movieTitle.textContent = `${movie.movieNm}`;
@@ -92,6 +93,9 @@ const setMovieDetail = async (movie: BoxOffice, detailResult: MovieDetail) => {
 
         if (textGenre instanceof HTMLElement) {
             textGenre.textContent = `${detailResult.genre}`;
+        }
+        if (movieRank instanceof HTMLElement) {
+            movieRank.textContent = `${movie.rank}`
         }
     }
 };
