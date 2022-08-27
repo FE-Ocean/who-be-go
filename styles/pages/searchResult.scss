@@ -13,14 +13,14 @@
 }
 
 .movie-article {
-    margin: 0 auto;
     max-width: 550px;
     padding: 0px 20px;
+    margin: 0 auto;
     margin-bottom: 100px;
     animation: fadeIn 0.9s ease-in-out;
     .movie-title {
-        margin-bottom: 4px;
         padding: 0 5px 0;
+        margin-bottom: 4px;
         line-height: 38px;
         text-align: left;
     }
@@ -39,8 +39,8 @@
     justify-content: space-between;
     max-width: 550px;
     .poster-card {
-        margin-right: 30px;
         width: 100%;
+        margin-right: 30px;
         object-fit: cover;
     }
 }
@@ -82,10 +82,10 @@
 }
 
 div > dt {
+    margin-bottom: 3px;
     color: $header-text;
     font-family: $font-regular;
     line-height: 18px;
-    margin-bottom: 3px;
 }
 
 .movie-summary {
@@ -104,9 +104,9 @@ div > dt {
 
 @media screen and (max-width: 550px) {
     .movie-article {
-        margin: 0 auto;
         max-width: 300px;
         padding: 0px 10px;
+        margin: 0 auto;
         margin-bottom: 100px;
         box-sizing: content-box;
         .movie-title {
@@ -137,8 +137,8 @@ div > dt {
         margin: 25px 0 0px;
         .container-review-btn {
             position: static;
-            margin: 0 auto;
             padding-bottom: 20px;
+            margin: 0 auto;
             animation: none;
             .img-wbg {
                 display: none;
