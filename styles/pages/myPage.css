@@ -16,13 +16,13 @@
 }
 
 .img-logo {
-  height: 90px;
+  height: 70px;
 }
-
 .img-logo img {
   margin-left: 90px;
+  margin-top: 5px;
+  height: 65px;
 }
-
 .img-logo .btn-nav {
   display: none;
   position: absolute;
@@ -40,7 +40,6 @@
   margin-right: 90px;
   letter-spacing: -0.02em;
 }
-
 .nav li {
   padding-left: 24px;
   color: #cfcfcf;
@@ -48,17 +47,15 @@
   font-size: 14px;
   cursor: pointer;
 }
-
 .nav li:hover {
   color: #ff5f5f;
 }
-
 .nav li a.selected {
   color: #ff5f5f;
 }
 
 .main {
-  margin-top: 90px;
+  margin-top: 70px;
   position: relative;
   min-height: calc(100vh - 150px);
 }
@@ -68,7 +65,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  margin-top: 90px;
+  margin-top: 20px;
   min-height: calc(100vh - 150px);
   width: 100%;
   height: 100%;
@@ -88,38 +85,57 @@
           align-items: center;
   color: #f1f1f1;
 }
-
 .wrapper-etc .img-etc {
   width: 181px;
   margin-bottom: 20px;
 }
-
 .wrapper-etc .text-etc {
   margin-bottom: 30px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 25px;
 }
-
 .wrapper-etc.disabled {
   display: none;
 }
 
 .footer {
   width: 100%;
-  height: 60px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 9999;
   background-color: #292929;
   text-align: center;
+  padding: 10px;
+  color: #dedede;
 }
-
-.footer p {
-  display: inline-block;
-  margin-top: 25px;
-  color: #cfcfcf;
+.footer .desc {
   font-size: 10px;
+  display: inline-block;
+  margin: 8px 0 5px;
+}
+.footer .wrapper-github {
+  margin: 0 5% 5px;
+  font-size: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  gap: 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.footer .wrapper-github .text-s {
+  font-size: 8px;
 }
 
 .page-title {
@@ -137,11 +153,13 @@
             flex-direction: column;
   }
   .img-logo img {
-    margin: 15px 0 0 0;
+    margin: 13px 0 0 0;
     content: url("../../assets/icons/logo-title-s.svg");
+    height: 52px;
   }
   .img-logo .btn-nav {
     display: block;
+    top: 25px;
   }
   .nav {
     display: none;
@@ -172,19 +190,16 @@
     margin-top: 296px;
   }
 }
-
 .container-mypage {
   max-width: 720px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  padding: 60px 20px 40px;
+  padding: 50px 5% 40px;
   margin: 0 auto;
 }
-
 .container-mypage .page-title {
   margin-bottom: 34px;
 }
-
 .container-mypage .review-album {
   margin: 0 auto;
   padding-top: 50px;
@@ -194,26 +209,22 @@
   height: fit-content;
   max-height: 800px;
 }
-
 .container-mypage .review-album::-webkit-scrollbar {
   width: 8px;
   border-radius: 60px;
   scroll-padding: 10%;
 }
-
 .container-mypage .review-album::-webkit-scrollbar-thumb {
   border-radius: 30px;
   height: 10%;
   background-color: #242424;
 }
-
 .container-mypage .user-info {
   display: block;
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
 }
-
 .container-mypage .user-info #img-profile {
   border-radius: 9999px;
   width: 110px;
@@ -221,50 +232,41 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .container-mypage .user-info #text-name {
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
   font-size: 18px;
   color: #cfcfcf;
   margin: 19px 0 10px;
 }
-
 .container-mypage .user-info #text-id,
 .container-mypage .user-info #text-intro {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   color: #dedede;
 }
-
 .container-mypage .user-info #text-id {
   font-size: 13px;
   margin-bottom: 25px;
 }
-
 .container-mypage .user-info #text-id::before {
-  content: '@';
+  content: "@";
   margin-right: 4px;
 }
-
 .container-mypage .user-info #text-intro {
   font-size: 14px;
   margin-bottom: 35px;
 }
-
 .container-mypage .wrapper-btn {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   margin-bottom: 37px;
 }
-
 .container-mypage .wrapper-btn .btn-s {
   background-color: #ff5f5f;
 }
-
 .container-mypage .wrapper-btn .btn-s:first-of-type {
   margin-right: 16px;
 }
-
 .container-mypage .wrapper-btn .btn-s:hover, .container-mypage .wrapper-btn .btn-s:focus, .container-mypage .wrapper-btn .btn-s:active {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);

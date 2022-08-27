@@ -3,7 +3,7 @@
 @import '../components/common';
 .write-wrapper {
     box-sizing: content-box;
-    padding: 60px 20px;
+    padding: 50px 20px;
     max-width: 740px;
     margin: 0 auto;
     color: $title-text;
@@ -16,7 +16,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    text-align: center;
+    gap: 4px;
     #movie-title {
         font: {
             family: $font-bold;

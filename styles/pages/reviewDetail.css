@@ -16,10 +16,12 @@
 }
 
 .img-logo {
-  height: 90px;
+  height: 70px;
 }
 .img-logo img {
   margin-left: 90px;
+  margin-top: 5px;
+  height: 65px;
 }
 .img-logo .btn-nav {
   display: none;
@@ -28,7 +30,7 @@
   right: 33px;
   width: 25px;
   height: 25px;
-  background: url(../../assets/icons/menu.svg) no-repeat 0 0;
+  background: url("../../assets/icons/menu.svg") no-repeat 0 0;
 }
 
 .nav {
@@ -48,16 +50,26 @@
 .nav li:hover {
   color: #ff5f5f;
 }
-.nav li a .selected {
+.nav li a.selected {
   color: #ff5f5f;
 }
 
 .main {
-  margin-top: 90px;
+  margin-top: 70px;
   position: relative;
   min-height: calc(100vh - 150px);
 }
-.main.wrapper-etc {
+
+.wrapper-etc {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 20px;
+  min-height: calc(100vh - 150px);
+  width: 100%;
+  height: 100%;
+  background-color: #1e1e1e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,34 +83,59 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 250px;
   color: #f1f1f1;
 }
-.main.wrapper-etc .img-etc {
+.wrapper-etc .img-etc {
   width: 181px;
   margin-bottom: 20px;
 }
-.main.wrapper-etc .text-etc {
+.wrapper-etc .text-etc {
   margin-bottom: 30px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 25px;
 }
+.wrapper-etc.disabled {
+  display: none;
+}
 
 .footer {
   width: 100%;
-  height: 60px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 9999;
   background-color: #292929;
   text-align: center;
+  padding: 10px;
+  color: #dedede;
 }
-.footer p {
-  display: inline-block;
-  margin-top: 25px;
-  color: #cfcfcf;
+.footer .desc {
   font-size: 10px;
+  display: inline-block;
+  margin: 8px 0 5px;
+}
+.footer .wrapper-github {
+  margin: 0 5% 5px;
+  font-size: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  gap: 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.footer .wrapper-github .text-s {
+  font-size: 8px;
 }
 
 .page-title {
@@ -116,10 +153,13 @@
             flex-direction: column;
   }
   .img-logo img {
-    margin-left: 0;
+    margin: 13px 0 0 0;
+    content: url("../../assets/icons/logo-title-s.svg");
+    height: 52px;
   }
   .img-logo .btn-nav {
     display: block;
+    top: 25px;
   }
   .nav {
     display: none;
@@ -157,7 +197,7 @@
 
 .wrapper-review {
   max-width: 600px;
-  margin: 70px auto;
+  margin: 50px auto;
   position: relative;
 }
 

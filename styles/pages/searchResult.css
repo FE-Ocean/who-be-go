@@ -16,13 +16,13 @@
 }
 
 .img-logo {
-  height: 90px;
+  height: 70px;
 }
-
 .img-logo img {
   margin-left: 90px;
+  margin-top: 5px;
+  height: 65px;
 }
-
 .img-logo .btn-nav {
   display: none;
   position: absolute;
@@ -40,7 +40,6 @@
   margin-right: 90px;
   letter-spacing: -0.02em;
 }
-
 .nav li {
   padding-left: 24px;
   color: #cfcfcf;
@@ -48,17 +47,15 @@
   font-size: 14px;
   cursor: pointer;
 }
-
 .nav li:hover {
   color: #ff5f5f;
 }
-
 .nav li a.selected {
   color: #ff5f5f;
 }
 
 .main {
-  margin-top: 90px;
+  margin-top: 70px;
   position: relative;
   min-height: calc(100vh - 150px);
 }
@@ -68,7 +65,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  margin-top: 90px;
+  margin-top: 20px;
   min-height: calc(100vh - 150px);
   width: 100%;
   height: 100%;
@@ -88,38 +85,57 @@
           align-items: center;
   color: #f1f1f1;
 }
-
 .wrapper-etc .img-etc {
   width: 181px;
   margin-bottom: 20px;
 }
-
 .wrapper-etc .text-etc {
   margin-bottom: 30px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 25px;
 }
-
 .wrapper-etc.disabled {
   display: none;
 }
 
 .footer {
   width: 100%;
-  height: 60px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 9999;
   background-color: #292929;
   text-align: center;
+  padding: 10px;
+  color: #dedede;
 }
-
-.footer p {
-  display: inline-block;
-  margin-top: 25px;
-  color: #cfcfcf;
+.footer .desc {
   font-size: 10px;
+  display: inline-block;
+  margin: 8px 0 5px;
+}
+.footer .wrapper-github {
+  margin: 0 5% 5px;
+  font-size: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  gap: 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.footer .wrapper-github .text-s {
+  font-size: 8px;
 }
 
 .page-title {
@@ -137,11 +153,13 @@
             flex-direction: column;
   }
   .img-logo img {
-    margin: 15px 0 0 0;
+    margin: 13px 0 0 0;
     content: url("../../assets/icons/logo-title-s.svg");
+    height: 52px;
   }
   .img-logo .btn-nav {
     display: block;
+    top: 25px;
   }
   .nav {
     display: none;
@@ -172,9 +190,8 @@
     margin-top: 296px;
   }
 }
-
 .search-result-main {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 .text-heading {
@@ -191,14 +208,12 @@
   -webkit-animation: fadeIn 0.9s ease-in-out;
           animation: fadeIn 0.9s ease-in-out;
 }
-
 .movie-article .movie-title {
   margin-bottom: 4px;
   padding: 0 5px 0;
   line-height: 38px;
   text-align: left;
 }
-
 .movie-article .sub-movie-title {
   padding: 0 5px 0;
   margin-bottom: 30px;
@@ -217,7 +232,6 @@
           justify-content: space-between;
   max-width: 550px;
 }
-
 .card-info-wrapper .poster-card {
   margin-right: 30px;
   width: 100%;
@@ -238,13 +252,11 @@
           justify-content: space-between;
   margin: 10px 0 10px;
 }
-
 .right-part .container-review-btn {
   position: relative;
   -webkit-animation: motion 1.8s linear 0s infinite alternate;
           animation: motion 1.8s linear 0s infinite alternate;
 }
-
 .right-part .img-wbg {
   width: 48px;
   height: 66px;
@@ -253,13 +265,11 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
-
 .right-part .btn-ms {
   position: absolute;
   top: 70px;
   margin: 0 7.5px 0;
 }
-
 .right-part .movie-info {
   max-width: 180px;
   color: #ffffff;
@@ -267,7 +277,6 @@
   font-size: 13px;
   line-height: 16px;
 }
-
 .right-part .movie-info div {
   margin-bottom: 8px;
 }
@@ -380,7 +389,6 @@ div > dt {
     width: 300px;
   }
 }
-
 @-webkit-keyframes motion {
   from {
     padding-top: 0px;
@@ -389,7 +397,6 @@ div > dt {
     padding-top: 10px;
   }
 }
-
 @keyframes motion {
   from {
     padding-top: 0px;
@@ -398,7 +405,6 @@ div > dt {
     padding-top: 10px;
   }
 }
-
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -407,7 +413,6 @@ div > dt {
     opacity: 1;
   }
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
