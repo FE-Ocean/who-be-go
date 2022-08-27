@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/main.css">
+        <link rel="stylesheet" href="../styles/pages/signUp.css">
+        <title>프로필 수정 | 후비고</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>프로필수정 | 후비고</title>
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/pages/signUp.css">
-</head>
+    <body>
+        <div class="wrapper-etc">
+            <img
+                class="img-etc"
+                src="../assets/icons/logo-three.svg"
+                alt="로딩중 아이콘"
+            />
+            <strong class="text-etc">로딩중...</strong>
+        </div>
 
-<body>
-    <div class="wrapper-etc">
-        <img
-            class="img-etc"
-            src="../assets/icons/logo-three.svg"
-            alt="로딩중 아이콘"
-        />
-        <strong class="text-etc">로딩중...</strong>
-    </div>
-    <section class="container-signup section-profile" style="display: flex;">
-        <h1 class="page-title profile">프로필 수정</h1>
-        <h2 class="page-subtitle">나중에 언제든지 변경할 수 있습니다.</h2>
-        <form method="POST" id="form-profile">
-            <div class="wrapper-upload-img">
-                <img id="img-profile" src="../../assets/icons/default-logo.svg" alt="프로필 이미지">
-                <label for="choose-img">
-                    <img src="../assets/icons/upload-file.svg" alt="upload" class="ico-upload">
-                </label>
-                <input type="file" name="user-img" id="choose-img" accept="image/*">
-            </div>
-            <div class="wrapper-name">
-                <label for="name" class="label-profile">
-                    사용자 이름
-                </label>
-                <input id="name" type="text" minlength="2" maxlength="10" required autocomplete="off" autofocus
-                    placeholder="2 ~ 10자 이내여야 합니다. ">
-                </input>
-                <strong class="msg-error username">
-                </strong>
-            </div>
-            <div class="wrapper-id">
-                <label for="user-id" class="label-profile">
-                    계정ID
-                </label>
-                <input id="user-id" type="text" minlength="1" maxLength="10" required autocomplete="off"
-                    placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다."></input>
-                <strong class="msg-error userid">
-                    *영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.
-                </strong>
-            </div>
-            <div class="wrapper-intro">
-                <label for="intro" class="label-profile">
-                    소개
-                </label>
-                <input id="intro" type="text" required autocomplete="off" placeholder="자신을 소개해 주세요!"></input>
-            </div>
-            <button type="submit" class="btn-L btn-edit" disabled>수정하기</button>
-        </form>
-    </section>
-    <script type="module" src="../js/profileEdit.js"></script>
-</body>
+        <section class="container-signup section-profile" style="display: flex;">
+            <h1 class="page-title profile">프로필 수정</h1>
+            <h2 class="page-subtitle">나중에 언제든지 변경할 수 있습니다.</h2>
+            <form method="POST" id="form-profile">
+                <div class="wrapper-upload-img">
+                    <img id="img-profile" src="../../assets/icons/default-logo.svg" alt="프로필 이미지">
+                    <label for="choose-img">
+                        <img src="../assets/icons/upload-file.svg" alt="upload" class="ico-upload">
+                    </label>
+                    <input type="file" name="user-img" id="choose-img" accept="image/*">
+                </div>
+                <div class="wrapper-name">
+                    <label for="name" class="label-profile">
+                        사용자 이름
+                    </label>
+                    <input id="name" type="text" minlength="2" maxlength="10" required autocomplete="off" autofocus
+                        placeholder="2 ~ 10자 이내여야 합니다. ">
+                    </input>
+                    <strong class="msg-error username">
+                    </strong>
+                </div>
+                <div class="wrapper-id">
+                    <label for="user-id" class="label-profile">
+                        계정ID
+                    </label>
+                    <input id="user-id" type="text" minlength="1" maxLength="10" required autocomplete="off"
+                        placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다."></input>
+                    <strong class="msg-error userid">
+                        *영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.
+                    </strong>
+                </div>
+                <div class="wrapper-intro">
+                    <label for="intro" class="label-profile">
+                        소개
+                    </label>
+                    <input id="intro" type="text" required autocomplete="off" placeholder="자신을 소개해 주세요!"></input>
+                </div>
+                <button type="submit" class="btn-L btn-edit" disabled>수정하기</button>
+            </form>
+        </section>
+        <script type="module" src="../js/profileEdit.js"></script>
+    </body>
 
 </html>

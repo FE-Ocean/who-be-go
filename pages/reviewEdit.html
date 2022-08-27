@@ -1,114 +1,203 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/pages/writePost.css" />
+        <script src="../js/common.js" defer></script>
+        <title>나의 감상문 수정 | 후비고</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/pages/writePost.css" />
-    <script src="../js/common.js" defer></script>
-    <title>영화 감상문 수정 | 후비고</title>
-</head>
+    <body>
+        <div class="wrapper-etc">
+            <img
+                class="img-etc"
+                src="../assets/icons/logo-three.svg"
+                alt="로딩중 아이콘"
+            />
+            <strong class="text-etc">로딩중...</strong>
+        </div>
 
-<body>
-    <div class="wrapper-etc">
-        <img class="img-etc" src="../assets/icons/logo-three.svg" alt="로딩중 아이콘" />
-        <strong class="text-etc">로딩중...</strong>
-    </div>
+        <header class="header">
+            <h1 class="img-logo">
+                <a href="../index.html">
+                    <img
+                        src="../assets/icons/logo-title.svg"
+                        alt="로고이미지"
+                    />
+                </a>
+                <button class="btn-nav"></button>
+            </h1>
 
-    <header class="header">
-        <h1 class="img-logo">
-            <a href="../index.html">
-                <img src="../assets/icons/logo-title.svg" alt="로고이미지" />
-            </a>
-            <button class="btn-nav"></button>
-        </h1>
+            <ul class="nav">
+                <li><a href="../pages/chart.html">영화차트</a></li>
+                <li><a href="../pages/search.html">감상문작성</a></li>
+                <li>
+                    <a href="../pages/review.html" class="selected"
+                        >나의감상문</a
+                    >
+                </li>
+                <li><a href="../pages/myPage.html">마이페이지</a></li>
+                <li></li>
+            </ul>
+        </header>
 
-        <ul class="nav">
-            <li><a href="../pages/chart.html">영화차트</a></li>
-            <li><a href="../pages/search.html">감상문작성</a></li>
-            <li>
-                <a href="../pages/review.html" class="selected">나의감상문</a>
-            </li>
-            <li><a href="../pages/myPage.html">마이페이지</a></li>
-            <li></li>
-        </ul>
-    </header>
-
-    <main class="main">
-        <div class="write-wrapper">
-            <div class="title-container">
-                <p id="movie-title">영화 제목</p>
-                <p id="movie-title-eng">영화 부제목</p>
-            </div>
-            <div class="rating-wrapper">
-                <span>별점을 매겨주세요!</span>
-                <div class="star-wrapper">
-                    <span id="text-rating"></span>
-                    <div class="radio-container">
-                        <input type="radio" name="radio-rating" id="rating0.5" value="0.5" class="radio-rating" />
-                        <input type="radio" name="radio-rating" id="rating1.0" value="1.0" class="radio-rating" />
-                        <input type="radio" name="radio-rating" id="rating1.5" value="1.5" class="radio-rating" />
-                        <input type="radio" name="radio-rating" id="rating2.0" value="2.0" class="radio-rating" />
-                        <input type="radio" name="radio-rating" id="rating2.5" value="2.5" class="radio-rating" />
-                        <input type="radio" name="radio-rating" id="rating3.0" value="3.0" class="radio-rating" />
-                        <input type="radio" name="radio-rating" id="rating3.5" value="3.5" class="radio-rating" />
-                        <input type="radio" name="radio-rating" id="rating4.0" value="4.0" class="radio-rating" />
-                        <input type="radio" name="radio-rating" id="rating4.5" value="4.5" class="radio-rating" />
-                        <input type="radio" name="radio-rating" id="rating5.0" value="5.0" class="radio-rating" />
-                        <div class="star"></div>
+        <main class="main">
+            <div class="write-wrapper">
+                <div class="title-container">
+                    <p id="movie-title">영화 제목</p>
+                    <p id="movie-title-eng">영화 부제목</p>
+                </div>
+                <div class="rating-wrapper">
+                    <span>별점을 매겨주세요!</span>
+                    <div class="star-wrapper">
+                        <span id="text-rating"></span>
+                        <div class="radio-container">
+                            <input
+                                type="radio"
+                                name="radio-rating"
+                                id="rating0.5"
+                                value="0.5"
+                                class="radio-rating"
+                            />
+                            <input
+                                type="radio"
+                                name="radio-rating"
+                                id="rating1.0"
+                                value="1.0"
+                                class="radio-rating"
+                            />
+                            <input
+                                type="radio"
+                                name="radio-rating"
+                                id="rating1.5"
+                                value="1.5"
+                                class="radio-rating"
+                            />
+                            <input
+                                type="radio"
+                                name="radio-rating"
+                                id="rating2.0"
+                                value="2.0"
+                                class="radio-rating"
+                            />
+                            <input
+                                type="radio"
+                                name="radio-rating"
+                                id="rating2.5"
+                                value="2.5"
+                                class="radio-rating"
+                            />
+                            <input
+                                type="radio"
+                                name="radio-rating"
+                                id="rating3.0"
+                                value="3.0"
+                                class="radio-rating"
+                            />
+                            <input
+                                type="radio"
+                                name="radio-rating"
+                                id="rating3.5"
+                                value="3.5"
+                                class="radio-rating"
+                            />
+                            <input
+                                type="radio"
+                                name="radio-rating"
+                                id="rating4.0"
+                                value="4.0"
+                                class="radio-rating"
+                            />
+                            <input
+                                type="radio"
+                                name="radio-rating"
+                                id="rating4.5"
+                                value="4.5"
+                                class="radio-rating"
+                            />
+                            <input
+                                type="radio"
+                                name="radio-rating"
+                                id="rating5.0"
+                                value="5.0"
+                                class="radio-rating"
+                            />
+                            <div class="star"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="review-container">
-                <div class="review-contents">
-                    <div class="img-container disabled">
-                        <img id="img-review" src="" alt="리뷰 이미지" />
-                        <button type="button" id="btn-close"></button>
+                <div class="review-container">
+                    <div class="review-contents">
+                        <div class="img-container disabled">
+                            <img id="img-review" src="" alt="리뷰 이미지" />
+                            <button type="button" id="btn-close"></button>
+                        </div>
+                        <textarea
+                            name="text-review"
+                            id="text-review"
+                            placeholder="영화 감상문을 작성해 주세요."
+                        ></textarea>
                     </div>
-                    <textarea name="text-review" id="text-review" placeholder="영화 감상문을 작성해 주세요."></textarea>
+                    <label id="label-img" for="img-input">이미지 업로드</label>
+                    <input
+                        type="file"
+                        name="img-input"
+                        id="img-input"
+                        accept="image/gif, image/jpeg, image/png, image/bmp, image/tiff, image/heic"
+                    />
                 </div>
-                <label id="label-img" for="img-input">이미지 업로드</label>
-                <input type="file" name="img-input" id="img-input"
-                    accept="image/gif, image/jpeg, image/png, image/bmp, image/tiff, image/heic" />
-
+                <!-- 글이 입력되지 않았을 때 disabled -->
+                <button type="submit" class="btn-s save" id="btn-save">
+                    저장
+                </button>
             </div>
-            <!-- 글이 입력되지 않았을 때 disabled -->
-            <button type="submit" class="btn-s save" id="btn-save">
-                저장
-            </button>
+        </main>
+
+        <footer class="footer">
+            <p class="desc">
+                Copyright
+                <a href="https://github.com/FE-Ocean/who-be-go">@FE_Ocean</a>
+                all right reserved.
+            </p>
+            <br />
+            <ul class="wrapper-github">
+                <li class="github text-s">만든사람들</li>
+                <li class="github">
+                    <a href="https://github.com/waterbinnn">@waterbinnn |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/donkeeman">@donkeeman |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/nimoseel">@nimoseel |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/etoile-j">@etoile-j |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/leehyeonseop"
+                        >@leehyeonseop |</a
+                    >
+                </li>
+                <li class="github">
+                    <a href="https://github.com/ryungom">@ryungom</a>
+                </li>
+            </ul>
+        </footer>
+
+        <div class="modal-alert-container disabled">
+            <div class="modal-alert">
+                <span class="message">로그아웃하시겠습니까?</span>
+                <button class="btn-alert" id="btn-cancel">취소</button>
+                <button class="btn-alert action" id="btn-logout">
+                    로그아웃
+                </button>
+            </div>
         </div>
-    </main>
-
-    <footer class="footer">
-        <p class="desc">Copyright
-            <a href="https://github.com/FE-Ocean/who-be-go">@FE_Ocean</a>
-            all right reserved.
-        </p>
-        <br>
-        <ul class="wrapper-github">
-            <li class="github text-s">만든사람들</li>
-            <li class="github"><a href="https://github.com/waterbinnn">@waterbinnn |</a></li>
-            <li class="github"><a href="https://github.com/donkeeman">@donkeeman |</a></li>
-            <li class="github"><a href="https://github.com/nimoseel">@nimoseel |</a></li>
-            <li class="github"><a href="https://github.com/etoile-j">@etoile-j |</a></li>
-            <li class="github"><a href="https://github.com/leehyeonseop">@leehyeonseop |</a></li>
-            <li class="github"><a href="https://github.com/ryungom">@ryungom</a></li>
-        </ul>
-    </footer>
-
-    <div class="modal-alert-container disabled">
-        <div class="modal-alert">
-            <span class="message">로그아웃하시겠습니까?</span>
-            <button class="btn-alert" id="btn-cancel">취소</button>
-            <button class="btn-alert action" id="btn-logout">
-                로그아웃
-            </button>
-        </div>
-    </div>
-</body>
-<script type="module" src="../js/reviewEdit.js"></script>
-
+    </body>
+    <script type="module" src="../js/reviewEdit.js"></script>
 </html>

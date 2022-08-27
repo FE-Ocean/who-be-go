@@ -1,99 +1,125 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/pages/reviewDetail.css" />
+        <script src="../js/common.js" defer></script>
+        <title>나의 감상문 | 후비고</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/pages/reviewDetail.css" />
-    <script src="../js/common.js" defer></script>
-    <title>나의 감상문 | 후비고</title>
-</head>
+    <body>
+        <div class="wrapper-etc">
+            <img
+                class="img-etc"
+                src="../assets/icons/logo-three.svg"
+                alt="로딩중 아이콘"
+            />
+            <strong class="text-etc">로딩중...</strong>
+        </div>
 
-<body>
-    <div class="wrapper-etc">
-        <img class="img-etc" src="../assets/icons/logo-three.svg" alt="로딩중 아이콘" />
-        <strong class="text-etc">로딩중...</strong>
-    </div>
+        <header class="header">
+            <h1 class="img-logo">
+                <a href="../index.html">
+                    <img
+                        src="../assets/icons/logo-title.svg"
+                        alt="로고이미지"
+                    />
+                </a>
+                <button class="btn-nav"></button>
+            </h1>
 
-    <header class="header">
-        <h1 class="img-logo">
-            <a href="../index.html">
-                <img src="../assets/icons/logo-title.svg" alt="로고이미지" />
-            </a>
-            <button class="btn-nav"></button>
-        </h1>
+            <ul class="nav">
+                <li><a href="../pages/chart.html">영화차트</a></li>
+                <li><a href="../pages/search.html">감상문작성</a></li>
+                <li>
+                    <a href="../pages/review.html" class="selected"
+                        >나의감상문</a
+                    >
+                </li>
+                <li><a href="../pages/myPage.html">마이페이지</a></li>
+                <li></li>
+            </ul>
+        </header>
 
-        <ul class="nav">
-            <li><a href="../pages/chart.html">영화차트</a></li>
-            <li><a href="../pages/search.html">감상문작성</a></li>
-            <li>
-                <a href="../pages/review.html" class="selected">나의감상문</a>
-            </li>
-            <li><a href="../pages/myPage.html">마이페이지</a></li>
-            <li></li>
-        </ul>
-    </header>
+        <main class="main">
+            <div class="wrapper-review">
+                <h2 class="movie-title"></h2>
+                <button class="btn-modal" type="button">
+                    <img
+                        src="../assets/icons/icon-more-vertical.svg"
+                        alt="더보기버튼"
+                        class="ico-modal"
+                    />
+                </button>
+                <div class="modal-dropbox disabled">
+                    <button class="btn-dropbox" id="btn-edit">수정</button>
+                    <button class="btn-dropbox" id="btn-show-alert">
+                        삭제
+                    </button>
+                </div>
+                <div class="wrapper-rating"></div>
 
-    <main class="main">
-        <div class="wrapper-review">
-            <h2 class="movie-title"></h2>
-            <button class="btn-modal" type="button">
-                <img src="../assets/icons/icon-more-vertical.svg" alt="더보기버튼" class="ico-modal" />
-            </button>
-            <div class="modal-dropbox disabled">
-                <button class="btn-dropbox" id="btn-edit">수정</button>
-                <button class="btn-dropbox" id="btn-show-alert">
-                    삭제
+                <img class="img-poster" src="" alt="리뷰 이미지" />
+                <p class="text-story"></p>
+                <span class="text-date"></span>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p class="desc">
+                Copyright
+                <a href="https://github.com/FE-Ocean/who-be-go">@FE_Ocean</a>
+                all right reserved.
+            </p>
+            <br />
+            <ul class="wrapper-github">
+                <li class="github text-s">만든사람들</li>
+                <li class="github">
+                    <a href="https://github.com/waterbinnn">@waterbinnn |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/donkeeman">@donkeeman |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/nimoseel">@nimoseel |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/etoile-j">@etoile-j |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/leehyeonseop"
+                        >@leehyeonseop |</a
+                    >
+                </li>
+                <li class="github">
+                    <a href="https://github.com/ryungom">@ryungom</a>
+                </li>
+            </ul>
+        </footer>
+
+        <!-- 로그아웃 -->
+        <div class="modal-alert-container disabled">
+            <div class="modal-alert">
+                <span class="message">로그아웃하시겠습니까?</span>
+                <button class="btn-alert" id="btn-cancel">취소</button>
+                <button class="btn-alert action" id="btn-logout">
+                    로그아웃
                 </button>
             </div>
-            <div class="wrapper-rating"></div>
-
-            <img class="img-poster" src="" alt="리뷰 이미지" />
-            <p class="text-story"></p>
-            <span class="text-date"></span>
         </div>
-    </main>
 
-    <footer class="footer">
-        <p class="desc">Copyright
-            <a href="https://github.com/FE-Ocean/who-be-go">@FE_Ocean</a>
-            all right reserved.
-        </p>
-        <br>
-        <ul class="wrapper-github">
-            <li class="github text-s">만든사람들</li>
-            <li class="github"><a href="https://github.com/waterbinnn">@waterbinnn |</a></li>
-            <li class="github"><a href="https://github.com/donkeeman">@donkeeman |</a></li>
-            <li class="github"><a href="https://github.com/nimoseel">@nimoseel |</a></li>
-            <li class="github"><a href="https://github.com/etoile-j">@etoile-j |</a></li>
-            <li class="github"><a href="https://github.com/leehyeonseop">@leehyeonseop |</a></li>
-            <li class="github"><a href="https://github.com/ryungom">@ryungom</a></li>
-        </ul>
-    </footer>
-
-    <!-- 로그아웃 -->
-    <div class="modal-alert-container disabled">
-        <div class="modal-alert">
-            <span class="message">로그아웃하시겠습니까?</span>
-            <button class="btn-alert" id="btn-cancel">취소</button>
-            <button class="btn-alert action" id="btn-logout">
-                로그아웃
-            </button>
+        <!-- 삭제 -->
+        <div class="modal-alert-container disabled">
+            <div class="modal-alert">
+                <span class="message">삭제하시겠습니까?</span>
+                <button class="btn-alert" id="btn-cancel">취소</button>
+                <button class="btn-alert action" id="btn-delete">삭제</button>
+            </div>
         </div>
-    </div>
 
-    <!-- 삭제 -->
-    <div class="modal-alert-container disabled">
-        <div class="modal-alert">
-            <span class="message">삭제하시겠습니까?</span>
-            <button class="btn-alert" id="btn-cancel">취소</button>
-            <button class="btn-alert action" id="btn-delete">삭제</button>
-        </div>
-    </div>
-
-    <script type="module" src="../js/reviewDetail.js"></script>
-</body>
-
+        <script type="module" src="../js/reviewDetail.js"></script>
+    </body>
 </html>
