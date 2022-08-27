@@ -2,6 +2,10 @@ import { handleUploadImage } from './imageApi.js';
 import { getMovieInfo } from './movieApi.js';
 import { writeReview } from './reviewApi.js';
 
+import { hasToken } from './tokenValid.js';
+
+hasToken();
+
 const movieTitle = document.querySelector(
     '#movie-title'
 ) as HTMLParagraphElement;
