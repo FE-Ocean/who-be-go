@@ -10,7 +10,7 @@ const hasToken = async () => {
         if (result) {
             location.href = '/pages/login.html';
         } else {
-            location.href = '/';
+            location.href = '/index.html';
         }
     } else {
         tokenValid(token);
@@ -30,7 +30,7 @@ const tokenValid = async (token: string) => {
 
         if (json.isValid !== true) {
             localStorage.removeItem('token');
-            location.href = '/';
+            location.href = '/index.html';
             alert('잘못된 접근입니다.');
             throw new Error(
                 '예상치 못한 오류가 발생했습니다. 다시 시도해주세요.'
