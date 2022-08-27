@@ -11,7 +11,12 @@ hasToken();
 const createReviewAlbum = (review) => {
     const li = document.createElement('li');
     li.classList.add('card-s');
-    li.style.backgroundImage = `url(${review.image})`;
+    if (review.image) {
+        li.style.backgroundImage = `url(${review.image})`;
+    }
+    else {
+        li.style.backgroundImage = `url(../assets/images/min_post_default.jpg)`;
+    }
     const a = document.createElement('a');
     a.href = `../pages/reviewDetail.html?id=${review.id}`;
     const h3 = document.createElement('h3');
