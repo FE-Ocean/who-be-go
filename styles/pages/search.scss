@@ -109,7 +109,12 @@
     padding: 0 2px 10px;
     font-size: 13px;
     .movie-title {
-        @include text-overflow-two(96%);
+        display: -webkit-box;
+        overflow: hidden;
+        width: 96%;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 }
 
@@ -145,8 +150,5 @@
     }
     .title-box {
         font-size: 12px;
-        .movie-title {
-            @include text-overflow-two(96%);
-        }
     }
 }

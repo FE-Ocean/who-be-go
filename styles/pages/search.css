@@ -345,7 +345,6 @@
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  word-break: keep-all;
 }
 
 @media screen and (max-width: 600px) {
@@ -390,14 +389,5 @@
   }
   .title-box {
     font-size: 12px;
-  }
-  .title-box .movie-title {
-    display: -webkit-box;
-    overflow: hidden;
-    width: 96%;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    word-break: keep-all;
   }
 }
