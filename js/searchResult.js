@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { getMovieInfo } from './movieApi.js';
 const title = document.querySelector('.movie-title');
 const titleEng = document.querySelector('.sub-movie-title');
@@ -28,13 +19,16 @@ const loading = document.querySelector('.wrapper-etc');
 postReview.addEventListener('click', () => {
     window.location.href = `../pages/writePost.html?movieId=${movieId}&movieSeq=${movieSeq}`;
 });
-window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
+window.addEventListener('load', async () => {
     if (movieId !== null && movieSeq !== null) {
-        const movieInfo = yield getMovieInfo(movieId, movieSeq);
+        const movieInfo = await getMovieInfo({
+            movieId: movieId,
+            movieSeq: movieSeq,
+        });
         showValue(movieInfo);
     }
     loading.classList.add('disabled');
-}));
+});
 const showValue = (movie) => {
     title.textContent = movie.title;
     if (movie.titleEng === '') {

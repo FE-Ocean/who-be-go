@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { login } from './userApi.js';
 const loginForm = document.querySelector('.form-login');
 const email = document.querySelector('#email');
@@ -26,7 +17,7 @@ loginForm.addEventListener('input', (e) => {
     checkInput(e);
 });
 // 로그인 체크
-const Login = (e) => __awaiter(void 0, void 0, void 0, function* () {
+const Login = async (e) => {
     e.preventDefault();
     const loginData = {
         user: {
@@ -35,7 +26,7 @@ const Login = (e) => __awaiter(void 0, void 0, void 0, function* () {
         },
     };
     try {
-        const resJson = yield login(loginData);
+        const resJson = await login(loginData);
         if (resJson.status !== 422) {
             localStorage.setItem('token', resJson.user.token);
             localStorage.setItem('accountname', resJson.user.accountname);
@@ -48,7 +39,7 @@ const Login = (e) => __awaiter(void 0, void 0, void 0, function* () {
     catch (err) {
         console.error(err);
     }
-});
+};
 loginBtn.addEventListener('click', (e) => {
     Login(e);
 });

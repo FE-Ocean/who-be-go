@@ -1,31 +1,28 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { getBoxOfficeList } from './boxOfiiceApi.js';
-import { getMovieInfoStart, getMovieInfoEnd } from './movieApi.js';
+import { getMovieInfo } from './movieApi.js';
 const loadingItem = document.querySelectorAll('.loading');
 // 일별 박스 오피스 값을 넣어 영화 상세 결과값을 얻어냅니다.
-const movieDetail = (boxOfficeResult) => __awaiter(void 0, void 0, void 0, function* () {
-    boxOfficeResult.forEach((movie) => __awaiter(void 0, void 0, void 0, function* () {
+const movieDetail = async (boxOfficeResult) => {
+    boxOfficeResult.forEach(async (movie) => {
         let detailResult;
         const title = movie.movieNm;
         const releaseDts = movie.openDt.replace(/-/gi, '');
-        detailResult = yield getMovieInfoStart(title, releaseDts);
+        detailResult = await getMovieInfo({
+            title: title,
+            releaseDts: releaseDts,
+        });
         // 만약 검색한 결과 값이 없을 경우 검색 조건을 바꿔서 한번 더 검색합니다.
         if (detailResult === undefined) {
-            detailResult = yield getMovieInfoEnd(title, releaseDts);
+            detailResult = await getMovieInfo({
+                title: title,
+                releaseDte: releaseDts,
+            });
         }
         setMovieDetail(movie, detailResult);
-    }));
-});
+    });
+};
 // 영화정보를 셋팅합니다.
-const setMovieDetail = (movie, detailResult) => __awaiter(void 0, void 0, void 0, function* () {
+const setMovieDetail = async (movie, detailResult) => {
     const li = document.getElementById(`rank${movie.rank}`);
     if (li instanceof HTMLLIElement) {
         li.style.backgroundImage = `url(${detailResult.posters.split('|')[0]})`;
@@ -62,14 +59,14 @@ const setMovieDetail = (movie, detailResult) => __awaiter(void 0, void 0, void 0
             textGenre.textContent = `${detailResult.genre}`;
         }
     }
-});
+};
 const hideLoading = () => {
     loadingItem.forEach((element) => {
         element.classList.remove('loading');
     });
 };
-window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
-    const results = yield getBoxOfficeList();
+window.addEventListener('load', async () => {
+    const results = await getBoxOfficeList();
     movieDetail(results);
     hideLoading();
-}));
+});

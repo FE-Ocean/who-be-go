@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { getUserInfo } from './userApi.js';
 import { getReviewList } from './reviewApi.js';
 import { hasToken } from './tokenValid.js';
@@ -16,6 +7,7 @@ const userId = document.querySelector('#text-id');
 const userIntro = document.querySelector('#text-intro');
 const reviewAlbum = document.querySelector('.review-album');
 const loading = document.querySelector('.wrapper-etc');
+hasToken();
 const createReviewAlbum = (review) => {
     const li = document.createElement('li');
     li.classList.add('card-s');
@@ -39,18 +31,17 @@ const createReviewAlbum = (review) => {
     li.append(a);
     return li;
 };
-window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
-    hasToken();
+window.addEventListener('load', async () => {
     // 유저 정보 설정
-    const userInfo = yield getUserInfo();
+    const userInfo = await getUserInfo();
     profileImg.src = userInfo.image;
     username.textContent = userInfo.username;
     userId.textContent = userInfo.accountname;
     userIntro.textContent = userInfo.intro;
     // 유저의 리뷰 앨범 설정
-    const reviewList = yield getReviewList();
+    const reviewList = await getReviewList();
     for (let review of reviewList) {
         reviewAlbum.appendChild(createReviewAlbum(review));
     }
     loading.classList.add('disabled');
-}));
+});

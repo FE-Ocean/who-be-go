@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { getMovieInfo } from './movieApi.js';
 import data from './randomMovieList.js';
 const titleKo = document.querySelector('#movie-title');
@@ -27,13 +18,15 @@ function rand(min, max) {
 const id = data[rand(0, 98)];
 const title = id.title;
 const movieSeq = id.movieSeq;
-const serviceKey = 'NE98FTD75W4C0R4JS785';
-window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
+window.addEventListener('load', async () => {
     //영화 정보
-    const movieInfo = yield getMovieInfo('F', movieSeq);
+    const movieInfo = await getMovieInfo({
+        title: title,
+        movieSeq: movieSeq,
+    });
     setValue(movieInfo);
     loading.classList.add('disabled');
-}));
+});
 const setValue = (result) => {
     function posterUrl(posters) {
         const poster = result.posters;

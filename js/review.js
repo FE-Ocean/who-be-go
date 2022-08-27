@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { getReviewList, deleteReview } from './reviewApi.js';
 import { hasToken } from './tokenValid.js';
 hasToken();
@@ -121,10 +112,10 @@ const setReviewList = (post) => {
 // 무한 스크롤
 const createObserver = (element) => {
     let skip = 10;
-    const observer = new IntersectionObserver(([entry], observer) => __awaiter(void 0, void 0, void 0, function* () {
+    const observer = new IntersectionObserver(async ([entry], observer) => {
         if (entry.isIntersecting) {
             observer.unobserve(entry.target);
-            const newReviewList = yield getReviewList(skip);
+            const newReviewList = await getReviewList(skip);
             if (newReviewList.length === 0)
                 return;
             setReviewList(newReviewList);
@@ -136,7 +127,7 @@ const createObserver = (element) => {
                 observer.disconnect();
             }
         }
-    }), {
+    }, {
         threshold: 0.5,
     });
     if (element) {
@@ -154,8 +145,8 @@ window.addEventListener('click', (e) => {
         }
     }
 });
-window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
-    const reviewList = yield getReviewList();
+window.addEventListener('load', async () => {
+    const reviewList = await getReviewList();
     setReviewList(reviewList);
     loading.classList.add('disabled');
     if (reviewList.length < 10)
@@ -164,9 +155,9 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
     if (lastItem instanceof HTMLLIElement) {
         createObserver(lastItem);
     }
-}));
-buttonDelete.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
-    yield deleteReview(postId);
+});
+buttonDelete.addEventListener('click', async () => {
+    await deleteReview(postId);
     modalAlertContainer.classList.add('disabled');
     window.location.href = '../pages/review.html';
-}));
+});

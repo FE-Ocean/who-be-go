@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { handleUploadImage } from './imageApi.js';
 import { getMovieInfo } from './movieApi.js';
 import { writeReview } from './reviewApi.js';
@@ -49,14 +40,14 @@ const setTextHeight = (e) => {
     }
 };
 // 감상문 업로드
-const handleUploadReview = (e) => __awaiter(void 0, void 0, void 0, function* () {
+const handleUploadReview = async (e) => {
     e.preventDefault();
     if (textRating.textContent === '') {
         alert('별점을 입력해주세요.');
         return;
     }
     if (img) {
-        imgUrl = yield handleUploadImage(img);
+        imgUrl = await handleUploadImage(img);
     }
     const reqData = {
         post: {
@@ -70,12 +61,15 @@ const handleUploadReview = (e) => __awaiter(void 0, void 0, void 0, function* ()
             image: imgUrl,
         },
     };
-    const postId = yield writeReview(reqData);
+    const postId = await writeReview(reqData);
     window.location.href = `/pages/reviewDetail.html?id=${postId}`;
-});
-window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
+};
+window.addEventListener('load', async () => {
     if (movieId !== null && movieSeq !== null) {
-        const movieInfo = yield getMovieInfo(movieId, movieSeq);
+        const movieInfo = await getMovieInfo({
+            movieId: movieId,
+            movieSeq: movieSeq,
+        });
         movieTitle.textContent = movieInfo.title;
         if (movieInfo.titleEng !== '') {
             movieSubTitle.textContent = movieInfo.titleEng;
@@ -88,7 +82,7 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
         }
     }
     loading.classList.add('disabled');
-}));
+});
 imgInput.addEventListener('change', (e) => {
     const fileReader = new FileReader();
     const target = e.currentTarget;

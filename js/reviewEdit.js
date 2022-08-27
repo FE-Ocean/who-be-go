@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { handleUploadImage } from './imageApi.js';
 import { getReviewDetail, editReview } from './reviewApi.js';
 const queryString = window.location.search;
@@ -45,10 +36,10 @@ const setTextHeight = (e) => {
     }
 };
 // 감상문 수정
-const handleEditReview = (e) => __awaiter(void 0, void 0, void 0, function* () {
+const handleEditReview = async (e) => {
     e.preventDefault();
     if (img) {
-        imgUrl = yield handleUploadImage(img);
+        imgUrl = await handleUploadImage(img);
     }
     const reqData = {
         post: {
@@ -62,14 +53,14 @@ const handleEditReview = (e) => __awaiter(void 0, void 0, void 0, function* () {
             image: imgUrl,
         },
     };
-    const postId = yield editReview(id, reqData);
+    const postId = await editReview(id, reqData);
     if (postId) {
         window.location.href = `/pages/reviewDetail.html?id=${postId}`;
     }
-});
-window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
+};
+window.addEventListener('load', async () => {
     if (id !== null) {
-        const post = yield getReviewDetail(id);
+        const post = await getReviewDetail(id);
         const contentArray = post.content.split('@');
         movieTitle.textContent = contentArray[0];
         movieSubTitle.textContent = contentArray[1];
@@ -88,7 +79,7 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
         imgUrl = post.image;
     }
     loading.classList.add('disabled');
-}));
+});
 imgInput.addEventListener('change', (e) => {
     const fileReader = new FileReader();
     const target = e.currentTarget;
