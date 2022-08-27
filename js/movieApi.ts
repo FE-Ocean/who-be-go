@@ -41,7 +41,7 @@ const getMovieInfoEnd = async (title: string, releaseDts: string) => {
 
 // 영화 검색 결과 얻어오는 함수
 const getSearchResult = async (searchInputValue: string) => {
-    const url = `${MOVIE_URL}&ServiceKey=${serviceKey}&detail=Y&listCount=17&title=${searchInputValue}`;
+    const url = `${MOVIE_URL}&ServiceKey=${serviceKey}&detail=Y&listCount=100&sort=prodYear,1&title=${searchInputValue}`;
 
     try {
         const response = await fetch(url, {
