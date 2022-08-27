@@ -1,5 +1,6 @@
 @import '../constants/colors';
 @import '../constants/typography.scss';
+@import '../components/common';
 
 .search-main {
     padding: 60px 5%;
@@ -60,15 +61,79 @@
 }
 
 .container-searched-list {
-    padding: 25px 33px;
+    max-width: 740px;
+    // padding: 25px 33px;
+    padding: 20px 5px;
+    margin: 0 auto;
     color: $header-text;
     line-height: 1.37;
     text-align: left;
 }
-.searched-movie {
-    cursor: pointer;
-    &:hover {
-        background-color: black;
-        opacity: 0.95;
+
+.grid-box {
+    display: grid;
+    grid-template: auto / repeat(5, 1fr);
+    gap: 6px;
+    margin-top: 10px;
+    .searched-movie {
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+            transition-duration: 0.4s;
+            transition-timing-function: ease-in-out;
+            transform: translateY(-10px);
+        }
+    }
+}
+
+.container-poster {
+    position: relative;
+    padding-top: 142%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.img-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title-box {
+    margin-top: 5px;
+    padding: 0 2px 10px;
+    font-size: 15px;
+    // display: flex;
+    // overflow: hidden;
+}
+// .movie-title {
+//     position: absolute;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     display: inline-block;
+//     white-space: nowrap;
+//     word-break: keep-all;
+//     width: 96%;
+//     // max-width: 100%;
+//     // @include text-overflow-one(143px);
+// }
+
+@media screen and (max-width: 600px) {
+    .text-heading {
+        font-size: 26px;
+        line-height: 31px;
+    }
+    .text-description {
+        font-size: 16px;
+    }
+
+    .grid-box {
+        grid-template: auto / repeat(3, 1fr);
     }
 }
