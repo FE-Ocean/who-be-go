@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { MOVIE_URL } from './BASE_URL.js';
+import { getMovieInfo } from './movieApi.js';
 import data from './randomMovieList.js';
 const titleKo = document.querySelector('#movie-title');
 const titleEng = document.querySelector('#movie-title-eng');
@@ -28,26 +28,10 @@ const id = data[rand(0, 98)];
 const title = id.title;
 const movieSeq = id.movieSeq;
 const serviceKey = 'NE98FTD75W4C0R4JS785';
-//영화 정보
-function getMovieInfo() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const url = MOVIE_URL +
-            `&detail=Y&title=${title}&movieSeq=${movieSeq}&ServiceKey=${serviceKey}`;
-        try {
-            const response = yield fetch(url, {
-                method: 'GET',
-            });
-            const reqJson = yield response.json();
-            const result = yield reqJson.Data[0].Result[0];
-            setValue(result);
-        }
-        catch (err) {
-            console.error(err);
-        }
-    });
-}
 window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
-    yield getMovieInfo();
+    //영화 정보
+    const movieInfo = yield getMovieInfo('F', movieSeq);
+    setValue(movieInfo);
     loading.classList.add('disabled');
 }));
 const setValue = (result) => {
