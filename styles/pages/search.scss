@@ -30,11 +30,11 @@
     .input-search {
         width: 100%;
         padding: 21px 51px 17px 33px;
+        border: 1px solid #8b8b8b;
+        border-radius: 40px;
         color: $header-text;
         font-family: $font-regular;
         font-size: 18px;
-        border: 1px solid #8b8b8b;
-        border-radius: 40px;
         box-sizing: border-box;
         &::placeholder {
             color: #8b8b8b;
@@ -50,13 +50,13 @@
         position: absolute;
         top: 18px;
         right: 22px;
+        width: 24px;
+        height: 24px;
         background: {
             image: url('../../assets/icons/icon-search.svg');
             repeat: no-repeat;
             size: contain;
         }
-        width: 24px;
-        height: 24px;
     }
 }
 
@@ -75,8 +75,8 @@
     gap: 6px;
     margin-top: 10px;
     .searched-movie {
-        cursor: pointer;
         transition: 0.3s;
+        cursor: pointer;
         &:hover {
             transition-duration: 0.4s;
             transition-timing-function: ease-in-out;
@@ -86,18 +86,18 @@
 }
 
 .container-poster {
+    overflow: hidden;
     position: relative;
     padding-top: 142%;
-    overflow: hidden;
     border-radius: 5px;
 }
 
 .img-poster {
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
     max-width: 100%;
     width: 100%;
     height: 100%;
@@ -119,7 +119,25 @@
         line-height: 31px;
     }
     .text-description {
+        margin-bottom: 33px;
         font-size: 16px;
+    }
+
+    .input-search-container {
+        .input-search {
+            padding: 17px 51px 14px 33px;
+            font-size: 16px;
+            &::placeholder {
+                font-size: 16px;
+                line-height: 21px;
+            }
+        }
+        .img-search {
+            top: 15px;
+            right: 22px;
+            width: 21px;
+            height: 21px;
+        }
     }
 
     .grid-box {
