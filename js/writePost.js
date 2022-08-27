@@ -10,6 +10,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { handleUploadImage } from './imageApi.js';
 import { getMovieInfo } from './movieApi.js';
 import { writeReview } from './reviewApi.js';
+import { hasToken } from './tokenValid.js';
+hasToken();
 const movieTitle = document.querySelector('#movie-title');
 const movieSubTitle = document.querySelector('#movie-title-eng');
 const textRating = document.querySelector('#text-rating');
