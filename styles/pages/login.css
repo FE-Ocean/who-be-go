@@ -2,60 +2,63 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-width: 322px;
   padding: 0 20px;
   margin-top: 65px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
+
 .container-login .img-logo {
   height: 150px;
   margin-bottom: 10px;
 }
+
 .container-login .img-logo.move {
   margin-bottom: 0;
 }
+
 .container-login label {
   margin-bottom: 6px;
+  color: #dedede;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 13px;
-  color: #dedede;
 }
+
 .container-login ::-webkit-input-placeholder {
+  color: #464646;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
-  color: #464646;
 }
-.container-login ::-moz-placeholder {
-  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
-  font-size: 12px;
-  color: #464646;
-}
+
 .container-login :-ms-input-placeholder {
+  color: #464646;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
-  color: #464646;
 }
+
 .container-login ::-ms-input-placeholder {
+  color: #464646;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
-  color: #464646;
 }
+
 .container-login ::placeholder {
+  color: #464646;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
-  color: #464646;
 }
+
 .container-login input {
   padding: 8px 0;
   border-bottom: 1px solid #767676;
@@ -64,15 +67,18 @@
   font-size: 13px;
   line-height: 1;
 }
+
 .container-login input:focus {
   border-color: #ffffff;
 }
+
 .container-login .page-msg {
+  margin: 20px 0 30px;
+  color: #cfcfcf;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 16px;
-  color: #cfcfcf;
-  margin: 20px 0 30px;
 }
+
 .container-login .msg-error {
   display: none;
   margin-top: 7px;
@@ -80,10 +86,12 @@
   font-weight: 400;
   font-size: 11px;
 }
+
 .container-login .msg-error.false {
   display: block;
   color: #ff5f5f;
 }
+
 .container-login .wrapper-email,
 .container-login .wrapper-password {
   display: -webkit-box;
@@ -94,13 +102,15 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
 .container-login .wrapper-password {
   margin: 16px 0 35px 0;
 }
+
 .container-login .sign-up-link {
   display: block;
-  text-align: center;
   margin-top: 25px;
   color: #cfcfcf;
   font-size: 12px;
+  text-align: center;
 }

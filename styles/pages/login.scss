@@ -3,9 +3,9 @@
 
 .container-login {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-width: 322px;
     padding: 0 20px;
     margin-top: 65px;
@@ -21,14 +21,14 @@
 
     label {
         margin-bottom: 6px;
+        color: $content-text;
         font-family: $font-regular;
         font-size: 13px;
-        color: $content-text;
     }
     ::placeholder {
+        color: $placeholder-text;
         font-family: $font-regular;
         font-size: 12px;
-        color: $placeholder-text;
     }
     input {
         padding: 8px 0;
@@ -43,10 +43,10 @@
     }
 
     .page-msg {
+        margin: 20px 0 30px;
+        color: $header-text;
         font-family: $font-regular;
         font-size: 16px;
-        color: $header-text;
-        margin: 20px 0 30px;
     }
 
     .msg-error {
@@ -74,9 +74,9 @@
 
     .sign-up-link {
         display: block;
-        text-align: center;
         margin-top: 25px;
         color: $header-text;
         font-size: 12px;
+        text-align: center;
     }
 }
