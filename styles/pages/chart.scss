@@ -1,23 +1,16 @@
 @import '../constants/colors';
 @import '../constants/typography.scss';
-
 .container-chart {
     box-sizing: content-box;
     padding: 60px 20px;
     margin: 0 auto;
 }
-
 .text-description-chart {
     margin: 17px 0 42px 0;
     color: $sub-text;
     font: 18px/1 $font-regular;
     text-align: center;
 }
-
-// .card-m:focus {
-//     outline: 10px solid #FFC3C3;
-// }
-
 .card-m {
     cursor: pointer;
     #rank {
@@ -25,15 +18,13 @@
         top: 5px;
         left: 1px;
         .num {
+            display: block;
             position: absolute;
             top: -33px;
             left: -26px;
-            font-family: $font-medium;
-            color: $white;
-            font-size: 40px;
-            font-style: italic;
-            display: block;
             padding: 10px;
+            font:italic 40px/1 $font-medium;
+            color: $white;
             text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.4);
         }
     }
@@ -44,13 +35,11 @@
         }
     }
 }
-
 @keyframes blinker {
     50% {
         opacity: 0;
     }
 }
-
 .loading {
     background-image: none;
     background-color: #e0e0e0;

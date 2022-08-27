@@ -1,6 +1,5 @@
 .container-chart {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   padding: 60px 20px;
   margin: 0 auto;
 }
@@ -21,15 +20,13 @@
   left: 1px;
 }
 .card-m #rank .num {
+  display: block;
   position: absolute;
   top: -33px;
   left: -26px;
-  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
-  color: #ffffff;
-  font-size: 40px;
-  font-style: italic;
-  display: block;
   padding: 10px;
+  font: italic 40px/1 "SpoqaHanSansNeo-Medium", sans-serif;
+  color: #ffffff;
   text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.4);
 }
 .card-m .show-contents {
