@@ -113,6 +113,7 @@ imgInput.addEventListener('change', (e) => {
 });
 closeButton.addEventListener('click', () => {
     img = undefined;
+    imgUrl = '';
     imgReview.src = '';
     imgContainer.classList.add('disabled');
 });
