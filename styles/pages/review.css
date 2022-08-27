@@ -16,11 +16,14 @@
 }
 
 .img-logo {
-  height: 90px;
+  height: 70px;
 }
+
 .img-logo img {
-  margin-left: 90px;
+  height: 65px;
+  margin: 5px 0 0 90px;
 }
+
 .img-logo .btn-nav {
   display: none;
   position: absolute;
@@ -28,7 +31,7 @@
   right: 33px;
   width: 25px;
   height: 25px;
-  background: url(../../assets/icons/menu.svg) no-repeat 0 0;
+  background: url("../../assets/icons/menu.svg") no-repeat 0 0;
 }
 
 .nav {
@@ -38,6 +41,7 @@
   margin-right: 90px;
   letter-spacing: -0.02em;
 }
+
 .nav li {
   padding-left: 24px;
   color: #cfcfcf;
@@ -45,67 +49,107 @@
   font-size: 14px;
   cursor: pointer;
 }
-.nav li:hover {
-  color: #ff5f5f;
-}
-.nav li a .selected {
+
+.nav li:hover,
+.nav li a.selected {
   color: #ff5f5f;
 }
 
 .main {
-  margin-top: 90px;
   position: relative;
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 131px);
+  margin-top: 70px;
 }
-.main.wrapper-etc {
+
+.wrapper-etc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 250px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 150px);
+  margin-top: 20px;
+  background-color: #1e1e1e;
   color: #f1f1f1;
 }
-.main.wrapper-etc .img-etc {
+
+.wrapper-etc .img-etc {
   width: 181px;
   margin-bottom: 20px;
 }
-.main.wrapper-etc .text-etc {
+
+.wrapper-etc .text-etc {
   margin-bottom: 30px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 25px;
 }
 
+.wrapper-etc.disabled {
+  display: none;
+}
+
 .footer {
-  width: 100%;
-  height: 60px;
+  z-index: 9999;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  z-index: 9999;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
   background-color: #292929;
+  color: #dedede;
   text-align: center;
 }
-.footer p {
+
+.footer .desc {
   display: inline-block;
-  margin-top: 25px;
-  color: #cfcfcf;
+  margin: 8px 0 5px;
   font-size: 10px;
 }
 
+.footer .wrapper-github {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 5% 5px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.footer .wrapper-github .text-s {
+  font-size: 8px;
+}
+
 .page-title {
+  color: #f1f1f1;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 30px;
   text-align: center;
-  color: #f1f1f1;
 }
 
 @media screen and (max-width: 768px) {
@@ -116,10 +160,13 @@
             flex-direction: column;
   }
   .img-logo img {
-    margin-left: 0;
+    content: url("../../assets/icons/logo-title-s.svg");
+    margin: 13px 0 0 0;
+    height: 52px;
   }
   .img-logo .btn-nav {
     display: block;
+    top: 25px;
   }
   .nav {
     display: none;
@@ -150,6 +197,7 @@
     margin-top: 296px;
   }
 }
+
 .main {
   overflow: hidden;
   padding: 0 5%;
@@ -183,13 +231,13 @@
 }
 
 .movie-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
   display: -webkit-box;
+  overflow: hidden;
+  width: 90%;
+  text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   word-break: keep-all;
-  width: 90%;
   color: #f1f1f1;
   font-size: 25px;
   margin-left: 5px;
@@ -203,9 +251,11 @@
   position: absolute;
   cursor: pointer;
 }
+
 .btn-modal::marker {
   font-size: 0;
 }
+
 .btn-modal .ico-modal {
   width: 25px;
   height: 25px;
@@ -222,8 +272,9 @@
   margin: 12px 0 22px 5px;
   --width-rating: 100%;
 }
+
 .wrapper-rating::before {
-  content: "";
+  content: '';
   display: block;
   background-image: url("../../assets/icons/star-yellow-100.svg");
   width: var(--width-rating);
@@ -249,14 +300,16 @@
   overflow-y: auto;
   border-radius: 4px;
 }
+
 .text-story::-webkit-scrollbar {
   width: 8px;
   border-radius: 60px;
   scroll-padding: 10%;
 }
+
 .text-story::-webkit-scrollbar-thumb {
-  border-radius: 30px;
   height: 10%;
+  border-radius: 30px;
   background-color: #242424;
 }
 
@@ -274,6 +327,7 @@
   margin: 0;
   text-align: center;
 }
+
 .wrapper-noreview.disabled {
   display: none;
 }
