@@ -1,16 +1,29 @@
 .container-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-width: 322px;
   padding: 0 20px;
   margin-top: 65px;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 .container-login .img-logo {
   height: 150px;
   margin-bottom: 10px;
+}
+.container-login .img-logo.move {
+  margin-bottom: 0;
 }
 .container-login label {
   margin-bottom: 6px;
@@ -18,12 +31,22 @@
   font-size: 13px;
   color: #dedede;
 }
+.container-login ::-webkit-input-placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 12px;
+  color: #464646;
+}
 .container-login ::-moz-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
   color: #464646;
 }
 .container-login :-ms-input-placeholder {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 12px;
+  color: #464646;
+}
+.container-login ::-ms-input-placeholder {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
   color: #464646;
@@ -44,6 +67,12 @@
 .container-login input:focus {
   border-color: #ffffff;
 }
+.container-login .page-msg {
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 16px;
+  color: #cfcfcf;
+  margin: 20px 0 30px;
+}
 .container-login .msg-error {
   display: none;
   margin-top: 7px;
@@ -57,8 +86,13 @@
 }
 .container-login .wrapper-email,
 .container-login .wrapper-password {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .container-login .wrapper-password {
   margin: 16px 0 35px 0;
