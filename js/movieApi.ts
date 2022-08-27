@@ -2,9 +2,13 @@ import { MOVIE_URL } from './BASE_URL.js';
 
 const serviceKey = 'NE98FTD75W4C0R4JS785';
 
-// movieId, movieSeq로 영화 정보 얻어오는 함수
-const getMovieInfo = async (movieId: string, movieSeq: string) => {
-    const url = `${MOVIE_URL}&ServiceKey=${serviceKey}&detail=Y&movieId=${movieId}&movieSeq=${movieSeq}`;
+// 영화 정보 얻어오는 함수 (인자로 쿼리 받음)
+const getMovieInfo = async (queryObj: object) => {
+    let queryString = '';
+    Object.entries(queryObj).map(([key, value]) => {
+        queryString += `&${key}=${value}`;
+    });
+    const url = `${MOVIE_URL}&ServiceKey=${serviceKey}&detail=Y${queryString}`;
 
     try {
         const response = await fetch(url, {
@@ -14,28 +18,6 @@ const getMovieInfo = async (movieId: string, movieSeq: string) => {
         return json.Data[0].Result[0];
     } catch (err) {
         console.error(err);
-    }
-};
-
-// 영화 제목, 개봉 시작일로 영화 정보 얻어오는 함수
-const getMovieInfoStart = async (title: string, releaseDts: string) => {
-    const url = `${MOVIE_URL}&ServiceKey=${serviceKey}&title=${title}&releaseDts=${releaseDts}&detail=Y`;
-
-    const response = await fetch(url);
-    const json = await response.json();
-    if (json.Data[0].Result !== undefined) {
-        return json.Data[0].Result[0];
-    }
-};
-
-// 영화 제목, 개봉 종료일로 영화 정보 얻어오는 함수
-const getMovieInfoEnd = async (title: string, releaseDts: string) => {
-    const url = `${MOVIE_URL}&ServiceKey=${serviceKey}&title=${title}&releaseDte=${releaseDts}&detail=Y`;
-
-    const response = await fetch(url);
-    const json = await response.json();
-    if (json.Data[0].Result !== undefined) {
-        return json.Data[0].Result[0];
     }
 };
 
@@ -54,4 +36,4 @@ const getSearchResult = async (searchInputValue: string) => {
     }
 };
 
-export { getMovieInfo, getMovieInfoStart, getMovieInfoEnd, getSearchResult };
+export { getMovieInfo, getSearchResult };

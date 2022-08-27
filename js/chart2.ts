@@ -1,6 +1,6 @@
 import { BoxOffice, MovieDetail } from './movieListInterface';
 import { getBoxOfficeList } from './boxOfiiceApi.js';
-import { getMovieInfoStart, getMovieInfoEnd } from './movieApi.js';
+import { getMovieInfo } from './movieApi.js';
 
 const loadingItem = document.querySelectorAll('.loading');
 
@@ -10,10 +10,16 @@ const movieDetail = async (boxOfficeResult: BoxOffice[]) => {
         let detailResult;
         const title = movie.movieNm;
         const releaseDts = movie.openDt.replace(/-/gi, '');
-        detailResult = await getMovieInfoStart(title, releaseDts);
+        detailResult = await getMovieInfo({
+            title: title,
+            releaseDts: releaseDts,
+        });
         // 만약 검색한 결과 값이 없을 경우 검색 조건을 바꿔서 한번 더 검색합니다.
         if (detailResult === undefined) {
-            detailResult = await getMovieInfoEnd(title, releaseDts);
+            detailResult = await getMovieInfo({
+                title: title,
+                releaseDte: releaseDts,
+            });
         }
         setMovieDetail(movie, detailResult);
     });

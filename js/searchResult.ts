@@ -59,7 +59,10 @@ postReview!.addEventListener('click', () => {
 
 window.addEventListener('load', async () => {
     if (movieId !== null && movieSeq !== null) {
-        const movieInfo = await getMovieInfo(movieId, movieSeq);
+        const movieInfo = await getMovieInfo({
+            movieId: movieId,
+            movieSeq: movieSeq,
+        });
         showValue(movieInfo);
     }
     loading.classList.add('disabled');

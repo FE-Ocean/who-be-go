@@ -45,11 +45,13 @@ function rand(min: number, max: number) {
 const id = data[rand(0, 98)];
 const title: string = id.title;
 const movieSeq: string = id.movieSeq;
-const serviceKey: string = 'NE98FTD75W4C0R4JS785';
 
 window.addEventListener('load', async () => {
     //영화 정보
-    const movieInfo = await getMovieInfo('F', movieSeq);
+    const movieInfo = await getMovieInfo({
+        title: title,
+        movieSeq: movieSeq,
+    });
     setValue(movieInfo);
     loading.classList.add('disabled');
 });
