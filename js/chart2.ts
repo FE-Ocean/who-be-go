@@ -1,9 +1,7 @@
 import { BoxOffice, MovieDetail } from './movieListInterface';
 import { getBoxOfficeList } from './boxOfiiceApi.js';
 import { getMovieInfo } from './movieApi.js';
-
 const loadingItem = document.querySelectorAll('.loading');
-
 // 일별 박스 오피스 값을 넣어 영화 상세 결과값을 얻어냅니다.
 const movieDetail = async (boxOfficeResult: BoxOffice[]) => {
     boxOfficeResult.forEach(async (movie) => {
@@ -24,7 +22,6 @@ const movieDetail = async (boxOfficeResult: BoxOffice[]) => {
         setMovieDetail(movie, detailResult);
     });
 };
-
 // 영화정보를 셋팅합니다.
 const setMovieDetail = async (movie: BoxOffice, detailResult: MovieDetail) => {
     const li = document.getElementById(`rank${movie.rank}`);
@@ -39,55 +36,62 @@ const setMovieDetail = async (movie: BoxOffice, detailResult: MovieDetail) => {
         const textDirector = li.querySelector('#text-director');
         const textActor = li.querySelector('#text-actor');
         const textGenre = li.querySelector('#text-genre');
-
         if (movieTitle instanceof HTMLElement) {
             movieTitle.textContent = `${movie.movieNm}`;
         }
-
         if (movieEngTitle instanceof HTMLSpanElement) {
             movieEngTitle.textContent = `${detailResult.titleEng}`;
         }
-
         if (textRelease instanceof HTMLElement) {
-            const dates = movie.openDt;
-            let dateText = '';
-            for (let date of dates) {
-                dateText += date.split('-').join('.');
+            if (movie.openDt !== ''){
+                const dates = movie.openDt;
+                let dateText = '';
+                for (let date of dates) {
+                    dateText += date.split('-').join('.');
+                }
+                textRelease.textContent = `${dateText}`;
+            } else {
+                textRelease.textContent = '개봉 정보가 없습니다.';
             }
-            // textRelease.textContent = `${movie.openDt}`;
-            textRelease.textContent = `${dateText}`;
         }
-
         if (textDirector instanceof HTMLElement) {
-            textDirector.textContent = `${detailResult.directors.director[0].directorNm}`;
+            if (detailResult.directors.director[0].directorNm !== '') {
+                textDirector.textContent = `${detailResult.directors.director[0].directorNm}`;
+            } else {
+                textDirector.textContent = '감독 정보가 없습니다.';
+            }
         }
-
         if (textActor instanceof HTMLElement) {
             const actors = detailResult.actors.actor;
-            let actorText = '';
-            for (let actor of actors) {
-                actorText += actor.actorNm + ' | ';
+            if (actors[0].actorNm !== '') {
+                let actorText = '';
+                for (let actor of actors) {
+                    actorText += actor.actorNm + ' | ';
+                }
+                textActor.textContent = `${actorText}`;
+            } else {
+                textActor.textContent = '배우 정보가 없습니다';
             }
-            textActor.textContent = `${actorText}`;
         }
-
         if (textGenre instanceof HTMLElement) {
             const genres = detailResult.genre;
-            let genreText = '';
-            for (let genre of genres) {
-                genreText += genre.split(',').join(' | ')
+            if (genres !== '') {
+                let genreText = '';
+                for (let genre of genres) {
+                    genreText += genre.split(',').join(' | ')
+                }
+                textGenre.textContent = `${genreText}`;
+            } else {
+                textGenre.textContent = '장르 정보가 없습니다.';
             }
-            textGenre.textContent = `${genreText}`;
         }
     }
 };
-
 const hideLoading = () => {
     loadingItem.forEach((element) => {
         element.classList.remove('loading');
     });
 };
-
 window.addEventListener('load', async () => {
     const results = await getBoxOfficeList();
     movieDetail(results);

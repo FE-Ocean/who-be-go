@@ -42,32 +42,51 @@ const setMovieDetail = async (movie, detailResult) => {
             movieEngTitle.textContent = `${detailResult.titleEng}`;
         }
         if (textRelease instanceof HTMLElement) {
-            const dates = movie.openDt;
-            let dateText = '';
-            for (let date of dates) {
-                dateText += date.split('-').join('.');
+            if (movie.openDt !== '') {
+                const dates = movie.openDt;
+                let dateText = '';
+                for (let date of dates) {
+                    dateText += date.split('-').join('.');
+                }
+                textRelease.textContent = `${dateText}`;
             }
-            // textRelease.textContent = `${movie.openDt}`;
-            textRelease.textContent = `${dateText}`;
+            else {
+                textRelease.textContent = '개봉 정보가 없습니다.';
+            }
         }
         if (textDirector instanceof HTMLElement) {
-            textDirector.textContent = `${detailResult.directors.director[0].directorNm}`;
+            if (detailResult.directors.director[0].directorNm !== '') {
+                textDirector.textContent = `${detailResult.directors.director[0].directorNm}`;
+            }
+            else {
+                textDirector.textContent = '감독 정보가 없습니다.';
+            }
         }
         if (textActor instanceof HTMLElement) {
             const actors = detailResult.actors.actor;
-            let actorText = '';
-            for (let actor of actors) {
-                actorText += actor.actorNm + ' | ';
+            if (actors[0].actorNm !== '') {
+                let actorText = '';
+                for (let actor of actors) {
+                    actorText += actor.actorNm + ' | ';
+                }
+                textActor.textContent = `${actorText}`;
             }
-            textActor.textContent = `${actorText}`;
+            else {
+                textActor.textContent = '배우 정보가 없습니다';
+            }
         }
         if (textGenre instanceof HTMLElement) {
             const genres = detailResult.genre;
-            let genreText = '';
-            for (let genre of genres) {
-                genreText += genre.split(',').join(' | ');
+            if (genres !== '') {
+                let genreText = '';
+                for (let genre of genres) {
+                    genreText += genre.split(',').join(' | ');
+                }
+                textGenre.textContent = `${genreText}`;
             }
-            textGenre.textContent = `${genreText}`;
+            else {
+                textGenre.textContent = '장르 정보가 없습니다.';
+            }
         }
     }
 };
