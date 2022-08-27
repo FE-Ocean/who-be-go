@@ -14,6 +14,7 @@ const buttonShowAlert = document.querySelector(
 ) as HTMLButtonElement;
 // (모달의) 삭제 버튼
 const buttonDelete = document.querySelector('#btn-delete') as HTMLButtonElement;
+const loading = document.querySelector('.wrapper-etc') as HTMLElement;
 
 // URL 이 ?id=123123 이런식으로 온다고 가정하겠습니다.
 const queryString = window.location.search;
@@ -73,6 +74,7 @@ window.addEventListener('load', async () => {
         const currentPost = await getReviewDetail(id);
         setReviewDetail(currentPost);
     }
+    loading.classList.add('disabled');
 });
 
 modalButton.addEventListener('click', () => {

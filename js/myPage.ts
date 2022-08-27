@@ -1,11 +1,15 @@
 import { getUserInfo } from './userApi.js';
 import { getReviewList } from './reviewApi.js';
+import { hasToken } from './tokenValid.js';
 
 const profileImg = document.querySelector('#img-profile') as HTMLImageElement;
 const username = document.querySelector('#text-name') as HTMLLIElement;
 const userId = document.querySelector('#text-id') as HTMLLIElement;
 const userIntro = document.querySelector('#text-intro') as HTMLLIElement;
 const reviewAlbum = document.querySelector('.review-album') as HTMLUListElement;
+const loading = document.querySelector('.wrapper-etc') as HTMLElement;
+
+hasToken();
 
 interface album {
     id: string;
@@ -50,4 +54,5 @@ window.addEventListener('load', async () => {
     for (let review of reviewList) {
         reviewAlbum.appendChild(createReviewAlbum(review));
     }
+    loading.classList.add('disabled');
 });

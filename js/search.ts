@@ -1,4 +1,4 @@
-// import { MOVIE_URL } from './BASE_URL';
+import { getSearchResult } from './movieApi.js';
 
 const searchInput = document.getElementById('input-search');
 const searchedList = document.querySelector(
@@ -32,20 +32,8 @@ interface MovieList {
 }
 
 async function search(searchInputValue: string) {
-    const serviceKey = 'NE98FTD75W4C0R4JS785';
-    const listCount = '100';
-    const url = `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=${serviceKey}&detail=Y&sort=prodYear,1&listCount=${listCount}&title=${searchInputValue}`;
-
-    try {
-        const response = await fetch(url, {
-            method: 'GET',
-        });
-        const json = await response.json();
-        createSearchedList(json.Data[0]);
-        console.log(json.Data[0]);
-    } catch (err) {
-        console.error(err);
-    }
+    const searchResult = await getSearchResult(searchInputValue);
+    createSearchedList(searchResult);
 }
 
 const createSearchedList = (list: MovieList) => {

@@ -11,25 +11,29 @@ import { handleUploadImage } from './imageApi.js';
 import { getIdValidMsg, getUserInfo, editUserInfo } from './userApi.js';
 const profileForm = document.querySelector('#form-profile');
 const imgBtn = document.querySelector('#choose-img');
-const thumbnailImg = document.querySelector('.wrapper-upload-img');
+const profileImg = document.querySelector('#img-profile');
 const name = document.querySelector('#name');
 const id = document.querySelector('#user-id');
 const intro = document.querySelector('#intro');
 const errorName = document.querySelector('.msg-error.username');
 const errorId = document.querySelector('.msg-error.userid');
 const editBtn = document.querySelector('.btn-edit');
+const loading = document.querySelector('.wrapper-etc');
 const accountname = window.localStorage.getItem('accountname');
+window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
+    yield getProfile();
+    loading.classList.add('disabled');
+}));
 // 현재 프로필 정보 get
 function getProfile() {
     return __awaiter(this, void 0, void 0, function* () {
         const userInfo = yield getUserInfo();
-        thumbnailImg.style.backgroundImage = userInfo.image;
+        profileImg.src = userInfo.image;
         name.value = userInfo.username;
         id.value = userInfo.accountname;
         intro.value = userInfo.intro;
     });
 }
-getProfile();
 // 버튼 활성화 함수
 function checkBtn() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -120,7 +124,7 @@ function uploadImg(e) {
             if (target.files !== null) {
                 const file = target.files[0];
                 const editImgURL = yield handleUploadImage(file);
-                thumbnailImg.style.backgroundImage = `url(${editImgURL})`;
+                profileImg.src = editImgURL;
             }
         }
         catch (err) {
@@ -140,7 +144,7 @@ function editProfile(e) {
                 username: name.value,
                 accountname: id.value,
                 intro: intro.value,
-                image: thumbnailImg.style.backgroundImage,
+                image: profileImg.src,
             },
         };
         const editInfo = yield editUserInfo(reqData);

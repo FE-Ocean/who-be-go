@@ -9,11 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { getUserInfo } from './userApi.js';
 import { getReviewList } from './reviewApi.js';
+import { hasToken } from './tokenValid.js';
 const profileImg = document.querySelector('#img-profile');
 const username = document.querySelector('#text-name');
 const userId = document.querySelector('#text-id');
 const userIntro = document.querySelector('#text-intro');
 const reviewAlbum = document.querySelector('.review-album');
+const loading = document.querySelector('.wrapper-etc');
 const createReviewAlbum = (review) => {
     const li = document.createElement('li');
     li.classList.add('card-s');
@@ -38,6 +40,7 @@ const createReviewAlbum = (review) => {
     return li;
 };
 window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
+    hasToken();
     // 유저 정보 설정
     const userInfo = yield getUserInfo();
     profileImg.src = userInfo.image;
@@ -49,4 +52,5 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
     for (let review of reviewList) {
         reviewAlbum.appendChild(createReviewAlbum(review));
     }
+    loading.classList.add('disabled');
 }));

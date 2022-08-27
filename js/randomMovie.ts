@@ -1,4 +1,4 @@
-import { MOVIE_URL } from './BASE_URL.js';
+import { getMovieInfo } from './movieApi.js';
 import data from './randomMovieList.js';
 
 interface MovieLists {
@@ -35,6 +35,7 @@ const rating = document.querySelector('#rating') as HTMLElement;
 const img = document.querySelector('.card-L') as HTMLImageElement;
 const imgInfo = document.querySelector('.card-L.info') as HTMLImageElement;
 const newBtn = document.querySelector('.btn-L.home') as HTMLButtonElement;
+const loading = document.querySelector('.wrapper-etc') as HTMLElement;
 
 //숫자 랜덤으로 뽑아주는 함수
 function rand(min: number, max: number) {
@@ -46,28 +47,11 @@ const title: string = id.title;
 const movieSeq: string = id.movieSeq;
 const serviceKey: string = 'NE98FTD75W4C0R4JS785';
 
-//영화 정보
-async function getMovieInfo() {
-    const url =
-        MOVIE_URL +
-        `&detail=Y&title=${title}&movieSeq=${movieSeq}&ServiceKey=${serviceKey}`;
-
-    console.log(url);
-
-    try {
-        const response = await fetch(url, {
-            method: 'GET',
-        });
-        const reqJson = await response.json();
-        const result = await reqJson.Data[0].Result[0];
-        setValue(result);
-    } catch (err) {
-        console.error(err);
-    }
-}
-
 window.addEventListener('load', async () => {
-    await getMovieInfo();
+    //영화 정보
+    const movieInfo = await getMovieInfo('F', movieSeq);
+    setValue(movieInfo);
+    loading.classList.add('disabled');
 });
 
 const setValue = (result: MovieLists) => {

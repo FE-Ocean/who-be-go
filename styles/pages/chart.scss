@@ -18,10 +18,30 @@
 //     outline: 10px solid #FFC3C3;
 // }
 
-.card-m .show-contents {
-    text-align: left;
-    & .wrapper-movie-title {
-        color: #fff;
+.card-m {
+    cursor: pointer;
+    #rank {
+        position: absolute;
+        top: 5px;
+        left: 1px;
+        .num {
+            position: absolute;
+            top: -33px;
+            left: -26px;
+            font-family: $font-medium;
+            color: $white;
+            font-size: 40px;
+            font-style: italic;
+            display: block;
+            padding: 10px;
+            text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.4);
+        }
+    }
+    .show-contents {
+        text-align: left;
+        & .wrapper-movie-title {
+            color: $white;
+        }
     }
 }
 

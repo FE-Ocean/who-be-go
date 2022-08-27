@@ -1,5 +1,6 @@
 .container-chart {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   padding: 60px 20px;
   margin: 0 auto;
 }
@@ -11,11 +12,31 @@
   text-align: center;
 }
 
+.card-m {
+  cursor: pointer;
+}
+.card-m #rank {
+  position: absolute;
+  top: 5px;
+  left: 1px;
+}
+.card-m #rank .num {
+  position: absolute;
+  top: -33px;
+  left: -26px;
+  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
+  color: #ffffff;
+  font-size: 40px;
+  font-style: italic;
+  display: block;
+  padding: 10px;
+  text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.4);
+}
 .card-m .show-contents {
   text-align: left;
 }
 .card-m .show-contents .wrapper-movie-title {
-  color: #fff;
+  color: #ffffff;
 }
 
 @-webkit-keyframes blinker {

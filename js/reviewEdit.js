@@ -20,6 +20,7 @@ const imgReview = document.querySelector('#img-review');
 const imgInput = document.querySelector('#img-input');
 const textReview = document.querySelector('#text-review');
 const saveButton = document.querySelector('#btn-save');
+const loading = document.querySelector('.wrapper-etc');
 // 서버로 전송할 이미지 (파일 정보가 담김)
 let img;
 const IMG_MAX_SIZE = 10 * 1024 * 1024;
@@ -80,9 +81,13 @@ window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function
             }
         }
         textReview.textContent = contentArray[3];
-        imgReview.src = post.image;
+        if (post.image) {
+            imgReview.classList.remove('disabled');
+            imgReview.src = post.image;
+        }
         imgUrl = post.image;
     }
+    loading.classList.add('disabled');
 }));
 imgInput.addEventListener('change', (e) => {
     const fileReader = new FileReader();
