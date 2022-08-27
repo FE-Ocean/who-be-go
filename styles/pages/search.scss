@@ -62,7 +62,6 @@
 
 .container-searched-list {
     max-width: 740px;
-    // padding: 25px 33px;
     padding: 20px 5px;
     margin: 0 auto;
     color: $header-text;
@@ -106,23 +105,13 @@
 }
 
 .title-box {
-    margin-top: 5px;
+    margin-top: 7px;
     padding: 0 2px 10px;
-    font-size: 15px;
-    // display: flex;
-    // overflow: hidden;
+    font-size: 13px;
+    .movie-title {
+        @include text-overflow-two(96%);
+    }
 }
-// .movie-title {
-//     position: absolute;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//     display: inline-block;
-//     white-space: nowrap;
-//     word-break: keep-all;
-//     width: 96%;
-//     // max-width: 100%;
-//     // @include text-overflow-one(143px);
-// }
 
 @media screen and (max-width: 600px) {
     .text-heading {
@@ -135,5 +124,11 @@
 
     .grid-box {
         grid-template: auto / repeat(3, 1fr);
+    }
+    .title-box {
+        font-size: 12px;
+        .movie-title {
+            @include text-overflow-two(96%);
+        }
     }
 }
