@@ -70,7 +70,13 @@ const setMovieDetail = (movie, detailResult) => __awaiter(void 0, void 0, void 0
             movieEngTitle.textContent = `${detailResult.titleEng}`;
         }
         if (textRelease instanceof HTMLElement) {
-            textRelease.textContent = `${movie.openDt}`;
+            const dates = movie.openDt;
+            let dateText = '';
+            for (let date of dates) {
+                dateText += date.split('-').join('.');
+            }
+            // textRelease.textContent = `${movie.openDt}`;
+            textRelease.textContent = `${dateText}`;
         }
         if (textDirector instanceof HTMLElement) {
             textDirector.textContent = `${detailResult.directors.director[0].directorNm}`;
@@ -84,7 +90,12 @@ const setMovieDetail = (movie, detailResult) => __awaiter(void 0, void 0, void 0
             textActor.textContent = `${actorText}`;
         }
         if (textGenre instanceof HTMLElement) {
-            textGenre.textContent = `${detailResult.genre}`;
+            const genres = detailResult.genre;
+            let genreText = '';
+            for (let genre of genres) {
+                genreText += genre.split(',').join(' | ');
+            }
+            textGenre.textContent = `${genreText}`;
         }
     }
 });
