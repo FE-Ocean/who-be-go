@@ -4,18 +4,18 @@
 
 .container-mypage {
     max-width: 720px;
-    box-sizing: content-box;
     padding: 50px 5% 40px;
     margin: 0 auto;
+    box-sizing: content-box;
     .page-title {
         margin-bottom: 34px;
     }
     .review-album {
-        margin: 0 auto;
-        padding-top: 50px;
-        border-top: 1px solid $disabled-line;
         height: fit-content;
         max-height: 800px;
+        padding-top: 50px;
+        margin: 0 auto;
+        border-top: 1px solid $disabled-line;
         @include scroll(8px);
     }
     .user-info {
@@ -24,37 +24,40 @@
         margin: 0 auto;
         text-align: center;
         #img-profile {
-            border-radius: 9999px;
             width: 110px;
             height: 110px;
+            border-radius: 9999px;
             object-fit: cover;
         }
         #text-name {
-            font-family: $font-medium;
-            font-size: 18px;
-            color: $header-text;
             margin: 19px 0 10px;
+            color: $header-text;
+            font: {
+                family: $font-medium;
+                size: 18px;
+            }
         }
         #text-id,
         #text-intro {
-            font-family: $font-regular;
             color: $content-text;
+            font-family: $font-regular;
         }
         #text-id {
-            font-size: 13px;
             margin-bottom: 25px;
+            font-size: 13px;
             &::before {
-                content: '@';
                 margin-right: 4px;
+                content: '@';
             }
         }
         #text-intro {
-            font-size: 14px;
             margin-bottom: 35px;
+            font-size: 14px;
         }
     }
     .wrapper-btn {
         display: inline-flex;
+        margin-bottom: 37px;
         .btn-s {
             background-color: $primary-color;
             &:first-of-type {
@@ -66,6 +69,5 @@
                 transform: scale(1.03);
             }
         }
-        margin-bottom: 37px;
     }
 }
