@@ -39,6 +39,13 @@
         }
     }
 
+    .page-msg {
+        font-family: $font-regular;
+        font-size: 16px;
+        color: $header-text;
+        margin: 20px 0 30px;
+    }
+
     .msg-error {
         display: none;
         margin-top: 7px;
