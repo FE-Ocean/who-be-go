@@ -157,13 +157,13 @@ window.addEventListener('click', (e) => {
 window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
     const reviewList = yield getReviewList();
     setReviewList(reviewList);
+    loading.classList.add('disabled');
     if (reviewList.length < 10)
         return;
     let lastItem = ul === null || ul === void 0 ? void 0 : ul.lastElementChild;
     if (lastItem instanceof HTMLLIElement) {
         createObserver(lastItem);
     }
-    loading.classList.add('disabled');
 }));
 buttonDelete.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
     yield deleteReview(postId);

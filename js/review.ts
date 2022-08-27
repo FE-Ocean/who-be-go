@@ -179,12 +179,12 @@ window.addEventListener('click', (e: Event) => {
 window.addEventListener('load', async () => {
     const reviewList = await getReviewList();
     setReviewList(reviewList);
+    loading.classList.add('disabled');
     if (reviewList.length < 10) return;
     let lastItem = ul?.lastElementChild;
     if (lastItem instanceof HTMLLIElement) {
         createObserver(lastItem);
     }
-    loading.classList.add('disabled');
 });
 
 buttonDelete.addEventListener('click', async () => {
