@@ -86,7 +86,7 @@ const createSearchedList = (list: MovieList, compare: boolean) => {
             posterImg.setAttribute('src', '../assets/images/post_default.jpg');
         }
         posterImg.classList.add('img-poster');
-        div.classList.add('title-box'); //말줄임 때문에 씀
+        div.classList.add('title-box');
         span.classList.add('movie-title');
 
         span.textContent = list.Result[i].title
@@ -120,10 +120,6 @@ searchInput?.addEventListener('keyup', (e) => {
     }
 });
 
-// '한' 이라는 한글자를 검색했을 때 총 696개의 검색결과
-// 현재 listcount 값을 100개로 제한한 상태여서 596개의 결과 확인 불가능
-// listcount는 최대 500개까지만 늘릴 수 있으므로 최대로 늘려도 196개의 검색 결과 확인 불가능
-// 무한스크롤
 const createObserver = (element: Element) => {
     let startCount = 100;
 
