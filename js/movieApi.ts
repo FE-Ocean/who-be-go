@@ -22,8 +22,13 @@ const getMovieInfo = async (queryObj: object) => {
 };
 
 // 영화 검색 결과 얻어오는 함수
-const getSearchResult = async (searchInputValue: string) => {
-    const url = `${MOVIE_URL}&ServiceKey=${serviceKey}&detail=Y&listCount=100&sort=prodYear,1&title=${searchInputValue}`;
+const getSearchResult = async (queryObj: object) => {
+    let queryString = '';
+    Object.entries(queryObj).map(([key, value]) => {
+        queryString += `&${key}=${value}`;
+    });
+
+    const url = `${MOVIE_URL}&ServiceKey=${serviceKey}&detail=Y&listCount=100&sort=prodYear,1${queryString}`;
 
     try {
         const response = await fetch(url, {
