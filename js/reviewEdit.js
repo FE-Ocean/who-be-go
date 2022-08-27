@@ -7,7 +7,9 @@ const movieTitle = document.querySelector('#movie-title');
 const movieSubTitle = document.querySelector('#movie-title-eng');
 const textRating = document.querySelector('#text-rating');
 const radioRating = document.querySelectorAll('.radio-rating');
+const imgContainer = document.querySelector('.img-container');
 const imgReview = document.querySelector('#img-review');
+const closeButton = document.querySelector('#btn-close');
 const imgInput = document.querySelector('#img-input');
 const textReview = document.querySelector('#text-review');
 const saveButton = document.querySelector('#btn-save');
@@ -73,8 +75,10 @@ window.addEventListener('load', async () => {
         }
         textReview.textContent = contentArray[3];
         if (post.image) {
-            imgReview.classList.remove('disabled');
-            imgReview.src = post.image;
+            if (post.image.includes('mandarin')) {
+                imgContainer.classList.remove('disabled');
+                imgReview.src = post.image;
+            }
         }
         imgUrl = post.image;
     }
@@ -100,12 +104,17 @@ imgInput.addEventListener('change', (e) => {
     fileReader.readAsDataURL(files[0]);
     fileReader.addEventListener('load', () => {
         if (fileReader.result !== null) {
-            imgReview.classList.remove('disabled');
+            imgContainer.classList.remove('disabled');
             img = files[0];
             imgReview.src = fileReader.result.toString();
             target.value = '';
         }
     });
+});
+closeButton.addEventListener('click', () => {
+    img = undefined;
+    imgReview.src = '';
+    imgContainer.classList.add('disabled');
 });
 textReview.addEventListener('keydown', (e) => {
     setTextHeight(e);

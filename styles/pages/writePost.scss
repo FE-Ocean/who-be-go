@@ -13,6 +13,7 @@
 .title-container {
     margin: 0 auto 5px;
     display: flex;
+    text-align: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -140,12 +141,26 @@
         height: 100%;
         @include scroll(8px);
 
-        #img-review {
+        .img-container {
+            position: relative;
             display: block;
-            max-width: 250px;
-            max-height: 300px;
+            width: fit-content;
+            height: fit-content;
             margin-bottom: 14px;
             border-radius: 4px;
+            #img-review {
+                max-width: 250px;
+                max-height: 300px;
+                object-fit: cover;
+            }
+            #btn-close {
+                position: absolute;
+                top: 4px;
+                right: 4px;
+                width: 24px;
+                height: 24px;
+                background-image: url('../../assets/icons/icon-close.svg');
+            }
             &.disabled {
                 display: none;
             }

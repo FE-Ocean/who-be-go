@@ -13,14 +13,16 @@ const movieSubTitle = document.querySelector(
 ) as HTMLParagraphElement;
 const textRating = document.querySelector('#text-rating') as HTMLSpanElement;
 const radioRating = document.querySelectorAll('.radio-rating');
+const imgContainer = document.querySelector('.img-container') as HTMLElement;
 const imgReview = document.querySelector('#img-review') as HTMLImageElement;
+const closeButton = document.querySelector('#btn-close') as HTMLButtonElement;
 const imgInput = document.querySelector('#img-input') as HTMLInputElement;
 const textReview = document.querySelector('#text-review') as HTMLInputElement;
 const saveButton = document.querySelector('#btn-save') as HTMLButtonElement;
 const loading = document.querySelector('.wrapper-etc') as HTMLElement;
 
 // 서버로 전송할 이미지 (파일 정보가 담김)
-let img: File;
+let img: File | undefined;
 const IMG_MAX_SIZE = 10 * 1024 * 1024;
 // 이미지 url
 let imgUrl: String = '';
@@ -84,8 +86,10 @@ window.addEventListener('load', async () => {
         }
         textReview.textContent = contentArray[3];
         if (post.image) {
-            imgReview.classList.remove('disabled');
-            imgReview.src = post.image;
+            if (post.image.includes('mandarin')) {
+                imgContainer.classList.remove('disabled');
+                imgReview.src = post.image;
+            }
         }
         imgUrl = post.image;
     }
@@ -112,12 +116,18 @@ imgInput.addEventListener('change', (e: Event) => {
     fileReader.readAsDataURL(files[0]);
     fileReader.addEventListener('load', () => {
         if (fileReader.result !== null) {
-            imgReview.classList.remove('disabled');
+            imgContainer.classList.remove('disabled');
             img = files[0];
             imgReview.src = fileReader.result.toString();
             target.value = '';
         }
     });
+});
+
+closeButton.addEventListener('click', () => {
+    img = undefined;
+    imgReview.src = '';
+    imgContainer.classList.add('disabled');
 });
 
 textReview.addEventListener('keydown', (e: Event) => {
