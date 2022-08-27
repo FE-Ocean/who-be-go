@@ -2,21 +2,21 @@
 @import '../constants/typography';
 @import '../components/common';
 .write-wrapper {
-    box-sizing: content-box;
-    padding: 50px 20px;
+    overflow: hidden;
     max-width: 740px;
+    padding: 50px 20px;
     margin: 0 auto;
     color: $title-text;
-    overflow: hidden;
+    box-sizing: content-box;
 }
 
 .title-container {
-    margin: 0 auto 10px;
     display: flex;
-    text-align: center;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    margin: 0 auto 10px;
+    text-align: center;
     gap: 4px;
     #movie-title {
         font: {
@@ -29,27 +29,27 @@
     }
 
     #movie-title-eng {
+        color: $header-text;
         font: {
             family: $font-medium;
             size: 20px;
         }
-        line-height: 1.4;
-        color: $header-text;
         @include text-overflow-three(98%);
+        line-height: 1.4;
     }
 }
 
 .rating-wrapper {
-    margin: {
-        left: auto;
-        bottom: 22px;
-        right: 5px;
-    }
-    width: fit-content;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    flex-direction: column;
+    width: fit-content;
+    margin: {
+        bottom: 22px;
+        left: auto;
+        right: 5px;
+    }
     gap: 7px;
     span {
         font-size: 12px;
@@ -68,15 +68,15 @@
         }
     }
     .radio-container {
+        display: flex;
         position: relative;
         width: 120px;
         height: 24px;
         background-image: url(../../assets/icons/stars-gray.svg);
-        display: flex;
         .radio-rating {
+            width: 12px;
             cursor: pointer;
             opacity: 0;
-            width: 12px;
             &:nth-of-type(1):hover ~ .star,
             &:nth-of-type(1):checked ~ .star {
                 width: 10%;
@@ -119,10 +119,10 @@
             }
         }
         .star {
+            display: block;
             position: absolute;
             top: 0;
             left: 0;
-            display: block;
             height: 24px;
             background-image: url(../../assets/icons/star-yellow.svg);
             pointer-events: none;
@@ -132,19 +132,19 @@
 
 .review-container {
     position: relative;
-    padding: 40px 37px;
     width: 100%;
     height: 425px;
-    background-color: $post-bg;
+    padding: 40px 37px;
     border-radius: 20px;
+    background-color: $post-bg;
     .review-contents {
         overflow-y: auto;
         height: 100%;
         @include scroll(8px);
 
         .img-container {
-            position: relative;
             display: block;
+            position: relative;
             width: fit-content;
             height: fit-content;
             margin-bottom: 14px;
@@ -160,45 +160,45 @@
                 right: 4px;
                 width: 24px;
                 height: 24px;
-                background-image: url('../../assets/icons/icon-close.svg');
+                background-image: url(../../assets/icons/icon-close.svg);
             }
             &.disabled {
                 display: none;
             }
         }
         #text-review {
-            resize: none;
+            overflow-y: auto;
             width: 98%;
             height: 330px;
-            overflow-y: auto;
-            word-break: break-all;
             color: $content-text;
             font-size: 14px;
             line-height: 1.4;
+            word-break: break-all;
+            resize: none;
             @include scroll(6px);
 
             &::placeholder {
+                color: $disabled-line;
                 font: {
                     family: $font-regular;
                     size: 13px;
                 }
-                color: $disabled-line;
             }
         }
     }
 
     #label-img {
-        background: {
-            image: url('../../assets/icons/upload-file.svg');
-            size: cover;
-        }
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        color: transparent;
         position: absolute;
         top: 25px;
         right: 25px;
+        width: 30px;
+        height: 30px;
+        background: {
+            image: url(../../assets/icons/upload-file.svg);
+            size: cover;
+        }
+        color: transparent;
+        cursor: pointer;
     }
     #img-input {
         display: none;
@@ -206,8 +206,8 @@
 }
 
 .save {
-    margin-top: 22px;
     float: right;
+    margin-top: 22px;
 }
 
 @media screen and (max-width: 768px) {
