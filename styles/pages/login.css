@@ -22,6 +22,9 @@
   height: 150px;
   margin-bottom: 10px;
 }
+.container-login .img-logo.move {
+  margin-bottom: 0;
+}
 .container-login label {
   margin-bottom: 6px;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;

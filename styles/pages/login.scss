@@ -14,6 +14,9 @@
     .img-logo {
         height: 150px;
         margin-bottom: 10px;
+        &.move {
+            margin-bottom: 0;
+        }
     }
 
     label {
