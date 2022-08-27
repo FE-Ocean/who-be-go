@@ -1,88 +1,111 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/pages/myPage.css" />
+        <script src="../js/common.js" defer></script>
+        <title>마이 페이지 | 후비고</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>마이페이지 | 후비고</title>
-    <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/pages/myPage.css" />
-    <script src="../js/common.js" defer></script>
-</head>
-
-<body>
-    <div class="wrapper-etc">
-        <img class="img-etc" src="../assets/icons/logo-three.svg" alt="로딩중 아이콘" />
-        <strong class="text-etc">로딩중...</strong>
-    </div>
-
-    <header class="header">
-        <h1 class="img-logo">
-            <a href="../index.html">
-                <img src="../assets/icons/logo-title.svg" alt="로고이미지" />
-            </a>
-            <button class="btn-nav"></button>
-        </h1>
-
-        <ul class="nav">
-            <li><a href="../pages/chart.html">영화차트</a></li>
-            <li><a href="../pages/search.html">감상문작성</a></li>
-            <li><a href="../pages/review.html">나의감상문</a></li>
-            <li><a href="../pages/myPage.html">마이페이지</a></li>
-            <li></li>
-        </ul>
-    </header>
-
-    <main class="main">
-        <section class="container-mypage">
-            <h1 class="page-title">마이페이지</h1>
-            <section class="user-info">
-                <h2 class="visually-hidden">마이 프로필</h2>
-                <img id="img-profile" src="" alt="프로필 이미지" />
-                <ul class="text-info">
-                    <li id="text-name"></li>
-                    <li id="text-id"></li>
-                    <li id="text-intro"></li>
-                </ul>
-                <div class="wrapper-btn">
-                    <a href="./profileEdit.html" class="btn-s">프로필수정</a>
-                    <a href="./search.html" class="btn-s">감상문작성</a>
-                </div>
-            </section>
-            <section>
-                <h2 class="visually-hidden">나의 영화 감상문 앨범</h2>
-                <ul class="review-album"></ul>
-            </section>
-        </section>
-    </main>
-    <footer class="footer">
-        <p class="desc">Copyright
-            <a href="https://github.com/FE-Ocean/who-be-go">@FE_Ocean</a>
-            all right reserved.
-        </p>
-        <br>
-        <ul class="wrapper-github">
-            <li class="github text-s">만든사람들</li>
-            <li class="github"><a href="https://github.com/waterbinnn">@waterbinnn |</a></li>
-            <li class="github"><a href="https://github.com/donkeeman">@donkeeman |</a></li>
-            <li class="github"><a href="https://github.com/nimoseel">@nimoseel |</a></li>
-            <li class="github"><a href="https://github.com/etoile-j">@etoile-j |</a></li>
-            <li class="github"><a href="https://github.com/leehyeonseop">@leehyeonseop |</a></li>
-            <li class="github"><a href="https://github.com/ryungom">@ryungom</a></li>
-        </ul>
-    </footer>
-
-    <div class="modal-alert-container disabled">
-        <div class="modal-alert">
-            <span class="message">로그아웃하시겠습니까?</span>
-            <button class="btn-alert" id="btn-cancel">취소</button>
-            <button class="btn-alert action" id="btn-logout">
-                로그아웃
-            </button>
+    <body>
+        <div class="wrapper-etc">
+            <img
+                class="img-etc"
+                src="../assets/icons/logo-three.svg"
+                alt="로딩중 아이콘"
+            />
+            <strong class="text-etc">로딩중...</strong>
         </div>
-    </div>
-    <script type="module" src="../js/myPage.js"></script>
-</body>
 
+        <header class="header">
+            <h1 class="img-logo">
+                <a href="../index.html">
+                    <img
+                        src="../assets/icons/logo-title.svg"
+                        alt="로고이미지"
+                    />
+                </a>
+                <button class="btn-nav"></button>
+            </h1>
+
+            <ul class="nav">
+                <li><a href="../pages/chart.html">영화차트</a></li>
+                <li><a href="../pages/search.html">감상문작성</a></li>
+                <li><a href="../pages/review.html">나의감상문</a></li>
+                <li><a href="../pages/myPage.html">마이페이지</a></li>
+                <li></li>
+            </ul>
+        </header>
+
+        <main class="main">
+            <section class="container-mypage">
+                <h1 class="page-title">마이페이지</h1>
+                <section class="user-info">
+                    <h2 class="visually-hidden">마이 프로필</h2>
+                    <img id="img-profile" src="" alt="프로필 이미지" />
+                    <ul class="text-info">
+                        <li id="text-name"></li>
+                        <li id="text-id"></li>
+                        <li id="text-intro"></li>
+                    </ul>
+                    <div class="wrapper-btn">
+                        <a href="./profileEdit.html" class="btn-s"
+                            >프로필수정</a
+                        >
+                        <a href="./search.html" class="btn-s">감상문작성</a>
+                    </div>
+                </section>
+                <section>
+                    <h2 class="visually-hidden">나의 영화 감상문 앨범</h2>
+                    <ul class="review-album"></ul>
+                </section>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="desc">
+                Copyright
+                <a href="https://github.com/FE-Ocean/who-be-go">@FE_Ocean</a>
+                all right reserved.
+            </p>
+            <br />
+            <ul class="wrapper-github">
+                <li class="github text-s">만든사람들</li>
+                <li class="github">
+                    <a href="https://github.com/waterbinnn">@waterbinnn |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/donkeeman">@donkeeman |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/nimoseel">@nimoseel |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/etoile-j">@etoile-j |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/leehyeonseop"
+                        >@leehyeonseop |</a
+                    >
+                </li>
+                <li class="github">
+                    <a href="https://github.com/ryungom">@ryungom</a>
+                </li>
+            </ul>
+        </footer>
+
+        <div class="modal-alert-container disabled">
+            <div class="modal-alert">
+                <span class="message">로그아웃하시겠습니까?</span>
+                <button class="btn-alert" id="btn-cancel">취소</button>
+                <button class="btn-alert action" id="btn-logout">
+                    로그아웃
+                </button>
+            </div>
+        </div>
+        <script type="module" src="../js/myPage.js"></script>
+    </body>
 </html>

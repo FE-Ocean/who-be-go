@@ -1,91 +1,88 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/main.css">
+        <link rel="stylesheet" href="../styles/pages/signUp.css">
+        <title>회원가입 | 후비고</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입 | 후비고</title>
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/pages/signUp.css">
-</head>
+    <body>
+        <section class="container-signup section-signup">
+            <h1 class="page-title">이메일로 회원가입</h1>
+            <form id="form-signup">
+                <div class="wrapper-email">
+                    <label for="email" class="label-email">
+                        이메일
+                    </label>
+                    <input id="email" type="text" autofocus placeholder="이메일 주소를 입력해 주세요.">
+                    </input>
+                    <strong class="msg-error email">
+                    </strong>
+                </div>
+                <div class="wrapper-password">
+                    <label for="password" class="label-password">
+                        비밀번호
+                    </label>
+                    <input id="password" type="password" minlength="5" maxLength="16" placeholder="비밀번호를 설정해 주세요."></input>
+                    <strong class="msg-error password">
+                    </strong>
+                </div>
+                <div class="wrapper-password check">
+                    <label for="check" class="label-password">
+                        비밀번호 확인
+                    </label>
+                    <input id="check" type="password" minlength="5" maxLength="16" placeholder="비밀번호를 다시 입력해 주세요."></input>
+                    <strong class="msg-error check">
+                    </strong>
+                </div>
+                <button type="submit" class="btn-L" id="btn-next" disabled>다음</button>
+            </form>
+        </section>
 
-<body>
-    <section class="container-signup section-signup">
-        <h1 class="page-title">이메일로 회원가입</h1>
-        <form id="form-signup">
-            <div class="wrapper-email">
-                <label for="email" class="label-email">
-                    이메일
-                </label>
-                <input id="email" type="text" autofocus placeholder="이메일 주소를 입력해 주세요.">
-                </input>
-                <strong class="msg-error email">
-                </strong>
-            </div>
-            <div class="wrapper-password">
-                <label for="password" class="label-password">
-                    비밀번호
-                </label>
-                <input id="password" type="password" minlength="5" maxLength="16" placeholder="비밀번호를 설정해 주세요."></input>
-                <strong class="msg-error password">
-                </strong>
-            </div>
-            <div class="wrapper-password check">
-                <label for="check" class="label-password">
-                    비밀번호 확인
-                </label>
-                <input id="check" type="password" minlength="5" maxLength="16" placeholder="비밀번호를 다시 입력해 주세요."></input>
-                <strong class="msg-error check">
-                </strong>
-            </div>
-            <button type="submit" class="btn-L" id="btn-next" disabled>다음</button>
-        </form>
-    </section>
-
-    <section class="container-signup section-profile">
-        <h1 class="page-title profile">프로필 설정</h1>
-        <h2 class="page-subtitle">나중에 언제든지 변경할 수 있습니다.</h2>
-        <form method="POST" id="form-profile">
-            <div class="wrapper-upload-img">
-                <img id="img-profile" src="../../assets/icons/default-logo.svg" alt="프로필 이미지">
-                <label for="choose-img">
-                    <img src="../assets/icons/upload-file.svg" alt="upload" class="ico-upload">
-                </label>
-                <input type="file" name="user-img" id="choose-img" accept="image/*">
-            </div>
-            <div class="wrapper-name">
-                <label for="name" class="label-profile">
-                    사용자 이름
-                </label>
-                <input id="name" type="text" minlength="2" maxlength="10" required autocomplete="off" autofocus
-                    placeholder="2 ~ 10자 이내여야 합니다. ">
-                </input>
-                <strong class="msg-error username">
-                </strong>
-            </div>
-            <div class="wrapper-id">
-                <label for="user-id" class="label-profile">
-                    계정ID
-                </label>
-                <input id="user-id" type="text" minlength="1" maxLength="10" required autocomplete="off"
-                    placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다."></input>
-                <strong class="msg-error userid false">
-                    *영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.
-                </strong>
-            </div>
-            <div class="wrapper-intro">
-                <label for="intro" class="label-profile">
-                    소개
-                </label>
-                <input id="intro" type="text" required autocomplete="off" placeholder="자신을 소개해 주세요!"></input>
-            </div>
-            <button type="submit" class="btn-L btn-start" disabled>후비고 시작하기</button>
-        </form>
-    </section>
-    <script type="module" src="../js/signUp.js"></script>
-
-
-</body>
+        <section class="container-signup section-profile">
+            <h1 class="page-title profile">프로필 설정</h1>
+            <h2 class="page-subtitle">나중에 언제든지 변경할 수 있습니다.</h2>
+            <form method="POST" id="form-profile">
+                <div class="wrapper-upload-img">
+                    <img id="img-profile" src="../../assets/icons/default-logo.svg" alt="프로필 이미지">
+                    <label for="choose-img">
+                        <img src="../assets/icons/upload-file.svg" alt="upload" class="ico-upload">
+                    </label>
+                    <input type="file" name="user-img" id="choose-img" accept="image/*">
+                </div>
+                <div class="wrapper-name">
+                    <label for="name" class="label-profile">
+                        사용자 이름
+                    </label>
+                    <input id="name" type="text" minlength="2" maxlength="10" required autocomplete="off" autofocus
+                        placeholder="2 ~ 10자 이내여야 합니다. ">
+                    </input>
+                    <strong class="msg-error username">
+                    </strong>
+                </div>
+                <div class="wrapper-id">
+                    <label for="user-id" class="label-profile">
+                        계정ID
+                    </label>
+                    <input id="user-id" type="text" minlength="1" maxLength="10" required autocomplete="off"
+                        placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다."></input>
+                    <strong class="msg-error userid false">
+                        *영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.
+                    </strong>
+                </div>
+                <div class="wrapper-intro">
+                    <label for="intro" class="label-profile">
+                        소개
+                    </label>
+                    <input id="intro" type="text" required autocomplete="off" placeholder="자신을 소개해 주세요!"></input>
+                </div>
+                <button type="submit" class="btn-L btn-start" disabled>후비고 시작하기</button>
+            </form>
+        </section>
+        <script type="module" src="../js/signUp.js"></script>
+    </body>
 
 </html>
