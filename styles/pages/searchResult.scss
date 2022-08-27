@@ -3,7 +3,7 @@
 @import '../components/common';
 
 .search-result-main {
-    padding-top: 94px;
+    padding-top: 60px;
 }
 
 .text-heading {
@@ -17,8 +17,9 @@
     max-width: 550px;
     padding: 0px 20px;
     margin-bottom: 100px;
+    animation: fadeIn 0.9s ease-in-out;
     .movie-title {
-        margin: 60px 0 4px;
+        margin-bottom: 4px;
         padding: 0 5px 0;
         line-height: 38px;
         text-align: left;
@@ -39,6 +40,8 @@
     max-width: 550px;
     .poster-card {
         margin-right: 30px;
+        width: 100%;
+        object-fit: cover;
     }
 }
 
@@ -107,7 +110,6 @@ div > dt {
         margin-bottom: 100px;
         box-sizing: content-box;
         .movie-title {
-            margin: 50px 0 7px;
             font-size: 25px;
             line-height: 31px;
             text-align: center;
@@ -169,5 +171,14 @@ div > dt {
     }
     to {
         padding-top: 10px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
