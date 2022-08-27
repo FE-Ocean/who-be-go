@@ -495,10 +495,12 @@ textarea {
 }
 
 .img-logo {
-  height: 90px;
+  height: 70px;
 }
 .img-logo img {
   margin-left: 90px;
+  margin-top: 5px;
+  height: 65px;
 }
 .img-logo .btn-nav {
   display: none;
@@ -532,7 +534,7 @@ textarea {
 }
 
 .main {
-  margin-top: 90px;
+  margin-top: 70px;
   position: relative;
   min-height: calc(100vh - 150px);
 }
@@ -542,7 +544,7 @@ textarea {
   position: fixed;
   top: 0;
   left: 0;
-  margin-top: 90px;
+  margin-top: 20px;
   min-height: calc(100vh - 150px);
   width: 100%;
   height: 100%;
@@ -577,19 +579,42 @@ textarea {
 
 .footer {
   width: 100%;
-  height: 60px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 9999;
   background-color: #292929;
   text-align: center;
+  padding: 10px;
+  color: #dedede;
 }
-.footer p {
-  display: inline-block;
-  margin-top: 25px;
-  color: #cfcfcf;
+.footer .desc {
   font-size: 10px;
+  display: inline-block;
+  margin: 8px 0 5px;
+}
+.footer .wrapper-github {
+  margin: 0 5% 5px;
+  font-size: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  gap: 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.footer .wrapper-github .text-s {
+  font-size: 8px;
 }
 
 .page-title {
@@ -607,11 +632,13 @@ textarea {
             flex-direction: column;
   }
   .img-logo img {
-    margin: 15px 0 0 0;
+    margin: 13px 0 0 0;
     content: url("../../assets/icons/logo-title-s.svg");
+    height: 52px;
   }
   .img-logo .btn-nav {
     display: block;
+    top: 25px;
   }
   .nav {
     display: none;
@@ -947,10 +974,12 @@ textarea {
 }
 
 .img-logo {
-  height: 90px;
+  height: 70px;
 }
 .img-logo img {
   margin-left: 90px;
+  margin-top: 5px;
+  height: 65px;
 }
 .img-logo .btn-nav {
   display: none;
@@ -984,7 +1013,7 @@ textarea {
 }
 
 .main {
-  margin-top: 90px;
+  margin-top: 70px;
   position: relative;
   min-height: calc(100vh - 150px);
 }
@@ -994,7 +1023,7 @@ textarea {
   position: fixed;
   top: 0;
   left: 0;
-  margin-top: 90px;
+  margin-top: 20px;
   min-height: calc(100vh - 150px);
   width: 100%;
   height: 100%;
@@ -1029,19 +1058,42 @@ textarea {
 
 .footer {
   width: 100%;
-  height: 60px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 9999;
   background-color: #292929;
   text-align: center;
+  padding: 10px;
+  color: #dedede;
 }
-.footer p {
-  display: inline-block;
-  margin-top: 25px;
-  color: #cfcfcf;
+.footer .desc {
   font-size: 10px;
+  display: inline-block;
+  margin: 8px 0 5px;
+}
+.footer .wrapper-github {
+  margin: 0 5% 5px;
+  font-size: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  gap: 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.footer .wrapper-github .text-s {
+  font-size: 8px;
 }
 
 .page-title {
@@ -1059,11 +1111,13 @@ textarea {
             flex-direction: column;
   }
   .img-logo img {
-    margin: 15px 0 0 0;
+    margin: 13px 0 0 0;
     content: url("../../assets/icons/logo-title-s.svg");
+    height: 52px;
   }
   .img-logo .btn-nav {
     display: block;
+    top: 25px;
   }
   .nav {
     display: none;
@@ -1163,7 +1217,7 @@ textarea {
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
   font-size: 16px;
   line-height: 20px;
-  padding: 29px 62px 22px;
+  padding: 29px 58px 22px;
 }
 .modal-alert-container .modal-alert .btn-alert {
   position: relative;

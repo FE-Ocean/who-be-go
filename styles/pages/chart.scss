@@ -2,7 +2,7 @@
 @import '../constants/typography.scss';
 .container-chart {
     box-sizing: content-box;
-    padding: 60px 20px;
+    padding: 50px 5%;
     margin: 0 auto;
 }
 .text-description-chart {
@@ -23,7 +23,7 @@
             top: -33px;
             left: -26px;
             padding: 10px;
-            font:italic 40px/1 $font-medium;
+            font: italic 40px/1 $font-medium;
             color: $white;
             text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.4);
         }

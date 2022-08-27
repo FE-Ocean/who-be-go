@@ -10,7 +10,7 @@
 }
 
 .img-logo {
-    height: 90px;
+    height: 70px;
 }
 .img-logo img {
     margin-left: 90px;
@@ -23,6 +23,21 @@
     width: 25px;
     height: 25px;
     background: url('../../assets/icons/menu.svg') no-repeat 0 0;
+
+}
+.img-logo img {
+  margin-left: 90px;
+  margin-top: 5px;
+  height: 65px;
+}
+.img-logo .btn-nav {
+  display: none;
+  position: absolute;
+  top: 33px;
+  right: 33px;
+  width: 25px;
+  height: 25px;
+  background: url("../../assets/icons/menu.svg") no-repeat 0 0;
 }
 
 .nav {
@@ -77,23 +92,90 @@
 }
 .wrapper-etc.disabled {
     display: none;
+
+.main {
+  margin-top: 70px;
+  position: relative;
+  min-height: calc(100vh - 150px);
+}
+
+.wrapper-etc {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 20px;
+  min-height: calc(100vh - 150px);
+  width: 100%;
+  height: 100%;
+  background-color: #1e1e1e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #f1f1f1;
+}
+.wrapper-etc .img-etc {
+  width: 181px;
+  margin-bottom: 20px;
+}
+.wrapper-etc .text-etc {
+  margin-bottom: 30px;
+  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
+  font-size: 25px;
+}
+.wrapper-etc.disabled {
+  display: none;
 }
 
 .footer {
-    width: 100%;
-    height: 60px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    background-color: #292929;
-    text-align: center;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: #292929;
+  text-align: center;
+  padding: 10px;
+  color: #dedede;
 }
-.footer p {
-    display: inline-block;
-    margin-top: 25px;
-    color: #cfcfcf;
-    font-size: 10px;
+.footer .desc {
+  font-size: 10px;
+  display: inline-block;
+  margin: 8px 0 5px;
+}
+.footer .wrapper-github {
+  margin: 0 5% 5px;
+  font-size: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  gap: 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.footer .wrapper-github .text-s {
+  font-size: 8px;
+
 }
 
 .page-title {
@@ -155,6 +237,78 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .img-logo img {
+    margin: 13px 0 0 0;
+    content: url("../../assets/icons/logo-title-s.svg");
+    height: 52px;
+  }
+  .img-logo .btn-nav {
+    display: block;
+    top: 25px;
+  }
+  .nav {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    margin-right: 0;
+  }
+  .nav.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .nav li {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+  }
+  .nav li:last-child {
+    padding-bottom: 20px;
+  }
+  .nav li a {
+    display: block;
+  }
+  .main.active {
+    margin-top: 296px;
+  }
+}
+.write-wrapper {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 50px 20px;
+  max-width: 740px;
+  margin: 0 auto;
+  color: #f1f1f1;
+  overflow: hidden;
+}
+
+.title-container {
+  margin: 0 auto 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 4px;
 }
 .title-container #movie-title {
     font-family: 'SpoqaHanSansNeo-Bold', sans-serif;
