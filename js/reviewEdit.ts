@@ -126,6 +126,7 @@ imgInput.addEventListener('change', (e: Event) => {
 
 closeButton.addEventListener('click', () => {
     img = undefined;
+    imgUrl = '';
     imgReview.src = '';
     imgContainer.classList.add('disabled');
 });
