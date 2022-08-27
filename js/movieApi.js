@@ -19,7 +19,7 @@ const getMovieInfo = async (queryObj) => {
     }
 };
 // 영화 검색 결과 얻어오는 함수
-const getSearchResult = (searchInputValue) => __awaiter(void 0, void 0, void 0, function* () {
+const getSearchResult = async (searchInputValue) => {
     const url = `${MOVIE_URL}&ServiceKey=${serviceKey}&detail=Y&listCount=100&sort=prodYear,1&title=${searchInputValue}`;
     try {
         const response = await fetch(url, {
