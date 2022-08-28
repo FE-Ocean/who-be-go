@@ -20,7 +20,7 @@ const getMovieInfo = async (queryObj) => {
         }
     }
     catch (err) {
-        location.href = '/pages/notFound.html';
+        window.location.href = './notFound.html';
         console.error(err);
     }
 };
@@ -39,7 +39,7 @@ const getSearchResult = async (queryObj) => {
         return json.Data[0];
     }
     catch (err) {
-        location.href = 'pages/notFound.html';
+        location.href = '/pages/notFound.html';
         console.error(err);
     }
 };

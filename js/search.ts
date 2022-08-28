@@ -14,6 +14,8 @@ let queryObj = {
     startCount: 0,
 };
 
+let searchString = '';
+
 async function search(searchInputValue: string, startCount: number = 0) {
     let compare = true;
 
@@ -25,6 +27,7 @@ async function search(searchInputValue: string, startCount: number = 0) {
 
     const searchResult = await getSearchResult(queryObj);
 
+    searchString = searchInputValue;
     createSearchedList(searchResult, compare);
 
     if (gridBox.lastElementChild instanceof HTMLLIElement) {
@@ -43,7 +46,44 @@ const createSearchedList = (list: MovieList, compare: boolean) => {
 
     strong.textContent = `총 ${list.TotalCount}개의 검색결과가 있습니다.`;
 
-    for (let i = 0; i < list.Result.length; i++) {
+    const result = list.Result.map((result) => {
+        const newResult = {
+            ...result,
+            title: result.title
+                .replace(/\!HS/g, '')
+                .replace(/\!HE/g, '')
+                .replace(/^\s+|\s+$/g, '')
+                .replace(/ +/g, ' '),
+        };
+        return newResult;
+    });
+    // 영화 이름 완전 일치
+    const allMatched = result.filter(
+        (movie) =>
+            movie.title.replace(/[ \!\,\.\?]/g, '') ===
+            searchString.replace(/ /g, '')
+    );
+    // 부분 일치 (제목에 검색어를 포함하는 경우)
+    const someMatched = result
+        .filter(
+            (movie) => movie.title.replace(/[\!\,\.\?]/g, '') !== searchString
+        )
+        .filter((movie) =>
+            movie.title.replace(/[\!\,\.\?]/g, '').includes(searchString)
+        );
+    // 불일치 (제목에 검색어를 포함하지 않는 경우)
+    const notMatched = result
+        .filter(
+            (movie) => movie.title.replace(/[\!\,\.\?]/g, '') !== searchString
+        )
+        .filter(
+            (movie) =>
+                !movie.title.replace(/[\!\,\.\?]/g, '').includes(searchString)
+        );
+
+    // 최종 필터링 결과 (완전 일치 - 부분 일치 - 불일치 순)
+    const orderedResult = allMatched.concat(someMatched, notMatched);
+    for (let i = 0; i < orderedResult.length; i++) {
         const li = document.createElement('li');
         const containerPoster = document.createElement('div');
         const posterImg = document.createElement('img');
@@ -52,10 +92,10 @@ const createSearchedList = (list: MovieList, compare: boolean) => {
 
         li.classList.add('searched-movie');
         containerPoster.classList.add('container-poster');
-        if (list.Result[i].posters !== '') {
+        if (orderedResult[i].posters !== '') {
             posterImg.setAttribute(
                 'src',
-                list.Result[i].posters.substring(0, 60)
+                orderedResult[i].posters.substring(0, 60)
             );
         } else {
             posterImg.setAttribute('src', '../assets/images/post_default.jpg');
@@ -64,15 +104,10 @@ const createSearchedList = (list: MovieList, compare: boolean) => {
         div.classList.add('title-box');
         span.classList.add('movie-title');
 
-        const filteredTitle = list.Result[i].title
-            .replace(/\!HS/g, '')
-            .replace(/\!HE/g, '')
-            .trim()
-            .replace(/ +/g, ' ')
-            .replace(
-                searchInput.value,
-                `<strong style="color:#FF5F5F">${searchInput.value}</strong>`
-            );
+        const filteredTitle = orderedResult[i].title.replace(
+            searchInput.value,
+            `<strong style="color:#FF5F5F">${searchInput.value}</strong>`
+        );
 
         span.insertAdjacentHTML('afterbegin', filteredTitle);
 
@@ -83,7 +118,7 @@ const createSearchedList = (list: MovieList, compare: boolean) => {
         div.appendChild(span);
 
         li.addEventListener('click', () => {
-            window.location.href = `../pages/searchResult.html?movieSeq=${list.Result[i].movieSeq}&movieId=${list.Result[i].movieId}`;
+            window.location.href = `../pages/searchResult.html?movieSeq=${orderedResult[i].movieSeq}&movieId=${orderedResult[i].movieId}`;
         });
     }
 
@@ -112,7 +147,7 @@ const createObserver = (element: Element) => {
                     title: searchInput.value,
                     startCount: startCount,
                 };
-
+                searchString = searchInput.value;
                 const newSearchList = await getSearchResult(queryObj);
                 if (newSearchList.Result.length === 0) return;
                 createSearchedList(newSearchList, true);
