@@ -7,9 +7,7 @@ const userId = document.querySelector('#text-id');
 const userIntro = document.querySelector('#text-intro');
 const reviewAlbum = document.querySelector('.review-album');
 const loading = document.querySelector('.wrapper-etc');
-
 hasToken('/pages/myPage.html');
-
 const createReviewAlbum = (reviewList) => {
     const fragment = document.createDocumentFragment();
     for (let review of reviewList) {
