@@ -21,11 +21,11 @@
 }
 
 .wrapper-card {
-    width: fit-content;
     display: flex;
     margin: 0 auto;
-    color: $title-text;
     margin-top: 50px;
+    width: fit-content;
+    color: $title-text;
     &.chart {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -36,29 +36,29 @@
         display: flex;
         flex-direction: column;
         margin: 24px 22px 0 22px;
-        font-family: $font-bold;
         color: $white;
+        font-family: $font-bold;
         text-align: left;
     }
 
     .wrapper-sub-text {
-        width: 210px;
         position: absolute;
         bottom: 0;
         margin: 20px 22px;
+        width: 210px;
         font-size: 12px;
         text-align: left;
         .sub-title {
-            font-family: $font-medium;
             display: flex;
             flex-direction: column;
             margin-right: 18px;
             color: $header-text;
+            font-family: $font-medium;
             .sub-text {
-                font-family: $font-medium;
-                color: $title-text;
-                font-weight: 300;
                 margin: 8px 0;
+                color: $title-text;
+                font-family: $font-medium;
+                font-weight: 300;
                 @include text-overflow-one(250px);
             }
         }
@@ -67,16 +67,18 @@
 
 .card-L {
     @extend %card-base;
+    position: relative;
     width: 310px;
     height: 310 * 1.43px;
     z-index: 10;
     object-fit: contain;
-    position: relative;
     &:first-of-type {
         margin-right: 20px;
     }
-    &:last-of-type::after {
-        @extend %card-cover;
+    &.info {
+        &:last-of-type::after {
+            @extend %card-cover;
+        }
     }
     .wrapper-movie-title {
         margin-top: 40px;
@@ -117,8 +119,8 @@
             margin: 26px 16px 4px 16px;
 
             #movie-title {
-                font-size: 16px;
                 margin-bottom: 4px;
+                font-size: 16px;
                 @include text-overflow-two(180px);
             }
             #movie-title-eng {
@@ -193,6 +195,7 @@
         &:first-of-type {
             display: none;
         }
+
         &.search {
             &:first-of-type {
                 display: block;
@@ -236,9 +239,8 @@
             grid-template-columns: repeat(1, 1fr);
         }
     }
-
     .review-album {
-        height: 600px;
+        max-height: 600px;
         grid-template-columns: repeat(2, 160px);
     }
 }

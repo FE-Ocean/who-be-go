@@ -533,7 +533,7 @@ textarea {
 .main {
   position: relative;
   min-height: calc(100vh - 131px);
-  margin-top: 70px;
+  margin: 70px 0 30px;
 }
 
 .wrapper-etc {
@@ -674,7 +674,7 @@ textarea {
   border-radius: 10px;
 }
 
-.review-album .card-s:hover .show-contents, .card-m:hover .show-contents, .card-m:focus .show-contents, .card-L:last-of-type::after {
+.review-album .card-s:hover .show-contents, .card-m:hover .show-contents, .card-m:focus .show-contents, .card-L.info:last-of-type::after {
   content: "";
   position: absolute;
   top: 0;
@@ -687,15 +687,15 @@ textarea {
 }
 
 .wrapper-card {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
-  color: #f1f1f1;
   margin-top: 50px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #f1f1f1;
 }
 .wrapper-card.chart {
   display: grid;
@@ -711,20 +711,19 @@ textarea {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 24px 22px 0 22px;
-  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   color: #ffffff;
+  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   text-align: left;
 }
 .wrapper-card .wrapper-sub-text {
-  width: 210px;
   position: absolute;
   bottom: 0;
   margin: 20px 22px;
+  width: 210px;
   font-size: 12px;
   text-align: left;
 }
 .wrapper-card .wrapper-sub-text .sub-title {
-  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -734,12 +733,13 @@ textarea {
           flex-direction: column;
   margin-right: 18px;
   color: #cfcfcf;
+  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
 }
 .wrapper-card .wrapper-sub-text .sub-title .sub-text {
-  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
-  color: #f1f1f1;
-  font-weight: 300;
   margin: 8px 0;
+  color: #f1f1f1;
+  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
+  font-weight: 300;
   display: inline-block;
   overflow: hidden;
   width: 250px;
@@ -749,12 +749,12 @@ textarea {
 }
 
 .card-L {
+  position: relative;
   width: 310px;
   height: 443.3px;
   z-index: 10;
   -o-object-fit: contain;
      object-fit: contain;
-  position: relative;
 }
 .card-L:first-of-type {
   margin-right: 20px;
@@ -810,8 +810,8 @@ textarea {
   margin: 26px 16px 4px 16px;
 }
 .card-m:hover .wrapper-movie-title #movie-title, .card-m:focus .wrapper-movie-title #movie-title {
-  font-size: 16px;
   margin-bottom: 4px;
+  font-size: 16px;
   display: -webkit-box;
   overflow: hidden;
   width: 180px;
@@ -949,7 +949,7 @@ textarea {
     grid-template-columns: repeat(1, 1fr);
   }
   .review-album {
-    height: 600px;
+    max-height: 600px;
     grid-template-columns: repeat(2, 160px);
   }
 }
@@ -1009,7 +1009,7 @@ textarea {
 .main {
   position: relative;
   min-height: calc(100vh - 131px);
-  margin-top: 70px;
+  margin: 70px 0 30px;
 }
 
 .wrapper-etc {

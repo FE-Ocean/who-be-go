@@ -1,7 +1,7 @@
 .container-home {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  padding: 50px 5% 45px;
+  padding: 50px 5% 50px;
   margin: 0 auto;
   max-width: 740px;
 }
@@ -18,7 +18,7 @@
 @media screen and (max-width: 768px) {
   .btn-L.home {
     display: block;
-    margin: 0 auto 80px;
+    margin: 0 auto;
     padding: 14px;
     width: 170px;
   }
