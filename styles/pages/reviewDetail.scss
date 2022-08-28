@@ -7,9 +7,9 @@
 }
 
 .wrapper-review {
+    position: relative;
     max-width: 600px;
     margin: 50px auto;
-    position: relative;
 }
 
 .movie-title {
@@ -30,43 +30,43 @@
 }
 
 .wrapper-rating {
-    background-image: url('../../assets/icons/stars-gray.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
     width: 100px;
     height: 20px;
     margin-top: 12px;
     margin-bottom: 22px;
+    background-image: url('../../assets/icons/stars-gray.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     --width-rating: 100%;
     &::before {
-        content: '';
         display: block;
-        background-image: url('../../assets/icons/star-yellow-100.svg');
+        content: '';
         width: var(--width-rating);
         height: 20px;
+        background-image: url('../../assets/icons/star-yellow-100.svg');
     }
 }
 
 .img-poster {
-    border-radius: 4px;
     width: 98%;
     max-height: 425px;
+    border-radius: 4px;
     object-fit: contain;
 }
 
 .text-story {
-    color: $content-text;
-    font-size: 14px;
-    line-height: 1.3;
-    margin: 10px 0;
+    overflow-y: auto;
     max: {
         width: 98%;
         height: 300px;
     }
+    margin: 10px 0;
+    color: $content-text;
+    font-size: 14px;
+    line-height: 1.3;
     word-wrap: break-word;
-    overflow-y: auto;
     border-radius: 4px;
     @include scroll(8px);
 }
