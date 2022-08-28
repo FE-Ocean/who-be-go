@@ -5,6 +5,7 @@
   margin: 0 auto;
   max-width: 740px;
 }
+
 .container-home .card-L:last-child {
   cursor: pointer;
 }

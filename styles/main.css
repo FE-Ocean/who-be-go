@@ -1,21 +1,24 @@
 @font-face {
-  font-family: "SpoqaHanSansNeo-Regular";
+  font-family: 'SpoqaHanSansNeo-Regular';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
-  font-family: "SpoqaHanSansNeo-Medium";
+  font-family: 'SpoqaHanSansNeo-Medium';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Medium.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
-  font-family: "SpoqaHanSansNeo-Bold";
+  font-family: 'SpoqaHanSansNeo-Bold';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Bold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
@@ -40,8 +43,10 @@ body {
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /* Sections
@@ -77,9 +82,12 @@ h1 {
  */
 hr {
   -webkit-box-sizing: content-box;
-          box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+          box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
 }
 
 /**
@@ -87,8 +95,10 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /* Text-level semantics
@@ -105,10 +115,13 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+          text-decoration: underline dotted;
+  /* 2 */
 }
 
 /**
@@ -126,8 +139,10 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /**
@@ -177,10 +192,14 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
 }
 
 /**
@@ -207,9 +226,9 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
@@ -217,9 +236,9 @@ button,
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -228,9 +247,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -249,12 +268,18 @@ fieldset {
  */
 legend {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+          box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
 }
 
 /**
@@ -275,18 +300,20 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -294,15 +321,17 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type=search] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
 }
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type=search]::-webkit-search-decoration {
+[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -311,8 +340,10 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /* Interactive
@@ -371,6 +402,7 @@ textarea {
   background-color: transparent;
   border: 0;
 }
+
 button:focus,
 input:focus,
 select:focus,
@@ -403,16 +435,13 @@ address {
 input {
   -webkit-text-fill-color: #cfcfcf;
 }
+
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }
 
 input::-webkit-input-placeholder {
-  -webkit-text-fill-color: #464646;
-}
-
-input::-moz-placeholder {
   -webkit-text-fill-color: #464646;
 }
 
@@ -436,7 +465,7 @@ textarea {
   -webkit-appearance: none;
 }
 
-.btn-L, .btn-ms, .btn-s {
+.btn-s, .btn-ms, .btn-L {
   display: inline-block;
   border-radius: 30px;
   background-color: #ff5f5f;
@@ -445,7 +474,7 @@ textarea {
   text-align: center;
 }
 
-.btn-L.disabled, .btn-L:disabled, .btn-ms.disabled, .btn-ms:disabled, .btn-s.disabled, .btn-s:disabled {
+.btn-s.disabled, .btn-s:disabled, .btn-ms.disabled, .btn-ms:disabled, .btn-L.disabled, .btn-L:disabled {
   background-color: #ffc4c4;
   color: #ffffff;
   pointer-events: none;
@@ -456,12 +485,14 @@ textarea {
   padding: 9px 0 7px;
   font-size: 13px;
 }
+
 .btn-ms {
   width: 170px;
   height: 32px;
   padding: 9px 0 7px;
   font-size: 13px;
 }
+
 .btn-ms:hover, .btn-ms:focus, .btn-ms:active {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
@@ -472,6 +503,7 @@ textarea {
   height: 44px;
   font-size: 14px;
 }
+
 .btn-L:hover, .btn-L:focus, .btn-L:active {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
@@ -497,10 +529,12 @@ textarea {
 .img-logo {
   height: 70px;
 }
+
 .img-logo img {
   height: 65px;
   margin: 3px 0 0 90px;
 }
+
 .img-logo .btn-nav {
   display: none;
   position: absolute;
@@ -518,6 +552,7 @@ textarea {
   margin-right: 90px;
   letter-spacing: -0.02em;
 }
+
 .nav li {
   padding-left: 24px;
   color: #cfcfcf;
@@ -525,6 +560,7 @@ textarea {
   font-size: 14px;
   cursor: pointer;
 }
+
 .nav li:hover,
 .nav li a.selected {
   color: #ff5f5f;
@@ -533,7 +569,7 @@ textarea {
 .main {
   position: relative;
   min-height: calc(100vh - 131px);
-  margin: 70px 0 30px;
+  margin-top: 70px;
 }
 
 .wrapper-etc {
@@ -561,15 +597,18 @@ textarea {
   background-color: #1e1e1e;
   color: #f1f1f1;
 }
+
 .wrapper-etc .img-etc {
   width: 181px;
   margin-bottom: 20px;
 }
+
 .wrapper-etc .text-etc {
   margin-bottom: 30px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 25px;
 }
+
 .wrapper-etc.disabled {
   display: none;
 }
@@ -588,11 +627,13 @@ textarea {
   color: #dedede;
   text-align: center;
 }
+
 .footer .desc {
   display: inline-block;
   margin: 8px 0 5px;
   font-size: 10px;
 }
+
 .footer .wrapper-github {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -610,6 +651,7 @@ textarea {
   font-size: 10px;
   text-align: center;
 }
+
 .footer .wrapper-github .text-s {
   font-size: 8px;
 }
@@ -662,11 +704,15 @@ textarea {
   .nav li a {
     display: block;
   }
+  .main {
+    margin-bottom: 30px;
+  }
   .main.active {
     margin-top: 296px;
   }
 }
-.review-album .card-s, .card-m, .card-L {
+
+.card-L, .card-m, .review-album .card-s {
   position: relative;
   background-image: url("../../assets/images/post_default.jpg");
   background-repeat: no-repeat;
@@ -674,8 +720,8 @@ textarea {
   border-radius: 10px;
 }
 
-.review-album .card-s:hover .show-contents, .card-m:hover .show-contents, .card-m:focus .show-contents, .card-L.info:last-of-type::after {
-  content: "";
+.card-L.info:last-of-type::after, .card-m:hover .show-contents, .card-m:focus .show-contents, .review-album .card-s:hover .show-contents {
+  content: '';
   position: absolute;
   top: 0;
   bottom: 0;
@@ -697,11 +743,15 @@ textarea {
   width: fit-content;
   color: #f1f1f1;
 }
+
 .wrapper-card.chart {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
+
 .wrapper-card .wrapper-movie-title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -715,6 +765,7 @@ textarea {
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   text-align: left;
 }
+
 .wrapper-card .wrapper-sub-text {
   position: absolute;
   bottom: 0;
@@ -723,6 +774,7 @@ textarea {
   font-size: 12px;
   text-align: left;
 }
+
 .wrapper-card .wrapper-sub-text .sub-title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -735,6 +787,7 @@ textarea {
   color: #cfcfcf;
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
 }
+
 .wrapper-card .wrapper-sub-text .sub-title .sub-text {
   margin: 8px 0;
   color: #f1f1f1;
@@ -756,12 +809,15 @@ textarea {
   -o-object-fit: contain;
      object-fit: contain;
 }
+
 .card-L:first-of-type {
   margin-right: 20px;
 }
+
 .card-L .wrapper-movie-title {
   margin-top: 40px;
 }
+
 .card-L .wrapper-movie-title #movie-title {
   display: -webkit-box;
   overflow: hidden;
@@ -773,6 +829,7 @@ textarea {
   font-size: 24px;
   margin-bottom: 10px;
 }
+
 .card-L .wrapper-movie-title #movie-title-eng {
   font-size: 20px;
   display: -webkit-box;
@@ -783,6 +840,7 @@ textarea {
   -webkit-box-orient: vertical;
   word-break: keep-all;
 }
+
 .card-L.search {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -795,20 +853,25 @@ textarea {
   width: 210px;
   height: 305px;
 }
+
 .card-m .show-contents {
   display: none;
 }
+
 .card-m:hover, .card-m:focus {
   z-index: 10;
 }
+
 .card-m:hover .show-contents, .card-m:focus .show-contents {
   position: absolute;
   bottom: 0;
   display: block;
 }
+
 .card-m:hover .wrapper-movie-title, .card-m:focus .wrapper-movie-title {
   margin: 26px 16px 4px 16px;
 }
+
 .card-m:hover .wrapper-movie-title #movie-title, .card-m:focus .wrapper-movie-title #movie-title {
   margin-bottom: 4px;
   font-size: 16px;
@@ -820,6 +883,7 @@ textarea {
   -webkit-box-orient: vertical;
   word-break: keep-all;
 }
+
 .card-m:hover .wrapper-movie-title #movie-title-eng, .card-m:focus .wrapper-movie-title #movie-title-eng {
   font-size: 12px;
   display: inline-block;
@@ -829,11 +893,13 @@ textarea {
   white-space: nowrap;
   word-break: keep-all;
 }
+
 .card-m:hover .wrapper-sub-text, .card-m:focus .wrapper-sub-text {
   margin: 16px 16px 18px;
   font-size: 11px;
   line-height: 0.9;
 }
+
 .card-m:hover .wrapper-sub-text .sub-text, .card-m:focus .wrapper-sub-text .sub-text {
   display: inline-block;
   overflow: hidden;
@@ -844,23 +910,28 @@ textarea {
 }
 
 .review-album {
+  display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  grid-template-columns: repeat(3, 205px);
+  -ms-grid-columns: (205px)[3];
+      grid-template-columns: repeat(3, 205px);
   gap: 20px;
   overflow-y: auto;
 }
+
 .review-album .card-s {
   width: 205px;
   height: 205px;
   background-image: url("../../assets/images/min_post_default.jpg");
   background-position: center center;
 }
+
 .review-album .card-s .show-contents {
   display: none;
 }
+
 .review-album .card-s:hover .show-contents {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -877,6 +948,7 @@ textarea {
           align-items: center;
   z-index: 10;
 }
+
 .review-album .card-s:hover .show-contents #movie-title {
   margin-bottom: 10px;
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
@@ -891,14 +963,16 @@ textarea {
   -webkit-box-orient: vertical;
   word-break: keep-all;
 }
+
 .review-album .card-s .rate-star {
   position: relative;
   width: 120px;
   height: 24px;
   background-image: url("../../assets/icons/stars-gray.svg");
 }
+
 .review-album .card-s .rate-star::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0px;
   left: 0px;
@@ -915,10 +989,12 @@ textarea {
     display: block;
   }
   .wrapper-card.chart {
-    grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
   .review-album {
-    grid-template-columns: repeat(3, 160px);
+    -ms-grid-columns: (160px)[3];
+        grid-template-columns: repeat(3, 160px);
     gap: 15px;
   }
   .review-album .card-s {
@@ -944,15 +1020,19 @@ textarea {
     background-size: cover;
   }
 }
+
 @media screen and (max-width: 550px) {
   .wrapper-card.chart {
-    grid-template-columns: repeat(1, 1fr);
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
   }
   .review-album {
     max-height: 600px;
-    grid-template-columns: repeat(2, 160px);
+    -ms-grid-columns: (160px)[2];
+        grid-template-columns: repeat(2, 160px);
   }
 }
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -973,10 +1053,12 @@ textarea {
 .img-logo {
   height: 70px;
 }
+
 .img-logo img {
   height: 65px;
   margin: 3px 0 0 90px;
 }
+
 .img-logo .btn-nav {
   display: none;
   position: absolute;
@@ -994,6 +1076,7 @@ textarea {
   margin-right: 90px;
   letter-spacing: -0.02em;
 }
+
 .nav li {
   padding-left: 24px;
   color: #cfcfcf;
@@ -1001,6 +1084,7 @@ textarea {
   font-size: 14px;
   cursor: pointer;
 }
+
 .nav li:hover,
 .nav li a.selected {
   color: #ff5f5f;
@@ -1009,7 +1093,7 @@ textarea {
 .main {
   position: relative;
   min-height: calc(100vh - 131px);
-  margin: 70px 0 30px;
+  margin-top: 70px;
 }
 
 .wrapper-etc {
@@ -1037,15 +1121,18 @@ textarea {
   background-color: #1e1e1e;
   color: #f1f1f1;
 }
+
 .wrapper-etc .img-etc {
   width: 181px;
   margin-bottom: 20px;
 }
+
 .wrapper-etc .text-etc {
   margin-bottom: 30px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 25px;
 }
+
 .wrapper-etc.disabled {
   display: none;
 }
@@ -1064,11 +1151,13 @@ textarea {
   color: #dedede;
   text-align: center;
 }
+
 .footer .desc {
   display: inline-block;
   margin: 8px 0 5px;
   font-size: 10px;
 }
+
 .footer .wrapper-github {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1086,6 +1175,7 @@ textarea {
   font-size: 10px;
   text-align: center;
 }
+
 .footer .wrapper-github .text-s {
   font-size: 8px;
 }
@@ -1138,10 +1228,14 @@ textarea {
   .nav li a {
     display: block;
   }
+  .main {
+    margin-bottom: 30px;
+  }
   .main.active {
     margin-top: 296px;
   }
 }
+
 .modal-dropbox {
   z-index: 20;
   -webkit-box-orient: vertical;
@@ -1159,11 +1253,13 @@ textarea {
   border-radius: 8px;
   background-color: #121212;
 }
+
 .modal-dropbox.disabled {
   display: none;
 }
+
 .modal-dropbox::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: -10px;
@@ -1172,6 +1268,7 @@ textarea {
   border-right: 15px solid transparent;
   border-bottom: 25px solid #121212;
 }
+
 .modal-dropbox .btn-dropbox {
   width: 100%;
   text-align: left;
@@ -1190,9 +1287,11 @@ textarea {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 .modal-alert-container.disabled {
   display: none;
 }
+
 .modal-alert-container .modal-alert {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1206,6 +1305,7 @@ textarea {
   border-radius: 10px;
   color: #f1f1f1;
 }
+
 .modal-alert-container .modal-alert .message {
   display: block;
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
@@ -1213,6 +1313,7 @@ textarea {
   line-height: 20px;
   padding: 29px 58px 22px;
 }
+
 .modal-alert-container .modal-alert .btn-alert {
   position: relative;
   float: left;
@@ -1223,11 +1324,13 @@ textarea {
   font-size: 14px;
   line-height: 18px;
 }
+
 .modal-alert-container .modal-alert .btn-alert.action {
   color: #ff5f5f;
 }
+
 .modal-alert-container .modal-alert .btn-alert.action::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;

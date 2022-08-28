@@ -15,14 +15,17 @@
 .card-m {
   cursor: pointer;
 }
+
 .card-m .sub-text {
   line-height: 1.3;
 }
+
 .card-m #rank {
   position: absolute;
   top: 5px;
   left: 1px;
 }
+
 .card-m #rank .num {
   display: block;
   position: absolute;
@@ -33,9 +36,11 @@
   color: #ffffff;
   text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.4);
 }
+
 .card-m .show-contents {
   text-align: left;
 }
+
 .card-m .show-contents .wrapper-movie-title {
   color: #ffffff;
 }
@@ -51,6 +56,7 @@
     opacity: 0;
   }
 }
+
 .loading {
   background-image: none;
   background-color: #e0e0e0;
