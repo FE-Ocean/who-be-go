@@ -1,8 +1,10 @@
 //필요한 항목은 추가해서 사용하시면 됩니다.
 export default interface MovieList {
-    CollName: string;
+    TotalCount: string;
     Result: [
         {
+            movieSeq: string;
+            movieId: string;
             title: string;
             titleEng: string;
             posters: string;
@@ -86,55 +88,6 @@ export interface Ratings {
     rating: Rating[];
 }
 
-export interface Staff {
-    staffNm: string;
-    staffEnNm: string;
-    staffRoleGroup: string;
-    staffRole: string;
-    staffEtc: string;
-    staffId: string;
-}
-
-export interface Staffs {
-    staff: Staff[];
-}
-
-export interface Vod {
-    vodClass: string;
-    vodUrl: string;
-}
-
-export interface Vods {
-    vod: Vod[];
-}
-
-export interface Stat {
-    screenArea: string;
-    screenCnt: string;
-    salesAcc: string;
-    audiAcc: string;
-    statSouce: string;
-    statDate: string;
-}
-
-export interface Code {
-    CodeNm: string;
-    CodeNo: string;
-}
-
-export interface Codes {
-    Code: Code[];
-}
-
-export interface CommCode {
-    CodeNm: string;
-    CodeNo: string;
-}
-
-export interface CommCodes {
-    CommCode: CommCode[];
-}
-
 export interface MovieDetail {
     DOCID: string;
     movieId: string;
@@ -147,7 +100,6 @@ export interface MovieDetail {
     directors: Directors;
     actors: Actors;
     nation: string;
-    company: string;
     plots: Plots;
     runtime: string;
     rating: string;
@@ -156,31 +108,13 @@ export interface MovieDetail {
     type: string;
     use: string;
     episodes: string;
-    ratedYn: string;
     repRatDate: string;
     repRlsDate: string;
     ratings: Ratings;
     keywords: string;
     posters: string;
     stlls: string;
-    staffs: Staffs;
-    vods: Vods;
-    openThtr: string;
-    stat: Stat[];
-    screenArea: string;
-    screenCnt: string;
-    salesAcc: string;
-    audiAcc: string;
-    statSouce: string;
-    statDate: string;
-    themeSong: string;
-    soundtrack: string;
-    fLocation: string;
-    Awards1: string;
-    Awards2: string;
     regDate: string;
     modDate: string;
-    Codes: Codes;
-    CommCodes: CommCodes;
     ALIAS: string;
 }
