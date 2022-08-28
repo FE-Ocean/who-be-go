@@ -438,11 +438,11 @@ textarea {
 
 .btn-L, .btn-ms, .btn-s {
   display: inline-block;
-  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
-  text-align: center;
   border-radius: 30px;
   background-color: #ff5f5f;
+  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
   color: #ffffff;
+  text-align: center;
 }
 
 .btn-L.disabled, .btn-L:disabled, .btn-ms.disabled, .btn-ms:disabled, .btn-s.disabled, .btn-s:disabled {
@@ -453,14 +453,14 @@ textarea {
 
 .btn-s {
   width: 90px;
-  font-size: 13px;
   padding: 9px 0 7px;
+  font-size: 13px;
 }
 .btn-ms {
   width: 170px;
   height: 32px;
-  font-size: 13px;
   padding: 9px 0 7px;
+  font-size: 13px;
 }
 .btn-ms:hover, .btn-ms:focus, .btn-ms:active {
   -webkit-transform: scale(1.03);
@@ -853,10 +853,10 @@ textarea {
   overflow-y: auto;
 }
 .review-album .card-s {
-  background-image: url("../../assets/images/min_post_default.jpg");
-  background-position: center center;
   width: 205px;
   height: 205px;
+  background-image: url("../../assets/images/min_post_default.jpg");
+  background-position: center center;
 }
 .review-album .card-s .show-contents {
   display: none;
@@ -878,10 +878,10 @@ textarea {
   z-index: 10;
 }
 .review-album .card-s:hover .show-contents #movie-title {
+  margin-bottom: 10px;
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
   font-size: 16px;
   color: #ffffff;
-  margin-bottom: 10px;
   text-align: center;
   display: -webkit-box;
   overflow: hidden;
@@ -1144,12 +1144,6 @@ textarea {
 }
 .modal-dropbox {
   z-index: 20;
-  position: absolute;
-  top: 40px;
-  right: -3px;
-  border-radius: 8px;
-  width: 110px;
-  background-color: #121212;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1157,7 +1151,13 @@ textarea {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  position: absolute;
+  top: 40px;
+  right: -3px;
+  width: 110px;
   padding: 6px;
+  border-radius: 8px;
+  background-color: #121212;
 }
 .modal-dropbox.disabled {
   display: none;
@@ -1217,11 +1217,11 @@ textarea {
   position: relative;
   float: left;
   width: 50%;
-  font-size: 14px;
-  line-height: 18px;
   padding: 14px 0;
   border-top: 0.5px solid #767676;
   color: #f1f1f1;
+  font-size: 14px;
+  line-height: 18px;
 }
 .modal-alert-container .modal-alert .btn-alert.action {
   color: #ff5f5f;
@@ -1248,8 +1248,8 @@ textarea {
     width: 220px;
   }
   .modal-alert-container .modal-alert .message {
-    font-size: 13px;
     padding: 26px 40px 22px;
+    font-size: 13px;
   }
   .modal-alert-container .modal-alert .btn-alert {
     font-size: 13px;

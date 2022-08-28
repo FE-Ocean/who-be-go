@@ -7,11 +7,16 @@
     &.disabled {
         display: none;
     }
-    // 사용할 땐 여기부터
+    flex-direction: column;
+    align-items: flex-start;
     position: absolute;
     top: 40px;
     right: -3px;
-    // 여기까지 삭제해주세요
+    width: 110px;
+    padding: 6px;
+    border-radius: 8px;
+    background-color: $dropbox-bg;
+
     &::before {
         content: '';
         display: block;
@@ -24,12 +29,7 @@
             bottom: 25px solid $dropbox-bg;
         }
     }
-    border-radius: 8px;
-    width: 110px;
-    background-color: $dropbox-bg;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 6px;
+
     .btn-dropbox {
         width: 100%;
         text-align: left;
@@ -77,11 +77,11 @@
             position: relative;
             float: left;
             width: 50%;
-            font-size: 14px;
-            line-height: 18px;
             padding: 14px 0;
             border-top: 0.5px solid $disabled-line;
             color: $title-text;
+            font-size: 14px;
+            line-height: 18px;
             &.action {
                 color: $primary-color;
             }
@@ -110,8 +110,8 @@
         .modal-alert {
             width: 220px;
             .message {
-                font-size: 13px;
                 padding: 26px 40px 22px;
+                font-size: 13px;
             }
             .btn-alert {
                 font-size: 13px;

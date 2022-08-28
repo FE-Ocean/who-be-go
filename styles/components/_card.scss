@@ -145,10 +145,10 @@
     overflow-y: auto;
     .card-s {
         @extend %card-base;
-        background-image: url('../../assets/images/min_post_default.jpg');
-        background-position: center center;
         width: 205px;
         height: 205px;
+        background-image: url('../../assets/images/min_post_default.jpg');
+        background-position: center center;
         .show-contents {
             display: none;
         }
@@ -161,10 +161,10 @@
                 z-index: 10;
                 @extend %card-cover;
                 #movie-title {
+                    margin-bottom: 10px;
                     font-family: $font-medium;
                     font-size: 16px;
                     color: $white;
-                    margin-bottom: 10px;
                     text-align: center;
                     @include text-overflow-three(180px);
                 }
