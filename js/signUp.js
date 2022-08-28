@@ -228,7 +228,7 @@ async function userInfo(e) {
         const resMsg = await signUp(reqData);
         if (resMsg === '회원가입 성공') {
             console.log(reqData);
-            location.href = './login.html';
+            location.href = './moveLogin.html';
         }
     }
     catch (err) {
