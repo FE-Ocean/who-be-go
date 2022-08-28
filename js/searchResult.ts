@@ -1,37 +1,5 @@
 import { getMovieInfo } from './movieApi.js';
-
-interface MovieLists {
-    title: string;
-    titleEng: string;
-    titleOrg: string;
-    posters: string;
-    repRlsDate: string;
-    prodYear: string;
-    genre: string;
-    rating: string;
-    runtime: string;
-    directors: {
-        director: [
-            {
-                directorNm: string;
-            }
-        ];
-    };
-    actors: {
-        actor: [
-            {
-                actorNm: string;
-            }
-        ];
-    };
-    plots: {
-        plot: [
-            {
-                plotText: string;
-            }
-        ];
-    };
-}
+import { MovieDetail } from './movieListInterface.js';
 
 const title = document.querySelector('.movie-title') as HTMLHeadingElement;
 const titleEng = document.querySelector(
@@ -46,7 +14,6 @@ const runtime = document.querySelector('.runtime');
 const rating = document.querySelector('.rating');
 const summary = document.querySelector('.movie-summary>dd') as HTMLElement;
 const postReview = document.querySelector('.container-review-btn>button');
-// const movieSeq = window.location.search.slice(1);
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const movieId = params.get('movieId');
@@ -68,7 +35,7 @@ window.addEventListener('load', async () => {
     loading.classList.add('disabled');
 });
 
-const showValue = (movie: MovieLists) => {
+const showValue = (movie: MovieDetail) => {
     title.textContent = movie.title;
 
     if (movie.titleEng === '') {
