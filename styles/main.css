@@ -533,7 +533,7 @@ textarea {
 .main {
   position: relative;
   min-height: calc(100vh - 131px);
-  margin-top: 70px;
+  margin: 70px 0 30px;
 }
 
 .wrapper-etc {
@@ -948,8 +948,8 @@ textarea {
   .wrapper-card.chart {
     grid-template-columns: repeat(1, 1fr);
   }
-  .wrapper-card .review-album {
-    height: 600px;
+  .review-album {
+    max-height: 600px;
     grid-template-columns: repeat(2, 160px);
   }
 }
@@ -1009,7 +1009,7 @@ textarea {
 .main {
   position: relative;
   min-height: calc(100vh - 131px);
-  margin-top: 70px;
+  margin: 70px 0 30px;
 }
 
 .wrapper-etc {

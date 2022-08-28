@@ -238,9 +238,9 @@
         &.chart {
             grid-template-columns: repeat(1, 1fr);
         }
-        .review-album {
-            height: 600px;
-            grid-template-columns: repeat(2, 160px);
-        }
+    }
+    .review-album {
+        max-height: 600px;
+        grid-template-columns: repeat(2, 160px);
     }
 }
