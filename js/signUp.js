@@ -66,7 +66,8 @@ function checkPasswordCorrect(password, check) {
 //버튼 활성화 함수
 async function btnCheckValid() {
     const emailCheckedResult = await checkEmailValid(email.value);
-    const passwordCheckedResult = checkPasswordCorrect(password.value, checkPassword.value);
+    const passwordCheckedResult = checkPasswordValid(password.value) &&
+        checkPasswordCorrect(password.value, checkPassword.value);
     if (emailCheckedResult && passwordCheckedResult) {
         nextBtn.disabled = false;
     }
@@ -118,39 +119,42 @@ const intro = document.querySelector('#intro');
 const errorName = document.querySelector('.msg-error.username');
 const errorId = document.querySelector('.msg-error.userid');
 const startBtn = document.querySelector('.btn-start');
+let joinButtonValid = {
+    name: false,
+    id: false,
+};
 // 버튼 활성화 함수
 async function checkBtn() {
-    const nameCheckedResult = checkNameValid(name.value);
-    const idCheckedResult = await checkIdValid(id.value);
-    if (nameCheckedResult && idCheckedResult) {
+    if (joinButtonValid.name && joinButtonValid.id) {
         startBtn.disabled = false;
     }
     else {
         startBtn.disabled = true;
     }
 }
-profileForm.addEventListener('input', () => {
-    checkBtn();
-});
 // name 체크
 function checkNameValid(name) {
     if (name == '') {
         errorName.textContent = '*사용자 이름은 필수 입력사항 입니다.';
         errorName.classList.remove('true');
         errorName.classList.add('false');
-        return false;
+        joinButtonValid.name = false;
     }
     else if (name.length < 2 || name.length > 11) {
         errorName.textContent = '*사용자 이름은 2~10자 이내여야 합니다.';
         errorName.classList.remove('true');
         errorName.classList.add('false');
-        return false;
+        joinButtonValid.name = false;
     }
     else {
         errorName.classList.remove('false');
-        return true;
+        joinButtonValid.name = true;
     }
 }
+name.addEventListener('input', () => {
+    checkNameValid(name.value);
+    checkBtn();
+});
 // id 체크, 검증
 async function checkIdValid(id) {
     try {
@@ -159,14 +163,16 @@ async function checkIdValid(id) {
             errorId.textContent = '*계정ID는 필수 입력사항 입니다.';
             errorId.classList.remove('true');
             errorId.classList.add('false');
-            return false;
+            joinButtonValid.id = false;
+            return;
         }
         else if (!regex.test(id)) {
             errorId.textContent =
                 '*영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.';
             errorId.classList.remove('true');
             errorId.classList.add('false');
-            return false;
+            joinButtonValid.id = false;
+            return;
         }
         const idData = {
             user: {
@@ -178,19 +184,25 @@ async function checkIdValid(id) {
             errorId.textContent = '*' + resMsg;
             errorId.classList.remove('false');
             errorId.classList.add('true');
-            return true;
+            joinButtonValid.id = true;
+            return;
         }
         else if (resMsg === '이미 가입된 계정ID 입니다.') {
             errorId.textContent = '*' + resMsg;
             errorId.classList.remove('true');
             errorId.classList.add('false');
-            return false;
+            joinButtonValid.id = false;
+            return;
         }
     }
     catch (err) {
         console.error(err);
     }
 }
+id.addEventListener('input', async () => {
+    await checkIdValid(id.value);
+    checkBtn();
+});
 // 이미지 업로드
 async function uploadImg(e) {
     try {
