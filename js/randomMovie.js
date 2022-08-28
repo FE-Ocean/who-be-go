@@ -15,7 +15,7 @@ const loading = document.querySelector('.wrapper-etc');
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-const id = data[rand(0, 98)];
+const id = data[rand(0, 124)];
 const title = id.title;
 const movieSeq = id.movieSeq;
 window.addEventListener('load', async () => {

@@ -43,7 +43,7 @@ function rand(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const id = data[rand(0, 98)];
+const id = data[rand(0, 124)];
 const title: string = id.title;
 const movieSeq: string = id.movieSeq;
 
