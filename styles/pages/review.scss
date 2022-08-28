@@ -13,38 +13,38 @@
 }
 
 .wrapper-list-review {
+    overflow-x: hidden;
+    max-width: 450px;
     margin: 0 auto;
     margin-top: 50px;
-    max-width: 450px;
-    overflow-x: hidden;
 }
 
 .list-review {
-    margin: 0 -14px;
     display: flex;
     flex-wrap: wrap;
+    margin: 0 -14px;
 }
 
 .item-review {
+    position: relative;
     width: 100%;
     padding: 0 14px;
     margin-bottom: 46px;
-    position: relative;
 }
 
 .movie-title {
     @include text-overflow-two(90%);
+    margin-left: 5px;
     color: $title-text;
     font-size: 25px;
-    margin-left: 5px;
     cursor: pointer;
 }
 
 .btn-modal {
     display: inline-block;
+    position: absolute;
     top: 3px;
     right: 22.5px;
-    position: absolute;
     cursor: pointer;
     &::marker {
         font-size: 0;
@@ -56,36 +56,36 @@
 }
 
 .wrapper-rating {
-    background-image: url('../../assets/icons/stars-gray.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
     width: 100px;
     height: 20px;
     margin: 12px 0 22px 5px;
+    background-image: url('../../assets/icons/stars-gray.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     --width-rating: 100%;
     &::before {
-        content: '';
         display: block;
-        background-image: url('../../assets/icons/star-yellow-100.svg');
+        content: '';
         width: var(--width-rating);
         height: 20px;
+        background-image: url('../../assets/icons/star-yellow-100.svg');
     }
 }
 
 .img-poster {
-    border-radius: 4px;
     width: 98%;
     max-height: 360px;
+    border-radius: 4px;
     object-fit: contain;
 }
 
 .text-story {
+    margin: 16px 0;
     color: $content-text;
     font-size: 13px;
     line-height: 1.4;
-    margin: 16px 0;
     max: {
         width: 98%;
         height: 200px;
@@ -116,10 +116,10 @@
 }
 
 .text-description {
+    display: block;
     font-size: 30px;
     line-height: 38px;
     color: #f1f1f1;
-    display: block;
 }
 
 .btn-ms {
