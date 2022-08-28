@@ -1,6 +1,5 @@
 .container-chart {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   padding: 50px 5%;
   margin: 0 auto;
 }
@@ -14,6 +13,9 @@
 
 .card-m {
   cursor: pointer;
+}
+.card-m .sub-text {
+  line-height: 1.3;
 }
 .card-m #rank {
   position: absolute;
