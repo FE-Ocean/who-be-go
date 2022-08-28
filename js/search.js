@@ -45,11 +45,13 @@ const createSearchedList = (list, compare) => {
         posterImg.classList.add('img-poster');
         div.classList.add('title-box');
         span.classList.add('movie-title');
-        span.textContent = list.Result[i].title
+        const filteredTitle = list.Result[i].title
             .replace(/\!HS/g, '')
             .replace(/\!HE/g, '')
-            .replace(/^\s+|\s+$/g, '')
-            .replace(/ +/g, ' ');
+            .trim()
+            .replace(/ +/g, ' ')
+            .replace(searchInput.value, `<strong style="color:#FF5F5F">${searchInput.value}</strong>`);
+        span.insertAdjacentHTML('afterbegin', filteredTitle);
         fragment.appendChild(li);
         li.appendChild(containerPoster);
         containerPoster.appendChild(posterImg);

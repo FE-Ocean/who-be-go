@@ -1,4 +1,5 @@
 import { getSearchResult } from './movieApi.js';
+import MovieList from './movieListInterface.js';
 
 const searchInput = document.getElementById('input-search') as HTMLInputElement;
 const searchedList = document.querySelector(
@@ -7,32 +8,6 @@ const searchedList = document.querySelector(
 
 const gridBox = document.querySelector('.grid-box') as HTMLOListElement;
 const strong = document.querySelector('strong') as HTMLElement;
-
-interface MovieList {
-    TotalCount: string;
-    Result: [
-        {
-            movieSeq: string;
-            movieId: string;
-            title: string;
-            titleEng: string;
-            posters: string;
-            genre: string;
-            rating: string;
-            runtime: string;
-            directors: {
-                director: [
-                    {
-                        directorNm: string;
-                    }
-                ];
-            };
-            actors: {
-                actor: [];
-            };
-        }
-    ];
-}
 
 let queryObj = {
     title: '',
@@ -89,11 +64,17 @@ const createSearchedList = (list: MovieList, compare: boolean) => {
         div.classList.add('title-box');
         span.classList.add('movie-title');
 
-        span.textContent = list.Result[i].title
+        const filteredTitle = list.Result[i].title
             .replace(/\!HS/g, '')
             .replace(/\!HE/g, '')
-            .replace(/^\s+|\s+$/g, '')
-            .replace(/ +/g, ' ');
+            .trim()
+            .replace(/ +/g, ' ')
+            .replace(
+                searchInput.value,
+                `<strong style="color:#FF5F5F">${searchInput.value}</strong>`
+            );
+
+        span.insertAdjacentHTML('afterbegin', filteredTitle);
 
         fragment.appendChild(li);
         li.appendChild(containerPoster);
