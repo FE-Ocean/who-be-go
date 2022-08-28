@@ -7,7 +7,9 @@ const userId = document.querySelector('#text-id');
 const userIntro = document.querySelector('#text-intro');
 const reviewAlbum = document.querySelector('.review-album');
 const loading = document.querySelector('.wrapper-etc');
-hasToken();
+
+hasToken('/pages/myPage.html');
+
 const createReviewAlbum = (reviewList) => {
     const fragment = document.createDocumentFragment();
     for (let review of reviewList) {
@@ -51,6 +53,7 @@ window.addEventListener('load', async () => {
     const reviewList = await getReviewList();
     createReviewAlbum(reviewList);
     loading.classList.add('disabled');
+    localStorage.removeItem('previousPage');
     createObserver(reviewAlbum.lastElementChild);
 });
 const createObserver = (element) => {

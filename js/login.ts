@@ -36,7 +36,12 @@ const Login = async (e: Event) => {
         if (resJson.status !== 422) {
             localStorage.setItem('token', resJson.user.token);
             localStorage.setItem('accountname', resJson.user.accountname);
-            location.href = '../index.html';
+            const previousPage = localStorage.getItem('previousPage');
+            if (typeof previousPage === 'string') {
+                location.href = previousPage;
+            } else {
+                location.href = '/index.html';
+            }
         } else {
             errMsg.classList.add('false');
         }

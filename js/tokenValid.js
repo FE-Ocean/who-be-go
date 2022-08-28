@@ -1,6 +1,7 @@
 import { MANDARIN_URL } from '../js/BASE_URL.js';
 // 로컬스토리지에 토큰이 있는지 확인
-const hasToken = async () => {
+const hasToken = async (url = '/index.html') => {
+    localStorage.setItem('previousPage', url);
     const token = localStorage.getItem('token');
     if (token === null) {
         const result = confirm('로그인이 필요한 서비스입니다. 로그인 하시겠습니까?');
@@ -8,6 +9,7 @@ const hasToken = async () => {
             location.href = '/pages/login.html';
         }
         else {
+            localStorage.removeItem('previousPage');
             location.href = '/index.html';
         }
     }

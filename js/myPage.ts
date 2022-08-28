@@ -9,7 +9,7 @@ const userIntro = document.querySelector('#text-intro') as HTMLLIElement;
 const reviewAlbum = document.querySelector('.review-album') as HTMLUListElement;
 const loading = document.querySelector('.wrapper-etc') as HTMLElement;
 
-hasToken();
+hasToken('/pages/myPage.html');
 
 interface album {
     id: string;
@@ -45,7 +45,6 @@ const createReviewAlbum = (reviewList: album[]) => {
         showContents.append(movieTitle, ratingStar);
         a.append(h3, showContents);
         li.append(a);
-
         fragment.appendChild(li);
     }
 
@@ -64,6 +63,7 @@ window.addEventListener('load', async () => {
     const reviewList = await getReviewList();
     createReviewAlbum(reviewList);
     loading.classList.add('disabled');
+    localStorage.removeItem('previousPage');
     createObserver(reviewAlbum.lastElementChild as HTMLLIElement);
 });
 
