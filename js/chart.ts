@@ -6,7 +6,8 @@ const loadingItem = document.querySelectorAll('.loading');
 const movieDetail = async (boxOfficeResult: BoxOffice[]) => {
     boxOfficeResult.forEach(async (movie) => {
         let detailResult;
-        const title = movie.movieNm;
+        const title = movie.movieNm.replace(/ /g, '');
+
         const releaseDts = movie.openDt.replace(/-/gi, '');
         detailResult = await getMovieInfo({
             title: title,
@@ -51,14 +52,14 @@ const setMovieDetail = async (movie: BoxOffice, detailResult: MovieDetail) => {
                 }
                 textRelease.textContent = `${dateText}`;
             } else {
-                textRelease.textContent = '개봉 정보가 없습니다.';
+                textRelease.textContent = '정보 없음';
             }
         }
         if (textDirector instanceof HTMLElement) {
             if (detailResult.directors.director[0].directorNm !== '') {
                 textDirector.textContent = `${detailResult.directors.director[0].directorNm}`;
             } else {
-                textDirector.textContent = '감독 정보가 없습니다.';
+                textDirector.textContent = '정보 없음';
             }
         }
         if (textActor instanceof HTMLElement) {
@@ -70,7 +71,7 @@ const setMovieDetail = async (movie: BoxOffice, detailResult: MovieDetail) => {
                 }
                 textActor.textContent = `${actorText}`;
             } else {
-                textActor.textContent = '배우 정보가 없습니다';
+                textActor.textContent = '정보 없음';
             }
         }
         if (textGenre instanceof HTMLElement) {
@@ -82,7 +83,7 @@ const setMovieDetail = async (movie: BoxOffice, detailResult: MovieDetail) => {
                 }
                 textGenre.textContent = `${genreText}`;
             } else {
-                textGenre.textContent = '장르 정보가 없습니다.';
+                textGenre.textContent = '정보 없음';
             }
         }
     }
