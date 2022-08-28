@@ -13,7 +13,7 @@ const movieDetail = async (boxOfficeResult: BoxOffice[]) => {
             releaseDts: releaseDts,
         });
         // 만약 검색한 결과 값이 없을 경우 검색 조건을 바꿔서 한번 더 검색합니다.
-        if (detailResult === undefined) {
+        if (detailResult.TotalCount === 0) {
             detailResult = await getMovieInfo({
                 title: title,
                 releaseDte: releaseDts,
@@ -43,7 +43,7 @@ const setMovieDetail = async (movie: BoxOffice, detailResult: MovieDetail) => {
             movieEngTitle.textContent = `${detailResult.titleEng}`;
         }
         if (textRelease instanceof HTMLElement) {
-            if (movie.openDt !== ''){
+            if (movie.openDt !== '') {
                 const dates = movie.openDt;
                 let dateText = '';
                 for (let date of dates) {
@@ -78,7 +78,7 @@ const setMovieDetail = async (movie: BoxOffice, detailResult: MovieDetail) => {
             if (genres !== '') {
                 let genreText = '';
                 for (let genre of genres) {
-                    genreText += genre.split(',').join(' | ')
+                    genreText += genre.split(',').join(' | ');
                 }
                 textGenre.textContent = `${genreText}`;
             } else {

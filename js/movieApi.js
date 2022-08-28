@@ -12,9 +12,15 @@ const getMovieInfo = async (queryObj) => {
             method: 'GET',
         });
         const json = await response.json();
-        return json.Data[0].Result[0];
+        if (json.TotalCount !== 0) {
+            return json.Data[0].Result[0];
+        }
+        else {
+            return json;
+        }
     }
     catch (err) {
+        location.href = '/pages/notFound.html';
         console.error(err);
     }
 };
@@ -33,6 +39,7 @@ const getSearchResult = async (queryObj) => {
         return json.Data[0];
     }
     catch (err) {
+        location.href = 'pages/notFound.html';
         console.error(err);
     }
 };
