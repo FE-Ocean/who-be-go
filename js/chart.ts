@@ -7,7 +7,6 @@ const movieDetail = async (boxOfficeResult: BoxOffice[]) => {
     boxOfficeResult.forEach(async (movie) => {
         let detailResult;
         const title = movie.movieNm.replace(/ /g, '');
-
         const releaseDts = movie.openDt.replace(/-/gi, '');
         detailResult = await getMovieInfo({
             title: title,
