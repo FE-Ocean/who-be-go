@@ -244,7 +244,7 @@
 }
 
 .card-info-wrapper .poster-card {
-  width: 100%;
+  width: 300px;
   margin-right: 30px;
   -o-object-fit: cover;
      object-fit: cover;
