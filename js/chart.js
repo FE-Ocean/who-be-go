@@ -51,7 +51,7 @@ const setMovieDetail = async (movie, detailResult) => {
                 textRelease.textContent = `${dateText}`;
             }
             else {
-                textRelease.textContent = '개봉 정보가 없습니다.';
+                textRelease.textContent = '정보 없음';
             }
         }
         if (textDirector instanceof HTMLElement) {
@@ -59,7 +59,7 @@ const setMovieDetail = async (movie, detailResult) => {
                 textDirector.textContent = `${detailResult.directors.director[0].directorNm}`;
             }
             else {
-                textDirector.textContent = '감독 정보가 없습니다.';
+                textDirector.textContent = '정보 없음';
             }
         }
         if (textActor instanceof HTMLElement) {
@@ -72,7 +72,7 @@ const setMovieDetail = async (movie, detailResult) => {
                 textActor.textContent = `${actorText}`;
             }
             else {
-                textActor.textContent = '배우 정보가 없습니다';
+                textActor.textContent = '정보 없음';
             }
         }
         if (textGenre instanceof HTMLElement) {
@@ -85,7 +85,7 @@ const setMovieDetail = async (movie, detailResult) => {
                 textGenre.textContent = `${genreText}`;
             }
             else {
-                textGenre.textContent = '장르 정보가 없습니다.';
+                textGenre.textContent = '정보 없음';
             }
         }
     }
