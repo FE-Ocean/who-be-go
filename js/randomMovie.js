@@ -39,6 +39,9 @@ const setValue = (result) => {
     }
     img.style.backgroundImage = "url('" + posterUrl(result.posters) + "')";
     imgInfo.style.backgroundImage = "url('" + posterUrl(result.posters) + "')";
+    imgInfo.addEventListener('click', () => {
+        location.href = `../pages/searchResult.html?movieId=${result.movieId}&movieSeq=${movieSeq}`;
+    });
     const title = result.title
         .replace(/\!HS/g, '')
         .replace(/\s+\!HE+\s/g, '')
