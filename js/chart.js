@@ -12,7 +12,7 @@ const movieDetail = async (boxOfficeResult) => {
             releaseDts: releaseDts,
         });
         // 만약 검색한 결과 값이 없을 경우 검색 조건을 바꿔서 한번 더 검색합니다.
-        if (detailResult === undefined) {
+        if (detailResult.TotalCount === 0) {
             detailResult = await getMovieInfo({
                 title: title,
                 releaseDte: releaseDts,

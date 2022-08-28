@@ -40,6 +40,7 @@ const getReviewDetail = async (id) => {
             return json.post;
         }
         else {
+            location.href = '/pages/notFound.html';
             throw new Error('리뷰 상세를 불러오는 과정에서 에러가 발생했습니다.');
         }
     }

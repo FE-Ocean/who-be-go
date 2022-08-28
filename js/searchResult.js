@@ -25,6 +25,9 @@ window.addEventListener('load', async () => {
             movieId: movieId,
             movieSeq: movieSeq,
         });
+        if (movieInfo.TotalCount === 0) {
+            location.href = '/pages/notFound.html';
+        }
         showValue(movieInfo);
     }
     loading.classList.add('disabled');
