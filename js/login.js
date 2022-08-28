@@ -30,7 +30,8 @@ const Login = async (e) => {
         if (resJson.status !== 422) {
             localStorage.setItem('token', resJson.user.token);
             localStorage.setItem('accountname', resJson.user.accountname);
-            location.href = '../index.html';
+            const previousPage = localStorage.getItem('previousPage');
+            location.href = previousPage;
         }
         else {
             errMsg.classList.add('false');

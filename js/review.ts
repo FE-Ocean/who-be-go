@@ -2,7 +2,7 @@ import { getReviewList, deleteReview } from './reviewApi.js';
 import PostInterface from './postInterface';
 import { hasToken } from './tokenValid.js';
 
-hasToken();
+hasToken('/pages/review.html');
 
 const noReview = document.querySelector('.wrapper-noreview') as HTMLElement;
 const review = document.querySelector('.wrapper-review') as HTMLElement;
@@ -185,6 +185,7 @@ window.addEventListener('load', async () => {
     if (lastItem instanceof HTMLLIElement) {
         createObserver(lastItem);
     }
+    localStorage.removeItem('previousPage');
 });
 
 buttonDelete.addEventListener('click', async () => {

@@ -9,7 +9,7 @@ const userIntro = document.querySelector('#text-intro') as HTMLLIElement;
 const reviewAlbum = document.querySelector('.review-album') as HTMLUListElement;
 const loading = document.querySelector('.wrapper-etc') as HTMLElement;
 
-hasToken();
+hasToken('/pages/myPage.html');
 
 interface album {
     id: string;
@@ -22,8 +22,7 @@ const createReviewAlbum = (review: album) => {
     li.classList.add('card-s');
     if (review.image) {
         li.style.backgroundImage = `url(${review.image})`;
-    }
-    else{
+    } else {
         li.style.backgroundImage = `url(../assets/images/min_post_default.jpg)`;
     }
     const a = document.createElement('a');
@@ -60,4 +59,5 @@ window.addEventListener('load', async () => {
         reviewAlbum.appendChild(createReviewAlbum(review));
     }
     loading.classList.add('disabled');
+    localStorage.removeItem('previousPage');
 });

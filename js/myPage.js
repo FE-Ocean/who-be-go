@@ -7,7 +7,7 @@ const userId = document.querySelector('#text-id');
 const userIntro = document.querySelector('#text-intro');
 const reviewAlbum = document.querySelector('.review-album');
 const loading = document.querySelector('.wrapper-etc');
-hasToken();
+hasToken('/pages/myPage.html');
 const createReviewAlbum = (review) => {
     const li = document.createElement('li');
     li.classList.add('card-s');
@@ -49,4 +49,5 @@ window.addEventListener('load', async () => {
         reviewAlbum.appendChild(createReviewAlbum(review));
     }
     loading.classList.add('disabled');
+    localStorage.removeItem('previousPage');
 });

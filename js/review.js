@@ -1,6 +1,6 @@
 import { getReviewList, deleteReview } from './reviewApi.js';
 import { hasToken } from './tokenValid.js';
-hasToken();
+hasToken('/pages/review.html');
 const noReview = document.querySelector('.wrapper-noreview');
 const review = document.querySelector('.wrapper-review');
 const writePostButton = document.getElementById('btn-writepost');
@@ -155,6 +155,7 @@ window.addEventListener('load', async () => {
     if (lastItem instanceof HTMLLIElement) {
         createObserver(lastItem);
     }
+    localStorage.removeItem('previousPage');
 });
 buttonDelete.addEventListener('click', async () => {
     await deleteReview(postId);
