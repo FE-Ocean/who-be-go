@@ -9,6 +9,7 @@ interface MovieLists {
     repRlsDate: string;
     genre: string;
     rating: string;
+    movieId: string;
     directors: {
         director: [
             {
@@ -68,6 +69,9 @@ const setValue = (result: MovieLists) => {
 
     img!.style.backgroundImage = "url('" + posterUrl(result.posters) + "')";
     imgInfo!.style.backgroundImage = "url('" + posterUrl(result.posters) + "')";
+    imgInfo.addEventListener('click', () => {
+        location.href = `../pages/searchResult.html?movieId=${result.movieId}&movieSeq=${movieSeq}`;
+    });
 
     const title = result.title
         .replace(/\!HS/g, '')
