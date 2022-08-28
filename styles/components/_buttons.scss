@@ -1,10 +1,10 @@
 %btn-base {
     display: inline-block;
-    font-family: $font-medium;
-    text-align: center;
     border-radius: 30px;
     background-color: $primary-color;
+    font-family: $font-medium;
     color: $white;
+    text-align: center;
 }
 
 %btn-disabled {
@@ -16,8 +16,8 @@
 .btn-s {
     @extend %btn-base;
     width: 90px;
-    font-size: 13px;
     padding: 9px 0 7px;
+    font-size: 13px;
     &.disabled,
     &:disabled {
         @extend %btn-disabled;
@@ -28,8 +28,8 @@
     @extend %btn-base;
     width: 170px;
     height: 32px;
-    font-size: 13px;
     padding: 9px 0 7px;
+    font-size: 13px;
     &.disabled,
     &:disabled {
         @extend %btn-disabled;

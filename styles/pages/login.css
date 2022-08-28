@@ -12,53 +12,50 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-width: 322px;
   padding: 0 20px;
   margin-top: 65px;
+  min-width: 322px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
-
 .container-login .img-logo {
-  height: 150px;
   margin-bottom: 10px;
+  height: 150px;
 }
-
 .container-login .img-logo.move {
   margin-bottom: 0;
 }
-
 .container-login label {
   margin-bottom: 6px;
   color: #dedede;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 13px;
 }
-
 .container-login ::-webkit-input-placeholder {
   color: #464646;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
 }
-
+.container-login ::-moz-placeholder {
+  color: #464646;
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 12px;
+}
 .container-login :-ms-input-placeholder {
   color: #464646;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
 }
-
 .container-login ::-ms-input-placeholder {
   color: #464646;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
 }
-
 .container-login ::placeholder {
   color: #464646;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
 }
-
 .container-login input {
   padding: 8px 0;
   border-bottom: 1px solid #767676;
@@ -67,18 +64,15 @@
   font-size: 13px;
   line-height: 1;
 }
-
 .container-login input:focus {
   border-color: #ffffff;
 }
-
 .container-login .page-msg {
   margin: 20px 0 30px;
   color: #cfcfcf;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 16px;
 }
-
 .container-login .msg-error {
   display: none;
   margin-top: 7px;
@@ -86,12 +80,10 @@
   font-weight: 400;
   font-size: 11px;
 }
-
 .container-login .msg-error.false {
   display: block;
   color: #ff5f5f;
 }
-
 .container-login .wrapper-email,
 .container-login .wrapper-password {
   display: -webkit-box;
@@ -102,11 +94,9 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-
 .container-login .wrapper-password {
   margin: 16px 0 35px 0;
 }
-
 .container-login .sign-up-link {
   display: block;
   margin-top: 25px;

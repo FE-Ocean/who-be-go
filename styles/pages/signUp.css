@@ -12,62 +12,58 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-width: 322px;
-  padding: 0 20px;
   margin-top: 100px;
+  padding: 0 20px;
+  min-width: 322px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
-
 .container-signup .page-title {
   margin-bottom: 54px;
   color: #ffffff;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 30px;
 }
-
 .container-signup .page-title.profile {
   margin-bottom: 10px;
 }
-
 .container-signup .page-subtitle {
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-weight: 300;
   font-size: 11px;
   color: #767676;
 }
-
 .container-signup label {
   margin-bottom: 6px;
   color: #dedede;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 13px;
 }
-
 .container-signup ::-webkit-input-placeholder {
   color: #464646;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
 }
-
+.container-signup ::-moz-placeholder {
+  color: #464646;
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: 12px;
+}
 .container-signup :-ms-input-placeholder {
   color: #464646;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
 }
-
 .container-signup ::-ms-input-placeholder {
   color: #464646;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
 }
-
 .container-signup ::placeholder {
   color: #464646;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 12px;
 }
-
 .container-signup input {
   padding: 8px 0;
   border-bottom: 1px solid #767676;
@@ -76,11 +72,9 @@
   font-size: 13px;
   line-height: 1;
 }
-
 .container-signup input:focus {
   border-color: #ffffff;
 }
-
 .container-signup .msg-error {
   display: none;
   margin-top: 7px;
@@ -88,26 +82,21 @@
   font-weight: 400;
   font-size: 11px;
 }
-
 .container-signup .msg-error.email.true, .container-signup .msg-error.userid.true, .container-signup .msg-error.check.true {
   color: #b8ff96;
   display: block;
 }
-
 .container-signup .msg-error.email.false, .container-signup .msg-error.userid.false, .container-signup .msg-error.check.false {
   color: #ff5f5f;
   display: block;
 }
-
 .container-signup .msg-error.password.true, .container-signup .msg-error.username.true {
   display: none;
 }
-
 .container-signup .msg-error.password.false, .container-signup .msg-error.username.false {
   display: block;
   color: #ff5f5f;
 }
-
 .container-signup .wrapper-email,
 .container-signup .wrapper-password,
 .container-signup .wrapper-name,
@@ -121,31 +110,26 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-
 .container-signup .wrapper-password,
 .container-signup .wrapper-intro {
   margin: 16px 0 20px 0;
 }
-
 .container-signup .wrapper-id {
   margin-top: 16px;
 }
-
 .container-signup .wrapper-upload-img {
   position: relative;
   width: 322px;
 }
-
 .container-signup .wrapper-upload-img #img-profile {
   display: block;
+  margin: 20px auto;
   width: 130px;
   height: 130px;
-  margin: 20px auto;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .container-signup .wrapper-upload-img .ico-upload {
   position: absolute;
   bottom: 0;
@@ -156,7 +140,7 @@
   cursor: pointer;
 }
 
-input[type='file'] {
+input[type=file] {
   position: absolute;
   overflow: hidden;
   width: 1px;

@@ -4,8 +4,8 @@
 .container-home {
     box-sizing: content-box;
     padding: 50px 5% 45px;
-    max-width: 740px;
     margin: 0 auto;
+    max-width: 740px;
 }
 
 .btn-L {
@@ -19,10 +19,10 @@
 @media screen and (max-width: 768px) {
     .btn-L {
         &.home {
-            width: 170px;
             display: block;
             margin: 0 auto 80px;
             padding: 14px;
+            width: 170px;
         }
     }
 }
