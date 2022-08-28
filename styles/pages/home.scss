@@ -6,6 +6,11 @@
     padding: 50px 5% 45px;
     margin: 0 auto;
     max-width: 740px;
+    .card-L {
+        &:last-child {
+            cursor: pointer;
+        }
+    }
 }
 
 .btn-L {
