@@ -23,8 +23,6 @@ const id = params.get('id');
 
 // id값으로 받아온 리뷰상세 설정해주기
 const setReviewDetail = (post: PostInterface) => {
-    console.log(post);
-
     const h2 = document.querySelector('.movie-title');
     const imgRating = document.querySelector('.wrapper-rating');
     const imgPoster = document.querySelector('.img-poster');
