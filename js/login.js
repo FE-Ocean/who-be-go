@@ -31,7 +31,12 @@ const Login = async (e) => {
             localStorage.setItem('token', resJson.user.token);
             localStorage.setItem('accountname', resJson.user.accountname);
             const previousPage = localStorage.getItem('previousPage');
-            location.href = previousPage;
+            if (typeof previousPage === 'string') {
+                location.href = previousPage;
+            }
+            else {
+                location.href = '/index.html';
+            }
         }
         else {
             errMsg.classList.add('false');

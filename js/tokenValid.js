@@ -9,6 +9,7 @@ const hasToken = async (url = '/index.html') => {
             location.href = '/pages/login.html';
         }
         else {
+            localStorage.removeItem('previousPage');
             location.href = '/index.html';
         }
     }

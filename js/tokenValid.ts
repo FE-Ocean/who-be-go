@@ -11,6 +11,7 @@ const hasToken = async (url: string = '/index.html') => {
         if (result) {
             location.href = '/pages/login.html';
         } else {
+            localStorage.removeItem('previousPage');
             location.href = '/index.html';
         }
     } else {
