@@ -1,4 +1,5 @@
 import { getSearchResult } from './movieApi.js';
+import MovieList from './movieListInterface.js';
 
 const searchInput = document.getElementById('input-search') as HTMLInputElement;
 const searchedList = document.querySelector(
@@ -7,32 +8,6 @@ const searchedList = document.querySelector(
 
 const gridBox = document.querySelector('.grid-box') as HTMLOListElement;
 const strong = document.querySelector('strong') as HTMLElement;
-
-interface MovieList {
-    TotalCount: string;
-    Result: [
-        {
-            movieSeq: string;
-            movieId: string;
-            title: string;
-            titleEng: string;
-            posters: string;
-            genre: string;
-            rating: string;
-            runtime: string;
-            directors: {
-                director: [
-                    {
-                        directorNm: string;
-                    }
-                ];
-            };
-            actors: {
-                actor: [];
-            };
-        }
-    ];
-}
 
 let queryObj = {
     title: '',

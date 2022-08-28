@@ -10,7 +10,6 @@ const runtime = document.querySelector('.runtime');
 const rating = document.querySelector('.rating');
 const summary = document.querySelector('.movie-summary>dd');
 const postReview = document.querySelector('.container-review-btn>button');
-// const movieSeq = window.location.search.slice(1);
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const movieId = params.get('movieId');
