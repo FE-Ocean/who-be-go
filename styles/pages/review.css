@@ -1,7 +1,13 @@
 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: fixed;
   top: 0;
   z-index: 9999;
@@ -14,7 +20,7 @@
 }
 .img-logo img {
   height: 65px;
-  margin: 5px 0 0 90px;
+  margin: 3px 0 0 90px;
 }
 .img-logo .btn-nav {
   display: none;
@@ -27,6 +33,8 @@
 }
 
 .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-right: 90px;
   letter-spacing: -0.02em;
@@ -46,14 +54,23 @@
 .main {
   position: relative;
   min-height: calc(100vh - 131px);
-  margin-top: 70px;
+  margin: 70px 0 30px;
 }
 
 .wrapper-etc {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
@@ -98,10 +115,17 @@
   font-size: 10px;
 }
 .footer .wrapper-github {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 5px;
   margin: 0 5% 5px;
   font-size: 10px;
@@ -120,7 +144,10 @@
 
 @media screen and (max-width: 768px) {
   .header {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .img-logo img {
     content: url("../../assets/icons/logo-title-s.svg");
@@ -133,11 +160,16 @@
   }
   .nav {
     display: none;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 100%;
     margin-right: 0;
   }
   .nav.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   .nav li {
@@ -172,8 +204,11 @@
 }
 
 .list-review {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0 -14px;
 }
 
@@ -271,7 +306,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   margin: 0;
   text-align: center;
 }
