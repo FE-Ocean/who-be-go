@@ -13,6 +13,10 @@ async function search(searchInputValue, startCount = 0) {
     if (queryObj.title != searchInputValue) {
         compare = false;
     }
+    if (queryObj.title === searchInputValue &&
+        queryObj.startCount === startCount) {
+        compare = false;
+    }
     queryObj.title = searchInputValue;
     queryObj.startCount = startCount;
     const searchResult = await getSearchResult(queryObj);
