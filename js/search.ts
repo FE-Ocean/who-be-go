@@ -22,6 +22,15 @@ async function search(searchInputValue: string, startCount: number = 0) {
     if (queryObj.title != searchInputValue) {
         compare = false;
     }
+
+    
+    if (
+        queryObj.title === searchInputValue &&
+        queryObj.startCount === startCount
+    ) {
+        compare = false;
+    }
+    
     queryObj.title = searchInputValue;
     queryObj.startCount = startCount;
 
