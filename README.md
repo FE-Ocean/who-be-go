@@ -2,7 +2,7 @@
 
 -   프로젝트 기간 : 2022.8.10 ~ 2022.8.28
 
--   배포 URL : https://who_be_go.netlify.app/
+-   배포 URL : https://whobego.netlify.app/
     -   ID : whobego@feocean.com
     -   PassWord : feocean
 
@@ -60,7 +60,7 @@
 
 ### [배포 URL]
 
--   URL: [https://who_be_go.netlify.app/](https://who_be_go.netlify.app/)
+-   URL: [https://whobego.netlify.app/](https://whobego.netlify.app/)
 -   계정
     -   🧑🏻‍💻 `ID`: whobego@feocean.com
     -   🔐 `PassWord`: feocean
