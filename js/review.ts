@@ -14,7 +14,7 @@ const ul = document.querySelector('.list-review');
 const loading = document.querySelector('.wrapper-etc') as HTMLElement;
 
 writePostButton?.addEventListener('click', () => {
-    location.href = '/pages/writePost.html';
+    location.href = '/pages/search.html';
 });
 
 // 삭제 버튼
