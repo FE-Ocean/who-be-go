@@ -1,15 +1,19 @@
-import { getReviewList, deleteReview } from './api/reviewApi.js';
-import { hasToken } from './api/tokenValid.js';
+import { getReviewList, deleteReview } from '../api/reviewApi.js';
+import { hasToken } from '../api/tokenValidApi.js';
 hasToken('/pages/review.html');
 const noReview = document.querySelector('.wrapper-noreview');
 const review = document.querySelector('.wrapper-review');
 const writePostButton = document.getElementById('btn-writepost');
-const modalAlertContainer = document.querySelectorAll('.modal-alert-container')[1];
+const modalAlertContainer = document.querySelectorAll(
+    '.modal-alert-container'
+)[1];
 const ul = document.querySelector('.list-review');
 const loading = document.querySelector('.wrapper-etc');
-writePostButton === null || writePostButton === void 0 ? void 0 : writePostButton.addEventListener('click', () => {
-    location.href = '/pages/search.html';
-});
+writePostButton === null || writePostButton === void 0
+    ? void 0
+    : writePostButton.addEventListener('click', () => {
+          location.href = '/pages/search.html';
+      });
 // 삭제 버튼
 const buttonDelete = document.querySelector('#btn-delete');
 let postId = '';
@@ -21,8 +25,7 @@ const setReviewList = (post) => {
         // 리뷰가 0개일때 실행될 코드
         review.classList.add('disabled');
         noReview.classList.remove('disabled');
-    }
-    else {
+    } else {
         review.classList.remove('disabled');
         noReview.classList.add('disabled');
         for (let i of post) {
@@ -50,7 +53,10 @@ const setReviewList = (post) => {
                 window.location.href = `../pages/reviewDetail.html?id=${i.id}`;
             });
             modalButton.classList.add('btn-modal');
-            imgMore.setAttribute('src', '../assets/icons/icon-more-vertical.svg');
+            imgMore.setAttribute(
+                'src',
+                '../assets/icons/icon-more-vertical.svg'
+            );
             imgMore.setAttribute('width', '25px');
             imgMore.setAttribute('height', '25px');
             imgMore.setAttribute('alt', '더보기버튼');
@@ -73,11 +79,15 @@ const setReviewList = (post) => {
             imgRating.style.setProperty('--width-rating', widthRating);
             divWrapperPoster.classList.add('wrapper-poster');
             imgPoster.classList.add('img-poster');
-            if (i.image === '' ||
-                i.image === 'https://mandarin.api.weniv.co.kr/undefined') {
-                imgPoster.setAttribute('src', '../assets/images/max_post_default.jpg');
-            }
-            else {
+            if (
+                i.image === '' ||
+                i.image === 'https://mandarin.api.weniv.co.kr/undefined'
+            ) {
+                imgPoster.setAttribute(
+                    'src',
+                    '../assets/images/max_post_default.jpg'
+                );
+            } else {
                 imgPoster.setAttribute('src', `${i.image}`);
             }
             imgPoster.setAttribute('alt', '리뷰 이미지');
@@ -106,30 +116,38 @@ const setReviewList = (post) => {
             li.appendChild(span);
             fragment.appendChild(li);
         }
-        listReview === null || listReview === void 0 ? void 0 : listReview.appendChild(fragment);
+        listReview === null || listReview === void 0
+            ? void 0
+            : listReview.appendChild(fragment);
     }
 };
 // 무한 스크롤
 const createObserver = (element) => {
     let skip = 10;
-    const observer = new IntersectionObserver(async ([entry], observer) => {
-        if (entry.isIntersecting) {
-            observer.unobserve(entry.target);
-            const newReviewList = await getReviewList(skip);
-            if (newReviewList.length === 0)
-                return;
-            setReviewList(newReviewList);
-            if ((ul === null || ul === void 0 ? void 0 : ul.lastElementChild) instanceof HTMLLIElement) {
-                observer.observe(ul.lastElementChild);
+    const observer = new IntersectionObserver(
+        async ([entry], observer) => {
+            if (entry.isIntersecting) {
+                observer.unobserve(entry.target);
+                const newReviewList = await getReviewList(skip);
+                if (newReviewList.length === 0) return;
+                setReviewList(newReviewList);
+                if (
+                    (ul === null || ul === void 0
+                        ? void 0
+                        : ul.lastElementChild) instanceof HTMLLIElement
+                ) {
+                    observer.observe(ul.lastElementChild);
+                }
+                skip += 10;
+                if (newReviewList.length < 10) {
+                    observer.disconnect();
+                }
             }
-            skip += 10;
-            if (newReviewList.length < 10) {
-                observer.disconnect();
-            }
+        },
+        {
+            threshold: 0.5,
         }
-    }, {
-        threshold: 0.5,
-    });
+    );
     if (element) {
         observer.observe(element);
     }
@@ -149,8 +167,7 @@ window.addEventListener('load', async () => {
     const reviewList = await getReviewList();
     setReviewList(reviewList);
     loading.classList.add('disabled');
-    if (reviewList.length < 10)
-        return;
+    if (reviewList.length < 10) return;
     let lastItem = ul === null || ul === void 0 ? void 0 : ul.lastElementChild;
     if (lastItem instanceof HTMLLIElement) {
         createObserver(lastItem);

@@ -1,4 +1,4 @@
-import { getMovieInfo } from './api/movieApi.js';
+import { getMovieInfo } from '../api/movieApi.js';
 const title = document.querySelector('.movie-title');
 const titleEng = document.querySelector('.sub-movie-title');
 const poster = document.querySelector('.poster-card');
@@ -35,38 +35,33 @@ const showValue = (movie) => {
     title.textContent = movie.title;
     if (movie.titleEng === '') {
         titleEng.textContent = movie.titleOrg;
-    }
-    else {
+    } else {
         titleEng.textContent = movie.titleEng;
     }
     if (movie.posters !== '') {
         poster.src = movie.posters.substring(0, 60);
-    }
-    else {
+    } else {
         poster.src = '../assets/images/post_default.jpg';
     }
     if (movie.repRlsDate === '') {
         release.textContent = movie.prodYear;
-    }
-    else {
+    } else {
         release.textContent =
             movie.repRlsDate.slice(0, 4) +
-                '.' +
-                movie.repRlsDate.slice(4, 6) +
-                '.' +
-                movie.repRlsDate.slice(6);
+            '.' +
+            movie.repRlsDate.slice(4, 6) +
+            '.' +
+            movie.repRlsDate.slice(6);
     }
     if (movie.directors.director[0].directorNm === '') {
         director.textContent = '정보 없음';
-    }
-    else {
+    } else {
         director.textContent = movie.directors.director[0].directorNm;
     }
     let actorBox = '';
     if (!movie.actors.actor[0].actorNm) {
         actor.textContent = '정보 없음';
-    }
-    else {
+    } else {
         for (let i = 0; i < movie.actors.actor.length; i++) {
             actorBox += movie.actors.actor[i].actorNm;
             actorBox += ' | ';
@@ -75,26 +70,22 @@ const showValue = (movie) => {
     }
     if (movie.genre === '') {
         genre.textContent = '정보 없음';
-    }
-    else {
+    } else {
         genre.textContent = movie.genre.replace(/,/g, ' | ');
     }
     if (movie.runtime === '') {
         runtime.textContent = '정보 없음';
-    }
-    else {
+    } else {
         runtime.textContent = movie.runtime + '분';
     }
     if (movie.rating === '') {
         rating.textContent = '정보 없음';
-    }
-    else {
+    } else {
         rating.textContent = movie.rating;
     }
     if (movie.plots.plot[0].plotText === '') {
         summary.textContent = '줄거리가 제공되지 않습니다 :)';
-    }
-    else {
+    } else {
         summary.textContent = movie.plots.plot[0].plotText;
     }
 };

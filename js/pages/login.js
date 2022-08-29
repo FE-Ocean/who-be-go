@@ -1,4 +1,4 @@
-import { login } from './api/userApi.js';
+import { login } from '../api/userApi.js';
 const loginForm = document.querySelector('.form-login');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
@@ -8,8 +8,7 @@ const loginBtn = document.querySelector('.btn-L');
 function checkInput(e) {
     if (email.value !== '' && password.value !== '') {
         loginBtn.disabled = false;
-    }
-    else {
+    } else {
         loginBtn.disabled = true;
     }
 }
@@ -33,16 +32,13 @@ const Login = async (e) => {
             const previousPage = localStorage.getItem('previousPage');
             if (typeof previousPage === 'string') {
                 location.href = previousPage;
-            }
-            else {
+            } else {
                 location.href = '/index.html';
             }
-        }
-        else {
+        } else {
             errMsg.classList.add('false');
         }
-    }
-    catch (err) {
+    } catch (err) {
         console.error(err);
     }
 };

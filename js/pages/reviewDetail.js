@@ -1,4 +1,5 @@
-import { getReviewDetail, deleteReview } from './api/reviewApi.js';
+import { getReviewList, deleteReview } from '../api/reviewApi.js';
+import { hasToken } from '../api/tokenValidApi.js';
 const modalButton = document.querySelector('.btn-modal');
 const modalDropbox = document.querySelector('.modal-dropbox');
 const modalAlertContainer = document.querySelectorAll('.modal-alert-container')[1];

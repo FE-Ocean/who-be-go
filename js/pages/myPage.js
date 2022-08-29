@@ -1,6 +1,6 @@
-import { getUserInfo } from './api/userApi.js';
-import { getReviewList } from './api/reviewApi.js';
-import { hasToken } from './api/tokenValid.js';
+import { getUserInfo } from '../api/userApi.js';
+import { getReviewList } from '../api/reviewApi.js';
+import { hasToken } from '../api/tokenValidApi.js';
 const profileImg = document.querySelector('#img-profile');
 const username = document.querySelector('#text-name');
 const userId = document.querySelector('#text-id');
@@ -15,8 +15,7 @@ const createReviewAlbum = (reviewList) => {
         li.classList.add('card-s');
         if (review.image) {
             li.style.backgroundImage = `url(${review.image})`;
-        }
-        else {
+        } else {
             li.style.backgroundImage = `url(../assets/images/min_post_default.jpg)`;
         }
         const a = document.createElement('a');
@@ -56,25 +55,27 @@ window.addEventListener('load', async () => {
 });
 const createObserver = (element) => {
     let skip = 10;
-    const observer = new IntersectionObserver(async ([entry], observer) => {
-        if (entry.isIntersecting) {
-            observer.unobserve(entry.target);
-            const newReviewList = await getReviewList(skip);
-            if (newReviewList.length === 0)
-                return;
-            createReviewAlbum(newReviewList);
-            if (reviewAlbum.lastElementChild instanceof HTMLLIElement) {
-                observer.observe(reviewAlbum.lastElementChild);
+    const observer = new IntersectionObserver(
+        async ([entry], observer) => {
+            if (entry.isIntersecting) {
+                observer.unobserve(entry.target);
+                const newReviewList = await getReviewList(skip);
+                if (newReviewList.length === 0) return;
+                createReviewAlbum(newReviewList);
+                if (reviewAlbum.lastElementChild instanceof HTMLLIElement) {
+                    observer.observe(reviewAlbum.lastElementChild);
+                }
+                skip += 10;
+                if (newReviewList.length < 10) {
+                    observer.disconnect();
+                }
             }
-            skip += 10;
-            if (newReviewList.length < 10) {
-                observer.disconnect();
-            }
+        },
+        {
+            threshold: 0.3,
+            root: reviewAlbum,
         }
-    }, {
-        threshold: 0.3,
-        root: reviewAlbum,
-    });
+    );
     if (element) {
         observer.observe(element);
     }

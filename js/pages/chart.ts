@@ -1,6 +1,6 @@
-import { BoxOffice, MovieDetail } from './interface/movieListInterface';
-import { getBoxOfficeList } from './api/boxOfficeApi.js';
-import { getMovieInfo } from './api/movieApi.js';
+import { BoxOffice, MovieDetail } from '../interface/movieListInterface';
+import { getBoxOfficeList } from '../api/boxOfficeApi.js';
+import { getMovieInfo } from '../api/movieApi.js';
 const loadingItem = document.querySelectorAll('.loading');
 // 일별 박스 오피스 값을 넣어 영화 상세 결과값을 얻어냅니다.
 const movieDetail = async (boxOfficeResult: BoxOffice[]) => {
