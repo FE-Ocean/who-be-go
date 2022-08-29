@@ -8,7 +8,7 @@ const modalAlertContainer = document.querySelectorAll('.modal-alert-container')[
 const ul = document.querySelector('.list-review');
 const loading = document.querySelector('.wrapper-etc');
 writePostButton === null || writePostButton === void 0 ? void 0 : writePostButton.addEventListener('click', () => {
-    location.href = '/pages/writePost.html';
+    location.href = '/pages/search.html';
 });
 // 삭제 버튼
 const buttonDelete = document.querySelector('#btn-delete');
