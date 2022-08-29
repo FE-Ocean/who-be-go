@@ -7,5 +7,15 @@
         "strict": true,
         "skipLibCheck": true
     },
-    "include": ["js/*"]
+    "include": [
+        "js/*",
+        "js/api/tokenValid.js",
+        "js/api/userApi.js",
+        "js/api/reviewApi.js",
+        "js/api/movieApi.js",
+        "js/interface/movieListInterface.ts",
+        "js/api/imageApi.js",
+        "js/api/boxOfficeApi.js",
+        "js/url/BASE_URL.js"
+    ]
 }
