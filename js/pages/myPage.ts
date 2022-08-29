@@ -1,6 +1,6 @@
-import { getUserInfo } from './api/userApi.js';
-import { getReviewList } from './api/reviewApi.js';
-import { hasToken } from './api/tokenValid.js';
+import { getUserInfo } from '../api/userApi.js';
+import { getReviewList } from '../api/reviewApi.js';
+import { hasToken } from '../api/tokenValidApi.js';
 
 const profileImg = document.querySelector('#img-profile') as HTMLImageElement;
 const username = document.querySelector('#text-name') as HTMLLIElement;

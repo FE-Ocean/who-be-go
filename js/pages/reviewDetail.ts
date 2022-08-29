@@ -1,5 +1,5 @@
-import { getReviewDetail, deleteReview } from './api/reviewApi.js';
-import PostInterface from './interface/postInterface';
+import { getReviewDetail, deleteReview } from '../api/reviewApi.js';
+import PostInterface from '../interface/postInterface';
 
 const modalButton = document.querySelector('.btn-modal') as HTMLButtonElement;
 const modalDropbox = document.querySelector('.modal-dropbox') as HTMLElement;

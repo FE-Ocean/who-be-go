@@ -1,4 +1,4 @@
-import { getMovieInfo } from './api/movieApi.js';
+import { getMovieInfo } from '../api/movieApi.js';
 import data from './randomMovieList.js';
 
 interface MovieLists {

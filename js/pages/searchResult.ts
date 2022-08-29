@@ -1,5 +1,5 @@
-import { getMovieInfo } from './api/movieApi.js';
-import { MovieDetail } from './interface/movieListInterface.js';
+import { getMovieInfo } from '../api/movieApi.js';
+import { MovieDetail } from '../interface/movieListInterface.js';
 
 const title = document.querySelector('.movie-title') as HTMLHeadingElement;
 const titleEng = document.querySelector(
