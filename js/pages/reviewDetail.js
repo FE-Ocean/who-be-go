@@ -1,8 +1,9 @@
-import { getReviewList, deleteReview } from '../api/reviewApi.js';
-import { hasToken } from '../api/tokenValidApi.js';
+import { getReviewDetail, deleteReview } from '../api/reviewApi.js';
 const modalButton = document.querySelector('.btn-modal');
 const modalDropbox = document.querySelector('.modal-dropbox');
-const modalAlertContainer = document.querySelectorAll('.modal-alert-container')[1];
+const modalAlertContainer = document.querySelectorAll(
+    '.modal-alert-container'
+)[1];
 // 수정 버튼
 const buttonEdit = document.querySelector('#btn-edit');
 // (드롭박스의) 삭제 버튼
@@ -33,11 +34,12 @@ const setReviewDetail = (post) => {
         imgRating.style.setProperty('--width-rating', widthRating);
     }
     if (imgPoster instanceof HTMLImageElement) {
-        if (post.image === '' ||
-            post.image === 'https://mandarin.api.weniv.co.kr/undefined') {
+        if (
+            post.image === '' ||
+            post.image === 'https://mandarin.api.weniv.co.kr/undefined'
+        ) {
             imgPoster.src = '../assets/images/max_post_default.jpg';
-        }
-        else {
+        } else {
             imgPoster.src = `${post.image}`;
         }
     }
