@@ -1,4 +1,4 @@
-import { getMovieInfo } from './api/movieApi.js';
+import { getMovieInfo } from '../api/movieApi.js';
 import data from './randomMovieList.js';
 const titleKo = document.querySelector('#movie-title');
 const titleEng = document.querySelector('#movie-title-eng');
@@ -32,8 +32,7 @@ const setValue = (result) => {
         const poster = result.posters;
         if (poster.includes('|')) {
             return poster.split('|')[0];
-        }
-        else {
+        } else {
             return poster;
         }
     }
@@ -49,18 +48,19 @@ const setValue = (result) => {
         .replace(/^\s+|\s+$/g, '');
     titleKo.textContent = title;
     titleEng.textContent = result.titleEng || result.titleOrg;
-    relase.textContent = `${result.repRlsDate.slice(0, 4)}.${result.repRlsDate.slice(4, 6)}.${result.repRlsDate.slice(6, 8)}`;
+    relase.textContent = `${result.repRlsDate.slice(
+        0,
+        4
+    )}.${result.repRlsDate.slice(4, 6)}.${result.repRlsDate.slice(6, 8)}`;
     if (result.directors.director[0].directorNm === '') {
         director.textContent = '정보없음';
-    }
-    else {
+    } else {
         director.textContent = result.directors.director[0].directorNm;
     }
     let actorBox = '';
     if (!result.actors.actor[0].actorNm) {
         actors.textContent = '정보없음';
-    }
-    else {
+    } else {
         for (let i = 0; i < result.actors.actor.length; i++) {
             actorBox += result.actors.actor[i].actorNm;
             actorBox += ' | ';
@@ -69,15 +69,13 @@ const setValue = (result) => {
     actors.textContent = actorBox.slice(0, -2);
     if (result.genre === '') {
         genre.textContent = '정보없음';
-    }
-    else {
+    } else {
         let newGenres = result.genre.split(',').join(' | ');
         genre.textContent = newGenres;
     }
     if (result.rating === '') {
         rating.textContent = '정보없음';
-    }
-    else {
+    } else {
         rating.textContent = result.rating;
     }
 };

@@ -1,5 +1,5 @@
 import { getSearchResult } from '../api/movieApi.js';
-import MovieList from '../interface/movieListInterface.js';
+import MovieList from '../interface/movieListInterface';
 
 const searchInput = document.getElementById('input-search') as HTMLInputElement;
 const searchedList = document.querySelector(

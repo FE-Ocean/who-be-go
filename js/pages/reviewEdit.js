@@ -1,5 +1,5 @@
-import { handleUploadImage } from './api/imageApi.js';
-import { getReviewDetail, editReview } from './api/reviewApi.js';
+import { handleUploadImage } from '../api/imageApi.js';
+import { getReviewDetail, editReview } from '../api/reviewApi.js';
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get('id');
@@ -32,8 +32,7 @@ const setTextHeight = (e) => {
     target.style.height = textReview.scrollHeight + 'px';
     if (target.value.length > 0) {
         saveButton.classList.remove('disabled');
-    }
-    else {
+    } else {
         saveButton.classList.add('disabled');
     }
 };
@@ -45,7 +44,8 @@ const handleEditReview = async (e) => {
     }
     const reqData = {
         post: {
-            content: movieTitle.textContent +
+            content:
+                movieTitle.textContent +
                 '@' +
                 movieSubTitle.textContent +
                 '@' +

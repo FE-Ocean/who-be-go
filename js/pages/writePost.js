@@ -1,7 +1,7 @@
-import { handleUploadImage } from './api/imageApi.js';
-import { getMovieInfo } from './api/movieApi.js';
-import { writeReview } from './api/reviewApi.js';
-import { hasToken } from './api/tokenValid.js';
+import { handleUploadImage } from '../api/imageApi.js';
+import { getMovieInfo } from '../api/movieApi.js';
+import { writeReview } from '../api/reviewApi.js';
+import { hasToken } from '../api/tokenValidApi.js';
 hasToken();
 const movieTitle = document.querySelector('#movie-title');
 const movieSubTitle = document.querySelector('#movie-title-eng');

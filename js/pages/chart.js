@@ -1,5 +1,5 @@
-import { getBoxOfficeList } from './api/boxOfficeApi.js';
-import { getMovieInfo } from './api/movieApi.js';
+import { getBoxOfficeList } from '../api/boxOfficeApi.js';
+import { getMovieInfo } from '../api/movieApi.js';
 const loadingItem = document.querySelectorAll('.loading');
 // 일별 박스 오피스 값을 넣어 영화 상세 결과값을 얻어냅니다.
 const movieDetail = async (boxOfficeResult) => {
@@ -49,16 +49,14 @@ const setMovieDetail = async (movie, detailResult) => {
                     dateText += date.split('-').join('.');
                 }
                 textRelease.textContent = `${dateText}`;
-            }
-            else {
+            } else {
                 textRelease.textContent = '정보 없음';
             }
         }
         if (textDirector instanceof HTMLElement) {
             if (detailResult.directors.director[0].directorNm !== '') {
                 textDirector.textContent = `${detailResult.directors.director[0].directorNm}`;
-            }
-            else {
+            } else {
                 textDirector.textContent = '정보 없음';
             }
         }
@@ -70,8 +68,7 @@ const setMovieDetail = async (movie, detailResult) => {
                     actorText += actor.actorNm + ' | ';
                 }
                 textActor.textContent = `${actorText}`;
-            }
-            else {
+            } else {
                 textActor.textContent = '정보 없음';
             }
         }
@@ -83,8 +80,7 @@ const setMovieDetail = async (movie, detailResult) => {
                     genreText += genre.split(',').join(' | ');
                 }
                 textGenre.textContent = `${genreText}`;
-            }
-            else {
+            } else {
                 textGenre.textContent = '정보 없음';
             }
         }

@@ -1,128 +1,141 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/pages/searchResult.css" />
+        <script src="../js/pages/common.js" defer></script>
+        <title>영화 검색 결과 | 후비고</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/pages/searchResult.css" />
-    <script src="../js/common.js" defer></script>
-    <title>영화 검색 결과 | 후비고</title>
-</head>
-
-<body>
-    <div class="wrapper-etc">
-        <img class="img-etc" src="../assets/icons/logo-three.svg" alt="로딩중 아이콘" />
-        <strong class="text-etc">로딩중...</strong>
-    </div>
-
-    <header class="header">
-        <h1 class="img-logo">
-            <a href="../index.html">
-                <img src="../assets/icons/logo-title.svg" alt="로고이미지" />
-            </a>
-            <button class="btn-nav"></button>
-        </h1>
-        <ul class="nav">
-            <li><a href="../pages/chart.html">영화차트</a></li>
-            <li>
-                <a href="../pages/search.html" class="selected">감상문작성</a>
-            </li>
-            <li><a href="../pages/review.html">나의감상문</a></li>
-            <li><a href="../pages/myPage.html">마이페이지</a></li>
-            <li></li>
-        </ul>
-    </header>
-
-    <main class="search-result-main main">
-        <article class="movie-article">
-            <h2 class="movie-title page-title"></h2>
-            <h3 class="sub-movie-title"></h3>
-            <div class="card-info-wrapper">
-                <img src="../assets/images/post_default.jpg" class="poster-card card-L search" alt="영화 포스터" />
-                <div class="right-part">
-                    <div class="container-review-btn">
-                        <div class="img-wbg"></div>
-                        <button type="button" class="btn-ms">
-                            영화 감상문 작성하기
-                        </button>
-                    </div>
-                    <dl class="movie-info">
-                        <div>
-                            <dt>개봉</dt>
-                            <dd class="release"></dd>
-                        </div>
-                        <div>
-                            <dt>감독</dt>
-                            <dd class="director"></dd>
-                        </div>
-                        <div>
-                            <dt>배우</dt>
-                            <dd class="actor"></dd>
-                        </div>
-                        <div>
-                            <dt>장르</dt>
-                            <dd class="genre"></dd>
-                        </div>
-                        <div>
-                            <dt>상영시간</dt>
-                            <dd class="runtime"></dd>
-                        </div>
-                        <div>
-                            <dt>관람등급</dt>
-                            <dd class="rating"></dd>
-                        </div>
-                    </dl>
-                </div>
-            </div>
-            <div class="movie-summary">
-                <dt>줄거리</dt>
-                <dd>줄거리가 제공되지 않습니다 :)</dd>
-            </div>
-        </article>
-    </main>
-
-    <footer class="footer">
-        <p class="desc">
-            Copyright
-            <a href="https://github.com/FE-Ocean/who-be-go">@FE_Ocean</a>
-            all right reserved.
-        </p>
-        <br />
-        <ul class="wrapper-github">
-            <li class="github text-s">만든사람들</li>
-            <li class="github">
-                <a href="https://github.com/waterbinnn">@waterbinnn |</a>
-            </li>
-            <li class="github">
-                <a href="https://github.com/donkeeman">@donkeeman |</a>
-            </li>
-            <li class="github">
-                <a href="https://github.com/nimoseel">@nimoseel |</a>
-            </li>
-            <li class="github">
-                <a href="https://github.com/etoile-j">@etoile-j |</a>
-            </li>
-            <li class="github">
-                <a href="https://github.com/leehyeonseop">@leehyeonseop |</a>
-            </li>
-            <li class="github">
-                <a href="https://github.com/ryungom">@ryungom</a>
-            </li>
-        </ul>
-    </footer>
-
-    <div class="modal-alert-container disabled">
-        <div class="modal-alert">
-            <span class="message">로그아웃하시겠습니까?</span>
-            <button class="btn-alert" id="btn-cancel">취소</button>
-            <button class="btn-alert action" id="btn-logout">
-                로그아웃
-            </button>
+    <body>
+        <div class="wrapper-etc">
+            <img
+                class="img-etc"
+                src="../assets/icons/logo-three.svg"
+                alt="로딩중 아이콘"
+            />
+            <strong class="text-etc">로딩중...</strong>
         </div>
-    </div>
-    <script type="module" src="../js/searchResult.js"></script>
-</body>
 
+        <header class="header">
+            <h1 class="img-logo">
+                <a href="../index.html">
+                    <img
+                        src="../assets/icons/logo-title.svg"
+                        alt="로고이미지"
+                    />
+                </a>
+                <button class="btn-nav"></button>
+            </h1>
+            <ul class="nav">
+                <li><a href="../pages/chart.html">영화차트</a></li>
+                <li>
+                    <a href="../pages/search.html" class="selected"
+                        >감상문작성</a
+                    >
+                </li>
+                <li><a href="../pages/review.html">나의감상문</a></li>
+                <li><a href="../pages/myPage.html">마이페이지</a></li>
+                <li></li>
+            </ul>
+        </header>
+
+        <main class="search-result-main main">
+            <article class="movie-article">
+                <h2 class="movie-title page-title"></h2>
+                <h3 class="sub-movie-title"></h3>
+                <div class="card-info-wrapper">
+                    <img
+                        src="../assets/images/post_default.jpg"
+                        class="poster-card card-L search"
+                        alt="영화 포스터"
+                    />
+                    <div class="right-part">
+                        <div class="container-review-btn">
+                            <div class="img-wbg"></div>
+                            <button type="button" class="btn-ms">
+                                영화 감상문 작성하기
+                            </button>
+                        </div>
+                        <dl class="movie-info">
+                            <div>
+                                <dt>개봉</dt>
+                                <dd class="release"></dd>
+                            </div>
+                            <div>
+                                <dt>감독</dt>
+                                <dd class="director"></dd>
+                            </div>
+                            <div>
+                                <dt>배우</dt>
+                                <dd class="actor"></dd>
+                            </div>
+                            <div>
+                                <dt>장르</dt>
+                                <dd class="genre"></dd>
+                            </div>
+                            <div>
+                                <dt>상영시간</dt>
+                                <dd class="runtime"></dd>
+                            </div>
+                            <div>
+                                <dt>관람등급</dt>
+                                <dd class="rating"></dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+                <div class="movie-summary">
+                    <dt>줄거리</dt>
+                    <dd>줄거리가 제공되지 않습니다 :)</dd>
+                </div>
+            </article>
+        </main>
+
+        <footer class="footer">
+            <p class="desc">
+                Copyright
+                <a href="https://github.com/FE-Ocean/who-be-go">@FE_Ocean</a>
+                all right reserved.
+            </p>
+            <br />
+            <ul class="wrapper-github">
+                <li class="github text-s">만든사람들</li>
+                <li class="github">
+                    <a href="https://github.com/waterbinnn">@waterbinnn |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/donkeeman">@donkeeman |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/nimoseel">@nimoseel |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/etoile-j">@etoile-j |</a>
+                </li>
+                <li class="github">
+                    <a href="https://github.com/leehyeonseop"
+                        >@leehyeonseop |</a
+                    >
+                </li>
+                <li class="github">
+                    <a href="https://github.com/ryungom">@ryungom</a>
+                </li>
+            </ul>
+        </footer>
+
+        <div class="modal-alert-container disabled">
+            <div class="modal-alert">
+                <span class="message">로그아웃하시겠습니까?</span>
+                <button class="btn-alert" id="btn-cancel">취소</button>
+                <button class="btn-alert action" id="btn-logout">
+                    로그아웃
+                </button>
+            </div>
+        </div>
+        <script type="module" src="../js/pages/searchResult.js"></script>
+    </body>
 </html>
