@@ -1,4 +1,4 @@
-import { MOVIE_URL } from './BASE_URL.js';
+import { MOVIE_URL } from '../url/BASE_URL.js';
 
 const serviceKey = 'NE98FTD75W4C0R4JS785';
 

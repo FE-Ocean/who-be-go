@@ -1,5 +1,5 @@
-import { getSearchResult } from './movieApi.js';
-import MovieList from './movieListInterface.js';
+import { getSearchResult } from './api/movieApi.js';
+import MovieList from './interface/movieListInterface.js';
 
 const searchInput = document.getElementById('input-search') as HTMLInputElement;
 const searchedList = document.querySelector(
@@ -23,14 +23,13 @@ async function search(searchInputValue: string, startCount: number = 0) {
         compare = false;
     }
 
-    
     if (
         queryObj.title === searchInputValue &&
         queryObj.startCount === startCount
     ) {
         compare = false;
     }
-    
+
     queryObj.title = searchInputValue;
     queryObj.startCount = startCount;
 

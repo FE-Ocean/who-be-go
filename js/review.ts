@@ -1,6 +1,6 @@
-import { getReviewList, deleteReview } from './reviewApi.js';
-import PostInterface from './postInterface';
-import { hasToken } from './tokenValid.js';
+import { getReviewList, deleteReview } from './api/reviewApi.js';
+import PostInterface from './interface/postInterface';
+import { hasToken } from './api/tokenValid.js';
 
 hasToken('/pages/review.html');
 

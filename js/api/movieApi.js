@@ -1,4 +1,4 @@
-import { MOVIE_URL } from './BASE_URL.js';
+import { MOVIE_URL } from '../url/BASE_URL.js';
 const serviceKey = 'NE98FTD75W4C0R4JS785';
 // 영화 정보 얻어오는 함수 (인자로 쿼리 받음)
 const getMovieInfo = async (queryObj) => {

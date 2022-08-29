@@ -1,4 +1,4 @@
-import { getMovieInfo } from './movieApi.js';
+import { getMovieInfo } from './api/movieApi.js';
 const title = document.querySelector('.movie-title');
 const titleEng = document.querySelector('.sub-movie-title');
 const poster = document.querySelector('.poster-card');

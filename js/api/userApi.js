@@ -1,10 +1,8 @@
-import { MANDARIN_URL } from './BASE_URL.js';
-
+import { MANDARIN_URL } from '../url/BASE_URL.js';
 const token = window.localStorage.getItem('token');
 const accountname = window.localStorage.getItem('accountname');
-
 // 이메일 검증 결과
-const getEmailValidMsg = async (reqData: object) => {
+const getEmailValidMsg = async (reqData) => {
     const res = await fetch(MANDARIN_URL + '/user/emailvalid', {
         method: 'POST',
         headers: {
@@ -12,14 +10,11 @@ const getEmailValidMsg = async (reqData: object) => {
         },
         body: JSON.stringify(reqData),
     });
-
     const reqJson = await res.json();
-
     return reqJson.message;
 };
-
 // 계정 ID 검증 결과
-const getIdValidMsg = async (reqData: object) => {
+const getIdValidMsg = async (reqData) => {
     const res = await fetch(MANDARIN_URL + '/user/accountnamevalid', {
         method: 'POST',
         headers: {
@@ -27,13 +22,11 @@ const getIdValidMsg = async (reqData: object) => {
         },
         body: JSON.stringify(reqData),
     });
-
     const resJson = await res.json();
     return resJson.message;
 };
-
 // 로그인
-const login = async (reqData: object) => {
+const login = async (reqData) => {
     const res = await fetch(MANDARIN_URL + '/user/login', {
         method: 'POST',
         headers: {
@@ -44,9 +37,8 @@ const login = async (reqData: object) => {
     const resJson = await res.json();
     return resJson;
 };
-
 // 회원 가입
-const signUp = async (reqData: object) => {
+const signUp = async (reqData) => {
     const res = await fetch(MANDARIN_URL + '/user', {
         method: 'POST',
         headers: {
@@ -57,7 +49,6 @@ const signUp = async (reqData: object) => {
     const resJson = await res.json();
     return resJson.message;
 };
-
 // 계정 정보 불러오기
 const getUserInfo = async () => {
     try {
@@ -71,18 +62,19 @@ const getUserInfo = async () => {
         const result = await data.json();
         if (result.profile) {
             return result.profile;
-        } else {
+        }
+        else {
             throw new Error(result.message);
         }
-    } catch (error) {
+    }
+    catch (error) {
         if (error instanceof Error) {
             alert(error.message);
         }
     }
 };
-
 // 계정 정보 수정
-const editUserInfo = async (reqData: object) => {
+const editUserInfo = async (reqData) => {
     try {
         const data = await fetch(`${MANDARIN_URL}/user`, {
             method: 'PUT',
@@ -95,20 +87,15 @@ const editUserInfo = async (reqData: object) => {
         const result = await data.json();
         if (result.user) {
             return result.user;
-        } else {
+        }
+        else {
             throw new Error(result.message);
         }
-    } catch (error) {
+    }
+    catch (error) {
         if (error instanceof Error) {
             alert(error.message);
         }
     }
 };
-export {
-    getEmailValidMsg,
-    getIdValidMsg,
-    login,
-    signUp,
-    getUserInfo,
-    editUserInfo,
-};
+export { getEmailValidMsg, getIdValidMsg, login, signUp, getUserInfo, editUserInfo, };

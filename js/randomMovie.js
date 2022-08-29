@@ -1,4 +1,4 @@
-import { getMovieInfo } from './movieApi.js';
+import { getMovieInfo } from './api/movieApi.js';
 import data from './randomMovieList.js';
 const titleKo = document.querySelector('#movie-title');
 const titleEng = document.querySelector('#movie-title-eng');

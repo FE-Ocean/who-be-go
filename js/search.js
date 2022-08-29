@@ -1,4 +1,4 @@
-import { getSearchResult } from './movieApi.js';
+import { getSearchResult } from './api/movieApi.js';
 const searchInput = document.getElementById('input-search');
 const searchedList = document.querySelector('.container-searched-list');
 const gridBox = document.querySelector('.grid-box');

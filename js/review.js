@@ -1,5 +1,5 @@
-import { getReviewList, deleteReview } from './reviewApi.js';
-import { hasToken } from './tokenValid.js';
+import { getReviewList, deleteReview } from './api/reviewApi.js';
+import { hasToken } from './api/tokenValid.js';
 hasToken('/pages/review.html');
 const noReview = document.querySelector('.wrapper-noreview');
 const review = document.querySelector('.wrapper-review');

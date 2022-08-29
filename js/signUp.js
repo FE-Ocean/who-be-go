@@ -1,5 +1,5 @@
-import { handleUploadImage } from './imageApi.js';
-import { getEmailValidMsg, getIdValidMsg, signUp } from './userApi.js';
+import { handleUploadImage } from './api/imageApi.js';
+import { getEmailValidMsg, getIdValidMsg, signUp } from './api/userApi.js';
 const signUpForm = document.querySelector('#form-signup');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');

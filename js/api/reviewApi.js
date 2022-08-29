@@ -1,4 +1,4 @@
-import { MANDARIN_URL } from './BASE_URL.js';
+import { MANDARIN_URL } from '../url/BASE_URL.js';
 const token = window.localStorage.getItem('token');
 const accountname = window.localStorage.getItem('accountname');
 // 영화 리스트 불러오기

@@ -1,4 +1,4 @@
-import { login } from './userApi.js';
+import { login } from './api/userApi.js';
 const loginForm = document.querySelector('.form-login');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');

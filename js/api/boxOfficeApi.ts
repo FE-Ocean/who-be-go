@@ -1,4 +1,4 @@
-import { BOX_OFFICE_URL } from './BASE_URL.js';
+import { BOX_OFFICE_URL } from '../url/BASE_URL.js';
 
 // 일별 박스 오피스 값을 불러옵니다.
 const getBoxOfficeList = async () => {

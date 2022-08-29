@@ -1,5 +1,5 @@
-import { handleUploadImage } from './imageApi.js';
-import { getReviewDetail, editReview } from './reviewApi.js';
+import { handleUploadImage } from './api/imageApi.js';
+import { getReviewDetail, editReview } from './api/reviewApi.js';
 
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);

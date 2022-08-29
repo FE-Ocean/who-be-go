@@ -1,4 +1,4 @@
-import { MANDARIN_URL } from './BASE_URL.js';
+import { MANDARIN_URL } from '../url/BASE_URL.js';
 // 이미지 업로드
 const handleUploadImage = async (image) => {
     const formData = new FormData();

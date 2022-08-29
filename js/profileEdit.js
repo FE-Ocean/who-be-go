@@ -1,5 +1,5 @@
-import { handleUploadImage } from './imageApi.js';
-import { getIdValidMsg, getUserInfo, editUserInfo } from './userApi.js';
+import { handleUploadImage } from './api/imageApi.js';
+import { getIdValidMsg, getUserInfo, editUserInfo } from './api/userApi.js';
 const profileForm = document.querySelector('#form-profile');
 const imgBtn = document.querySelector('#choose-img');
 const profileImg = document.querySelector('#img-profile');
