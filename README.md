@@ -8,7 +8,7 @@
 
 <br>
 <div align="center">
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/36322f3e-4f86-4e4e-a887-645209468608/mockup.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220829%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220829T065850Z&X-Amz-Expires=86400&X-Amz-Signature=04296e13ec275c34bff5b542d0eaf8d7c2f2d139afdb7f335d692912f99bac2c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22mockup.png%22&x-id=GetObject">
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/36322f3e-4f86-4e4e-a887-645209468608/mockup.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220831%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220831T053311Z&X-Amz-Expires=86400&X-Amz-Signature=fc7e7db61205d11cb40b80d285c3566d8dc38ffc141a6bab766277b801ff5b49&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22mockup.png%22&x-id=GetObject">
 </div>
 <br>
 
