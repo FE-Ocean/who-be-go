@@ -25,7 +25,11 @@ const movieDetail = async (boxOfficeResult) => {
 const setMovieDetail = async (movie, detailResult) => {
     const li = document.getElementById(`rank${movie.rank}`);
     if (li instanceof HTMLLIElement) {
-        li.style.backgroundImage = `url(${detailResult.posters.split('|')[0]})`;
+        const poster =
+            detailResult.posters.split('|')[0] === ''
+                ? '../assets/images/post_default.jpg'
+                : detailResult.posters.split('|')[0];
+        li.style.backgroundImage = `url(${poster})`;
         li.addEventListener('click', () => {
             location.href = `../pages/searchResult.html?movieId=${detailResult.movieId}&movieSeq=${detailResult.movieSeq}`;
         });
