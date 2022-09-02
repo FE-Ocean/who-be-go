@@ -25,10 +25,9 @@ const movieDetail = async (boxOfficeResult) => {
 const setMovieDetail = async (movie, detailResult) => {
     const li = document.getElementById(`rank${movie.rank}`);
     if (li instanceof HTMLLIElement) {
-        const poster =
-            detailResult.posters.split('|')[0] === ''
-                ? '../assets/images/post_default.jpg'
-                : detailResult.posters.split('|')[0];
+        const poster = detailResult.posters.split('|')[0] === ''
+            ? '../assets/images/post_default.jpg'
+            : detailResult.posters.split('|')[0];
         li.style.backgroundImage = `url(${poster})`;
         li.addEventListener('click', () => {
             location.href = `../pages/searchResult.html?movieId=${detailResult.movieId}&movieSeq=${detailResult.movieSeq}`;
@@ -53,14 +52,16 @@ const setMovieDetail = async (movie, detailResult) => {
                     dateText += date.split('-').join('.');
                 }
                 textRelease.textContent = `${dateText}`;
-            } else {
+            }
+            else {
                 textRelease.textContent = '정보 없음';
             }
         }
         if (textDirector instanceof HTMLElement) {
             if (detailResult.directors.director[0].directorNm !== '') {
                 textDirector.textContent = `${detailResult.directors.director[0].directorNm}`;
-            } else {
+            }
+            else {
                 textDirector.textContent = '정보 없음';
             }
         }
@@ -72,7 +73,8 @@ const setMovieDetail = async (movie, detailResult) => {
                     actorText += actor.actorNm + ' | ';
                 }
                 textActor.textContent = `${actorText}`;
-            } else {
+            }
+            else {
                 textActor.textContent = '정보 없음';
             }
         }
@@ -84,7 +86,8 @@ const setMovieDetail = async (movie, detailResult) => {
                     genreText += genre.split(',').join(' | ');
                 }
                 textGenre.textContent = `${genreText}`;
-            } else {
+            }
+            else {
                 textGenre.textContent = '정보 없음';
             }
         }
