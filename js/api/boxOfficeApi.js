@@ -9,7 +9,10 @@ const getBoxOfficeList = async () => {
     const yesterday = new Date(now.setDate(now.getDate() - 1));
     const year = yesterday.getFullYear();
     const month = ('0' + (1 + yesterday.getMonth())).slice(-2);
-    const day = yesterday.getDate();
+    const day =
+        yesterday.getDate() < 10
+            ? '0' + yesterday.getDate()
+            : yesterday.getDate();
     const today = year + month + day;
     const url = `${BOX_OFFICE_URL}key=${key}&targetDt=${today}`;
     const response = await fetch(url);
