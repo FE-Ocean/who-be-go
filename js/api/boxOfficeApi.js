@@ -14,7 +14,6 @@ const getBoxOfficeList = async () => {
         : yesterday.getDate();
     const today = year + month + day;
     const url = `${BOX_OFFICE_URL}&targetDt=${today}`;
-    console.log(url);
     const response = await fetch(url);
     const json = await response.json();
     const boxOfficeResult = json.boxOfficeResult.dailyBoxOfficeList;
