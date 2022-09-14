@@ -31,11 +31,13 @@ navBtn.addEventListener('click', () => {
 });
 
 const activePage = window.location.pathname;
-navItem.forEach((link) => {
-    if (link.href.includes(`${activePage}`)) {
-        link.classList.add('selected');
-    }
-});
+if (activePage != '/') {
+    navItem.forEach((link) => {
+        if (link.href.includes(`${activePage}`)) {
+            link.classList.add('selected');
+        }
+    });
+}
 
 // 모달
 

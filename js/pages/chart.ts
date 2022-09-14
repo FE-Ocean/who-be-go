@@ -25,8 +25,14 @@ const movieDetail = async (boxOfficeResult: BoxOffice[]) => {
 // 영화정보를 셋팅합니다.
 const setMovieDetail = async (movie: BoxOffice, detailResult: MovieDetail) => {
     const li = document.getElementById(`rank${movie.rank}`);
+
     if (li instanceof HTMLLIElement) {
-        li.style.backgroundImage = `url(${detailResult.posters.split('|')[0]})`;
+        const poster =
+            detailResult.posters.split('|')[0] === ''
+                ? '../assets/images/post_default.jpg'
+                : detailResult.posters.split('|')[0];
+        li.style.backgroundImage = `url(${poster})`;
+
         li.addEventListener('click', () => {
             location.href = `../pages/searchResult.html?movieId=${detailResult.movieId}&movieSeq=${detailResult.movieSeq}`;
         });

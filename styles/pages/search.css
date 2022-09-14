@@ -18,10 +18,12 @@
 .img-logo {
   height: 70px;
 }
+
 .img-logo img {
   height: 65px;
   margin: 3px 0 0 90px;
 }
+
 .img-logo .btn-nav {
   display: none;
   position: absolute;
@@ -39,6 +41,7 @@
   margin-right: 90px;
   letter-spacing: -0.02em;
 }
+
 .nav li {
   padding-left: 24px;
   color: #cfcfcf;
@@ -46,6 +49,7 @@
   font-size: 14px;
   cursor: pointer;
 }
+
 .nav li:hover,
 .nav li a.selected {
   color: #ff5f5f;
@@ -54,7 +58,7 @@
 .main {
   position: relative;
   min-height: calc(100vh - 131px);
-  margin: 70px 0 30px;
+  margin-top: 70px;
 }
 
 .wrapper-etc {
@@ -82,15 +86,18 @@
   background-color: #1e1e1e;
   color: #f1f1f1;
 }
+
 .wrapper-etc .img-etc {
   width: 181px;
   margin-bottom: 20px;
 }
+
 .wrapper-etc .text-etc {
   margin-bottom: 30px;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 25px;
 }
+
 .wrapper-etc.disabled {
   display: none;
 }
@@ -109,11 +116,13 @@
   color: #dedede;
   text-align: center;
 }
+
 .footer .desc {
   display: inline-block;
   margin: 8px 0 5px;
   font-size: 10px;
 }
+
 .footer .wrapper-github {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -131,6 +140,7 @@
   font-size: 10px;
   text-align: center;
 }
+
 .footer .wrapper-github .text-s {
   font-size: 8px;
 }
@@ -183,10 +193,14 @@
   .nav li a {
     display: block;
   }
+  .main {
+    margin-bottom: 30px;
+  }
   .main.active {
     margin-top: 296px;
   }
 }
+
 .search-main {
   padding: 50px 5%;
   text-align: center;
@@ -214,6 +228,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
 .input-search-container .input-search {
   width: 100%;
   padding: 21px 51px 17px 33px;
@@ -225,34 +240,35 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
 .input-search-container .input-search::-webkit-input-placeholder {
   color: #8b8b8b;
   font-size: 18px;
   line-height: 23px;
 }
-.input-search-container .input-search::-moz-placeholder {
-  color: #8b8b8b;
-  font-size: 18px;
-  line-height: 23px;
-}
+
 .input-search-container .input-search:-ms-input-placeholder {
   color: #8b8b8b;
   font-size: 18px;
   line-height: 23px;
 }
+
 .input-search-container .input-search::-ms-input-placeholder {
   color: #8b8b8b;
   font-size: 18px;
   line-height: 23px;
 }
+
 .input-search-container .input-search::placeholder {
   color: #8b8b8b;
   font-size: 18px;
   line-height: 23px;
 }
+
 .input-search-container .input-search:focus {
   border-color: #cfcfcf;
 }
+
 .input-search-container .img-search {
   display: inline-block;
   position: absolute;
@@ -275,16 +291,21 @@
 }
 
 .grid-box {
+  display: -ms-grid;
   display: grid;
-  grid-template: auto/repeat(5, 1fr);
+  -ms-grid-rows: auto;
+  -ms-grid-columns: (1fr)[5];
+      grid-template: auto/repeat(5, 1fr);
   gap: 6px;
   margin-top: 10px;
 }
+
 .grid-box .searched-movie {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   cursor: pointer;
 }
+
 .grid-box .searched-movie:hover {
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
@@ -319,6 +340,7 @@
   padding: 0 2px 10px;
   font-size: 13px;
 }
+
 .title-box .movie-title {
   display: -webkit-box;
   overflow: hidden;
@@ -345,10 +367,6 @@
     font-size: 16px;
     line-height: 21px;
   }
-  .input-search-container .input-search::-moz-placeholder {
-    font-size: 16px;
-    line-height: 21px;
-  }
   .input-search-container .input-search:-ms-input-placeholder {
     font-size: 16px;
     line-height: 21px;
@@ -368,7 +386,9 @@
     height: 21px;
   }
   .grid-box {
-    grid-template: auto/repeat(3, 1fr);
+    -ms-grid-rows: auto;
+    -ms-grid-columns: (1fr)[3];
+        grid-template: auto/repeat(3, 1fr);
   }
   .title-box {
     font-size: 12px;
