@@ -7,8 +7,9 @@
     -   PassWord : feocean
 
 <br>
+
 <div align="center">
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/36322f3e-4f86-4e4e-a887-645209468608/mockup.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220831%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220831T053311Z&X-Amz-Expires=86400&X-Amz-Signature=fc7e7db61205d11cb40b80d285c3566d8dc38ffc141a6bab766277b801ff5b49&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22mockup.png%22&x-id=GetObject">
+<img src="https://user-images.githubusercontent.com/96714788/191214206-038cbd42-6e9b-450e-b753-ddcc1ecd893f.png">
 </div>
 <br>
 
@@ -155,25 +156,26 @@
 
 <div >
 
+
 |                            0. 로그인                            |                           1. 로그아웃                            |
 | :-------------------------------------------------------------: | :--------------------------------------------------------------: |
-| <img src="https://i.esdrop.com/d/f/eZ1kpS3Y3y/eSEjbHAt4t.gif"/> | <img src="https://i.esdrop.com/d/f/eZ1kpS3Y3y/LtvBoNbWMd.gif" /> |
+| <img src="https://user-images.githubusercontent.com/96714788/191214934-f3588412-3522-4659-bd09-182760459296.gif"/> | <img src="https://user-images.githubusercontent.com/96714788/191215039-220e9e5c-9e60-4f36-976c-a2c62bb5f711.gif" /> |
 
 |                           2. 회원가입                           |                          3. 프로필설정                          |
 | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="https://i.esdrop.com/d/f/eZ1kpS3Y3y/fIhSJuGHs0.gif"/> | <img src="https://i.esdrop.com/d/f/eZ1kpS3Y3y/2r1xlXkO6U.gif"/> |
+| <img src="https://user-images.githubusercontent.com/96714788/191215114-fdca9fd4-d57f-4780-86d3-c40e7e6dc851.gif"/> | <img src="https://user-images.githubusercontent.com/96714788/191215188-fe50d938-ef7a-4296-9fe4-7fc5acc62a5e.gif"/> |
 
 |                        4. 영화 랜덤 추천                        |                     5. 일별 박스오피스 순위                     |
 | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="https://i.esdrop.com/d/f/eZ1kpS3Y3y/zlcypS4XMN.gif"/> | <img src="https://i.esdrop.com/d/f/eZ1kpS3Y3y/ooVl0mOyg8.gif"/> |
+| <img src="https://user-images.githubusercontent.com/96714788/191215294-73b39aa7-edf9-4fa7-b0f7-6a268205c65a.gif"/> | <img src="https://user-images.githubusercontent.com/96714788/191215443-a5d7a579-7b6b-47f3-be95-580e495655e9.gif"/> |
 
 |                      6. 영화 검색 및 결과                       |                         7. 감상문 작성                          |
 | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="https://i.esdrop.com/d/f/eZ1kpS3Y3y/DCyiXAx7C5.gif"/> | <img src="https://i.esdrop.com/d/f/eZ1kpS3Y3y/Uw7RP3wiGQ.gif"/> |
+| <img src="https://user-images.githubusercontent.com/96714788/191215582-7e925d9a-8d10-43fc-aeae-5f20d724974a.gif"/> | <img src="https://user-images.githubusercontent.com/96714788/191215701-422e5142-b6ec-4288-b919-7ae4ecfd27d0.gif"/> |
 
 |                     8. 감상문 수정 및 삭제                      |                          9. 마이페이지                          |
 | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="https://i.esdrop.com/d/f/eZ1kpS3Y3y/FAR9v67EUI.gif"/> | <img src="https://i.esdrop.com/d/f/eZ1kpS3Y3y/X1OEK4oIrF.gif"/> |
+| <img src="https://user-images.githubusercontent.com/96714788/191215713-c281932b-2299-4068-b2ca-0e36e5253e4f.gif"/> | <img src="https://user-images.githubusercontent.com/96714788/191215729-4429f28e-678d-467c-8be7-6ac90af82b05.gif"/> |
 
 <br>
 
