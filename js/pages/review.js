@@ -9,6 +9,7 @@ const modalAlertContainer = document.querySelectorAll(
 )[1];
 const ul = document.querySelector('.list-review');
 const loading = document.querySelector('.wrapper-etc');
+const modalDropbox = document.getElementsByClassName('modal-dropbox');
 writePostButton === null || writePostButton === void 0
     ? void 0
     : writePostButton.addEventListener('click', () => {
@@ -152,17 +153,6 @@ const createObserver = (element) => {
         observer.observe(element);
     }
 };
-// 바깥 영역 클릭하면 모달 닫힘
-window.addEventListener('click', (e) => {
-    // 문제는 이렇게 클릭 이벤트 실행될 때마다 쿼리셀렉터를 새로 불러와야 하는데 이게 맞는지?
-    const modalDropbox = document.querySelectorAll('.modal-dropbox');
-    const target = e.target;
-    if (!target.classList.contains('ico-modal')) {
-        for (let dropbox of modalDropbox) {
-            dropbox.classList.add('disabled');
-        }
-    }
-});
 window.addEventListener('load', async () => {
     const reviewList = await getReviewList();
     setReviewList(reviewList);
@@ -178,4 +168,13 @@ buttonDelete.addEventListener('click', async () => {
     await deleteReview(postId);
     modalAlertContainer.classList.add('disabled');
     window.location.href = '../pages/review.html';
+});
+// 바깥 영역 클릭하면 모달 닫힘
+window.addEventListener('click', (e) => {
+    const target = e.target;
+    if (!target.classList.contains('ico-modal')) {
+        for (let dropbox of modalDropbox) {
+            dropbox.classList.add('disabled');
+        }
+    }
 });
