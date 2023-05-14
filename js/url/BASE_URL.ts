@@ -5,7 +5,7 @@ const serviceKey = 'NE98FTD75W4C0R4JS785';
 const key = '52ae81d6ce669361445e67ea47f30077';
 
 // 감귤마켓 API
-const MANDARIN_URL = 'https://mandarin.api.weniv.co.kr';
+const MANDARIN_URL = 'https://api.mandarin.weniv.co.kr';
 // 영화 진흥 위원회 API
 const BOX_OFFICE_URL = `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}`;
 // 한국 영화 자료원 API
